@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import ServiceCards from './components/HomePage/ServiceCard/ServiceCards/ServiceCards';
+import Home from './components/HomePage/Home/Home';
 
 function App() {
   return (
     <div className="App">
-
-      <ServiceCards></ServiceCards>
+      Let Start Our Dream Project called DreamFly!
+      <Home />
     </div>
   );
 }
