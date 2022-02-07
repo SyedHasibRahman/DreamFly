@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { Card, CardActionArea, CardContent, Container, Typography } from '@mui/material';
+import { Card, CardContent, Container, Typography } from '@mui/material';
 import './ServiceCards.css'
 import CleanHandsRoundedIcon from '@mui/icons-material/CleanHandsRounded';
 
@@ -26,7 +26,7 @@ const ServiceCards = () => {
                     {Array.from(Array(6)).map((_, index) => (
                         <Grid item xs={2} sm={4} md={4} key={index}>
                             <Card className='cardBody'>
-                                <CardActionArea>
+                                <>
 
                                     <CleanHandsRoundedIcon className='cardIcon' style={{ width: '100px', height: '100px', padding: '20px' }} color="dark" />
 
@@ -38,7 +38,7 @@ const ServiceCards = () => {
                                             As well as getting to fly to many different destinations as part of their job, airplane pilots get big discounts on money
                                         </Typography>
                                     </CardContent>
-                                </CardActionArea>
+                                </>
                             </Card>
 
                         </Grid>
