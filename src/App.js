@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
+import Navigation from './components/Shared/Navigation/Navigation';
 
 function App() {
   return (
     <div className="App">
+    <Navigation></Navigation>
       <h1>Let Start Our Dream Project called DreamFly!</h1>
     </div>
   );
