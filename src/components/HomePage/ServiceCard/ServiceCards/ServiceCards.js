@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { Card, CardActionArea, CardContent, Container, Typography } from '@mui/material';
+import { Card, CardContent, Container, Typography } from '@mui/material';
 import './ServiceCards.css'
 import CleanHandsRoundedIcon from '@mui/icons-material/CleanHandsRounded';
 
