@@ -1,19 +1,15 @@
 import { Container, Grid, Typography, Link } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import Navigation from '../../Shared/Navigation/Navigation';
 import './Banner.css';
 
 const Banner = () => {
   return (
     <Box sx={{backgroundColor:'#19232d', minHeight:'100vh',}}>
       <Box sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/element/element-1.png)',backgroundColor:'#19232d', backgroundPosition:'right', backgroundRepeat:'no-repeat', opacity:'1', backgroundSize:'right'}}>
-
+        <Navigation />
         <Container sx={{padding:"200px 0", }}>
-          {/* <Box sx={{display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap'}}>
-            
-            <Box></Box>
-          </Box> */}
           <Box display={{xs:'none', md:'block'}}>
             <Box className='socialIconBox'>
               <Link href="#" className='socialIcon'><i class="fab fa-facebook-f"></i></Link>

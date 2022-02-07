@@ -12,8 +12,8 @@ const Home = () => {
             <Banner />
             <BestService />
             <About />
-            <ServiceCards></ServiceCards>
-            <ViewCounts></ViewCounts>
+            <ServiceCards />
+            <ViewCounts />
         </Box>
     );
 };
