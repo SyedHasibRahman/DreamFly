@@ -5,7 +5,7 @@ const ServiceCard = () => {
 
     return (
         <div>
-            <Card sx={{ maxWidth: 345 }} className='cardBody'>
+            <Card sx={ { maxWidth: 345 } } className='cardBody'>
                 <CardActionArea>
                     <CardMedia
                         component="img"
