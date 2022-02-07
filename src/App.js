@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Navigation from './components/Shared/Navigation/Navigation';
+import Home from './components/HomePage/Home/Home';
 
 function App() {
   return (
     <div className="App">
-    <Navigation></Navigation>
-      <h1>Let Start Our Dream Project called DreamFly!</h1>
+      Let Start Our Dream Project called DreamFly!
+      <Home />
     </div>
   );
 }

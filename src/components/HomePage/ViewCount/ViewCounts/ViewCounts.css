@@ -1,0 +1,15 @@
+.viewImage{
+   padding-bottom: 100px;
+   padding-top: 100px;
+    background-repeat:repeat-x;
+    width: 100%;
+    background-color: #19232d;
+    opacity: .9;
+    background-image: url("https://themeim.com/demo/flynext/assets/images/bg/bg-2.png"), linear-gradient(90deg, #3d3d3d 15%, rgba(25, 25, 25, 0.62) 100%);
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+   
+ 
+}
