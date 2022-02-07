@@ -6,7 +6,7 @@ import "./BestService.css";
 
 const BestService = () => {
   return (
-    <Box component="div" className="bestService">
+    <Box component="div" className="bestService" sx={{ py: 10 }}>
       <Container>
         <Box className="jatService">
           <Box component="div" className="card">
