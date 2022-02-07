@@ -1,4 +1,4 @@
-import { Container, Grid, Paper, Typography } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import PrimaryButton from '../../StyledComponent/Buttons/PrimaryButton';
@@ -45,7 +45,7 @@ const About = () => {
                         <Typography variant='body1' sx={ {
                             py: 3,
                         } }>
-                            Flynext is the only way to fully travel on your terms. Whether it’s accessing a remote destination or taking back control of productivity and flight scheduling
+                            DreamFly is the only way to fully travel on your terms. Whether it’s accessing a remote destination or taking back control of productivity and flight scheduling
                         </Typography>
                         <Grid sx={ {
                             display: 'flex',
