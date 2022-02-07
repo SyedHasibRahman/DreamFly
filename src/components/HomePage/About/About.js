@@ -15,7 +15,8 @@ const About = () => {
             objectFit: 'cover',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            color: '#fff'
+            color: '#fff',
+            position: 'relative',
         } }>
             <Grid sx={ {
                 position: 'absolute',
@@ -23,7 +24,9 @@ const About = () => {
                 right: 0,
                 animation: 'scroll-down 2s cubic-bezier(0.4, 0, 1, 1) infinite',
             } }>
-                <img src="https://themeim.com/demo/flynext/assets/images/element/element-8.png" alt="" />
+                <img style={ {
+                    animation: 'scroll-down 2s cubic-bezier(0.4, 0, 1, 1) infinite',
+                } } src="https://themeim.com/demo/flynext/assets/images/element/element-8.png" alt="" />
             </Grid>
             <Container>
                 <Grid container spacing={ 2 } sx={ {

@@ -1,21 +1,20 @@
-.bestService {
+/* .bestService {
   width: 100%;
-}
+} */
 .jatService {
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin: 0 auto;
 }
 
 .card {
-  width: 450px;
+  min-width: 550px;
   height: 400px;
   position: relative;
-  border-radius: 15px;
-  margin-right: 10px;
+  border-radius: 15px;  
 }
 
 .card::before {
