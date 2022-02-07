@@ -2,15 +2,16 @@ import { Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import PrimaryButton from '../../StyledComponent/Buttons/PrimaryButton';
+import AboutModal from './AboutModal';
 
 const About = () => {
     return (
         <div style={ {
             minHight: 500,
-            height: '100vh',
+            height: '100%',
             display: 'flex',
             alignItems: 'center',
-            backgroundImage: `url("https://themeim.com/demo/flynext/assets/images/bg/bg-1.png"), linear-gradient(90deg, #101010 25%, rgba(25, 25, 25, 0.62) 100%)`,
+            backgroundImage: `url("https://themeim.com/demo/flynext/assets/images/bg/bg-1.png"), linear-gradient(90deg, #000 15%, rgba(25, 25, 25, 0.62) 100%)`,
             backgroundBlendMode: 'overlay',
             objectFit: 'cover',
             backgroundSize: 'cover',
@@ -71,8 +72,12 @@ const About = () => {
                             <PrimaryButton> Book Now</PrimaryButton>
                         </Grid>
                     </Grid>
-                    <Grid item xs={ 12 } sm={ 12 } md={ 5 } lg={ 5 }>
-
+                    <Grid item xs={ 12 } sm={ 12 } md={ 5 } lg={ 5 } sx={ {
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    } }>
+                        <AboutModal />
                     </Grid>
                 </Grid>
             </Container>

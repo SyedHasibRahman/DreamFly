@@ -13,7 +13,7 @@ const BestService = () => {
             <Box className="card_img">
               <img src={ overview2 } alt="" />
             </Box>
-            <Box className="card_content">
+            <Box className="card_content" xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 }>
               <Typography variant="stong">#1 Private Jet Charter</Typography>
               <Typography
                 variant="h5"
@@ -31,7 +31,7 @@ const BestService = () => {
               <Typography variant="h6">04 Air Ambulance</Typography>
             </Box>
           </Box>
-          <Box component="div" className="card">
+          <Box component="div" className="card" xs={ 12 } sm={ 12 } md={ 7 } lg={ 7 }>
             <Box className="card_img">
               <img src={ overview1 } alt="" />
             </Box>
