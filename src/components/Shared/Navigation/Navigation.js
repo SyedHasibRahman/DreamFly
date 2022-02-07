@@ -28,7 +28,7 @@ const Navigation = () => {
 
     return (
         <>
-          <AppBar position="static" sx={{ bgcolor: "#7e57c2", py: '10px' }}>
+          <AppBar position="static" sx={{ bgcolor: "#7e57c2", py: "10px" }}>
             <Container maxWidth="xl">
               <Toolbar disableGutters>
                 <Typography
