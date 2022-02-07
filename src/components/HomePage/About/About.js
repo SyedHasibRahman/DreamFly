@@ -8,7 +8,7 @@ const About = () => {
     return (
         <div style={ {
             minHight: 500,
-            height: '100%',
+            height: '100vh',
             display: 'flex',
             alignItems: 'center',
             backgroundImage: `url("https://themeim.com/demo/flynext/assets/images/bg/bg-1.png"), linear-gradient(90deg, #000 15%, rgba(25, 25, 25, 0.62) 100%)`,
