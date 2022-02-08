@@ -1,0 +1,47 @@
+.book-card{
+    border: #e5e5e5 2px solid;
+    border-radius: 10px;
+}
+.book-container img{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    margin-right: 20px;
+   
+}
+
+.name{
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.title{
+    font-size: 15px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: 700;
+    color: grey;
+  
+}
+.book-price{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+
+}
+.detail{
+    margin-right: 20px;
+}
+.icon{
+    margin-right: 20px;
+    color: rgb(247, 166, 67);
+    font-weight: 700;
+}
+.btn{
+    color: black !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+}
