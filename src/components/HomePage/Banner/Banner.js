@@ -16,10 +16,10 @@ const Banner = () => {
           </Box> */}
           <Box display={{xs:'none', md:'block'}}>
             <Box className='socialIconBox'>
-              <Link href="#" className='socialIcon'><i class="fab fa-facebook-f"></i></Link>
-              <Link href="#" className='socialIcon'><i class="fab fa-twitter"></i></Link>
-              <Link href="#" className='socialIcon'><i class="fab fa-youtube"></i></Link>
-              <Link href="#" className='socialIcon'><i class="fab fa-instagram"></i></Link>
+              <Link href="#" className='socialIcon'><i className="fab fa-facebook-f"></i></Link>
+              <Link href="#" className='socialIcon'><i className="fab fa-twitter"></i></Link>
+              <Link href="#" className='socialIcon'><i className="fab fa-youtube"></i></Link>
+              <Link href="#" className='socialIcon'><i className="fab fa-instagram"></i></Link>
             </Box>
           </Box>
           <Grid container spacing={0}>

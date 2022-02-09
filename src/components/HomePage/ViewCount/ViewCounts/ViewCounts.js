@@ -1,8 +1,9 @@
+
+import { Box, Container, Grid, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import React from 'react';
 import './ViewCounts.css';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import { Box, Container, Typography } from '@material-ui/core';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -52,7 +53,6 @@ const ViewCounts = () => {
                         <Grid container item xs={12} spacing={0}>
                             <FormRow />
                         </Grid>
-
                     </Grid>
                 </Container>
             </Box>
