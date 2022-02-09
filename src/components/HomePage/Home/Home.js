@@ -16,8 +16,9 @@ const Home = () => {
       <BestService />
       <About />
       <ServiceCards></ServiceCards>
-      <Testimonials />
       <TourPackages />
+      {/* <ViewCounts></ViewCounts> */ }
+      <Testimonials />
     </Box>
   );
 };
