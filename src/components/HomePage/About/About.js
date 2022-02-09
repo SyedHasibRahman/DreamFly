@@ -7,8 +7,8 @@ import AboutModal from './AboutModal';
 const About = () => {
     return (
         <div style={ {
-            minHight: 500,
-            height: '100vh',
+            paddingTop: '80px',
+            paddingBottom: '80px',
             display: 'flex',
             alignItems: 'center',
             backgroundImage: `url("https://themeim.com/demo/flynext/assets/images/bg/bg-1.png"), linear-gradient(90deg, #000 15%, rgba(25, 25, 25, 0.62) 100%)`,
@@ -59,14 +59,19 @@ const About = () => {
                             backgroundImage: `url("https://themeim.com/demo/flynext/assets/images/element/element-7.png"), linear-gradient(90deg, #fff, #fff)`,
                             color: '#000',
                             borderRadius: 1,
+                            flexWrap: 'wrap'
 
                         } }>
-                            <Box >
-                                <Typography variant='h4' sx={ { pb: 3 } }>
-                                    Call for book an order
+                            <Box sx={ {
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            } }>
+                                <Typography variant='h5' sx={ { pb: 3 } }>
+                                    Call for book an order <br />
+                                    <a href="tel:+4733378901">+47 333 78 901</a>
                                 </Typography>
                                 <Typography variant='h5'>
-                                    <a href="tel:+4733378901">+47 333 78 901</a>
                                 </Typography>
                             </Box>
                             <PrimaryButton> Book Now</PrimaryButton>
