@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import StarIcon from '@mui/icons-material/Star';
@@ -45,7 +45,9 @@ const Testimonial = () => {
                             </Typography>
                             <Box sx={ {
                             } }>
-                                <StarIcon sx={ { fontSize: '2.5rem', color: 'goldenrod' } } />
+                                { Array.from(Array(5)).map((_, index) => (
+                                    <StarIcon key={ index } sx={ { fontSize: '1.5rem', color: 'goldenrod' } } />
+                                )) }
                             </Box>
                         </Grid>
                     </Grid>

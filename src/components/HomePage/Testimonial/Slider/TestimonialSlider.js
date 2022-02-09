@@ -8,7 +8,7 @@ export default class TestimonialSlider extends Component {
     render() {
         var settings = {
             dots: true,
-            infinite: false,
+            infinite: true,
             speed: 500,
             slidesToShow: 2,
             slidesToScroll: 2,
@@ -20,7 +20,7 @@ export default class TestimonialSlider extends Component {
                         slidesToShow: 2,
                         slidesToScroll: 2,
                         infinite: true,
-                        dots: true
+                        dots: false,
                     }
                 },
                 {

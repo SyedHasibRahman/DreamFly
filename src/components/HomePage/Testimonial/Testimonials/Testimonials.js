@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import TestimonialSlider from '../Slider/TestimonialSlider';
 
 const Testimonials = () => {
@@ -8,6 +8,15 @@ const Testimonials = () => {
             padding: '50px 0',
         } } >
             <Container>
+                <Grid sx={ {
+                    textAlign: 'center',
+                } }>
+                    <Typography variant='h6'>
+                        <span style={ {
+                            color: '#2CC0FF',
+                        } }>DreamFly</span> Testimonial</Typography>
+                    <Typography variant='h4'>Our Customer Feedback</Typography>
+                </Grid>
                 <Grid container spacing={ 2 }>
                     <Grid item xs={ 12 } sm={ 12 } md={ 8 } lg={ 8 } sx={ {
                         padding: '15px',
