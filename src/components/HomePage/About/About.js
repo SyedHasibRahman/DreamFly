@@ -39,7 +39,7 @@ const About = () => {
                         } }>
                             <span style={ {
                                 color: '#2CC0FF',
-                            } }>About</span> Flynext
+                            } }>About</span> DreamFly
                         </Typography>
                         <Typography variant='h3' sx={ {
                             py: 3,
