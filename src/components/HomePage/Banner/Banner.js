@@ -9,7 +9,7 @@ const Banner = () => {
     <Box sx={{backgroundColor:'#19232d', minHeight:'100vh',}}>
       <Box sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/element/element-1.png)',backgroundColor:'#19232d', backgroundPosition:'right', backgroundRepeat:'no-repeat', opacity:'1', backgroundSize:'right'}}>
         <Navigation />
-        <Container sx={{padding:"200px 0", position:'relative' }}>
+        <Container sx={{padding:"200px 0", position:'relative'}}>
           <Box display={{xs:'none', md:'block'}}>
             <Box className='socialIconBox'>
               <Link href="#" className='socialIcon'><i className="fab fa-facebook-f"></i></Link>

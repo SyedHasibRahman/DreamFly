@@ -16,7 +16,10 @@ const Home = () => {
       <About />
       <ServiceCards />
       <Testimonials />
+      <ServiceCards></ServiceCards>
       <TourPackages />
+      {/* <ViewCounts></ViewCounts> */ }
+      <Testimonials />
     </Box>
   );
 };
