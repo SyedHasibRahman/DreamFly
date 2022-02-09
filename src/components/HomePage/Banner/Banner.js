@@ -26,7 +26,6 @@ const Banner = () => {
               <Typography variant="body1" gutterBottom sx={{width:'80%', fontSize:'16px', lineHeight:'1.7em', marginBottom:'15px', color:'#FFFFFF', fontFamily:"'Mulish', sans-serif", fontWeight:'500'}}> Curly Airline proudly raises the bar and exceeds the standard for luxury and corporate private jet charter services. We pride ourselves on offering a professional service. </Typography>
               <Box sx={{marginTop:'65px'}}>
                 <Link href="#"> Make Your Trip </Link> 
-                <Link href="#"> Make Your Trip </Link> 
               </Box>
               </Box>
             </Grid>
