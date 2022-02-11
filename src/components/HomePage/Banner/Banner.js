@@ -1,19 +1,15 @@
 import { Container, Grid, Typography, Link } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import Navigation from '../../Shared/Navigation/Navigation';
 import './Banner.css';
 
 const Banner = () => {
   return (
     <Box sx={{backgroundColor:'#19232d', minHeight:'100vh',}}>
       <Box sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/element/element-1.png)',backgroundColor:'#19232d', backgroundPosition:'right', backgroundRepeat:'no-repeat', opacity:'1', backgroundSize:'right'}}>
-
-        <Container sx={{padding:"200px 0", }}>
-          {/* <Box sx={{display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap'}}>
-            
-            <Box></Box>
-          </Box> */}
+        <Navigation />
+        <Container sx={{padding:"200px 0", position:'relative'}}>
           <Box display={{xs:'none', md:'block'}}>
             <Box className='socialIconBox'>
               <Link href="#" className='socialIcon'><i className="fab fa-facebook-f"></i></Link>
@@ -29,7 +25,6 @@ const Banner = () => {
               <Typography variant="h1" component="h2" sx={{fontWeight:'700', marginBottom:'25px', color:'#FFFFFF', fontSize:'65px', lineHeight:'1.3em', fontFamily:"'Playfair Display', serif"}}> Book a private jet instantly </Typography>
               <Typography variant="body1" gutterBottom sx={{width:'80%', fontSize:'16px', lineHeight:'1.7em', marginBottom:'15px', color:'#FFFFFF', fontFamily:"'Mulish', sans-serif", fontWeight:'500'}}> Curly Airline proudly raises the bar and exceeds the standard for luxury and corporate private jet charter services. We pride ourselves on offering a professional service. </Typography>
               <Box sx={{marginTop:'65px'}}>
-                <Link href="#"> Make Your Trip </Link> 
                 <Link href="#"> Make Your Trip </Link> 
               </Box>
               </Box>

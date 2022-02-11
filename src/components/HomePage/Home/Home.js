@@ -1,25 +1,25 @@
 import { Box } from "@mui/material";
 import React from "react";
 import Footer from "../../Shared/Footer/Footer";
-import Navigation from "../../Shared/Navigation/Navigation";
+import TourPackages from "../../TourPackages/TourPackages";
 import About from "../About/About";
 import Banner from "../Banner/Banner";
 import BestService from "../BestService/BestService";
 import ServiceCards from "../ServiceCard/ServiceCards/ServiceCards";
-// import ViewCounts from "../ViewCount/ViewCounts/ViewCounts";
+import Testimonials from "../Testimonial/Testimonials/Testimonials";
 
 const Home = () => {
-    return (
-        <Box>
-            <Navigation></Navigation>
-            <Banner />
-            <BestService />
-            <About />
-            <ServiceCards></ServiceCards>
-            {/* <ViewCounts></ViewCounts> */}
-            <Footer/>
-        </Box>
-    );
+  return (
+    <Box>
+      <Banner />
+      <BestService />
+      <About />
+      <ServiceCards />
+      <TourPackages />
+      <Testimonials />
+      <Footer/>
+    </Box>
+  );
 };
 
 export default Home;

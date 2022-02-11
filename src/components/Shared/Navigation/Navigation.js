@@ -84,7 +84,7 @@ const Navigation = () => {
                 >
                   <img src={logo} width='200px' alt="logo" />
                 </Typography>
-                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:{md: 'flex-end'}}}>
                   {pages.map((page) => (
                     <Typography
                       key={page}
