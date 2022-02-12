@@ -7,6 +7,7 @@ import Banner from "../Banner/Banner";
 import BestService from "../BestService/BestService";
 import ServiceCards from "../ServiceCard/ServiceCards/ServiceCards";
 import Testimonials from "../Testimonial/Testimonials/Testimonials";
+import PersonalFlight from "../PersonalFlight/PersonalFlight";
 
 const Home = () => {
   return (
@@ -14,7 +15,8 @@ const Home = () => {
       <Banner />
       <BestService />
       <About />
-      <ServiceCards />
+      <ServiceCards></ServiceCards>
+      <PersonalFlight />
       <TourPackages />
       <Testimonials />
       <Footer />
