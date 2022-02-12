@@ -17,7 +17,6 @@ const Home = () => {
       <About />
       <ServiceCards></ServiceCards>
       <PersonalFlight />
-      <ServiceCards />
       <TourPackages />
       <Testimonials />
       <Footer />
