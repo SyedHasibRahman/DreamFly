@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
-import TourPackages from "../../TourPackages/TourPackages";
+import TourPackages from "../../Shared/TourPackages/TourPackages";
 import Navigation from "../../Shared/Navigation/Navigation";
 import About from "../About/About";
 import Banner from "../Banner/Banner";
@@ -15,8 +15,7 @@ const Home = () => {
       <BestService />
       <About />
       <ServiceCards />
-      <Testimonials />
-      <ServiceCards></ServiceCards>
+      <ServiceCards />
       <TourPackages />
       <Testimonials />
     </Box>
