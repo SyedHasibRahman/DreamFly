@@ -8,6 +8,7 @@ import BestService from "../BestService/BestService";
 import ServiceCards from "../ServiceCard/ServiceCards/ServiceCards";
 import Testimonials from "../Testimonial/Testimonials/Testimonials";
 import PersonalFlight from "../PersonalFlight/PersonalFlight";
+import OurCourses from "../../Pages/OurCourses/OurCourses";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <PersonalFlight />
       <TourPackages />
       <Testimonials />
+      <OurCourses />
       <Footer />
     </Box>
   );
