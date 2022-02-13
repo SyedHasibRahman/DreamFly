@@ -76,8 +76,8 @@ const OurCourses = () => {
       <Container>
         <Box style={{ padding: "40px 0px" }}>
           <Box component="div" sx={{ textAlign: "center" }}>
-            <Typography variant="h6" sx={{ fontWeight: 600, color: "#111" }}>
-              <span style={{ color: "#dcbb87" }}></span> Choose Course
+            <Typography variant="h6" sx={{ fontWeight: 500, color: "#dcbb87" }}>
+              Choose Course
             </Typography>
             <Typography
               variant="h3"
@@ -143,7 +143,7 @@ const OurCourses = () => {
                     >
                       <Typography className="courses_btn">
                         <Button>
-                          Book Now
+                          Enroll Now
                           <span className="course_arrow">
                             <i className="fas fa-arrow-right"></i>
                           </span>
