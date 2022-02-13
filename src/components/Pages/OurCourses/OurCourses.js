@@ -13,6 +13,7 @@ import {
   Container,
   Typography,
 } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
 const OurCourses = () => {
   const data = [
@@ -73,6 +74,27 @@ const OurCourses = () => {
   ];
   return (
     <Box>
+      <Typography
+        variant="h3"
+        sx={{ textAlign: "center", padding: "100px 0px 10px 0px" }}
+      >
+        Our Courses
+      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          paddingBottom: "100px",
+        }}
+      >
+        <Typography variant="h6" className="our_course_link">
+          <NavLink to={"/"}>Home</NavLink>
+        </Typography>
+        <Typography variant="h6" sx={{ paddingLeft: "10px" }}>
+          / Courses
+        </Typography>
+      </Box>
       <Container>
         <Box style={{ padding: "40px 0px" }}>
           <Box component="div" sx={{ textAlign: "center" }}>
@@ -81,7 +103,7 @@ const OurCourses = () => {
             </Typography>
             <Typography
               variant="h3"
-              sx={{ py: 3, fontWeight: 600, fontSize: "2.5rem", color: "#111" }}
+              sx={{ py: 4, fontWeight: 600, fontSize: "2.5rem", color: "#111" }}
             >
               Find The Right Course For You
             </Typography>
