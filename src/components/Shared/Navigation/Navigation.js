@@ -42,12 +42,12 @@ const Navigation = () => {
               variant="h6"
               noWrap
               component="div"
-              sx={ { mr: 2, display: { xs: 'none', md: 'flex' } } }
+              sx={ { mr: 2, display: { xs: "none", md: "flex" } } }
             >
               <Link to="/"><img src={ logo } width='200px' alt="logo" /></Link>
             </Typography>
 
-            <Box sx={ { flexGrow: 1, display: { xs: 'flex', md: 'none' } } }>
+            <Box sx={ { flexGrow: 1, display: { xs: "flex", md: "none" } } }>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -62,18 +62,18 @@ const Navigation = () => {
                 id="menu-appbar"
                 anchorEl={ anchorElNav }
                 anchorOrigin={ {
-                  vertical: 'bottom',
-                  horizontal: 'left',
+                  vertical: "bottom",
+                  horizontal: "left",
                 } }
                 keepMounted
                 transformOrigin={ {
-                  vertical: 'top',
-                  horizontal: 'left',
+                  vertical: "top",
+                  horizontal: "left",
                 } }
                 open={ Boolean(anchorElNav) }
                 onClose={ handleCloseNavMenu }
                 sx={ {
-                  display: { xs: 'block', md: 'none' },
+                  display: { xs: "block", md: "none" },
                 } }
               >
                 { pages.map((page) => (
@@ -87,19 +87,22 @@ const Navigation = () => {
               variant="h6"
               noWrap
               component="div"
-              sx={ { flexGrow: 1, display: { xs: 'flex', md: 'none' } } }
+              sx={ { flexGrow: 1, display: { xs: "flex", md: "none" } } }
             >
-              <img src={ logo } width='200px' alt="logo" />
+              <img src={ logo } width="200px" alt="logo" />
             </Typography>
-            <Box sx={ {
-              flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: { md: 'flex-end' }
-            }
-            }>
+            <Box
+              sx={ {
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+                justifyContent: { md: "flex-end" },
+              } }
+            >
               { pages.map((page) => (
                 <Typography
                   key={ page }
                   onClick={ handleCloseNavMenu }
-                  sx={ { ml: 2, color: 'white', display: 'block' } }
+                  sx={ { ml: 2, color: "white", display: "block" } }
                 >
                   <Link style={ {
                     textDecoration: 'none',
@@ -115,27 +118,28 @@ const Navigation = () => {
               )) }
             </Box>
 
-            <Box sx={ {
-              flexGrow: 0
-            } } >
-
+            <Box
+              sx={ {
+                flexGrow: 0,
+              } }
+            >
               <Tooltip title="Open settings" sx={ { ml: 5 } }>
-                <IconButton onClick={ handleOpenUserMenu } >
+                <IconButton onClick={ handleOpenUserMenu }>
                   <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                 </IconButton>
               </Tooltip>
               <Menu
-                sx={ { mt: '45px' } }
+                sx={ { mt: "45px" } }
                 id="menu-appbar"
                 anchorEl={ anchorElUser }
                 anchorOrigin={ {
-                  vertical: 'top',
-                  horizontal: 'right',
+                  vertical: "top",
+                  horizontal: "right",
                 } }
                 keepMounted
                 transformOrigin={ {
-                  vertical: 'top',
-                  horizontal: 'right',
+                  vertical: "top",
+                  horizontal: "right",
                 } }
                 open={ Boolean(anchorElUser) }
                 onClose={ handleCloseUserMenu }
