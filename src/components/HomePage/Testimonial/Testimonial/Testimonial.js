@@ -12,7 +12,7 @@ const Testimonial = () => {
 
             <Container>
 
-                <Grid container sx={ {
+                <Grid item container sx={ {
                     boxShadow: `rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset`,
                     padding: '15px',
                     borderRadius: '5px'
@@ -25,7 +25,7 @@ const Testimonial = () => {
                     <Grid item xs={ 12 } sm={ 12 } md={ 8 } lg={ 8 } sx={ { width: '100%' } }>
                         <img style={ { float: "right", marginTop: '-70px' } } src="https://themeim.com/demo/flynext/assets/images/client/client-4.png" alt="" />
                     </Grid>
-                    <Grid xs={ 12 }>
+                    <Grid item xs={ 12 }>
 
                         <Typography>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores eaque rerum doloremque numquam et nihil.</Typography>
                         <Typography variant="h5" sx={ {

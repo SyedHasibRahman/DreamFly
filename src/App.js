@@ -1,29 +1,42 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import Home from "./components/HomePage/Home/Home";
-import AboutUs from "./components/Pages/AboutUs/AboutUs";
-import Blogs from "./components/Pages/Blogs/Blogs/Blogs";
-import ContactUs from "./components/Pages/ContactUs/ContactUs";
-import OurCourses from "./components/Pages/OurCourses/OurCourses";
-import OurPilots from "./components/Pages/OurPilots/OurPilots/OurPilots";
-import Services from "./components/Pages/Services/Services/Services";
-import Navigation from "./components/Shared/Navigation/Navigation";
+import React from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
+import './App.css';
+import Home from './components/HomePage/Home/Home';
+import SignInSide from './components/Pages/Login/SingIn/SignInSide';
+import SingUp from './components/Pages/Login/SingUp/SingUp';
+import AboutUs from './components/Pages/AboutUs/AboutUs';
+import Blogs from './components/Pages/Blogs/Blogs/Blogs';
+import ContactUs from './components/Pages/ContactUs/ContactUs';
+import OurPilots from './components/Pages/OurPilots/OurPilots/OurPilots';
+import Services from './components/Pages/Services/Services/Services';
+import Navigation from './components/Shared/Navigation/Navigation';
+import Footer from './components/Shared/Footer/Footer';
+import AuthProvider from './contexts/AuthProvider/AuthProvider';
+
 
 function App() {
   return (
     <div className="App">
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="Home" element={<Home />} />
-        <Route path="Services" element={<Services />} />
-        <Route path="aboutus" element={<AboutUs />} />
-        <Route path="OurPilots" element={<OurPilots />} />
-        <Route path="OurCourses" element={<OurCourses />} />
-        <Route path="ContactUs" element={<ContactUs />} />
-        <Route path="Blogs" element={<Blogs />} />
-      </Routes>
+      <AuthProvider>
+        <Link to="/SingUp">SingUp</Link>
+        <Link to="/SignIn">SignIn</Link>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={ <Home /> } />
+          <Route path="Home" element={ <Home /> } />
+          <Route path="Services" element={ <Services /> } />
+          <Route path="aboutus" element={ <AboutUs /> } />
+          <Route path="OurPilots" element={ <OurPilots /> } />
+          <Route path="ContactUs" element={ <ContactUs /> } />
+          <Route path="Blogs" element={ <Blogs /> } />
+          <Route path="SignIn" element={ <SignInSide /> } />
+          <Route path="SingUp" element={ <SingUp /> } />
+        </Routes>
+        <Footer />
+
+
+      </AuthProvider>
+
     </div>
   );
 }
