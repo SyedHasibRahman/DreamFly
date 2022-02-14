@@ -13,6 +13,7 @@ import Navigation from './components/Shared/Navigation/Navigation';
 import Footer from './components/Shared/Footer/Footer';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 
+
 function App() {
   return (
     <div className="App">
