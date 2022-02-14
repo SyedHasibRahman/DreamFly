@@ -1,14 +1,16 @@
-import { AppBar, Avatar, Box, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material';
+import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React from 'react';
 import logo from '../../../images/Logo7.png'
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
-const pages = ['Home', 'Services', 'AboutUs', 'OurPilots', 'ContactUs', 'Blogs'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Navigation = () => {
+  const { user, logOut } = useAuth({})
 
+  const pages = ['Home', 'Services', 'AboutUs', 'OurPilots', 'ContactUs', 'Blogs'];
+  const settings = ['Profile', 'Account', 'Dashboard'];
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -29,7 +31,11 @@ const Navigation = () => {
 
   return (
     <>
-      <AppBar position="static" sx={ { bgcolor: "#7e57c2", py: "10px" } }>
+      {/* background: 'linear-gradient(90deg, #93FFD8, #CFFFDC) */ }
+      {/* background: 'linear-gradient(90deg, #99FEFF, #94DAFF)' */ }
+      <AppBar position="static" sx={ {
+        background: 'linear-gradient(90deg, #94DAFF, #64DFDF)', py: "10px",
+      } }>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
@@ -38,7 +44,7 @@ const Navigation = () => {
               component="div"
               sx={ { mr: 2, display: { xs: 'none', md: 'flex' } } }
             >
-              <img src={ logo } width='200px' alt="logo" />
+              <Link to="/"><img src={ logo } width='200px' alt="logo" /></Link>
             </Typography>
 
             <Box sx={ { flexGrow: 1, display: { xs: 'flex', md: 'none' } } }>
@@ -95,7 +101,16 @@ const Navigation = () => {
                   onClick={ handleCloseNavMenu }
                   sx={ { ml: 2, color: 'white', display: 'block' } }
                 >
-                  <Link to={ `/${page}` }>{ page }</Link>
+                  <Link style={ {
+                    textDecoration: 'none',
+                    color: 'black',
+                    fontWeight: 400,
+
+                    background: '-webkit-linear-gradient(90deg, crimson, #673AB7)',
+                    webkitBackgroundClip: 'text',
+                    webkitTextFillColor: 'transparent'
+
+                  } } to={ `/${page}` }>{ page }</Link>
                 </Typography>
               )) }
             </Box>
@@ -127,9 +142,30 @@ const Navigation = () => {
               >
                 { settings.map((setting) => (
                   <MenuItem key={ setting } onClick={ handleCloseUserMenu }>
-                    <Typography textAlign="center">{ setting }</Typography>
+                    {/* <Typography textAlign="center">{ setting }</Typography> */ }
+                    <Link style={ {
+                      textDecoration: 'none',
+                      color: 'black',
+                      fontWeight: 600
+
+                    } } to={ `/${setting}` }>{ setting }</Link>
+
+
                   </MenuItem>
                 )) }
+                <MenuItem>
+                  {
+                    user.email ?
+                      <Button onClick={ logOut } color="inherit">LogOut</Button>
+                      :
+                      <Link style={ {
+                        textDecoration: 'none',
+                        color: 'black',
+                        fontWeight: 600
+
+                      } } to="/SignIn">SignIn</Link>
+                  }
+                </MenuItem>
               </Menu>
             </Box>
           </Toolbar>
