@@ -1,0 +1,40 @@
+.footer-list {
+  font-weight: 500;
+  color: white;
+  transition: all 0.5s !important;
+}
+.footer-list:hover {
+  color: #18ffff;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.footer-icon {
+  margin-right: 15px !important;
+  padding: 10px;
+  text-align: center;
+  background: transparent;
+  border: 1px solid #18ffff;
+  font-size: 11px;
+  border-radius: 50%;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+.footer-icon:hover {
+  background: #18ffff;
+  border: 1px solid white;
+}
+.footer-icon > i {
+  color: #18ffff;
+  font-weight: 500;
+}
+.footer-icon:hover > i {
+  color: white;
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px 10px 15px 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  border: 0px solid white;
+}

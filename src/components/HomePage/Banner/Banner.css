@@ -1,6 +1,6 @@
 .socialIconBox{
   position: absolute;
-  left: 250px;
+  left: -50px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
