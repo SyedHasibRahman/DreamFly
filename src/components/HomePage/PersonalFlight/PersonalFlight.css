@@ -1,0 +1,105 @@
+.personal_flight {
+  background: url("../../../img/bg-3.png"), linear-gradient(#2d3640, #2d3640) !important;
+  background-blend-mode: overlay;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 10px !important;
+  width: 100%;
+  height: 450px;
+  padding: 20px;
+  margin: 0 auto !important;
+  position: relative;
+  z-index: 5;
+}
+.personal_flight::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(25, 35, 45, 0.623);
+  z-index: -999;
+  border-radius: 15px;
+}
+.selector_box {
+  margin: 0px 15px;
+  padding-bottom: 10px;
+}
+.selector {
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #8f5128 !important;
+  border-radius: 5px;
+}
+.passenger {
+  text-align: center;
+  line-height: 0px !important;
+}
+.selector .number {
+  width: 150px !important;
+  padding: 0px 60px;
+}
+.selector .int {
+  cursor: pointer;
+  font-size: 13px;
+}
+.selector .dec {
+  cursor: pointer;
+  font-size: 13px;
+}
+#cars * {
+  background-color: #fff;
+  padding: 20px !important;
+  color: #333;
+}
+#cars *:hover {
+  background-color: #dcbb87 !important;
+}
+.label {
+  color: #fff;
+  font-weight: 600;
+  text-align: justify !important;
+  padding-bottom: 15px;
+}
+.personal_flight_btn {
+  width: 100%;
+  text-align: center;
+  padding: 60px 0px 30px 0px;
+}
+.personal_flight_btn button {
+  background: #dcbb87;
+  border: 1px solid #dcbb87;
+  padding: 12px 35px;
+  border-radius: 25px;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  outline: none;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.arrow_plan svg {
+  margin-right: 7px;
+  font-size: 20px !important;
+  margin-bottom: -4px;
+  transform: rotate(60deg);
+  transition: 0.2s;
+}
+.personal_flight_btn button:hover {
+  background: transparent;
+  border: 1px solid #dcbb87;
+  color: #dcbb87;
+}
+.personal_flight_btn button:hover .arrow_plan svg {
+  color: #dcbb87;
+  transform: rotate(90deg);
+}
+@media only screen and (max-width: 1000px) {
+  .personal_flight {
+    height: 100%;
+  }
+}
