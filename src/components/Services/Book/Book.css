@@ -1,6 +1,7 @@
 .book-card{
     border: #e5e5e5 2px solid;
     border-radius: 10px;
+    margin-bottom: 50px;
 }
 .book-container img{
     width: 100%;
