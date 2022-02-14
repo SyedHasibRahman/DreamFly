@@ -17,12 +17,11 @@ const Home = () => {
       <Banner />
       <BestService />
       <About />
-      <ServiceCards></ServiceCards>
+      <ServiceCards />
       <Booking></Booking>
       <PersonalFlight />
       <TourPackages />
       <Testimonials />
-      <Footer />
     </Box>
   );
 };
