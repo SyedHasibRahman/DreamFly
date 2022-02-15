@@ -42,11 +42,13 @@
   color: #dcbb87;
   transform: rotate(90deg);
 }
-.MuiCardActions-root button {
+.tour_btn {
+  color: #111 !important;
+  font-weight: 700 !important;
   transition: all 0.5s ease-in-out !important;
-  margin-top: -10px;
+  margin-top: -10px !important;
 }
-.MuiCardActions-root button:hover {
+.tour_btn:hover {
   background: none !important;
   color: #dcbb87 !important;
   transform: translateX(10px) !important;

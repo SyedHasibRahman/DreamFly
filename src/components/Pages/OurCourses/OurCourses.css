@@ -1,0 +1,42 @@
+.courses_img img {
+  height: 220px;
+}
+.courses_price {
+  position: absolute;
+  left: 20px;
+  top: 35px;
+  background: #dcbb87;
+  width: 90px;
+  height: 35px;
+  color: #222 !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  line-height: 35px !important;
+  border-radius: 20px;
+  text-align: center;
+}
+.clock svg {
+  color: #dcbb87;
+}
+.courses_btn {
+  padding-bottom: 10px;
+}
+.courses_btn button {
+  background: transparent;
+  border: 1px solid #dcbb87;
+  border-radius: 20px;
+  color: #dcbb87;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 25px;
+  outline: none;
+  margin-left: 10px;
+}
+.course_arrow {
+  padding-left: 10px;
+}
+.our_course_link a {
+  text-decoration: none !important;
+  color: #111;
+  font-weight: 500;
+}

@@ -4,7 +4,6 @@ import React from 'react';
 // import SignUp from '../../Login/SignUp/SignUp';
 import Button from '@mui/material/Button';
 import './ContactUs.css'
-import Footer from '../../Shared/Footer/Footer';
 import {styled } from '@mui/material/styles';
 
 const InputTextField = styled(TextField)({
@@ -246,8 +245,6 @@ const ContactUs = () => {
                     </Grid>
                 </Container>
             </Box>
-
-            <Footer/>
         </>
     );
 };
