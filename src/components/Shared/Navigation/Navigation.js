@@ -72,7 +72,7 @@ const Navigation = () => {
               >
                 { pages.map((page) => (
                   <MenuItem key={ page } onClick={ handleCloseNavMenu }>
-                    <Typography>{ page }</Typography>
+                    <Typography sx={{color: 'white'}}>{ page }</Typography>
                   </MenuItem>
                 )) }
               </Menu>
@@ -95,7 +95,7 @@ const Navigation = () => {
                   onClick={ handleCloseNavMenu }
                   sx={ { ml: 2, color: 'white', display: 'block' } }
                 >
-                  <Link to={ `/${page}` }>{ page }</Link>
+                  <Link sx={{color: '#ffffff'}} to={ `/${page}` }>{ page }</Link>
                 </Typography>
               )) }
             </Box>
