@@ -21,9 +21,9 @@ const useFirebase = () => {
                 setAuthError('');
                 const newUser = { email, displayName: name }
                 setUser(newUser);
-                const user = userCredential.user;
+                // const user = userCredential.user;
                 // const destination = location?.state?.from || '/';
-                // navigate(destination);
+                // navigate(-2);
                 // ...
 
                 // send name to firebase after creation
@@ -32,7 +32,7 @@ const useFirebase = () => {
                 }).then(() => {
                 }).catch((error) => {
                 });
-                navigate('/');
+                navigate(-2);
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -85,10 +85,12 @@ const useFirebase = () => {
         });
         return () => unsubscribe;
     }, [auth])
-    const logOut = () => {
+    const logOut = (navigate) => {
         setIsLoading(true)
         signOut(auth).then(() => {
             // Sign-out successful.
+
+            navigate('/');
         }).catch((error) => {
             // An error happened.
         })
