@@ -2,7 +2,6 @@ import { Box } from "@mui/material";
 import React from "react";
 import Booking from "../../Services/Booking/Booking";
 import TourPackages from "../../Shared/TourPackages/TourPackages";
-import Footer from "../../Shared/Footer/Footer";
 import About from "../About/About";
 import Banner from "../Banner/Banner";
 import BestService from "../BestService/BestService";

@@ -78,7 +78,7 @@ const Navigation = () => {
               >
                 { pages.map((page) => (
                   <MenuItem key={ page } onClick={ handleCloseNavMenu }>
-                    <Typography>{ page }</Typography>
+                    <Typography sx={{color: 'white'}}>{ page }</Typography>
                   </MenuItem>
                 )) }
               </Menu>
