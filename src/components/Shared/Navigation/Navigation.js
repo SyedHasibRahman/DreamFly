@@ -28,7 +28,7 @@ const Navigation = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  console.log(user);
   return (
     <>
       {/* background: 'linear-gradient(90deg, #93FFD8, #CFFFDC) */ }
@@ -110,8 +110,8 @@ const Navigation = () => {
                     fontWeight: 400,
 
                     background: '-webkit-linear-gradient(90deg, crimson, #673AB7)',
-                    webkitBackgroundClip: 'text',
-                    webkitTextFillColor: 'transparent'
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
 
                   } } to={ `/${page}` }>{ page }</Link>
                 </Typography>
@@ -125,7 +125,8 @@ const Navigation = () => {
             >
               <Tooltip title="Open settings" sx={ { ml: 5 } }>
                 <IconButton onClick={ handleOpenUserMenu }>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */ }
+                  <Avatar alt="Remy Sharp" src={ user?.photoURL } />
                 </IconButton>
               </Tooltip>
               <Menu
