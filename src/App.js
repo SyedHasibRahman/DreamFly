@@ -21,8 +21,8 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <Link to="/SingUp">SingUp</Link>
-        <Link to="/SignIn">SignIn</Link>
+        {/* <Link to="/SingUp">SingUp</Link>
+        <Link to="/SignIn">SignIn</Link> */}
         <Navigation />
         <Routes>
           <Route path="/" element={ <Home /> } />
