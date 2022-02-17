@@ -1,12 +1,14 @@
 import { Box } from "@mui/material";
 import React from "react";
-import TourPackages from "../../TourPackages/TourPackages";
-import Navigation from "../../Shared/Navigation/Navigation";
+import Booking from "../../Services/Booking/Booking";
+import TourPackages from "../../Shared/TourPackages/TourPackages";
 import About from "../About/About";
 import Banner from "../Banner/Banner";
 import BestService from "../BestService/BestService";
 import ServiceCards from "../ServiceCard/ServiceCards/ServiceCards";
 import Testimonials from "../Testimonial/Testimonials/Testimonials";
+import PersonalFlight from "../PersonalFlight/PersonalFlight";
+
 
 const Home = () => {
   return (
@@ -15,8 +17,8 @@ const Home = () => {
       <BestService />
       <About />
       <ServiceCards />
-      <Testimonials />
-      <ServiceCards></ServiceCards>
+      <Booking></Booking>
+      <PersonalFlight />
       <TourPackages />
       <Testimonials />
     </Box>

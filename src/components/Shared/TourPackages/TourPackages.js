@@ -5,9 +5,9 @@ import { useRef } from "react";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
-import package1 from "../../img/package-9.png";
-import package2 from "../../img/package-10.png";
-import package3 from "../../img/package-11.png";
+import package1 from "../../../img/package-9.png";
+import package2 from "../../../img/package-10.png";
+import package3 from "../../../img/package-11.png";
 import "./TourPackages.css";
 import {
   Box,
@@ -163,12 +163,7 @@ const TourPackages = () => {
                         <span className="airplane">
                           <AirplanemodeActiveIcon />
                         </span>
-                        <Button
-                          size="small"
-                          sx={{ color: "#111", fontWeight: "700" }}
-                        >
-                          Book Now
-                        </Button>
+                        <Button className="tour_btn">Book Now</Button>
                       </Box>
                       <span className="video_icon">
                         <VideoCameraBackIcon />

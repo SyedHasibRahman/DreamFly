@@ -1,0 +1,16 @@
+.footer-list{
+    font-size: 18px;
+}
+.footer-box{
+    font-weight: 500;
+    font-size: 18px;
+    color: whitesmoke;
+}
+
+.input-field{
+    width: 100%;
+    padding: 15px 10px 15px 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: 0px solid #5e35b1;
+  }
