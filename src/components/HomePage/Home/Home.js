@@ -8,12 +8,15 @@ import BestService from "../BestService/BestService";
 import ServiceCards from "../ServiceCard/ServiceCards/ServiceCards";
 import Testimonials from "../Testimonial/Testimonials/Testimonials";
 import PersonalFlight from "../PersonalFlight/PersonalFlight";
+import Navigation from "../../Shared/Navigation/Navigation";
+import Footer from "../../Shared/Footer/Footer";
 
 
 
 const Home = () => {
   return (
     <Box>
+      <Navigation />
       <Banner />
       <BestService />
       <About />
@@ -22,6 +25,7 @@ const Home = () => {
       <PersonalFlight />
       <TourPackages />
       <Testimonials />
+      <Footer />
     </Box>
   );
 };
