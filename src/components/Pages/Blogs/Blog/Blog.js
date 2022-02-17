@@ -5,10 +5,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 
 const Blog = ({blog}) => {
-    const {image1, date, comment, title, info} = blog
+
+    const {image1, date, comment, title, info, _id} = blog;
+ 
     return (
         <Card sx={{}}>
             <CardMedia
@@ -30,8 +33,9 @@ const Blog = ({blog}) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
+                <Link to={`/BlogDetails/${_id}`}>
+                    <Button size="small">Read More</Button>
+                </Link> 
             </CardActions>
         </Card>
     );

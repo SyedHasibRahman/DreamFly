@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import {Box, Grid, Container, Typography} from '@mui/material';
+import {Box, Grid, Container, Typography, Stack, Pagination} from '@mui/material';
 import Blog from '../Blog/Blog';
-import BlogSideber from './BlogSideber/BlogSideber';
+import BlogSideber from '../BlogSideber/BlogSideber';
 
 const Blogs = () => {
 
@@ -11,11 +11,16 @@ const Blogs = () => {
         fetch('./blogs.json')
         .then(res => res.json())
         .then(data => setBlogs(data))
-    }, [])
+    }, []);
+
+    const [page, setPage] = React.useState(1);
+    const handleChange = (event, value) => {
+        setPage(value);
+    };
 
 
     return (
-        <Box sx={{py: 10, bgcolor: "#f5f5f5"}}>
+        <Box sx={{py: 10, bgcolor: "#fafafa"}}>
             <Container>
                 <Box>
                     <Typography
@@ -25,15 +30,15 @@ const Blogs = () => {
                         Welcome To Our Blogs
                     </Typography>
                 </Box>
+
                 <Box>
                     <Grid container spacing={4}>
                         <Grid item xs={12} md={8} sx={{}}>
-                            <Grid container columns={12}>
+                            <Grid container spacing={4} columns={12}>
                                 {blogs.map((blog) => (
-                                    <Grid item xs={12} md={6} sx={{}}>
+                                    <Grid key={blog.id}  item xs={12} md={6} sx={{}}>
                                         <Blog 
                                             gridColumn="span 8" 
-                                            key={blog.id} 
                                             blog={blog}>
                                         </Blog>
                                     </Grid>
@@ -41,9 +46,17 @@ const Blogs = () => {
                             </Grid>
                         </Grid>
                         <Grid item xs={12} md={4} sx={{}}>
-                            <BlogSideber></BlogSideber>
+                            <Grid container>
+                                <BlogSideber></BlogSideber>
+                            </Grid>
                         </Grid>
                     </Grid>        
+                </Box>
+
+                <Box sx={{pt: 4}}>
+                    <Stack spacing={2}>
+                        <Pagination count={10} page={page} onChange={handleChange} />
+                    </Stack>              
                 </Box>
             </Container>
         </Box>
