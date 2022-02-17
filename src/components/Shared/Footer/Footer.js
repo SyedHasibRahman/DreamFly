@@ -23,7 +23,7 @@ const SubscribeButton = styled(Button)({
 
 const Footer = () => {
     return (
-        <Box sx={{pt: 10, pb: 4, bgcolor: "#e0e0e0"}}>
+        <Box sx={{pt: 10, pb: 4, bgcolor: "#f5f5f5"}}>
             <Container>
                 <Grid container  spacing={{ xs: 2, sm: 4, md: 6 }} >
                     <Grid item xs={ 12 } sm={ 6 } md={ 6 } lg={ 4 }>
