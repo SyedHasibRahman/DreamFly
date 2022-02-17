@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/HomePage/Home/Home';
 import SignInSide from './components/Pages/Login/SingIn/SignInSide';
@@ -15,6 +15,7 @@ import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './components/Pages/Login/OtherRoutes/PrivateRoute/PrivateRoute';
 import Sidebar from './components/Dashboard/Sidebar/Sidebar';
 import NotFound from './components/Pages/NotFound/NotFound';
+import AddPost from './components/Dashboard/Admin/AddPost/AddPost';
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
       <AuthProvider>
         {/* <Link to="/SingUp">SingUp</Link>
         <Link to="/SignIn">SignIn</Link> */}
-        <Navigation />
+        {/* <Navigation /> */ }
         <Routes>
           <Route path="/" element={ <Home /> } />
           <Route path="Home" element={ <Home /> } />
@@ -34,10 +35,12 @@ function App() {
           <Route path="Blogs" element={ <PrivateRoute><Blogs /></PrivateRoute> } />
           <Route path="SignIn" element={ <SignInSide /> } />
           <Route path="SingUp" element={ <SingUp /> } />
-          <Route path="/Dashboard/" element={ <PrivateRoute><Sidebar /></PrivateRoute> } ></Route>
+          <Route path="Dashboard" element={ <PrivateRoute><Sidebar /></PrivateRoute> } >
+            <Route path="AddPost" element={ <AddPost /> } />
+          </Route>
           <Route path="*" element={ <NotFound /> } />
         </Routes>
-        <Footer />
+        {/* <Footer /> */ }
 
 
 
