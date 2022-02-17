@@ -28,7 +28,7 @@ const Navigation = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  console.log(user);
+ 
   return (
     <>
       {/* background: 'linear-gradient(90deg, #93FFD8, #CFFFDC) */ }
