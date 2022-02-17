@@ -15,7 +15,6 @@ import { Alert, Container } from '@mui/material';
 import { useState } from 'react';
 import useAuth from '../../../../hooks/useAuth';
 import LinearProgress from '@mui/material/LinearProgress';
-import { useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
     return (
@@ -36,7 +35,6 @@ const theme = createTheme();
 export default function SignUp() {
     const { registerUser, isLoading, user, authError } = useAuth({})
     const [loginData, setLoginData] = useState({})
-    const navigate = useNavigate()
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -52,7 +50,7 @@ export default function SignUp() {
             alert('Your Password Did not match');
             return;
         }
-        registerUser(loginData.email, loginData.password, loginData.name, navigate);
+        registerUser(loginData.email, loginData.password);
 
 
     };

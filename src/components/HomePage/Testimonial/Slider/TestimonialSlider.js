@@ -1,5 +1,4 @@
-import { Avatar, Container, Grid, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Grid} from "@mui/material";
 import React, { Component } from "react";
 import Slider from "react-slick";
 import Testimonial from "../Testimonial/Testimonial";

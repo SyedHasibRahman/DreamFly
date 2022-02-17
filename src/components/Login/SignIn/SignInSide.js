@@ -11,11 +11,10 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Alert, Container } from '@mui/material';
+import { Container, Alert } from '@mui/material';
 import { useState } from 'react';
 import useAuth from '../../../../hooks/useAuth';
 import LinearProgress from '@mui/material/LinearProgress';
-import { useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
     return (
@@ -32,11 +31,9 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-
-export default function SignUp() {
-    const { registerUser, isLoading, user, authError } = useAuth({})
-    const [loginData, setLoginData] = useState({})
-    const navigate = useNavigate()
+export default function SignInSide() {
+    const [loginData, setLoginData] = useState({});
+    const { user, logInUser, isLoading, authError } = useAuth({})
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -46,19 +43,17 @@ export default function SignUp() {
         setLoginData(newLoginData);
         console.log(newLoginData);
     }
-    const handleSignUpSubmit = (event) => {
+
+    const handleSignInSubmit = (event) => {
+        logInUser(loginData.email, loginData.password);
         event.preventDefault();
-        if (loginData.password !== loginData.password2) {
-            alert('Your Password Did not match');
-            return;
-        }
-        registerUser(loginData.email, loginData.password, loginData.name, navigate);
+
 
 
     };
 
     return (
-        <ThemeProvider theme={ theme }>
+        <ThemeProvider theme={ theme } >
             <Container>
                 { isLoading && <LinearProgress /> }
                 <Grid container component="main" sx={ { py: 5 } }>
@@ -68,7 +63,7 @@ export default function SignUp() {
                         sm={ 4 }
                         md={ 7 }
                         sx={ {
-                            backgroundImage: 'url(https://i.ibb.co/K9qTyrg/undraw-journey-lwlj.png)',
+                            backgroundImage: 'url(https://i.ibb.co/HG4dLcL/undraw-Airport-re-oqk1.png)',
                             backgroundRepeat: 'no-repeat',
                             backgroundColor: (t) =>
                                 t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -90,37 +85,14 @@ export default function SignUp() {
                                 <LockOutlinedIcon />
                             </Avatar>
                             <Typography component="h1" variant="h5">
-                                Sign Up
+                                Sign In
                             </Typography>
-                            { user?.email && <Alert severity="success">User successfully Created </Alert> }
+                            {/* Form Start here */ }
+                            { user?.email && <Alert severity="success">User Login Successfull </Alert> }
                             {
                                 authError && <Alert severity="error">{ authError }</Alert>
                             }
-                            <Box component="form" noValidate onSubmit={ handleSignUpSubmit } sx={ { mt: 1 } }>
-
-                                <TextField
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    id="fullname"
-                                    label="Full Name"
-                                    name="name"
-                                    type="name"
-                                    onChange={ handleOnChange }
-                                    autoComplete="name"
-                                    autoFocus
-                                />
-                                {/* <TextField
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    id="lastname"
-                                    label="Last Name"
-                                    name="name2"
-                                    onChange={ handleOnChange }
-                                    autoComplete="name"
-                                    autoFocus
-                                /> */}
+                            <Box component="form" noValidate onSubmit={ handleSignInSubmit } sx={ { mt: 1 } }>
                                 <TextField
                                     margin="normal"
                                     required
@@ -144,20 +116,9 @@ export default function SignUp() {
                                     id="password"
                                     autoComplete="current-password"
                                 />
-                                <TextField
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    name="password2"
-                                    type="password"
-                                    onChange={ handleOnChange }
-                                    label="Password"
-                                    id="password2"
-                                    autoComplete="current-password"
-                                />
                                 <FormControlLabel
                                     control={ <Checkbox value="remember" color="primary" /> }
-                                    label="I want to receive inspiration, marketing promotions and updates via email."
+                                    label="Remember me"
                                 />
                                 <Button
                                     type="submit"
@@ -165,12 +126,18 @@ export default function SignUp() {
                                     variant="contained"
                                     sx={ { mt: 3, mb: 2 } }
                                 >
-                                    Sign Up
+                                    Sign In
                                 </Button>
+
                                 <Grid container>
+                                    <Grid item xs>
+                                        <Link href="#" variant="body2">
+                                            Forgot password?
+                                        </Link>
+                                    </Grid>
                                     <Grid item>
-                                        <Link href="/SignIn" variant="body2">
-                                            Already have an account? Sign in
+                                        <Link href="/SingUp" variant="body2">
+                                            Don't have an account? Sign Up
                                         </Link>
                                     </Grid>
                                 </Grid>

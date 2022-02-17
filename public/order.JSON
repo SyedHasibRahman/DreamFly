@@ -1,0 +1,16 @@
+[
+  {
+    "id": "01",
+    "name": "Luxury & Comfort Travel",
+    "pname": "Air Basics Course",
+    "price": "5000",
+    "status": "pending"
+  },
+  {
+    "id": "02",
+    "name": "Luxury & Comfort Travel",
+    "pname": "Air Basics Course",
+    "price": "5000",
+    "status": "pending"
+  }
+]

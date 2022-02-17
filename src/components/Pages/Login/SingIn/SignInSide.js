@@ -15,6 +15,7 @@ import { Container, Alert } from '@mui/material';
 import { useState } from 'react';
 import useAuth from '../../../../hooks/useAuth';
 import LinearProgress from '@mui/material/LinearProgress';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
     return (
@@ -33,7 +34,10 @@ const theme = createTheme();
 
 export default function SignInSide() {
     const [loginData, setLoginData] = useState({});
-    const { user, logInUser, isLoading, authError } = useAuth({})
+    const { user, logInUser, isLoading, authError, signInWithGoogle } = useAuth({});
+
+    const location = useLocation();
+    const navigate = useNavigate();
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -45,12 +49,13 @@ export default function SignInSide() {
     }
 
     const handleSignInSubmit = (event) => {
-        logInUser(loginData.email, loginData.password);
         event.preventDefault();
-
-
-
+        logInUser(loginData.email, loginData.password, location, navigate);
+        alert('Login Successful');
     };
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, navigate)
+    }
 
     return (
         <ThemeProvider theme={ theme } >
@@ -128,7 +133,9 @@ export default function SignInSide() {
                                 >
                                     Sign In
                                 </Button>
-
+                                <Button onClick={ handleGoogleSignIn }
+                                    fullWidth variant="contained"
+                                    sx={ { my: 1 } } > Sign In Using Google</Button>
                                 <Grid container>
                                     <Grid item xs>
                                         <Link href="#" variant="body2">

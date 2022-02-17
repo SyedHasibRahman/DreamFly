@@ -1,0 +1,46 @@
+.contact{
+    background: url(../../../images/contact-img-plane.png) rgba(209, 196, 233, 0.3);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.contact-icon-box{
+    height: 60px;
+    width: 60px;
+    background:#ede7f6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-icon{
+    color: #512da8;
+    font-size: 25px;
+}
+.social-icon-box{
+    height: 35px;
+    width: 35px;
+    border: 2px solid #5e35b1;
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px; 
+}
+.social-icon{
+    color: #512da8;
+    font-size: 20px;  
+}
+.social-icon-box:hover{
+    background: #5e35b1; 
+    transition: .7s;
+}
+.social-icon:hover{
+    color: white;   
+    transition: .7s;
+}
+
+.my-btn{
+    background: #512da8;
+    padding: 20px 10px;
+}
