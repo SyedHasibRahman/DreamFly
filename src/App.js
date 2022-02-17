@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import {  Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/HomePage/Home/Home';
 import SignInSide from './components/Pages/Login/SingIn/SignInSide';
@@ -21,8 +21,8 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <Link to="/SingUp">SingUp</Link>
-        <Link to="/SignIn">SignIn</Link>
+        {/* <Link to="/SingUp">SingUp</Link>
+        <Link to="/SignIn">SignIn</Link> */}
         <Navigation />
         <Routes>
           <Route path="/" element={ <Home /> } />

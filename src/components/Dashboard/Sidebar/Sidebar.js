@@ -197,71 +197,71 @@ const Sidebar = () => {
 
   return (
     <Container>
-      <Button clicked={click} onClick={() => handleClick()}>
+      <Button clicked={ click } onClick={ () => handleClick() }>
         Click
       </Button>
       <SidebarContainer>
         <Logo>
-          <img src={logo} alt="logo" />
+          <img src={ logo } alt="logo" />
         </Logo>
-        <SlickBar clicked={click}>
+        <SlickBar clicked={ click }>
           <Item
-            onClick={() => setClick(false)}
+            onClick={ () => setClick(false) }
             exact
             activeClassName="active"
             to="/"
           >
-            <img src={Home} alt="Home" />
-            <Text clicked={click}>Home</Text>
+            <img src={ Home } alt="Home" />
+            <Text clicked={ click }>Home</Text>
           </Item>
           <Item
-            onClick={() => setClick(false)}
+            onClick={ () => setClick(false) }
             activeClassName="active"
             to="/team"
           >
-            <img src={Team} alt="Team" />
-            <Text clicked={click}>Team</Text>
+            <img src={ Team } alt="Team" />
+            <Text clicked={ click }>Team</Text>
           </Item>
           <Item
-            onClick={() => setClick(false)}
+            onClick={ () => setClick(false) }
             activeClassName="active"
             to="/calender"
           >
-            <img src={Calender} alt="Calender" />
-            <Text clicked={click}>Calender</Text>
+            <img src={ Calender } alt="Calender" />
+            <Text clicked={ click }>Calender</Text>
           </Item>
           <Item
-            onClick={() => setClick(false)}
+            onClick={ () => setClick(false) }
             activeClassName="active"
             to="/documents"
           >
-            <img src={Documents} alt="Documents" />
-            <Text clicked={click}>Documents</Text>
+            <img src={ Documents } alt="Documents" />
+            <Text clicked={ click }>Documents</Text>
           </Item>
           <Item
-            onClick={() => setClick(false)}
+            onClick={ () => setClick(false) }
             activeClassName="active"
             to="/projects"
           >
-            <img src={Projects} alt="Projects" />
-            <Text clicked={click}>Projects</Text>
+            <img src={ Projects } alt="Projects" />
+            <Text clicked={ click }>Projects</Text>
           </Item>
         </SlickBar>
 
-        <Profile clicked={profileClick}>
+        <Profile clicked={ profileClick }>
           <img
-            onClick={() => handleProfileClick()}
+            onClick={ () => handleProfileClick() }
             src="https://picsum.photos/200"
             alt="Profile"
           />
-          <Details clicked={profileClick}>
+          <Details clicked={ profileClick }>
             <Name>
               <h4>Sohel&nbsp;Rana</h4>
               <a href="/#">view&nbsp;profile</a>
             </Name>
 
             <Logout>
-              <img src={PowerOff} alt="logout" />
+              <img src={ PowerOff } alt="logout" />
             </Logout>
           </Details>
         </Profile>
