@@ -22,19 +22,17 @@ function App() {
         <Link to="/SignIn">SignIn</Link>
         <Navigation />
         <Routes>
-          <Route path="/" element={ <Home /> } />
-          <Route path="Home" element={ <Home /> } />
-          <Route path="Services" element={ <Services /> } />
-          <Route path="aboutus" element={ <AboutUs /> } />
-          <Route path="OurPilots" element={ <OurPilots /> } />
-          <Route path="ContactUs" element={ <ContactUs /> } />
-          <Route path="Blogs" element={ <Blogs /> } />
-          <Route path="SignIn" element={ <SignInSide /> } />
-          <Route path="SingUp" element={ <SingUp /> } />
+          <Route path="/" element={<Home />} />
+          <Route path="Home" element={<Home />} />
+          <Route path="Services" element={<Services />} />
+          <Route path="aboutus" element={<AboutUs />} />
+          <Route path="OurPilots" element={<OurPilots />} />
+          <Route path="ContactUs" element={<ContactUs />} />
+          <Route path="Blogs" element={<Blogs />} />
+          <Route path="SignIn" element={<SignInSide />} />
+          <Route path="SingUp" element={<SingUp />} />
         </Routes>
         <Footer />
-
-
       </AuthProvider>
 
     </div>
