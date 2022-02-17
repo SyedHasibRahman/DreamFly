@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/HomePage/Home/Home';
 import SignInSide from './components/Pages/Login/SingIn/SignInSide';
@@ -25,17 +25,17 @@ function App() {
         <Link to="/SignIn">SignIn</Link> */}
         <Navigation />
         <Routes>
-          <Route path="/" element={ <Home /> } />
-          <Route path="Home" element={ <Home /> } />
-          <Route path="Services" element={ <Services /> } />
-          <Route path="aboutus" element={ <AboutUs /> } />
-          <Route path="OurPilots" element={ <OurPilots /> } />
-          <Route path="ContactUs" element={ <ContactUs /> } />
-          <Route path="Blogs" element={ <PrivateRoute><Blogs /></PrivateRoute> } />
-          <Route path="SignIn" element={ <SignInSide /> } />
-          <Route path="SingUp" element={ <SingUp /> } />
-          <Route path="/Dashboard/" element={ <PrivateRoute><Sidebar /></PrivateRoute> } ></Route>
-          <Route path="*" element={ <NotFound /> } />
+          <Route path="/" element={<Home />} />
+          <Route path="Home" element={<Home />} />
+          <Route path="Services" element={<Services />} />
+          <Route path="aboutus" element={<AboutUs />} />
+          <Route path="OurPilots" element={<OurPilots />} />
+          <Route path="ContactUs" element={<ContactUs />} />
+          <Route path="Blogs" element={<PrivateRoute><Blogs /></PrivateRoute>} />
+          <Route path="SignIn" element={<SignInSide />} />
+          <Route path="SingUp" element={<SingUp />} />
+          <Route path="/Dashboard/" element={<PrivateRoute><Sidebar /></PrivateRoute>} ></Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
 
