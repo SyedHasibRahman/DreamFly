@@ -9,14 +9,12 @@ import Blogs from './components/Pages/Blogs/Blogs/Blogs';
 import ContactUs from './components/Pages/ContactUs/ContactUs';
 import OurPilots from './components/Pages/OurPilots/OurPilots/OurPilots';
 import Services from './components/Pages/Services/Services/Services';
-import Navigation from './components/Shared/Navigation/Navigation';
-import Footer from './components/Shared/Footer/Footer';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './components/Pages/Login/OtherRoutes/PrivateRoute/PrivateRoute';
 import Sidebar from './components/Dashboard/Sidebar/Sidebar';
 import NotFound from './components/Pages/NotFound/NotFound';
+import BlogDetails from './components/Pages/Blogs/BlogDetails/BlogDetails'
 import AddPost from './components/Dashboard/Admin/AddPost/AddPost';
-import BlogDetails from './components/Pages/Blogs/BlogDetails/BlogDetails';
 
 
 function App() {
@@ -33,8 +31,8 @@ function App() {
           <Route path="aboutus" element={ <AboutUs /> } />
           <Route path="OurPilots" element={ <OurPilots /> } />
           <Route path="ContactUs" element={ <ContactUs /> } />
-          <Route path="Blogs" element={ <PrivateRoute><Blogs /></PrivateRoute> } />
-          <Route path='/BlogDetails/:blogId' element={<PrivateRoute ><BlogDetails/></PrivateRoute>}/>
+          <Route path="Blogs" element={<Blogs />} />
+          <Route path="/blogs/:blogId" element={<BlogDetails/>}/>
           <Route path="SignIn" element={ <SignInSide /> } />
           <Route path="SingUp" element={ <SingUp /> } />
           <Route path="Dashboard" element={ <PrivateRoute><Sidebar /></PrivateRoute> } >

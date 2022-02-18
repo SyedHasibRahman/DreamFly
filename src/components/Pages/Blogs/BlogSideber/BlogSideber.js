@@ -13,7 +13,7 @@ const BlogSideber = () => {
     const [recentBlogs, setRecentBlogs] = useState([]);
 
     useEffect( () => {
-        fetch('./blogs.json')
+        fetch('http://localhost:5000/blogs')
         .then(res => res.json())
         .then(data => setRecentBlogs(data))
     }, [])

@@ -5,6 +5,8 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import './ContactUs.css'
 import {styled } from '@mui/material/styles';
+import Navigation from '../../Shared/Navigation/Navigation';
+import Footer from '../../Shared/Footer/Footer';
 
 const InputTextField = styled(TextField)({
   '& label.Mui-focused': {
@@ -47,6 +49,7 @@ const ContactButton = styled(Button)({
 const ContactUs = () => {
     return (
         <>
+        <Navigation></Navigation>
             <Container>
                 {/* <SignUp/> */}
             </Container>
@@ -245,6 +248,7 @@ const ContactUs = () => {
                     </Grid>
                 </Container>
             </Box>
+            <Footer></Footer>
         </>
     );
 };
