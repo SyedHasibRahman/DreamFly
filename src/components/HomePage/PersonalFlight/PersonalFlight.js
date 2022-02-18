@@ -14,36 +14,36 @@ const PersonalFlight = () => {
   }
   return (
     <Box
-      sx={{
+      sx={ {
         flexGrow: 1,
         py: 10,
-      }}
+      } }
     >
       <Container
         className="personal_flight"
-        spacing={{ xs: 2, md: 3 }}
-        style={{
+        spacing={ { xs: 2, md: 3 } }
+        style={ {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
-        }}
+        } }
       >
         <Box
           component="div"
-          sx={{ textAlign: "center", color: "#fff", paddingTop: "50px" }}
+          sx={ { textAlign: "center", color: "#fff", paddingTop: "50px" } }
         >
           <Typography variant="h6">Flynext Book</Typography>
-          <Typography variant="h4" sx={{ padding: "20px 0" }}>
+          <Typography variant="h4" sx={ { padding: "20px 0" } }>
             Book A Personal Flight
           </Typography>
         </Box>
         <Grid
           container
-          spacing={{ xs: 2, md: 3, lg: 3 }}
+          spacing={ { xs: 2, md: 3, lg: 3 } }
           className="flight_box"
         >
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 }>
             <Box className="selector_box">
               <Box for="cars" className="label">
                 From
@@ -54,7 +54,7 @@ const PersonalFlight = () => {
               </select>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 }>
             <Box className="selector_box">
               <Box className="label">To</Box>
               <select name="cars" id="cars" className="selector">
@@ -63,7 +63,7 @@ const PersonalFlight = () => {
               </select>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 }>
             <Box className="selector_box">
               <Box for="cars" className="label">
                 Date
@@ -74,18 +74,18 @@ const PersonalFlight = () => {
               </select>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 }>
             <Box className="selector_box">
               <Box for="cars" className="label">
                 Passenger
               </Box>
               <Box className="selector">
                 <Box className="passenger">
-                  <span className="int" onClick={() => decrementCounter()}>
+                  <span className="int" onClick={ () => decrementCounter() }>
                     <i className="fas fa-minus"></i>
                   </span>
-                  <span className="number">{counter}</span>
-                  <span className="dec" onClick={() => incrementCounter()}>
+                  <span className="number">{ counter }</span>
+                  <span className="dec" onClick={ () => incrementCounter() }>
                     <i className="fas fa-plus"></i>
                   </span>
                 </Box>
