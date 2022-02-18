@@ -14,6 +14,7 @@ const PersonalFlight = () => {
   }
   return (
     <Box
+      className="personal_flight_Container"
       sx={ {
         flexGrow: 1,
         py: 10,
@@ -33,7 +34,7 @@ const PersonalFlight = () => {
           component="div"
           sx={ { textAlign: "center", color: "#fff", paddingTop: "50px" } }
         >
-          <Typography variant="h6">Flynext Book</Typography>
+          <Typography variant="h6">DreamFly Book</Typography>
           <Typography variant="h4" sx={ { padding: "20px 0" } }>
             Book A Personal Flight
           </Typography>
