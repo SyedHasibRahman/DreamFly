@@ -6,6 +6,7 @@ import AboutUs from "./components/Pages/AboutUs/AboutUs";
 import Blogs from "./components/Pages/Blogs/Blogs/Blogs";
 import ContactUs from "./components/Pages/ContactUs/ContactUs";
 import OurCourses from "./components/Pages/OurCourses/OurCourses";
+import OurCoursesDetails from "./components/Pages/OurCourses/OurCoursesDetails/OurCoursesDetails";
 import OurPilots from "./components/Pages/OurPilots/OurPilots/OurPilots";
 import Services from "./components/Pages/Services/Services/Services";
 import Navigation from "./components/Shared/Navigation/Navigation";
@@ -21,6 +22,7 @@ function App() {
         <Route path="aboutus" element={<AboutUs />} />
         <Route path="OurPilots" element={<OurPilots />} />
         <Route path="OurCourses" element={<OurCourses />} />
+        <Route path="OurCoursesDetails" element={<OurCoursesDetails />} />
         <Route path="ContactUs" element={<ContactUs />} />
         <Route path="Blogs" element={<Blogs />} />
       </Routes>

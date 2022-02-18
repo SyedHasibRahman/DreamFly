@@ -23,6 +23,7 @@ const pages = [
   "ContactUs",
   "Blogs",
   "OurCourses",
+  "OurCoursesDetails",
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
