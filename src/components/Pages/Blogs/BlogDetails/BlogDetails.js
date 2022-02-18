@@ -5,26 +5,26 @@ import { useParams } from 'react-router-dom';
 
 const BlogDetails = () => {
 
-    
 
-    const {blogId} = useParams();
+
+    const { blogId } = useParams();
     const [blog, setBlog] = useState([]);
     console.log(blog);
 
-    useEffect( () => {
-        const url = `http://localhost:3000/BlogDetails/${blogId}`
+    useEffect(() => {
+        const url = `https://vast-retreat-08893.herokuapp.com/BlogDetails/${blogId}`
         fetch(url)
-        .then(res => res.json())
-        .then(data => setBlog(data))
+            .then(res => res.json())
+            .then(data => setBlog(data))
     }, [blogId]);
 
     return (
         <Container>
             <Box>
-            hello
-                <img src={blog.image1} alt="" />
+                hello
+                <img src={ blog.image1 } alt="" />
             </Box>
-            
+
         </Container>
     );
 };
