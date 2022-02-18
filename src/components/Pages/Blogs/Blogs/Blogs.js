@@ -9,10 +9,10 @@ const Blogs = () => {
 
     const [blogs, setBlogs] = useState([]);
 
-    useEffect( () => {
-        fetch('http://localhost:5000/blogs')
-        .then(res => res.json())
-        .then(data => setBlogs(data))
+    useEffect(() => {
+        fetch('https://vast-retreat-08893.herokuapp.com/blogs')
+            .then(res => res.json())
+            .then(data => setBlogs(data))
     }, []);
 
     const [page, setPage] = React.useState(1);
