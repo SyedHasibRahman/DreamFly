@@ -15,6 +15,7 @@ import {
   Typography,
 } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import Footer from "../../Shared/Footer/Footer";
 
 const OurCourses = () => {
   const data = [
@@ -181,6 +182,7 @@ const OurCourses = () => {
           </Grid>
         </Box>
       </Container>
+      <Footer />
     </Box>
   );
 };

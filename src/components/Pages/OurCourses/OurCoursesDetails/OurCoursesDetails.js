@@ -24,6 +24,7 @@ import ImageSearchIcon from "@mui/icons-material/ImageSearch";
 import StarIcon from "@mui/icons-material/Star";
 import { NavLink } from "react-router-dom";
 import Navigation from "../../../Shared/Navigation/Navigation";
+import Footer from "../../../Shared/Footer/Footer";
 
 function createData(Qualification, Length, Code) {
   return { Qualification, Length, Code };
@@ -583,6 +584,7 @@ const OurCoursesDetails = () => {
           </Grid>
         </Container>
       </Box>
+      <Footer />
     </Box>
   );
 };

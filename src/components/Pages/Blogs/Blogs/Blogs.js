@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Box, Grid, Container, Typography, Stack, Pagination } from '@mui/material';
 import Blog from '../Blog/Blog';
 import BlogSideber from '../BlogSideber/BlogSideber';
+import Navigation from '../../../Shared/Navigation/Navigation';
+import Footer from '../../../Shared/Footer/Footer';
 
 const Blogs = () => {
 
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/blogs')
+        fetch('https://vast-retreat-08893.herokuapp.com/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, []);
@@ -20,6 +22,9 @@ const Blogs = () => {
 
 
     return (
+        <>
+            <Navigation></Navigation>
+        
         <Box sx={ { py: 10, bgcolor: "#fafafa" } }>
             <Container>
                 <Box>
@@ -60,6 +65,8 @@ const Blogs = () => {
                 </Box>
             </Container>
         </Box>
+        <Footer></Footer>
+        </>
     );
 };
 

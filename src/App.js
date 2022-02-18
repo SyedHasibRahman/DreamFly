@@ -4,21 +4,19 @@ import "./App.css";
 import Home from "./components/HomePage/Home/Home";
 import SignInSide from "./components/Pages/Login/SingIn/SignInSide";
 import SingUp from "./components/Pages/Login/SingUp/SingUp";
-import AboutUs from "./components/Pages/AboutUs/AboutUs";
 import Blogs from "./components/Pages/Blogs/Blogs/Blogs";
 import ContactUs from "./components/Pages/ContactUs/ContactUs";
 import OurPilots from "./components/Pages/OurPilots/OurPilots/OurPilots";
 import Services from "./components/Pages/Services/Services/Services";
-import Navigation from "./components/Shared/Navigation/Navigation";
-import Footer from "./components/Shared/Footer/Footer";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import PrivateRoute from "./components/Pages/Login/OtherRoutes/PrivateRoute/PrivateRoute";
 import Sidebar from "./components/Dashboard/Sidebar/Sidebar";
 import NotFound from "./components/Pages/NotFound/NotFound";
-import AddPost from "./components/Dashboard/Admin/AddPost/AddPost";
 import BlogDetails from "./components/Pages/Blogs/BlogDetails/BlogDetails";
-import OurCourses from "./components/Pages/OurCourses/OurCourses";
+import AddPost from "./components/Dashboard/Admin/AddPost/AddPost";
+import AboutUs from "./components/Pages/AboutUs/AboutUs/AboutUs";
 import OurCoursesDetails from "./components/Pages/OurCourses/OurCoursesDetails/OurCoursesDetails";
+import OurCourses from "./components/Pages/OurCourses/OurCourses";
 
 function App() {
   return (
@@ -34,24 +32,10 @@ function App() {
           <Route path="aboutus" element={<AboutUs />} />
           <Route path="OurPilots" element={<OurPilots />} />
           <Route path="ContactUs" element={<ContactUs />} />
-          <Route path="OurCourses" element={<OurCourses />} />
-          <Route path="OurCoursesDetails" element={<OurCoursesDetails />} />
-          <Route
-            path="Blogs"
-            element={
-              <PrivateRoute>
-                <Blogs />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/BlogDetails/:blogId"
-            element={
-              <PrivateRoute>
-                <BlogDetails />
-              </PrivateRoute>
-            }
-          />
+          <Route path="Blogs" element={<Blogs />} />
+          <Route path="/blogs/:blogId" element={<BlogDetails />} />
+          <Route path="/OurCoursesDetails" element={<OurCoursesDetails />} />
+          <Route path="/OurCourses" element={<OurCourses />} />
           <Route path="SignIn" element={<SignInSide />} />
           <Route path="SingUp" element={<SingUp />} />
           <Route
