@@ -1,3 +1,11 @@
-.a{
-    background-blend-mode: overlay;
+.a {
+  background-blend-mode: overlay;
+}
+/* *{
+    color: #333333;
+    font-weight: 400;
+} */
+.a {
+  text-decoration: none;
+  color: white;
 }
