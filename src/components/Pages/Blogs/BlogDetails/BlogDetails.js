@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import BlogSideber from '../BlogSideber/BlogSideber';
 import BlogPagination from '../BlogPagination/BlogPagination';
+import Navigation from '../../../Shared/Navigation/Navigation';
+import Footer from '../../../Shared/Footer/Footer';
 
 
 const BlogDetails = () => {
@@ -19,6 +21,8 @@ const BlogDetails = () => {
     }, [blogId]);
 
     return (
+        <>
+        <Navigation></Navigation>
         <Box sx={{py: 10, bgcolor: "#fafafa"}}>
             <Container>
                 <Grid container spacing={4}>
@@ -83,6 +87,8 @@ const BlogDetails = () => {
 
             </Container>
         </Box>
+        <Footer></Footer>
+        </>
     );
 };
 

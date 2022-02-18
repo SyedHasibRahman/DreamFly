@@ -233,7 +233,7 @@ const Sidebar = () => {
           <Item
             onClick={ () => setClick(false) }
             activeClassName="active"
-            to="/documents"
+            to="/AddPost"
           >
             <img src={ Documents } alt="Documents" />
             <Text clicked={ click }>Documents</Text>
@@ -266,6 +266,7 @@ const Sidebar = () => {
           </Details>
         </Profile>
       </SidebarContainer>
+
     </Container>
   );
 };
