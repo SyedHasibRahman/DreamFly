@@ -4,7 +4,6 @@ import './App.css';
 import Home from './components/HomePage/Home/Home';
 import SignInSide from './components/Pages/Login/SingIn/SignInSide';
 import SingUp from './components/Pages/Login/SingUp/SingUp';
-import AboutUs from './components/Pages/AboutUs/AboutUs';
 import Blogs from './components/Pages/Blogs/Blogs/Blogs';
 import ContactUs from './components/Pages/ContactUs/ContactUs';
 import OurPilots from './components/Pages/OurPilots/OurPilots/OurPilots';
@@ -15,6 +14,7 @@ import Sidebar from './components/Dashboard/Sidebar/Sidebar';
 import NotFound from './components/Pages/NotFound/NotFound';
 import BlogDetails from './components/Pages/Blogs/BlogDetails/BlogDetails'
 import AddPost from './components/Dashboard/Admin/AddPost/AddPost';
+import AboutUs from './components/Pages/AboutUs/AboutUs/AboutUs';
 
 
 function App() {
