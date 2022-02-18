@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const Blog = ({blog}) => {
 
     const {image1, date, comment, title, info, _id} = blog;
- 
+    console.log(_id);
     return (
         <Card sx={{}}>
             <CardMedia
@@ -33,7 +33,7 @@ const Blog = ({blog}) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Link to={`/BlogDetails/${_id}`}>
+                <Link to={`/blogs/${_id}`}>
                     <Button size="small">Read More</Button>
                 </Link> 
             </CardActions>
