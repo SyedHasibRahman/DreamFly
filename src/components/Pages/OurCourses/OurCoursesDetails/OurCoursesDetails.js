@@ -536,7 +536,7 @@ const OurCoursesDetails = () => {
                     fontWeight: "600",
                   }}
                 >
-                  More Courses
+                  Course Instructor
                 </Typography>
                 <Box className="more_courses" sx={{ mr: 5 }}>
                   <img
