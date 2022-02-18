@@ -18,11 +18,11 @@ const Home = () => {
     <Box>
       <Navigation />
       <Banner />
+      <Booking></Booking>
+      <PersonalFlight />
       <BestService />
       <About />
       <ServiceCards />
-      <Booking></Booking>
-      <PersonalFlight />
       <TourPackages />
       <Testimonials />
       <Footer />

@@ -1,7 +1,7 @@
 import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React from 'react';
-import logo from '../../../images/Logo7.png'
+import logo from '../../../images/Logo5.png'
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
@@ -28,13 +28,13 @@ const Navigation = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
- 
+
   return (
     <>
-      {/* background: 'linear-gradient(90deg, #93FFD8, #CFFFDC) */ }
+      {/* background: 'linear-gradient(90deg, #93FFD8, #CFFFDC) || #512DA8*/ }
       {/* background: 'linear-gradient(90deg, #99FEFF, #94DAFF)' */ }
       <AppBar position="static" sx={ {
-        background: 'linear-gradient(90deg, #94DAFF, #64DFDF)', py: "10px",
+        background: 'linear-gradient(90deg, #512DA8, #512DA8)', py: "10px",
       } }>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
@@ -78,7 +78,7 @@ const Navigation = () => {
               >
                 { pages.map((page) => (
                   <MenuItem key={ page } onClick={ handleCloseNavMenu }>
-                    <Typography sx={{color: 'white'}}>{ page }</Typography>
+                    <Typography sx={ { color: 'white' } }>{ page }</Typography>
                   </MenuItem>
                 )) }
               </Menu>
@@ -106,12 +106,12 @@ const Navigation = () => {
                 >
                   <Link style={ {
                     textDecoration: 'none',
-                    color: 'black',
+                    color: 'white',
                     fontWeight: 400,
 
-                    background: '-webkit-linear-gradient(90deg, crimson, #673AB7)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
+                    // background: '-webkit-linear-gradient(90deg, crimson, #673AB7)',
+                    // WebkitBackgroundClip: 'text',
+                    // WebkitTextFillColor: 'transparent'
 
                   } } to={ `/${page}` }>{ page }</Link>
                 </Typography>

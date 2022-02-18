@@ -1,17 +1,20 @@
-.personal_flight {
-  background: url("../../../img/bg-3.png"), linear-gradient(#2d3640, #2d3640) !important;
+.personal_flight_Container{
+  background: url("../../../img/bg-3.png"), linear-gradient(180deg, #512DA8, #F5F5F5) !important;
   background-blend-mode: overlay;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
-  border-radius: 10px !important;
+  /* border-radius: 10px !important; */
   width: 100%;
-  height: 450px;
-  padding: 20px;
+  /* height: 450px; */
+  padding: 30px;
   margin: 0 auto !important;
   position: relative;
   z-index: 5;
 }
+
+/* .personal_flight {
+} */
 .personal_flight::before {
   position: absolute;
   content: "";
@@ -32,7 +35,7 @@
   padding: 15px;
   background: transparent;
   color: #fff;
-  border: 1px solid #8f5128 !important;
+  border: 1px solid #512DA8 !important;
   border-radius: 5px;
 }
 .passenger {
@@ -71,16 +74,17 @@
   padding: 60px 0px 30px 0px;
 }
 .personal_flight_btn button {
-  background: #dcbb87;
-  border: 1px solid #dcbb87;
+  background: #512DA8;
+  border: 1px solid #F5F5F5;
   padding: 12px 35px;
   border-radius: 25px;
-  color: #333;
+  color: #fff;
   font-size: 18px;
   font-weight: bold;
   outline: none;
   transition: 0.5s;
   cursor: pointer;
+  transition: .5s;
 }
 .arrow_plan svg {
   margin-right: 7px;
@@ -90,9 +94,9 @@
   transition: 0.2s;
 }
 .personal_flight_btn button:hover {
-  background: transparent;
-  border: 1px solid #dcbb87;
-  color: #dcbb87;
+  background: #F5F5F5;
+  border: 1px solid #512DA8;
+  color: #512DA8;
 }
 .personal_flight_btn button:hover .arrow_plan svg {
   color: #dcbb87;
