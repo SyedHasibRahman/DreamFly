@@ -2,7 +2,7 @@ import { styled } from '@mui/system';
 import { Button } from "@mui/material";
 
 const PrimaryButton = styled(Button)({
-    background: 'linear-gradient(90deg, #80FFDB, #64DFDF)',
+    background: 'linear-gradient(90deg, #512DA8, #F5F5F5)',
     color: '#FFF',
     fontWeight: '700',
     padding: '10px 15px',

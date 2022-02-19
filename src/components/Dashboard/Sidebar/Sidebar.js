@@ -7,7 +7,8 @@ import Projects from './../../../assets/starred.svg';
 import Documents from './../../../assets/draft.svg';
 import PowerOff from './../../../assets/power-off-solid.svg';
 import styled from "styled-components";
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
+import { Grid } from '@mui/material';
 
 const Container = styled.div`
   position: fixed;
@@ -217,23 +218,31 @@ const Sidebar = () => {
           <Item
             onClick={ () => setClick(false) }
             activeClassName="active"
-            to="/team"
+            to="/Dashboard/AddPost"
           >
-            <img src={ Team } alt="Team" />
-            <Text clicked={ click }>Team</Text>
+            <img src={ Team } alt="AddPost" />
+            <Text clicked={ click }>AddPost</Text>
           </Item>
           <Item
             onClick={ () => setClick(false) }
             activeClassName="active"
-            to="/calender"
+            to="/Dashboard/UserOrder"
           >
-            <img src={ Calender } alt="Calender" />
-            <Text clicked={ click }>Calender</Text>
+            <img src={ Team } alt="UserOrder" />
+            <Text clicked={ click }>UserOrder</Text>
           </Item>
           <Item
             onClick={ () => setClick(false) }
             activeClassName="active"
-            to="/AddPost"
+            to="/Dashboard/UserProfile"
+          >
+            <img src={ Calender } alt="UserProfile" />
+            <Text clicked={ click }>UserProfile</Text>
+          </Item>
+          <Item
+            onClick={ () => setClick(false) }
+            activeClassName="active"
+            to="/Dashboard/AddPost"
           >
             <img src={ Documents } alt="Documents" />
             <Text clicked={ click }>Documents</Text>
@@ -241,7 +250,7 @@ const Sidebar = () => {
           <Item
             onClick={ () => setClick(false) }
             activeClassName="active"
-            to="/projects"
+            to="/Dashboard/projects"
           >
             <img src={ Projects } alt="Projects" />
             <Text clicked={ click }>Projects</Text>
@@ -266,7 +275,6 @@ const Sidebar = () => {
           </Details>
         </Profile>
       </SidebarContainer>
-
     </Container>
   );
 };
