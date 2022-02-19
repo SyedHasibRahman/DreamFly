@@ -10,6 +10,8 @@ import Testimonials from "../Testimonial/Testimonials/Testimonials";
 import PersonalFlight from "../PersonalFlight/PersonalFlight";
 import Navigation from "../../Shared/Navigation/Navigation";
 import Footer from "../../Shared/Footer/Footer";
+import UserCourse from "../../Dashboard/User/UserCourse/UserCourse";
+
 
 
 
@@ -18,6 +20,7 @@ const Home = () => {
     <Box>
       <Navigation />
       <Banner />
+      <UserCourse></UserCourse>
       <Booking></Booking>
       <PersonalFlight />
       <BestService />
