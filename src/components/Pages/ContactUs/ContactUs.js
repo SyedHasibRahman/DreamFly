@@ -1,32 +1,14 @@
-import { Container, Grid, Typography, Link, TextField, InputAdornment } from '@mui/material';
+import { Container, Grid, Typography, Link, InputAdornment } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-// import SignUp from '../../Login/SignUp/SignUp';
 import Button from '@mui/material/Button';
 import './ContactUs.css'
 import {styled } from '@mui/material/styles';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../../Shared/Footer/Footer';
+import SignUp from '../Login/SignUp/SignUp';
+import InputTextField from '../../StyledComponent/InputTextField/InputTextField';
 
-const InputTextField = styled(TextField)({
-  '& label.Mui-focused': {
-    color: '#4527a0',
-  },
-  '& .MuiInput-underline:after': {
-    borderBottomColor: '#4527a0',
-  },
-  '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      border: '2px solid #4527a0'
-    },
-    '&:hover fieldset': {
-      borderColor: '#4527a0',
-    },
-    '&.Mui-focused fieldset': {
-      borderColor: '#4527a0',
-    },
-  },
-});
 
 const ContactButton = styled(Button)({
     '&' : {
@@ -51,7 +33,7 @@ const ContactUs = () => {
         <>
         <Navigation></Navigation>
             <Container>
-                {/* <SignUp/> */}
+                <SignUp/>
             </Container>
 
             {/* Contact Information Section */}
@@ -147,17 +129,17 @@ const ContactUs = () => {
                                 travelling by private jet charter is the most efficient
                             </Typography>
                             <Box sx={{display: "flex", mt: 2}}>
-                                <Link href="#" sx={{mr: 1}} className='social-icon-box'>
+                                <a href="#a" sx={{mr: 1}} className='social-icon-box'>
                                     <i className="fab fa-facebook-f social-icon"></i>
-                                </Link>
-                                <Link href="#" sx={{mr: 1}} className='social-icon-box'>
-                                    <i className="fab fa-twitter social-icon"></i></Link>
-                                <Link href="#" sx={{mr: 1}} className='social-icon-box'>
+                                </a>
+                                <a href="#a" sx={{mr: 1}} className='social-icon-box'>
+                                    <i className="fab fa-twitter social-icon"></i></a>
+                                <a href="#a" sx={{mr: 1}} className='social-icon-box'>
                                     <i className="fab fa-youtube social-icon"></i>
-                                </Link>
-                                <Link href="#" sx={{mr: 1}} className='social-icon-box'>
+                                </a>
+                                <a href="#a" sx={{mr: 1}} className='social-icon-box'>
                                     <i className="fab fa-instagram social-icon"></i>
-                                </Link>
+                                </a>
                             </Box>
                         </Grid>
 

@@ -1,12 +1,11 @@
-import { Box } from '@mui/lab/node_modules/@mui/system';
-import { Avatar, Container, Divider, FormControl, FormHelperText, Grid, Input, InputLabel, TextField, Typography } from '@mui/material';
+import { Avatar, Box, Container, Divider, FormControl,  Grid, TextField, Typography } from '@mui/material';
 import React from 'react';
 import useAuth from '../../../../hooks/useAuth';
 import PrimaryButton from '../../../StyledComponent/Buttons/PrimaryButton';
 
 const UserProfile = () => {
 
-    const { user, logOut } = useAuth({});
+    const { user } = useAuth({});
     console.log(user);
     return (
         <div>
