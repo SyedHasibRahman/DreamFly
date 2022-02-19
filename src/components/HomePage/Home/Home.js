@@ -20,13 +20,14 @@ const Home = () => {
     <Box>
       <Navigation />
       <Banner />
+      {/* <Booking></Booking> */}
       <UserCourse></UserCourse>
-      <Booking></Booking>
-      <PersonalFlight />
       <BestService />
       <About />
       <ServiceCards />
       <TourPackages />
+
+      <PersonalFlight />
       <Testimonials />
       <Footer />
     </Box>

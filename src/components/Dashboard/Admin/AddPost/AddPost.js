@@ -7,7 +7,7 @@ const AddPost = () => {
             <div className="div" style={ {
                 display: 'flex'
             } }>
-                <TestimonialSlider />
+                AddPost
             </div>
         </div>
     );
