@@ -10,7 +10,6 @@ import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import PrivateRoute from "./components/Pages/Login/OtherRoutes/PrivateRoute/PrivateRoute";
 import NotFound from "./components/Pages/NotFound/NotFound";
 import BlogDetails from "./components/Pages/Blogs/BlogDetails/BlogDetails";
-import AddPost from "./components/Dashboard/Admin/Add/AddPost";
 import AboutUs from "./components/Pages/AboutUs/AboutUs/AboutUs";
 import OurCoursesDetails from "./components/Pages/OurCourses/OurCoursesDetails/OurCoursesDetails";
 import OurCourses from "./components/Pages/OurCourses/OurCourses";
@@ -20,6 +19,7 @@ import AdminPanel from "./components/Dashboard/Admin/AdminPanel/AdminPanel";
 import UserOrder from "./components/Dashboard/User/UserOrder/UserOrder";
 import UserProfile from "./components/Dashboard/User/UserProfile/UserProfile";
 import ManageUsers from "./components/Dashboard/Admin/AdminPanel/ManageUsers/ManageUsers/ManageUsers";
+import AddBlog from "./components/Dashboard/Admin/AddBlog/AddBlog";
 
 function App() {
   return (
@@ -47,7 +47,7 @@ function App() {
               </PrivateRoute>
             }
           >
-            <Route path="AddPost" element={<AddPost />} />
+            <Route path="AddBlog" element={<AddBlog />} />
             <Route path="UserOrder" element={<UserOrder />} />
             <Route path="UserProfile" element={<UserProfile />} />
             <Route path="ManageUsers" element={<ManageUsers />} />
