@@ -1,0 +1,43 @@
+
+  .clock svg {
+    color: #dcbb87;
+  }
+  .courses_btnp {
+    padding-bottom: 5px;
+  }
+  .courses_btnp button {
+    background: #FF267B;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 15px;
+    outline: none;
+  
+  }
+  .courses_btnp button:hover{
+    background: #FF267B; 
+    color: white;
+  }
+  .course_arrow {
+    padding-left: 10px;
+  }
+  .our_course_link a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+  }
+  
+
+   .courses_imgp img {
+    height: 150px;
+    width: 100%;
+    
+    border-radius: 10px;
+  }
+
+  .courses_imgp{
+      padding: 30px;
+      align-items: center;
+      justify-content: center;
+  }

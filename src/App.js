@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
-        {/* <Navigation /> */ }
+        {/* <Navigation /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="Home" element={<Home />} />
@@ -47,14 +47,14 @@ function App() {
               </PrivateRoute>
             }
           >
-            <Route path="AddPost" element={ <AddPost /> } />
-            <Route path="UserOrder" element={ <UserOrder /> } />
-            <Route path="UserProfile" element={ <UserProfile /> } />
-            <Route path="ManageUsers" element={ <ManageUsers /> } />
+            <Route path="AddPost" element={<AddPost />} />
+            <Route path="UserOrder" element={<UserOrder />} />
+            <Route path="UserProfile" element={<UserProfile />} />
+            <Route path="ManageUsers" element={<ManageUsers />} />
           </Route>
-          <Route path="*" element={ <NotFound /> } />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-        {/* <Footer /> */ }
+        {/* <Footer /> */}
       </AuthProvider>
     </div>
   );
