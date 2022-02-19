@@ -1995,19 +1995,6 @@
     "prop-types" "^15.7.2"
     "react-is" "^17.0.2"
 
-"@mui/base@5.0.0-alpha.67":
-  "integrity" "sha512-yK2++NivZUitAVpheMc5QVuwrVCphrTw85L6qjKcvnSpB8wmVYne58CY2vzMCNEuHkuHG2jccq9/JlRZFGAanw=="
-  "resolved" "https://registry.npmjs.org/@mui/base/-/base-5.0.0-alpha.67.tgz"
-  "version" "5.0.0-alpha.67"
-  dependencies:
-    "@babel/runtime" "^7.16.7"
-    "@emotion/is-prop-valid" "^1.1.1"
-    "@mui/utils" "^5.3.0"
-    "@popperjs/core" "^2.4.4"
-    "clsx" "^1.1.1"
-    "prop-types" "^15.7.2"
-    "react-is" "^17.0.2"
-
 "@mui/base@5.0.0-alpha.69":
   "integrity" "sha512-IxUUj/lkilCTNBIybQxyQGW/zpxFp490G0QBQJgRp9TJkW2PWSTLvAH7gcH0YHd0L2TAf1TRgfdemoRseMzqQA=="
   "resolved" "https://registry.npmjs.org/@mui/base/-/base-5.0.0-alpha.69.tgz"
@@ -2047,16 +2034,16 @@
     "react-transition-group" "^4.4.2"
     "rifm" "^0.12.1"
 
-"@mui/material@^5.0.0", "@mui/material@^5.4.0":
-  "integrity" "sha512-vfBIAMsRNWI/A4p/eP01MjqhSACwxRGYp/2Yi7WAU64PpI/TXR4b9SRl+XJMMJXVC7+abu4E3hTdF3oqwMCSYA=="
-  "resolved" "https://registry.npmjs.org/@mui/material/-/material-5.4.0.tgz"
-  "version" "5.4.0"
+"@mui/material@^5.0.0", "@mui/material@^5.4.2":
+  "integrity" "sha512-jmeLWEO6AA6g7HErhI3MXVGaMZtqDZjDwcHCg24WY954wO38Xn0zJ53VfpFc44ZTJLV9Ejd7ci9fLlG/HmJCeg=="
+  "resolved" "https://registry.npmjs.org/@mui/material/-/material-5.4.2.tgz"
+  "version" "5.4.2"
   dependencies:
-    "@babel/runtime" "^7.16.7"
-    "@mui/base" "5.0.0-alpha.67"
-    "@mui/system" "^5.4.0"
-    "@mui/types" "^7.1.0"
-    "@mui/utils" "^5.3.0"
+    "@babel/runtime" "^7.17.0"
+    "@mui/base" "5.0.0-alpha.69"
+    "@mui/system" "^5.4.2"
+    "@mui/types" "^7.1.2"
+    "@mui/utils" "^5.4.2"
     "@types/react-transition-group" "^4.4.4"
     "clsx" "^1.1.1"
     "csstype" "^3.0.10"
@@ -2113,7 +2100,7 @@
     "jss-plugin-vendor-prefixer" "^10.8.2"
     "prop-types" "^15.7.2"
 
-"@mui/system@^5.4.0", "@mui/system@^5.4.2":
+"@mui/system@^5.4.2":
   "integrity" "sha512-QegBVu6fxUNov1X9bWc1MZUTeV3A5g9PIpli7d0kzkGfq6JzrJWuPlhSPZ+6hlWmWky+bbAXhU65Qz8atWxDGw=="
   "resolved" "https://registry.npmjs.org/@mui/system/-/system-5.4.2.tgz"
   "version" "5.4.2"

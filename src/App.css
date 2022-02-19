@@ -1,10 +1,19 @@
+
+/* 
+Use grey light : #fafafa
+Use grey deep : #f5f5f5
+use important text, border, icon : #4527a0
+use bg color, hover : #5e35b1
+where bg (#5e35b1) this color, there use btn color : #FF257B
+*/
+
 .a {
   background-blend-mode: overlay;
 }
-/* *{
+*{
     color: #333333;
     font-weight: 400;
-} */
+}
 .a {
   text-decoration: none;
   color: white;

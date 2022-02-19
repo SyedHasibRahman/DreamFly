@@ -3,6 +3,7 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
 .contact-icon-box{
     height: 60px;
     width: 60px;
@@ -12,10 +13,12 @@
     justify-content: center;
     align-items: center;
 }
+
 .contact-icon{
     color: #512da8;
     font-size: 25px;
 }
+
 .social-icon-box{
     height: 35px;
     width: 35px;
@@ -27,20 +30,24 @@
     align-items: center;
     margin: 10px; 
 }
+
 .social-icon{
     color: #512da8;
     font-size: 20px;  
 }
+
 .social-icon-box:hover{
     background: #5e35b1; 
-    transition: .7s;
+    transition: .7s;     
 }
-.social-icon:hover{
+
+.social-icon-box:hover i{
     color: white;   
     transition: .7s;
 }
 
 .my-btn{
-    background: #512da8;
-    padding: 20px 10px;
+    background: #512da8 !important;
+    padding: 20px 10px !important;
+    color: #ede7f6 !important;
 }
