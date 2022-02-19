@@ -8,7 +8,6 @@ import OurPilots from "./components/Pages/OurPilots/OurPilots/OurPilots";
 import Services from "./components/Pages/Services/Services/Services";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import PrivateRoute from "./components/Pages/Login/OtherRoutes/PrivateRoute/PrivateRoute";
-import Sidebar from "./components/Dashboard/Sidebar/Sidebar";
 import NotFound from "./components/Pages/NotFound/NotFound";
 import BlogDetails from "./components/Pages/Blogs/BlogDetails/BlogDetails";
 import AddPost from "./components/Dashboard/Admin/Add/AddPost";
@@ -17,14 +16,16 @@ import OurCoursesDetails from "./components/Pages/OurCourses/OurCoursesDetails/O
 import OurCourses from "./components/Pages/OurCourses/OurCourses";
 import SignUp from "./components/Pages/Login/SignUp/SignUp";
 import SignInSide from "./components/Pages/Login/SignIn/SignInSide";
+import AdminPanel from "./components/Dashboard/Admin/AdminPanel/AdminPanel";
+import UserOrder from "./components/Dashboard/User/UserOrder/UserOrder";
+import UserProfile from "./components/Dashboard/User/UserProfile/UserProfile";
+import ManageUsers from "./components/Dashboard/Admin/AdminPanel/ManageUsers/ManageUsers/ManageUsers";
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
-        {/* <Link to="/SingUp">SingUp</Link>
-        <Link to="/SignIn">SignIn</Link> */}
-        {/* <Navigation /> */}
+        {/* <Navigation /> */ }
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="Home" element={<Home />} />
@@ -42,21 +43,19 @@ function App() {
             path="Dashboard"
             element={
               <PrivateRoute>
-                <Sidebar />
+                <AdminPanel />
               </PrivateRoute>
             }
           >
-            <Route path="AddPost" element={<AddPost />} />
+            <Route path="AddPost" element={ <AddPost /> } />
+            <Route path="UserOrder" element={ <UserOrder /> } />
+            <Route path="UserProfile" element={ <UserProfile /> } />
+            <Route path="ManageUsers" element={ <ManageUsers /> } />
           </Route>
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={ <NotFound /> } />
         </Routes>
-        {/* <Footer /> */}
+        {/* <Footer /> */ }
       </AuthProvider>
-      {/* <AuthProvider>
-        <Routes>
-          <Route path="/Dashboard/" element={ <PrivateRoute><Sidebar /></PrivateRoute> } ></Route>
-        </Routes>
-      </AuthProvider> */}
     </div>
   );
 }
