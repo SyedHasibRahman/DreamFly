@@ -1,11 +1,23 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { Button, Card, CardActionArea, CardContent, CardMedia, Container, Typography } from '@mui/material';
+import { Button, Card, CardActionArea, CardMedia, Container, Typography } from '@mui/material';
 import useAuth from '../../../../hooks/useAuth';
 import './UserCourse.css'
+import Modal from '@mui/material/Modal';
 
 
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+};
 const UserCourse = () => {
     const { user } = useAuth({});
 
@@ -18,7 +30,8 @@ const UserCourse = () => {
             images:
                 "https://images.unsplash.com/photo-1506695939086-156c2eff767b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGxhbmUlMjBjb2NrcGl0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
             price: "399.00",
-            instracort: "Syde Hasibur"
+            instracort: "Syde Hasibur",
+            complete: "95"
         },
         {
             id: 2,
@@ -28,7 +41,8 @@ const UserCourse = () => {
             images:
                 "https://images.unsplash.com/photo-1529521914207-a330038e35a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGxhbmUlMjBjb2NrcGl0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
             price: "299.00",
-            instracort: "Ali Haydar"
+            instracort: "Ali Haydar",
+            complete: "80"
         },
         {
             id: 3,
@@ -38,7 +52,8 @@ const UserCourse = () => {
             images:
                 "https://images.unsplash.com/photo-1596899223071-723a26d67f9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBsYW5lJTIwY29ja3BpdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
             price: "499.00",
-            instracort: "Raju Molla"
+            instracort: "Raju Molla",
+            complete: "90"
         },
         {
             id: 4,
@@ -48,7 +63,8 @@ const UserCourse = () => {
             images:
                 "https://images.unsplash.com/photo-1581300907482-9ab70b31b69f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHBsYW5lJTIwY29ja3BpdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
             price: "199.00",
-            instracort: "Alif Ahmed"
+            instracort: "Alif Ahmed",
+            complete: "100"
         },
         {
             id: 5,
@@ -68,11 +84,50 @@ const UserCourse = () => {
             images:
                 "https://images.unsplash.com/photo-1509541206217-cde45c41aa6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fHBsYW5lJTIwY29ja3BpdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
             price: "699.00",
-            instracort: "Sohel Rana"
+            instracort: "Sohel Rana",
+            complete: "99"
         },
     ];
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     return (
         <Container>
+            <Box mt={5}>
+                <Box mx={'auto'} className='modaltext'>
+                    <Typography variant='h6' style={{ fontWeight: '700' }}>To see the important instructions at the beginning of the course</Typography>
+                    <Typography className="courses_btnp">
+                        <Button onClick={handleOpen}>Click</Button>
+                    </Typography>
+                </Box>
+                <Typography variant='h6' style={{ fontWeight: '700' }}>
+                    <div>
+
+                        <Modal
+                            keepMounted
+                            open={open}
+                            onClose={handleClose}
+                            aria-labelledby="keep-mounted-modal-title"
+                            aria-describedby="keep-mounted-modal-description"
+                        >
+                            <Box sx={style}>
+                                <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
+                                    Next Step
+                                </Typography>
+                                <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
+                                    <Container>
+                                        <ui>
+                                            <li>Join this group with your registration email and transaction information.</li>
+
+                                        </ui>
+                                    </Container>
+                                </Typography>
+                            </Box>
+                        </Modal>
+                    </div>
+                </Typography>
+
+            </Box>
             <Box><Typography my={5} variant='h5' style={{ fontWeight: '700' }}>Welcome back <span style={{ color: '#6047EC', fontWeight: '700' }}>{user?.displayName}</span>, ready for your next Course?</Typography></Box>
             <Box style={{ padding: "40px 0px" }}>
                 <Grid container spacing={{ xs: 2, md: 2 }}>
@@ -85,7 +140,7 @@ const UserCourse = () => {
                                     position: "relative",
                                 }}
                             >
-                                <CardActionArea style={{ display: 'flex' }}>
+                                <CardActionArea className='couserCard' style={{ display: 'flex' }}>
                                     <Grid xs={12} sm={12} md={5} lg={5} className="courses_imgp">
                                         <CardMedia
 
@@ -94,7 +149,7 @@ const UserCourse = () => {
                                             alt="green iguana"
                                         />
                                     </Grid>
-                                    <CardContent xs={12} sm={12} md={7} lg={7}>
+                                    <Grid xs={12} sm={12} md={7} lg={7}>
                                         <Typography
                                             gutterBottom
                                             variant="h5"
@@ -114,11 +169,15 @@ const UserCourse = () => {
                                         >
                                             <Typography
                                                 variant='h6'
-                                                sx={{ paddingLeft: "8px", fontWeight: 700 }}
+                                                sx={{ fontWeight: 700 }}
                                             >
                                                 {item?.instracort}
                                             </Typography>
 
+                                        </Box>
+                                        <Box className='course-contentt' variant='h5' style={{ fontWeight: '700' }}>
+                                            <progress value="100" max="100">75%</progress>
+                                            <span>100%</span>
                                         </Box>
                                         <Box>
                                             <Typography className="courses_btnp">
@@ -127,7 +186,7 @@ const UserCourse = () => {
                                                 </Button>
                                             </Typography>
                                         </Box>
-                                    </CardContent>
+                                    </Grid>
 
                                 </CardActionArea>
                             </Card>
