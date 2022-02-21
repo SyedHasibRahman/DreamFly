@@ -226,6 +226,14 @@ const Sidebar = () => {
           <Item
             onClick={ () => setClick(false) }
             activeClassName="active"
+            to="/Dashboard/AddBlog"
+          >
+            <img src={ Team } alt="AddBlog" />
+            <Text clicked={ click }>Add Blog</Text>
+          </Item>
+          <Item
+            onClick={ () => setClick(false) }
+            activeClassName="active"
             to="/Dashboard/UserOrder"
           >
             <img src={ Team } alt="UserOrder" />
