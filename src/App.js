@@ -25,20 +25,20 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
-        {/* <Navigation /> */}
+        {/* <Navigation /> */ }
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="Home" element={<Home />} />
-          <Route path="Services" element={<Services />} />
-          <Route path="aboutus" element={<AboutUs />} />
-          <Route path="OurPilots" element={<OurPilots />} />
-          <Route path="ContactUs" element={<ContactUs />} />
-          <Route path="Blogs" element={<Blogs />} />
-          <Route path="/blogs/:blogId" element={<BlogDetails />} />
-          <Route path="/OurCoursesDetails" element={<OurCoursesDetails />} />
-          <Route path="/OurCourses" element={<OurCourses />} />
-          <Route path="SignIn" element={<SignInSide />} />
-          <Route path="SignUp" element={<SignUp />} />
+          <Route path="/" element={ <Home /> } />
+          <Route path="Home" element={ <Home /> } />
+          <Route path="Services" element={ <Services /> } />
+          <Route path="aboutus" element={ <AboutUs /> } />
+          <Route path="OurPilots" element={ <OurPilots /> } />
+          <Route path="ContactUs" element={ <ContactUs /> } />
+          <Route path="Blogs" element={ <Blogs /> } />
+          <Route path="/blogs/:blogId" element={ <BlogDetails /> } />
+          <Route path="/OurCoursesDetails" element={ <OurCoursesDetails /> } />
+          <Route path="/OurCourses" element={ <OurCourses /> } />
+          <Route path="SignIn" element={ <SignInSide /> } />
+          <Route path="SignUp" element={ <SignUp /> } />
           <Route
             path="Dashboard"
             element={
@@ -47,14 +47,14 @@ function App() {
               </PrivateRoute>
             }
           >
-            <Route path="AddBlog" element={<AddBlog />} />
-            <Route path="UserOrder" element={<UserOrder />} />
-            <Route path="UserProfile" element={<UserProfile />} />
-            <Route path="ManageUsers" element={<ManageUsers />} />
+            <Route path="AddBlog" element={ <AddBlog /> } />
+            <Route path="UserOrder" element={ <UserOrder /> } />
+            <Route path="UserProfile" element={ <UserProfile /> } />
+            <Route path="ManageUsers" element={ <ManageUsers /> } />
           </Route>
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={ <NotFound /> } />
         </Routes>
-        {/* <Footer /> */}
+        {/* <Footer /> */ }
       </AuthProvider>
     </div>
   );
