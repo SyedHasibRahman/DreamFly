@@ -9,19 +9,16 @@
     background: #FF267B;
     border-radius: 20px;
     color: white;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
-    padding: 5px 15px;
     outline: none;
-  
+    padding: 10px 20px;
   }
   .courses_btnp button:hover{
     background: #FF267B; 
     color: white;
   }
-  .course_arrow {
-    padding-left: 10px;
-  }
+  
   .our_course_link a {
     text-decoration: none;
     color: #111;
@@ -30,7 +27,6 @@
   
 
    .courses_imgp img {
-    height: 150px;
     width: 100%;
     
     border-radius: 10px;
@@ -41,3 +37,60 @@
       align-items: center;
       justify-content: center;
   }
+
+  .modaltext{
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     box-shadow: 0 5.64912px 14.1228px rgb(0 0 0 / 10%);
+     padding: 5px;
+     font-style: normal;
+     font-weight: 600;
+     border-radius: 65px;
+     width: 70%;
+    padding: 10px;
+  }
+
+  .course-contentt{
+    display: flexs;
+    align-items: center;
+    justify-items: center;
+   
+  }
+  @media only screen and (max-width: 500px) {
+    .couserCard{
+       flex-direction: column;
+       padding: 5px 0;
+    }
+    .courses_btnp button {
+      background: #FF267B;
+      border-radius: 20px;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      outline: none;
+      padding: 8px 35px;
+    }
+    .courses_btnp{
+      padding: 15px 0;
+    }
+    .modaltext{
+      flex-direction: column;
+    width: 100% ;
+    text-align: center;
+    justify-content: center;
+   }
+}
+
+@media only screen and (max-width: 768px) {
+  .modaltext{
+  width: 100% ;
+  text-align: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 5px;
+ }
+ .modaltext h6{
+font-size: 14px;
+ }
+}
