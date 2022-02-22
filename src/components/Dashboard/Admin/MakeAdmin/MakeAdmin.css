@@ -7,11 +7,19 @@ textarea {
   outline: none;
   width: 100%;
 }
+.admin button{
+    color: white !important;
+}
+.admin label{
+    color:white;
+    font-weight: 700;
+}
 .admin form input:focus,
 textarea:focus {
   border: 1px solid #251d58;
 }
 .mainDiv{
-    background-color: rgb(145, 201, 223);
+    background-color: #512DA8 ;
+
 }
 

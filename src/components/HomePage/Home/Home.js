@@ -12,6 +12,8 @@ import Footer from "../../Shared/Footer/Footer";
 import UserCourse from "../../Dashboard/User/UserCourse/UserCourse";
 import CouserDetails from "../../Dashboard/User/UserCourse/CouserDetails/CouserDetails";
 import MakeAdmin from "../../Dashboard/Admin/MakeAdmin/MakeAdmin";
+import ManagePackage from "../../Dashboard/Admin/ManagePackage/ManagePackage";
+import ManageOrders from "../../Dashboard/Admin/ManageOrder/ManageOrders";
 
 
 
@@ -25,6 +27,8 @@ const Home = () => {
       <UserCourse></UserCourse>
       <CouserDetails></CouserDetails>
       <MakeAdmin></MakeAdmin>
+      <ManagePackage></ManagePackage>
+      <ManageOrders></ManageOrders>
       <BestService />
       <About />
       <ServiceCards />
