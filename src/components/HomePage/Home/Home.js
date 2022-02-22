@@ -14,6 +14,7 @@ import CouserDetails from "../../Dashboard/User/UserCourse/CouserDetails/CouserD
 import MakeAdmin from "../../Dashboard/Admin/MakeAdmin/MakeAdmin";
 import ManagePackage from "../../Dashboard/Admin/ManagePackage/ManagePackage";
 import ManageOrders from "../../Dashboard/Admin/ManageOrder/ManageOrders";
+import ManageFlight from "../../Dashboard/Admin/ManageFlight/ManageFlight";
 
 
 
@@ -29,6 +30,7 @@ const Home = () => {
       <MakeAdmin></MakeAdmin>
       <ManagePackage></ManagePackage>
       <ManageOrders></ManageOrders>
+      <ManageFlight></ManageFlight>
       <BestService />
       <About />
       <ServiceCards />
