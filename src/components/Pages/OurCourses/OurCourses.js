@@ -2,6 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import Navigation from "../../../components/Shared/Navigation/Navigation";
 import "./OurCourses.css";
 import {
   Button,
@@ -14,6 +15,7 @@ import {
   Typography,
 } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import Footer from "../../Shared/Footer/Footer";
 
 const OurCourses = () => {
   const data = [
@@ -74,6 +76,7 @@ const OurCourses = () => {
   ];
   return (
     <Box>
+      <Navigation />
       <Typography
         variant="h3"
         sx={{ textAlign: "center", padding: "100px 0px 10px 0px" }}
@@ -179,6 +182,7 @@ const OurCourses = () => {
           </Grid>
         </Box>
       </Container>
+      <Footer />
     </Box>
   );
 };
