@@ -1,11 +1,11 @@
 import React from 'react';
 
-const ManagePost = () => {
+const ManageUser = () => {
     return (
         <div>
-            ManagePost
+
         </div>
     );
 };
 
-export default ManagePost;
+export default ManageUser;

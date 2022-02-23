@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import logo from '../../../images/Logo.png';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
-import { Container, Link, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import './Footer.css'
 
 const SubscribeButton = styled(Button)({
@@ -159,17 +159,17 @@ const Footer = () => {
             
             <Container  sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between',}} >
                 <Box sx={{display: "flex",  mt: 4 }}>
-                    <Link href="#" sx={{mr: 1}} className='social-icon-box'>
+                    <a href="#a" sx={{mr: 1}} className='social-icon-box'>
                         <i className="fab fa-facebook-f social-icon"></i>
-                    </Link>
-                    <Link href="#" sx={{mr: 1}} className='social-icon-box'>
-                        <i className="fab fa-twitter social-icon"></i></Link>
-                    <Link href="#" sx={{mr: 1}} className='social-icon-box'>
+                    </a>
+                    <a href="#a" sx={{mr: 1}} className='social-icon-box'>
+                        <i className="fab fa-twitter social-icon"></i></a>
+                    <a href="#a" sx={{mr: 1}} className='social-icon-box'>
                         <i className="fab fa-youtube social-icon"></i>
-                    </Link>
-                    <Link href="#" sx={{mr: 1}} className='social-icon-box'>
+                    </a>
+                    <a href="#a" sx={{mr: 1}} className='social-icon-box'>
                         <i className="fab fa-instagram social-icon"></i>
-                    </Link>
+                    </a>
                 </Box>
                 <Box sx={{ mt: 4 }}>
                     <Typography sx={{}}>

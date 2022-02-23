@@ -1,3 +1,4 @@
+import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -5,24 +6,20 @@ import { useRef } from "react";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
-import package1 from "../../../img/package-9.png";
-import package2 from "../../../img/package-10.png";
-import package3 from "../../../img/package-11.png";
+import package1 from "../../../../img/package-9.png";
+import package2 from "../../../../img/package-10.png";
+import package3 from "../../../../img/package-11.png";
 import "./TourPackages.css";
-import {
-  Box,
-  Button,
-  Card,
-  CardActionArea,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Container,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography, } from "@mui/material";
 import VideoCameraBackIcon from "@mui/icons-material/VideoCameraBack";
+import BookingModal from '../BookingModal/BookingModal';
 
 const TourPackages = () => {
+
+  const [openBooking, setBookingOpen] = React.useState(false);
+  const handleBookingOpen = () => setBookingOpen(true);
+  const handleBookingClose = () => setBookingOpen(false);
+
   const sliderRef = useRef(null);
   const data = [
     {
@@ -52,7 +49,7 @@ const TourPackages = () => {
     {
       id: 4,
       title: "Island of the Goods",
-      date: "Thursday, Nov 4, 2021",
+      date: "Thursday, Jan 4, 2022",
       person: "2 Adults",
       images: package3,
       price: "130.00",
@@ -86,18 +83,19 @@ const TourPackages = () => {
     ],
   };
   return (
+    <>
     <Box className="tour_packages">
       <Container>
         <Box style={{ padding: "40px 0px" }}>
           <Box component="div" sx={{ textAlign: "center" }}>
             <Typography variant="h6" sx={{ fontWeight: 600, color: "#fff" }}>
-              <span style={{ color: "#dcbb87" }}>Flynext</span> Package
+              <span style={{ color: "#2cc0ff" }}>Dream Fly</span> Package
             </Typography>
             <Typography
               variant="h3"
               sx={{ py: 3, fontWeight: 600, fontSize: "2.5rem", color: "#fff" }}
             >
-              Flynext Tour Packages
+              Dream Fly Tour Packages
             </Typography>
           </Box>
           <Slider
@@ -163,7 +161,9 @@ const TourPackages = () => {
                         <span className="airplane">
                           <AirplanemodeActiveIcon />
                         </span>
-                        <Button className="tour_btn">Book Now</Button>
+                        <Button 
+                        onClick={handleBookingOpen} 
+                        className="tour_btn">Book Now</Button>
                       </Box>
                       <span className="video_icon">
                         <VideoCameraBackIcon />
@@ -191,7 +191,7 @@ const TourPackages = () => {
             }}
           >
             <Box
-              className="arrow_buttons left"
+              className="arrow_buttons"
               onClick={() => sliderRef.current.slickPrev()}
             >
               <ArrowBackIosNewIcon />
@@ -206,6 +206,14 @@ const TourPackages = () => {
         </Box>
       </Container>
     </Box>
+    
+    <BookingModal
+      openBooking={openBooking}
+      handleBookingClose={handleBookingClose}
+      // setBookingSuccess={setBookingSuccess}
+    ></BookingModal>
+  
+    </>        
   );
 };
 
