@@ -58,7 +58,7 @@ const UpdateBlog = () => {
             <p><small>{id}</small></p>
             <form onSubmit={handleUpdateBlog}>
                 <Grid item xs={ 12 } md={6}>
-                    {/* <InputTextField
+                    <InputTextField
                         label="Blog title"
                         onChange={handleNameChange} 
                         defaultValue={ blog.title || '' }
@@ -66,7 +66,7 @@ const UpdateBlog = () => {
                         type="text"
                         sx={{}}
                         {...register("info")}
-                    /> */}
+                    />
                     <InputTextField
                             sx={{bgcolor: "white", my:2}}
                             label="Name" 
@@ -81,7 +81,7 @@ const UpdateBlog = () => {
                 <Grid item xs={ 12 } md={6}>
                     <InputTextField
                         label="Blog Info"
-                        // onChange={handleEmailChange} 
+                        onChange={handleEmailChange} 
                         value={blog.info || ''}
                         fullWidth 
                         type="text"
