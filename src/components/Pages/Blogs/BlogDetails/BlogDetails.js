@@ -1,7 +1,7 @@
-import { Button, CardMedia, Container, Grid, InputAdornment, Link, Typography, } from '@mui/material';
+import { Button, CardMedia, Container, Grid, InputAdornment, Typography, } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import BlogSideber from '../BlogSideber/BlogSideber';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import Navigation from '../../../Shared/Navigation/Navigation';
@@ -15,7 +15,8 @@ const BlogDetails = () => {
     const [blog, setBlog] = useState({});
 
     useEffect(() => {
-        const url = `https://vast-retreat-08893.herokuapp.com/blogs/${blogId}`
+        // const url = `https://vast-retreat-08893.herokuapp.com/blogs/${blogId}`
+        const url = `http://localhost:5000/blogs/${blogId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setBlog(data))

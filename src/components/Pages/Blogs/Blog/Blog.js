@@ -12,7 +12,7 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 const Blog = ({blog}) => {
 
     const {image1, date, comment, title, info, _id} = blog;
-    console.log(_id);
+    
     return (
         <Card sx={{}}>
             <CardMedia
@@ -27,10 +27,10 @@ const Blog = ({blog}) => {
                     {date}   <span>|</span>  {comment} Comment
                 </Typography>
                 <Typography sx={{fontSize: "1.3rem", py: 2, fontWeight: 600}}>
-                    {title.slice(0,47)}
+                    {title}
                 </Typography>
                 <Typography sx={{fontSize: "16px", }}>
-                    {info.slice(0,100)}
+                    {info}
                 </Typography>
             </CardContent>
             <CardActions sx={{mb: 1}}>

@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import React from "react";
-import TourPackages from "../../Shared/TourPackages/TourPackages";
 import About from "../About/About";
 import Banner from "../Banner/Banner";
 import BestService from "../BestService/BestService";
@@ -10,6 +9,7 @@ import PersonalFlight from "../PersonalFlight/PersonalFlight";
 import Navigation from "../../Shared/Navigation/Navigation";
 import Footer from "../../Shared/Footer/Footer";
 import UserCourse from "../../Dashboard/User/UserCourse/UserCourse";
+import TourPackages from "../../Shared/TourPackages/TourPackages/TourPackages";
 
 
 
@@ -25,7 +25,6 @@ const Home = () => {
       <About />
       <ServiceCards />
       <TourPackages />
-
       <PersonalFlight />
       <Testimonials />
       <Footer />
