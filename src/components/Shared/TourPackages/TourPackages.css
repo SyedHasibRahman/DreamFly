@@ -87,3 +87,9 @@
     background-image: none;
   }
 }
+/* ===========tourdetails */
+.tourdetails input{
+  width: 100%;
+  margin-bottom: 15px;
+
+}

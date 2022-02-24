@@ -20,6 +20,9 @@ import UserOrder from "./components/Dashboard/User/UserOrder/UserOrder";
 import UserProfile from "./components/Dashboard/User/UserProfile/UserProfile";
 import ManageUsers from "./components/Dashboard/Admin/AdminPanel/ManageUsers/ManageUsers/ManageUsers";
 import AddBlog from "./components/Dashboard/Admin/AddBlog/AddBlog";
+import Payment from "./components/Dashboard/Payment/Payment";
+import TourPackages from "./components/Shared/TourPackages/TourPackages";
+import TourDetails from "./components/Shared/TourPackages/TourDetails/TourDetails";
 
 function App() {
   return (
@@ -37,6 +40,9 @@ function App() {
           <Route path="/blogs/:blogId" element={ <BlogDetails /> } />
           <Route path="/OurCoursesDetails" element={ <OurCoursesDetails /> } />
           <Route path="/OurCourses" element={ <OurCourses /> } />
+          <Route path="/TourPackages" element={ <TourPackages /> } />
+          <Route path="/TourPackages/:TourId" element={ <TourDetails /> } />
+          {/* <Route path="/payment/" element={ <Payment /> } /> */ }
           <Route path="SignIn" element={ <SignInSide /> } />
           <Route path="SignUp" element={ <SignUp /> } />
           <Route
@@ -44,6 +50,7 @@ function App() {
             element={
               <PrivateRoute>
                 <AdminPanel />
+
               </PrivateRoute>
             }
           >
@@ -51,6 +58,8 @@ function App() {
             <Route path="UserOrder" element={ <UserOrder /> } />
             <Route path="UserProfile" element={ <UserProfile /> } />
             <Route path="ManageUsers" element={ <ManageUsers /> } />
+            {/* <Route path="payment/" element={ <Payment /> } /> */ }
+            <Route path="payment/:bookedId" element={ <Payment /> } />
           </Route>
           <Route path="*" element={ <NotFound /> } />
         </Routes>
