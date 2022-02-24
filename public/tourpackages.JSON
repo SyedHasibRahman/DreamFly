@@ -1,0 +1,34 @@
+[
+  {
+    "id": "01",
+    "title": "Discover Island the Goods",
+    "date": "Sunday, Sep 3, 2021",
+    "person": "4 Adults",
+    "images": "https://i.ibb.co/GkvbQzR/package-9.png",
+    "price": "110.00" 
+  },
+  {
+    "id": 2,
+      "title": "City of the Goods",
+      "date": "Friday, Dec 7, 2021",
+      "person": "3 Adults",
+      "images": "https://i.ibb.co/cwkGQ3Q/package-10.png",
+      "price": "150.00" 
+  },
+  {
+    "id": "3",
+    "title": "Island of the Goods",
+    "date": "Thursday, Nov 4, 2021",
+    "person": "2 Adults",
+    "images": "https://i.ibb.co/55B14WS/package-11.png",
+    "price": "400.00" 
+  },
+  {
+    "id": "4",
+    "title": "Island of the Goods",
+    "date": "Thursday, Nov 4, 2021",
+    "person": "2 Adults",
+    "images": "https://i.ibb.co/GkvbQzR/package-9.png",
+    "price": "130.00" 
+  }
+]
