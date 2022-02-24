@@ -15,9 +15,8 @@ const PersonalFlight = () => {
             .then(data => setFlights(data))
     }, []);
 
-    const from = Array.from(flights.reduce((map, obj) => map.set(obj.from, obj),new Map()).values());
-
-    const to = Array.from(flights.reduce((map, obj) => map.set(obj.to, obj),new Map()).values());
+    
+    
 
   const handleFrom = e => {
     
@@ -74,7 +73,7 @@ const PersonalFlight = () => {
               </Box>
               <select className="selector">
                 {
-                  from.map((flight) => {
+                  flights.map((flight) => {
                     const {from} = flight;
                     return (
                     <option onClick={handleFrom} key={flight._id} value={from}>{from}</option>
@@ -88,7 +87,7 @@ const PersonalFlight = () => {
               <Box className="label">To</Box>
               <select className="selector">
                 {
-                  to.map((flight) => {
+                  flights.map((flight) => {
                     const {to} = flight;
                     return (
                     <option  key={flight._id} value={to}>{to}</option>

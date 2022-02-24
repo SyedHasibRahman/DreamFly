@@ -5,7 +5,7 @@ import Banner from "../Banner/Banner";
 import BestService from "../BestService/BestService";
 import ServiceCards from "../ServiceCard/ServiceCards/ServiceCards";
 import Testimonials from "../Testimonial/Testimonials/Testimonials";
-import PersonalFlight from "../PersonalFlight/PersonalFlight";
+
 import Navigation from "../../Shared/Navigation/Navigation";
 import Footer from "../../Shared/Footer/Footer";
 import UserCourse from "../../Dashboard/User/UserCourse/UserCourse";
@@ -15,6 +15,7 @@ import MakeAdmin from "../../Dashboard/Admin/MakeAdmin/MakeAdmin";
 import ManagePackage from "../../Dashboard/Admin/ManagePackage/ManagePackage";
 import ManageOrders from "../../Dashboard/Admin/ManageOrder/ManageOrders";
 import ManageFlight from "../../Dashboard/Admin/ManageFlight/ManageFlight";
+import PersonalFlight from "../PersonalFlight/PersonalFlight/PersonalFlight";
 
 
 

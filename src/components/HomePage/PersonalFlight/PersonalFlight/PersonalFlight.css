@@ -1,5 +1,5 @@
 .personal_flight_Container{
-  background: url("../../../img/bg-3.png"), linear-gradient(180deg, #512DA8, #F5F5F5) !important;
+  background: url("../../../../img/bg-3.png"), linear-gradient(180deg, #512DA8, #F5F5F5) !important;
   background-blend-mode: overlay;
   background-size: cover !important;
   background-position: center !important;

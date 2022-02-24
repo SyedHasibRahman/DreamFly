@@ -23,12 +23,12 @@ const Navigation = () => {
   const pages = [
     "Home",
     "Services",
-    "AboutUs",
-    "OurPilots",
-    "ContactUs",
+    "About",
+    "Pilots",
+    "Contact",
     "Blogs",
-    "OurCourses",
-    "OurCoursesDetails",
+    "Courses",
+    "CoursesDetails",
   ];
   const settings = ["Profile", "Account", "Dashboard"];
   const [anchorElNav, setAnchorElNav] = React.useState(null);
