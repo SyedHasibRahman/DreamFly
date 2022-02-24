@@ -10,7 +10,8 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-
+    console.log(user);
+    const uid = user.uid;
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
     const registerUser = (email, password, name, navigate) => {
@@ -20,10 +21,11 @@ const useFirebase = () => {
                 // Signed in 
                 setAuthError('');
                 const newUser = { email, displayName: name }
+                const photoURL = user.photoURL;
                 setUser(newUser);
 
                 // save user to the Database 
-                saveUser(email, name, 'POST');
+                saveUser(email, name, photoURL, uid, 'POST');
 
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
@@ -34,7 +36,7 @@ const useFirebase = () => {
                 navigate(-2);
             })
             .catch((error) => {
-                const errorCode = error.code;
+                // const errorCode = error.code;
                 const errorMessage = error.message;
                 setAuthError(errorMessage);
             })
@@ -49,7 +51,7 @@ const useFirebase = () => {
                 navigate(destination);
                 // Signed in 
                 setAuthError('');
-                const user = userCredential.user;
+                // const user = userCredential.user;
                 // ...
             })
             .catch((error) => {
@@ -65,9 +67,9 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
-
+                const photoURL = user.photoURL;
                 // save user to the Database 
-                saveUser(user.email, user.displayName, 'PUT');
+                saveUser(user.email, user.displayName, photoURL, uid, 'PUT');
                 const destination = location?.state?.from || '/';
                 navigate(destination);
                 setAuthError('');
@@ -98,9 +100,18 @@ const useFirebase = () => {
         })
             .finally(() => setIsLoading(false));
     }
-
-    const saveUser = (email, displayName, method) => {
-        const user = { email, displayName };
+    // const handleDeleteUser = (uid) => {
+    //     // const uid = user.uid;
+    //     auth.deleteUser(uid)
+    //         .then(() => {
+    //             console.log('Successfully deleted user');
+    //         })
+    //         .catch((error) => {
+    //             console.log('Error deleting user:', error);
+    //         });
+    // }
+    const saveUser = (email, displayName, photoURL, uid, method) => {
+        const user = { email, displayName, photoURL, uid };
         fetch('http://localhost:5000/users', {
             method: method,
             headers: {
@@ -117,7 +128,8 @@ const useFirebase = () => {
         logInUser,
         isLoading,
         authError,
-        signInWithGoogle
+        signInWithGoogle,
+        // handleDeleteUser
     }
 
 }

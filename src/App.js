@@ -19,9 +19,12 @@ import AdminPanel from "./components/Dashboard/Admin/AdminPanel/AdminPanel";
 import UserOrder from "./components/Dashboard/User/UserOrder/UserOrder";
 import UserProfile from "./components/Dashboard/User/UserProfile/UserProfile";
 import ManageUsers from "./components/Dashboard/Admin/AdminPanel/ManageUsers/ManageUsers/ManageUsers";
-import AddBlog from "./components/Dashboard/Admin/Blog/AddBlog/AddBlog";
+import Payment from "./components/Dashboard/Payment/Payment";
+import TourDetails from "./components/Shared/TourPackages/TourDetails/TourDetails";
 import DeleteBlog from "./components/Dashboard/Admin/Blog/DeleteBlog/DeleteBlog";
 import UpdateBlog from "./components/Dashboard/Admin/Blog/UpdateBlog/UpdateBlog";
+import AddBlog from "./components/Dashboard/Admin/Blog/AddBlog/AddBlog";
+import TourPackages from "./components/Shared/TourPackages/TourPackages/TourPackages";
 
 
 
@@ -41,6 +44,9 @@ function App() {
           <Route path="/blogs/:blogId" element={ <BlogDetails /> } />
           <Route path="/OurCoursesDetails" element={ <OurCoursesDetails /> } />
           <Route path="/OurCourses" element={ <OurCourses /> } />
+          <Route path="/TourPackages" element={ <TourPackages /> } />
+          <Route path="/TourPackages/:TourId" element={ <TourDetails /> } />
+          {/* <Route path="/payment/" element={ <Payment /> } /> */ }
           <Route path="SignIn" element={ <SignInSide /> } />
           <Route path="SignUp" element={ <SignUp /> } />
           <Route
@@ -48,15 +54,18 @@ function App() {
             element={
               <PrivateRoute>
                 <AdminPanel />
+
               </PrivateRoute>
             }
           >
-            <Route path="AddBlog" element={<AddBlog />} />
-            <Route path="UpdateBlog/:id" element={<UpdateBlog />} />
-            <Route path="DeleteBlog" element={<DeleteBlog />} />
-            <Route path="UserOrder" element={<UserOrder />} />
-            <Route path="UserProfile" element={<UserProfile />} />
-            <Route path="ManageUsers" element={<ManageUsers />} />
+            <Route path="AddBlog" element={ <AddBlog /> } />
+            <Route path="UserOrder" element={ <UserOrder /> } />
+            <Route path="UserProfile" element={ <UserProfile /> } />
+            <Route path="ManageUsers" element={ <ManageUsers /> } />
+            {/* <Route path="payment/" element={ <Payment /> } /> */ }
+            <Route path="payment/:bookedId" element={ <Payment /> } />
+            <Route path="UpdateBlog/:id" element={ <UpdateBlog /> } />
+            <Route path="DeleteBlog" element={ <DeleteBlog /> } />
           </Route>
           <Route path="*" element={ <NotFound /> } />
         </Routes>

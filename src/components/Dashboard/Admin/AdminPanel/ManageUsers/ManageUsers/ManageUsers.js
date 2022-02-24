@@ -6,20 +6,40 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Button, Container, Typography } from '@mui/material';
+import { Avatar, Button, Container, Typography } from '@mui/material';
 import { Box } from '@mui/system';
+import { DeleteForever } from "@mui/icons-material";
 
 const ManageUsers = () => {
-    const [orders, setOrders] = useState([]);
+    const [users, setUsers] = useState([]);
     useEffect(() => {
-        const url = `/order.JSON`;
+        const url = `http://localhost:5000/users`;
         fetch(url)
             .then(res => res.json())
-            .then(data => setOrders(data));
+            .then(data => setUsers(data));
     }, [])
     const textcolor = {
         'color': 'white',
         'fontWeight': '700'
+    }
+    const handleDelete = id => {
+        const deleteMassege = window.confirm("Delete the User?");
+        if (deleteMassege) {
+            const url = `http://localhost:5000/users/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        const remaining = users.filter(user => user._id !== id);
+                        setUsers(remaining);
+                    }
+
+                })
+        }
+
     }
     return (
         <Container>
@@ -39,20 +59,22 @@ const ManageUsers = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        { orders.map((row) => (
+                        { users.map((user) => (
                             <TableRow
                                 className="tbody"
-                                key={ row.name }
+                                key={ user._id }
                                 sx={ { '&:last-child td, &:last-child th': { border: 0 } } }
                             >
                                 <TableCell component="th" scope="row">
-                                    { row.id }
+                                    { user._id }
                                 </TableCell>
-                                <TableCell align="center">{ row.name }</TableCell>
-                                <TableCell align="center">{ row.name }</TableCell>
-                                <TableCell align="center">{ row.pname }</TableCell>
-                                <TableCell align="center">{ row.price }</TableCell>
-                                <TableCell align="center"><Button>{ row.status }</Button></TableCell>
+                                <TableCell align="center">{ user.displayName }</TableCell>
+                                <TableCell align="center">{ user.email }</TableCell>
+                                <TableCell align="center">
+                                    <Avatar alt="Remy Sharp" src={ user.photoURL } />
+                                </TableCell>
+                                <TableCell align="center">Comming Soon...</TableCell>
+                                <TableCell align="center"><Button onClick={ () => handleDelete(user?._id) }><DeleteForever style={ { color: 'red' } } /></Button></TableCell>
                             </TableRow>
                         )) }
                     </TableBody>

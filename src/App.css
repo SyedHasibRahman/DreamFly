@@ -9,10 +9,10 @@ where bg (#5e35b1) this color, there use btn color : #FF257B
 .a {
   background-blend-mode: overlay;
 }
-*{
+/* *{
     color: #333333;
     font-weight: 400;
-}
+} */
 .a {
   text-decoration: none;
   color: white;
