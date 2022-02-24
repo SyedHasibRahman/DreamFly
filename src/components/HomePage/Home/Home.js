@@ -35,7 +35,6 @@ const Home = () => {
       <About />
       <ServiceCards />
       <TourPackages />
-
       <PersonalFlight />
       <Testimonials />
       <Footer />
