@@ -6,6 +6,11 @@ import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
 import "./PersonalFlight.css";
 import { useEffect } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import {
+  addDateAndPass,
+  addFilterData,
+} from "../../../Redux/Slice/flightSlice";
 
 const PersonalFlight = () => {
   const [flights, setFlights] = useState([]);
@@ -36,6 +41,8 @@ const PersonalFlight = () => {
     // console.log(fillterData);
   };
 
+  const dispatch = useDispatch();
+
   const handleSubmit = () => {
     let from = fromRef.current.value;
     let to = toRef.current.value;
@@ -46,26 +53,18 @@ const PersonalFlight = () => {
     if (from && to) {
       axios
         .post("http://localhost:5000/filter", data)
-        .then((res) => console.log(res.data));
+        .then((res) => dispatch(addFilterData(res.data)));
     }
+    dispatch(
+      addDateAndPass({ date: dateRef.current.value, passanger: counter })
+    );
   };
 
-  // let newData = [...new Set(flights)];
-
-  // const from = flights.filter((item) => item.from === item.from);
-  // console.log(from);
-  // const arr = [
-  //   { id: 1, name: "one" },
-  //   { id: 2, name: "two" },
-  //   { id: 1, name: "one" },
-  // ];
-
+  //remove the duplicate items
   const flightFrom = flights.map((item) => item.from);
   const filterFrom = flights.filter(
     ({ from }, index) => !flightFrom.includes(from, index + 1)
   );
-
-  // console.log(filtered);
 
   const [counter, setCounter] = useState(0);
   const incrementCounter = () => setCounter(counter + 1);
