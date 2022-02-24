@@ -19,10 +19,14 @@ import AdminPanel from "./components/Dashboard/Admin/AdminPanel/AdminPanel";
 import UserOrder from "./components/Dashboard/User/UserOrder/UserOrder";
 import UserProfile from "./components/Dashboard/User/UserProfile/UserProfile";
 import ManageUsers from "./components/Dashboard/Admin/AdminPanel/ManageUsers/ManageUsers/ManageUsers";
-import AddBlog from "./components/Dashboard/Admin/AddBlog/AddBlog";
 import Payment from "./components/Dashboard/Payment/Payment";
-import TourPackages from "./components/Shared/TourPackages/TourPackages";
 import TourDetails from "./components/Shared/TourPackages/TourDetails/TourDetails";
+import DeleteBlog from "./components/Dashboard/Admin/Blog/DeleteBlog/DeleteBlog";
+import UpdateBlog from "./components/Dashboard/Admin/Blog/UpdateBlog/UpdateBlog";
+import AddBlog from "./components/Dashboard/Admin/Blog/AddBlog/AddBlog";
+import TourPackages from "./components/Shared/TourPackages/TourPackages/TourPackages";
+
+
 
 function App() {
   return (
@@ -60,6 +64,8 @@ function App() {
             <Route path="ManageUsers" element={ <ManageUsers /> } />
             {/* <Route path="payment/" element={ <Payment /> } /> */ }
             <Route path="payment/:bookedId" element={ <Payment /> } />
+            <Route path="UpdateBlog/:id" element={ <UpdateBlog /> } />
+            <Route path="DeleteBlog" element={ <DeleteBlog /> } />
           </Route>
           <Route path="*" element={ <NotFound /> } />
         </Routes>

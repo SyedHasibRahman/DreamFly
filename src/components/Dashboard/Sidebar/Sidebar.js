@@ -7,8 +7,8 @@ import Projects from './../../../assets/starred.svg';
 import Documents from './../../../assets/draft.svg';
 import PowerOff from './../../../assets/power-off-solid.svg';
 import styled from "styled-components";
-import { NavLink, Outlet } from 'react-router-dom';
-import { Grid } from '@mui/material';
+import { NavLink} from 'react-router-dom';
+
 
 const Container = styled.div`
   position: fixed;
@@ -230,6 +230,22 @@ const Sidebar = () => {
           >
             <img src={ Team } alt="AddBlog" />
             <Text clicked={ click }>Add Blog</Text>
+          </Item>
+          <Item
+            onClick={ () => setClick(false) }
+            activeClassName="active"
+            to="/Dashboard/DeleteBlog"
+          >
+            <img src={ Team } alt="DeleteBlog" />
+            <Text clicked={ click }>Delete Blog</Text>
+          </Item>
+          <Item
+            onClick={ () => setClick(false) }
+            activeClassName="active"
+            to="/Dashboard/UpdateBlog"
+          >
+            <img src={ Team } alt="UpdateBlog" />
+            <Text clicked={ click }>Update Blog</Text>
           </Item>
           <Item
             onClick={ () => setClick(false) }

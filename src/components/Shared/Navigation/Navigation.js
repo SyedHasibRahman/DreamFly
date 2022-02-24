@@ -54,7 +54,7 @@ const Navigation = () => {
       {/* background: 'linear-gradient(90deg, #93FFD8, #CFFFDC) || #512DA8*/}
       {/* background: 'linear-gradient(90deg, #99FEFF, #94DAFF)' */}
       <AppBar
-        position="static"
+        position="sticky"
         sx={{
           background: "linear-gradient(90deg, #512DA8, #512DA8)",
           py: "10px",

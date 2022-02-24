@@ -4,8 +4,31 @@ import { Box } from "@mui/system";
 import { Container, Typography } from "@mui/material";
 import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
 import "./PersonalFlight.css";
+import { useEffect } from "react";
 
 const PersonalFlight = () => {
+  const [flights, setFlights] = useState([]);
+
+  useEffect(() => {
+        fetch('./flight.JSON')
+            .then(res => res.json())
+            .then(data => setFlights(data))
+    }, []);
+
+    const from = Array.from(flights.reduce((map, obj) => map.set(obj.from, obj),new Map()).values());
+
+    const to = Array.from(flights.reduce((map, obj) => map.set(obj.to, obj),new Map()).values());
+
+  const handleFrom = e => {
+    
+    // if(flight.from == "Dhaka"){
+    //   return(to)
+    // }
+  };
+  
+  // const to = flights.filter(flight => flight.from == 'Dhaka');
+  // console.log(to)
+
   const [counter, setCounter] = useState(0);
   const incrementCounter = () => setCounter(counter + 1);
   let decrementCounter = () => setCounter(counter - 1);
@@ -34,8 +57,8 @@ const PersonalFlight = () => {
           component="div"
           sx={ { textAlign: "center", color: "#fff", paddingTop: "50px" } }
         >
-          <Typography variant="h6">DreamFly Book</Typography>
-          <Typography variant="h4" sx={ { padding: "20px 0" } }>
+          <Typography variant="h6" sx={ {color: "white"} }>DreamFly Book</Typography>
+          <Typography variant="h4" sx={ { padding: "20px 0", color: "white" } }>
             Book A Personal Flight
           </Typography>
         </Box>
@@ -49,18 +72,28 @@ const PersonalFlight = () => {
               <Box for="cars" className="label">
                 From
               </Box>
-              <select name="cars" id="cars" className="selector">
-                <option value="dhaka">Dhaka</option>
-                <option value="london">London</option>
+              <select className="selector">
+                {
+                  from.map((flight) => {
+                    const {from} = flight;
+                    return (
+                    <option onClick={handleFrom} key={flight._id} value={from}>{from}</option>
+                  )
+                })}
               </select>
             </Box>
           </Grid>
           <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 }>
             <Box className="selector_box">
               <Box className="label">To</Box>
-              <select name="cars" id="cars" className="selector">
-                <option value="london">London</option>
-                <option value="dhaka">Dhaka</option>
+              <select className="selector">
+                {
+                  to.map((flight) => {
+                    const {to} = flight;
+                    return (
+                    <option  key={flight._id} value={to}>{to}</option>
+                  )
+                })}
               </select>
             </Box>
           </Grid>
@@ -68,11 +101,15 @@ const PersonalFlight = () => {
             <Box className="selector_box">
               <Box for="cars" className="label">
                 Date
-              </Box>
-              <select name="cars" id="cars" className="selector">
-                <option value="2/10/2022">2/10/2022</option>
-                <option value="2/10/2022">2/29/2022</option>
-              </select>
+              </Box>  
+                <input
+                type="date"
+                required
+                size="small"
+                className="form-control selector"
+                id="exampleDatepicker1"
+                                        
+              />
             </Box>
           </Grid>
           <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 }>
@@ -83,11 +120,11 @@ const PersonalFlight = () => {
               <Box className="selector">
                 <Box className="passenger">
                   <span className="int" onClick={ () => decrementCounter() }>
-                    <i className="fas fa-minus"></i>
+                    <i style={{color: "white"}} className="fas fa-minus"></i>
                   </span>
-                  <span className="number">{ counter }</span>
+                  <span style={{color: "white"}} className="number">{ counter }</span>
                   <span className="dec" onClick={ () => incrementCounter() }>
-                    <i className="fas fa-plus"></i>
+                    <i style={{color: "white"}} className="fas fa-plus"></i>
                   </span>
                 </Box>
               </Box>
