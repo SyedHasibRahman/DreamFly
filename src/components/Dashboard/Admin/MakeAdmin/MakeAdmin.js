@@ -38,7 +38,7 @@ const MakeAdmin = () => {
             <Box className='row  d-flex justify-content-center'>
                 <Box className='col-12 col-md-10 col-lg-9 '>
                     <Box className='box-shadow admin mainDiv p-4 '>
-                        <h3 className='mb-5 heading-main'>Make Admin</h3>
+                        <h3 className='mb-5 heading-main text-light'>Make Admin</h3>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className='col-12 d-md-flex'>
                                 <div className='w-100 '>
@@ -53,7 +53,7 @@ const MakeAdmin = () => {
                                     />
                                 </div>
                             </div>
-                            <button type='submit' className='btn btn-primary'>
+                            <button type='submit' className='btn' style={{ background: '#FF257B' }}>
                                 Submit
                             </button>
                         </form>
@@ -66,7 +66,7 @@ const MakeAdmin = () => {
 
                     {error && (
                         <Alert variant='danger' className='mt-2 py-2'>
-                            Aready Added
+                            Already Added
                         </Alert>
                     )}
                 </Box>

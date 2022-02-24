@@ -1,26 +1,24 @@
 import { styled } from '@mui/system';
 import { Button } from "@mui/material";
 
-
-const PrimaryButton = styled(Button)({
+const SecondaryButton = styled(Button)({
     '&' : {
-        background: '#512da8',
+        background: '#FF257B',
         color: '#FFF',
         fontWeight: '600',
         padding: '3px 30px',
         borderRadius: "50px",
-        border: '2px solid #4527a0',
+        border: '2px solid #FF257B',
         marginTop: '10px',
         textTransform: 'capitalize',
     },
     '&:hover': {
-    borderColor: '#4527a0',
+    borderColor: '#FF257B',
     background: "white",
-    color: '#4527a0',
+    color: '#FF257B',
     transition: ".7s",
     fontWeight: '600',
   }
 });
 
-export default PrimaryButton;
-
+export default SecondaryButton;
