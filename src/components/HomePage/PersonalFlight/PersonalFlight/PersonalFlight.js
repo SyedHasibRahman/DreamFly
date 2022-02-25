@@ -15,18 +15,6 @@ const PersonalFlight = () => {
             .then(data => setFlights(data))
     }, []);
 
-    
-    
-
-  const handleFrom = e => {
-    
-    // if(flight.from == "Dhaka"){
-    //   return(to)
-    // }
-  };
-  
-  // const to = flights.filter(flight => flight.from == 'Dhaka');
-  // console.log(to)
 
   const [counter, setCounter] = useState(0);
   const incrementCounter = () => setCounter(counter + 1);
@@ -76,7 +64,7 @@ const PersonalFlight = () => {
                   flights.map((flight) => {
                     const {from} = flight;
                     return (
-                    <option onClick={handleFrom} key={flight._id} value={from}>{from}</option>
+                    <option key={flight._id} value={from}>{from}</option>
                   )
                 })}
               </select>

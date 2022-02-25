@@ -1,34 +1,31 @@
 import React from 'react';
+import { Container, Box, Typography } from "@mui/material";
 import PersonalFlight from '../PersonalFlight/PersonalFlight';
 
 const SearchFlights = () => {
     return (
         <div>
             <PersonalFlight/>
+            <Container>
+                <Box sx={{bgcolor: "#5e35b1"}}>
+                    <Box>
+                        <Typography> Barisal to Dhaka </Typography>
+                        <Typography> Mon, 28 February 22 </Typography>
+                    </Box>
+                    <Box>
+                        <Typography> AIRLINES </Typography>
+                        <Typography> DEPARTURE </Typography>
+                        <Typography> arrival </Typography>
+                        <Typography> FARE </Typography>
+                    </Box>
+                </Box>
+                <Box>
+                    <img src="https://bdtickets.com/images/airlines/NOVOAIR.png" width="150px" alt="" />
+
+                </Box>
+            </Container>
         </div>
     );
 };
 
 export default SearchFlights;
-
-// https://stackoverflow.com/questions/29108779/how-to-get-selected-value-of-a-dropdown-menu-in-reactjs
-// import React, { useState } from "react";
-
-// export default function App() {
-//   const getInitialState = () => {
-//     const value = "Orange";
-//     return value;
-//   };
-
-//   const [value, setValue] = useState(getInitialState);
-
-//   const handleChange = (e) => {
-//     setValue(e.target.value);
-//   };
-
-//   return (
-//     <div>
-//       <select value={value} onChange={handleChange}>
-//         <option value="Orange">Orange</option>
-//         <option value="Radish">Radish</option>
-//         <option value="Cherry">Cherry</option>
