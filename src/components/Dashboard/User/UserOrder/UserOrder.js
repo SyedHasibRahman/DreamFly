@@ -44,8 +44,8 @@ const UserOrder = () => {
                             <TableCell style={ textcolor } align="center">Name</TableCell>
                             <TableCell style={ textcolor } align="center">Product Name</TableCell>
                             <TableCell style={ textcolor } align="center">Price</TableCell>
-                            <TableCell style={ textcolor } align="center">Payment Status</TableCell>
                             <TableCell style={ textcolor } align="center">Shipment Status</TableCell>
+                            <TableCell style={ textcolor } align="center">Payment Status</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
