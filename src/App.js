@@ -25,6 +25,7 @@ import DeleteBlog from "./components/Dashboard/Admin/Blog/DeleteBlog/DeleteBlog"
 import UpdateBlog from "./components/Dashboard/Admin/Blog/UpdateBlog/UpdateBlog";
 import AddBlog from "./components/Dashboard/Admin/Blog/AddBlog/AddBlog";
 import TourPackages from "./components/Shared/TourPackages/TourPackages/TourPackages";
+import SearchFlights from "./components/HomePage/PersonalFlight/SearchFlights/SearchFlights";
 
 
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="Services" element={ <Services /> } />
           <Route path="aboutus" element={ <AboutUs /> } />
           <Route path="OurPilots" element={ <OurPilots /> } />
+          <Route path="SearchFlight" element={ <SearchFlights /> } />
           <Route path="ContactUs" element={ <ContactUs /> } />
           <Route path="Blogs" element={ <Blogs /> } />
           <Route path="/blogs/:blogId" element={ <BlogDetails /> } />

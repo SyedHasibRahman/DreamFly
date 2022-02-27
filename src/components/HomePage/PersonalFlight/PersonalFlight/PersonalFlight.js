@@ -10,7 +10,8 @@ import { useDispatch } from "react-redux";
 import {
   addDateAndPass,
   addFilterData,
-} from "../../../Redux/Slice/flightSlice";
+} from "../../../../Redux/Slice/flightSlice";
+import { Link } from "react-router-dom";
 
 const PersonalFlight = () => {
   const [flights, setFlights] = useState([]);
@@ -30,8 +31,7 @@ const PersonalFlight = () => {
     console.log(e);
     const fillterData = flights.filter((item) => {
       if (item.from === e) {
-        return item.to;
-      }
+      return item.to}
     });
     const flightTo = fillterData.map((item) => item.to);
     const filterTo = fillterData.filter(
@@ -40,6 +40,8 @@ const PersonalFlight = () => {
     setTo(filterTo);
     // console.log(fillterData);
   };
+
+  
 
   const dispatch = useDispatch();
 
@@ -116,11 +118,11 @@ const PersonalFlight = () => {
                 ref={fromRef}
                 onChange={() => handleFrom()}
               >
-                <option value="">From</option>
+                <option style={{color: "black"}} value="">From</option>
                 {filterFrom.map((flight) => {
                   const { from } = flight;
                   return (
-                    <option key={flight._id} value={from}>
+                    <option style={{color: "black"}} required key={flight._id} value={from}>
                       {from}
                     </option>
                   );
@@ -132,11 +134,11 @@ const PersonalFlight = () => {
             <Box className="selector_box">
               <Box className="label">To</Box>
               <select className="selector" ref={toRef}>
-                <option value="">To</option>
+                <option style={{color: "black"}} value="">To</option>
                 {to.map((flight) => {
                   const { to } = flight;
                   return (
-                    <option key={flight._id} value={to}>
+                    <option style={{color: "black"}} required key={flight._id} value={to}>
                       {to}
                     </option>
                   );
@@ -184,7 +186,7 @@ const PersonalFlight = () => {
               <span className="arrow_plan">
                 <AirplanemodeActiveIcon />
               </span>
-              Book Now
+              <Link to='/SearchFlight'>Search Now</Link>
             </button>
           </Box>
         </Grid>
