@@ -8,7 +8,7 @@ const ManagePackage = () => {
     const { register, handleSubmit, reset } = useForm();
     const [success, setSuccess] = useState();
     const onSubmit = (data) => {
-        fetch('https://intense-plateau-36885.herokuapp.com/products', {
+        fetch('http://localhost:5000/tourPackages', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -42,7 +42,7 @@ const ManagePackage = () => {
                                     <input
                                         required
                                         placeholder='Package Name'
-                                        {...register('name')}
+                                        {...register('title')}
                                     />
                                 </div>
 
@@ -62,7 +62,7 @@ const ManagePackage = () => {
                                     <label htmlFor='image' className='mb-2'>
                                         Image
                                     </label>
-                                    <input required placeholder='Image Url' {...register('img')} />
+                                    <input required placeholder='Image Url' {...register('images')} />
                                 </div>
                                 <div className='w-100 '></div>
                                 <div className='w-100 '>
@@ -72,7 +72,17 @@ const ManagePackage = () => {
                                     <input
                                         required
                                         placeholder='Persion'
-                                        {...register('stock')}
+                                        {...register('person')}
+                                    />
+                                </div>
+                                <div className='w-100 '>
+                                    <label htmlFor='image' className='mb-2'>
+                                        Category
+                                    </label>
+                                    <input
+                                        required
+                                        placeholder='Category'
+                                        {...register('category')}
                                     />
                                 </div>
                                 <div class="w-100 form-outline datepicker">
@@ -81,6 +91,7 @@ const ManagePackage = () => {
                                         type="date"
                                         class="form-control"
                                         id="exampleDatepicker1"
+                                        {...register('date')}
                                     />
                                 </div>
                                 <div className='w-100 '>
@@ -94,6 +105,7 @@ const ManagePackage = () => {
                                         {...register('description', { required: true })}
                                     />
                                 </div>
+
                             </div>
                             <button
                                 type='submit'

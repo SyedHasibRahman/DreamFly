@@ -12,7 +12,7 @@ const MakeAdmin = () => {
     const onSubmit = (data) => {
         const email = data.email;
         const user = { email };
-        fetch('https://intense-plateau-36885.herokuapp.com/users', {
+        fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -21,6 +21,7 @@ const MakeAdmin = () => {
         })
             .then((res) => res.json())
             .then((data) => {
+                console.log(data);
                 if (data.modifiedCount) {
                     setSuccess(true);
                     setError(false);
@@ -39,7 +40,7 @@ const MakeAdmin = () => {
                 <Box className='col-12 col-md-10 col-lg-9 '>
                     <Box className='box-shadow admin mainDiv p-4 '>
                         <h3 className='mb-5 heading-main text-light'>Make Admin</h3>
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <form onSubmit={ handleSubmit(onSubmit) }>
                             <div className='col-12 d-md-flex'>
                                 <div className='w-100 '>
                                     <label htmlFor='name' className='mb-2'>
@@ -49,26 +50,26 @@ const MakeAdmin = () => {
                                         required
                                         type='email'
                                         placeholder='Example@gmail.com'
-                                        {...register('email')}
+                                        { ...register('email') }
                                     />
                                 </div>
                             </div>
-                            <button type='submit' className='btn' style={{ background: '#FF257B' }}>
+                            <button type='submit' className='btn' style={ { background: '#FF257B' } }>
                                 Submit
                             </button>
                         </form>
                     </Box>
-                    {success && (
+                    { success && (
                         <Alert variant='success' className='mt-2 py-2'>
                             Admin added successfully
                         </Alert>
-                    )}
+                    ) }
 
-                    {error && (
+                    { error && (
                         <Alert variant='danger' className='mt-2 py-2'>
                             Already Added
                         </Alert>
-                    )}
+                    ) }
                 </Box>
             </Box>
         </Container>
