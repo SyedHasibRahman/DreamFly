@@ -23,12 +23,12 @@ const Home = () => {
     <Box>
       <Navigation />
       <Banner />
-      {/* <Booking></Booking> */ }
-      {/* <UserCourse></UserCourse> */ }
-      {/* <CouserDetails></CouserDetails> */ }
-      {/* <MakeAdmin></MakeAdmin> */ }
-      {/* <ManagePackage></ManagePackage> */ }
-      {/* <ManageOrders></ManageOrders> */ }
+      {/* <Booking></Booking> */}
+      {/* <UserCourse></UserCourse> */}
+      {/* <CouserDetails></CouserDetails> */}
+      {/* <MakeAdmin></MakeAdmin> */}
+      {/* <ManagePackage></ManagePackage> */}
+      {/* <ManageOrders></ManageOrders> */}
       <BestService />
       <About />
       <ServiceCards />
