@@ -1,4 +1,4 @@
-import { Container } from '@mui/material';
+import { Container, MenuItem, Select } from '@mui/material';
 import React, { useState } from 'react';
 import { Alert } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
@@ -79,11 +79,23 @@ const ManagePackage = () => {
                                     <label htmlFor='image' className='mb-2'>
                                         Category
                                     </label>
-                                    <input
+                                    {/* <input
                                         required
                                         placeholder='Category'
                                         {...register('category')}
-                                    />
+                                    /> */}
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+
+                                        label="Age"
+                                        {...register('category')}
+                                    >
+                                        <MenuItem value={'General'}>General</MenuItem>
+                                        <MenuItem value={'Packages'}>Packages</MenuItem>
+                                        <MenuItem value={'Services'}>Services</MenuItem>
+
+                                    </Select>
                                 </div>
                                 <div class="w-100 form-outline datepicker">
                                     <label for="exampleDatepicker1" class="form-label">Select a date</label>
@@ -94,7 +106,12 @@ const ManagePackage = () => {
                                         {...register('date')}
                                     />
                                 </div>
-                                <div className='w-100 '>
+
+                                {/* .....................
+                                In the fure implement this 
+                                ......................*/}
+
+                                {/* <div className='w-100 '>
                                     <label htmlFor='description' className='mb-2'>
                                         Description
                                     </label>
@@ -104,7 +121,7 @@ const ManagePackage = () => {
                                         placeholder='Short description'
                                         {...register('description', { required: true })}
                                     />
-                                </div>
+                                </div> */}
 
                             </div>
                             <button
