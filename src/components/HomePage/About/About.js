@@ -27,7 +27,7 @@ const About = () => {
             } }>
                 <img style={ {
                     animation: 'scroll-down 2s cubic-bezier(0.4, 0, 1, 1) infinite',
-                } } src="https://themeim.com/demo/flynext/assets/images/element/element-8.png" alt="" />
+                } } src="https://i.ibb.co/rfNppjH/element-8.png" alt="" />
             </Grid>
             <Container>
                 <Grid container spacing={ 2 } sx={ {
