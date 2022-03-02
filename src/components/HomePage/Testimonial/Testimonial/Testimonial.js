@@ -21,7 +21,7 @@ const Testimonial = () => {
                     <Grid item xs={ 12 } sm={ 12 } md={ 4 } lg={ 4 } sx={ {
                         padding: '15px',
                     } }>
-                        < FormatQuoteIcon sx={ { fontSize: '5rem', color: '#4527a0' } } />
+                        < FormatQuoteIcon sx={{ fontSize: '5rem', color: '#4527a0 !important' }}/>
                     </Grid>
                     <Grid item xs={ 12 } sm={ 12 } md={ 8 } lg={ 8 } sx={ { width: '100%' } }>
                         <img style={ { float: "right", marginTop: '-70px' } } src="https://themeim.com/demo/flynext/assets/images/client/client-4.png" alt="" />
@@ -47,7 +47,7 @@ const Testimonial = () => {
                             <Box sx={ {
                             } }>
                                 { Array.from(Array(5)).map((_, index) => (
-                                    <StarIcon key={ index } sx={ { fontSize: '1.5rem', color: 'goldenrod' } } />
+                                    <StarIcon key={ index } sx={ { fontSize: '1.5rem', color: '#4527a0 !important' } } />
                                 )) }
                             </Box>
                         </Grid>
