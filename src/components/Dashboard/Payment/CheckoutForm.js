@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import useAuth from '../../../hooks/useAuth';
 import { CircularProgress } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const CheckoutForm = ({ booked }) => {
     const [error, setError] = useState('');
@@ -12,6 +13,8 @@ const CheckoutForm = ({ booked }) => {
     const { user } = useAuth()
     const [process, setProcess] = useState(false)
     const [clientSecret, setClientSecret] = useState('');
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:5000/create-payment-intent', {
@@ -123,7 +126,13 @@ const CheckoutForm = ({ booked }) => {
                 error && <p style={ { color: 'red' } }>{ error }</p>
             }
             {
-                success && <p style={ { color: 'green' } }>{ success }</p>
+                success &&
+                <>
+                    <p style={ { color: 'green' } }>{ success }</p>
+                    {
+                        navigate('/Dashboard/UserOrder')
+                    }
+                </>
             }
         </div>
     );

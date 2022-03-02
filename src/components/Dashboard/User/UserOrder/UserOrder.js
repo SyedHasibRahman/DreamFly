@@ -46,6 +46,7 @@ const UserOrder = () => {
                             <TableCell style={ textcolor } align="center">Price</TableCell>
                             <TableCell style={ textcolor } align="center">Shipment Status</TableCell>
                             <TableCell style={ textcolor } align="center">Payment Status</TableCell>
+                            <TableCell style={ textcolor } align="center">Invoise</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -62,9 +63,14 @@ const UserOrder = () => {
                                 <TableCell align="center">{ row.name }</TableCell>
                                 <TableCell align="center">{ row.price }</TableCell>
                                 <TableCell align="center"><Button>{ row.status }</Button></TableCell>
-                                <TableCell align="center"><Button>{ row.payment ? 'Paid' :
-                                    <Link to={ `/dashboard/payment/${row._id}` }><Button>Pay</Button></Link>
-                                }</Button></TableCell>
+                                <TableCell align="center"><Button>{ row.status }</Button></TableCell>
+                                <TableCell align="center"><Button>
+                                    { row.payment ?
+                                        <Link to={ `/dashboard/invoice/${row._id}` }><Button>Invoice</Button></Link>
+                                        :
+                                        <Link to={ `/dashboard/payment/${row._id}` }><Button>Pay</Button>
+                                        </Link>
+                                    }</Button></TableCell>
                             </TableRow>
                         )) }
                     </TableBody>
