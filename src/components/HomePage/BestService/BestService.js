@@ -2,15 +2,27 @@ import { Box, Container, Typography, Button } from "@mui/material";
 import overview1 from "../../../img/overview-1.png";
 import overview2 from "../../../img/overview-2.png";
 import "./BestService.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 
 const BestService = () => {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 800,
+      easing: 'ease-in-sine',
+      delay: 200,
+
+    });
+  })
 
   return (
     <Box component="div" className="bestService" sx={{ py: 10 }}>
       <Container>
         <Box className="jatService">
-          <Box component="div" className="card" >
+          <Box component="div" className="card" data-aos='zoom-in-right'>
             <Box className="card_img">
               <img src={overview2} alt="" />
             </Box>
@@ -32,7 +44,7 @@ const BestService = () => {
               <Typography variant="h6">04 Air Ambulance</Typography>
             </Box>
           </Box>
-          <Box component="div" className="card" xs={12} sm={12} md={7} lg={7} >
+          <Box component="div" className="card" xs={12} sm={12} md={7} lg={7} data-aos='zoom-in-left'>
             <Box className="card_img">
               <img src={overview1} alt="" />
             </Box>

@@ -11,8 +11,20 @@ import {
   addDateAndPass,
   addFilterData,
 } from "../../../Redux/Slice/flightSlice";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+
 
 const PersonalFlight = () => {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 400,
+      easing: 'ease-in-sine',
+      delay: 100,
+
+    });
+  })
   const [flights, setFlights] = useState([]);
   const [to, setTo] = useState([]);
   const fromRef = useRef();
@@ -79,6 +91,7 @@ const PersonalFlight = () => {
         flexGrow: 1,
         py: 10,
       }}
+      data-aos='fade-down'
     >
       <Container
         className="personal_flight"
@@ -106,7 +119,7 @@ const PersonalFlight = () => {
           spacing={{ xs: 2, md: 3, lg: 3 }}
           className="flight_box"
         >
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={12} sm={12} md={6} lg={3} data-aos='zoom-in'>
             <Box className="selector_box">
               <Box for="cars" className="label">
                 From
@@ -128,7 +141,7 @@ const PersonalFlight = () => {
               </select>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={12} sm={12} md={6} lg={3} data-aos='zoom-in'>
             <Box className="selector_box">
               <Box className="label">To</Box>
               <select className="selector" ref={toRef}>
@@ -144,7 +157,7 @@ const PersonalFlight = () => {
               </select>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={12} sm={12} md={6} lg={3} data-aos='zoom-in'>
             <Box className="selector_box">
               <Box for="cars" className="label">
                 Date
@@ -159,7 +172,7 @@ const PersonalFlight = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={12} sm={12} md={6} lg={3} data-aos='zoom-in'>
             <Box className="selector_box">
               <Box for="cars" className="label">
                 Passenger
