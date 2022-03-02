@@ -6,7 +6,7 @@ import './CustomizePackages.css'
 const CustomizePackages = () => {
     const [packages, setPackages] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/tourPackages')
+        fetch('https://salty-beach-45243.herokuapp.com/tourPackages')
             .then(res => res.json())
             .then(data => setPackages(data));
     }, [])
@@ -16,10 +16,10 @@ const CustomizePackages = () => {
             <div className='servicesm'>
                 {
                     packages.map(packags => <CustomizePackage
-                        key={packags._id}
-                        packags={packags}
-                        setPackages={setPackages}
-                        packages={packages}
+                        key={ packags._id }
+                        packags={ packags }
+                        setPackages={ setPackages }
+                        packages={ packages }
 
                     ></CustomizePackage>)
                 }

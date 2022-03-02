@@ -26,7 +26,7 @@ const DeleteBlog = () => {
 
         if (window.confirm('Are you sure, you want to delete?')) {
 
-            axios.delete(`http://localhost:5000/blogs/${id}`, id)
+            axios.delete(`https://salty-beach-45243.herokuapp.com/blogs/${id}`, id)
                 .then(res => {
                     alert('deleted successfully')
                 })

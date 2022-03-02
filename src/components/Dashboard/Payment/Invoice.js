@@ -7,7 +7,7 @@ const Invoice = () => {
     const { bookedId } = useParams();
     const [item, setBooked] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/myorders/${bookedId}`)
+        fetch(`https://salty-beach-45243.herokuapp.com/myorders/${bookedId}`)
             .then(res => res.json())
             .then(data => setBooked(data));
 

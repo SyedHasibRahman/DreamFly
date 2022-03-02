@@ -36,7 +36,7 @@ const TourPackages = () => {
   const sliderRef = useRef(null);
   const [packages, setPackages] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/tourPackages')
+    fetch('https://salty-beach-45243.herokuapp.com/tourPackages')
       .then(res => res.json())
       .then(data => setPackages(data))
   }, []);
@@ -72,57 +72,57 @@ const TourPackages = () => {
     <>
       <Box className="tour_packages" data-aos='zoom-in-down'>
         <Container>
-          <Box data-aos='zoom-in' style={ { } }>
-            <Box data-aos='zoom-in-up' style={ { textAlign: 'center'} }>
-              <Typography 
-                gutterBottom 
-                sx={{fontSize: "20px", color: 'white', fontWeight: 700}}
-                >
+          <Box data-aos='zoom-in' style={ {} }>
+            <Box data-aos='zoom-in-up' style={ { textAlign: 'center' } }>
+              <Typography
+                gutterBottom
+                sx={ { fontSize: "20px", color: 'white', fontWeight: 700 } }
+              >
                 Discover DreamFly Packages
               </Typography>
-              <Typography 
-                gutterBottom 
+              <Typography
+                gutterBottom
                 variant="h2"
-                sx={{color: 'white', mb: "50px"}}>
+                sx={ { color: 'white', mb: "50px" } }>
                 DreamFly Tour Packages
               </Typography>
             </Box>
             <Slider
-              {...settings}
-              ref={sliderRef}
-              slidesToShow={3}
-              slidesToScroll={1}
-              customPaging={(i) => (
+              { ...settings }
+              ref={ sliderRef }
+              slidesToShow={ 3 }
+              slidesToScroll={ 1 }
+              customPaging={ (i) => (
                 <div
-                  style={{
+                  style={ {
                     position: "absolute",
                     width: "100%",
                     top: "-10px",
                     opacity: 0,
-                  }}
+                  } }
                 >
-                  {i}
+                  { i }
                 </div>
-              )}
+              ) }
             >
-              {packages.map((item) => (
-                <Box style={{}} key={item._id} data-aos='zoom-in-up'>
+              { packages.map((item) => (
+                <Box style={ {} } key={ item._id } data-aos='zoom-in-up'>
                   <Card
-                    sx={{
+                    sx={ {
                       maxWidth: "100%",
                       margin: "10px",
                       position: "relative",
-                    }}
+                    } }
                   >
                     <CardActionArea>
                       <Box className="tour_img">
                         <CardMedia
                           component="img"
-                          image={item?.images}
+                          image={ item?.images }
                           alt="green iguana"
                         />
                         <Typography className="tour_price">
-                          ${item?.price}
+                          ${ item?.price }
                         </Typography>
                       </Box>
                       <CardContent>
@@ -130,35 +130,35 @@ const TourPackages = () => {
                           gutterBottom
                           variant="h5"
                           component="div"
-                          sx={{ fontWeight: 600, fontSize: "1.4rem" }}
+                          sx={ { fontWeight: 600, fontSize: "1.4rem" } }
                         >
-                          {item?.title}
+                          { item?.title }
                         </Typography>
                         <Typography
-                          sx={{ color: "#111", fontWeight: 500, py: 1 }}
+                          sx={ { color: "#111", fontWeight: 500, py: 1 } }
                         >
-                          Date: {item?.date}
+                          Date: { item?.date }
                         </Typography>
-                        <Typography sx={{ color: "#111", fontWeight: 500 }}>
-                          Person: {item?.person}
+                        <Typography sx={ { color: "#111", fontWeight: 500 } }>
+                          Person: { item?.person }
                         </Typography>
                       </CardContent>
                       <CardActions
-                        sx={{ display: "flex", justifyContent: "space-between" }}
+                        sx={ { display: "flex", justifyContent: "space-between" } }
                       >
                         <Box>
                           <span className="airplane">
                             <AirplanemodeActiveIcon />
                           </span>
-                          <a style={{ textDecoration: "none" }}
-                            href={`/TourPackages/${item._id}`}
+                          <a style={ { textDecoration: "none" } }
+                            href={ `/TourPackages/${item._id}` }
                           >
-                            <Box sx={{ display: "flex", fontSize: "25px", textAlign: "center", ml: 1 }}>
-                              <Typography sx={{ color: '#5e35b1', fontWeight: 600, textTransform: 'capitalize', }}>
+                            <Box sx={ { display: "flex", fontSize: "25px", textAlign: "center", ml: 1 } }>
+                              <Typography sx={ { color: '#5e35b1', fontWeight: 600, textTransform: 'capitalize', } }>
                                 Book Now
                               </Typography>
-                              <Typography sx={{ color: '#5e35b1', fontWeight: 600, ml: 1 }}>
-                                {/* <ArrowRightAltIcon/> */}
+                              <Typography sx={ { color: '#5e35b1', fontWeight: 600, ml: 1 } }>
+                                {/* <ArrowRightAltIcon/> */ }
                               </Typography>
                             </Box>
                           </a>
@@ -170,33 +170,33 @@ const TourPackages = () => {
                     </CardActionArea>
                   </Card>
                 </Box>
-              ))}
+              )) }
             </Slider>
           </Box>
           <Box
-            style={{
+            style={ {
               display: "flex",
               justifyContent: "space-between",
               padding: "0 10px",
-            }}
+            } }
           >
             <Box
-              style={{
+              style={ {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 width: "100%",
-              }}
+              } }
             >
               <Box
                 className="arrow_buttons left"
-                onClick={() => sliderRef.current.slickPrev()}
+                onClick={ () => sliderRef.current.slickPrev() }
               >
                 <ArrowBackIosNewIcon />
               </Box>
               <Box
                 className="arrow_buttons"
-                onClick={() => sliderRef.current.slickNext()}
+                onClick={ () => sliderRef.current.slickNext() }
               >
                 <ArrowForwardIosIcon />
               </Box>
