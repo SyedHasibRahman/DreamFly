@@ -11,16 +11,17 @@ const Testimonial = () => {
         } }>
 
             <Container>
-
-                <Grid item container sx={ {
+                <Grid item container 
+                    sx={{
                     boxShadow: `rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset`,
                     padding: '15px',
                     borderRadius: '5px'
-                } }>
+                    }}
+                    >
                     <Grid item xs={ 12 } sm={ 12 } md={ 4 } lg={ 4 } sx={ {
                         padding: '15px',
                     } }>
-                        < FormatQuoteIcon sx={ { fontSize: '5rem', color: 'goldenrod' } } />
+                        < FormatQuoteIcon sx={ { fontSize: '5rem', color: '#4527a0' } } />
                     </Grid>
                     <Grid item xs={ 12 } sm={ 12 } md={ 8 } lg={ 8 } sx={ { width: '100%' } }>
                         <img style={ { float: "right", marginTop: '-70px' } } src="https://themeim.com/demo/flynext/assets/images/client/client-4.png" alt="" />

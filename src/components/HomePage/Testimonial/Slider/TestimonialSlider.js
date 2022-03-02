@@ -39,26 +39,22 @@ export default class TestimonialSlider extends Component {
                 }
             ]
         };
+
         return (
-            <div style={ {
+            <div 
+                style={{
                 backgroundImage: `url(https://themeim.com/demo/flynext/assets/images/client/map.png)`,
                 backgroundSize: 'cover',
                 objectFit: 'contain',
                 padding: '20px 0'
-
-            } }
-
-            >
-
+                }}
+                >
                 <Slider { ...settings }>
                     { Array.from(Array(10)).map((_, index) => (
                         <Grid item xs={ 12 } key={ index }>
-
                             <Testimonial />
                         </Grid>
-                    )) }
-
-
+                    ))}
                 </Slider >
             </div >
         );

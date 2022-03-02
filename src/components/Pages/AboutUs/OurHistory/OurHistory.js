@@ -8,61 +8,60 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import { Container, Typography } from '@mui/material';
+import './OurHistory.css'
 
 
 const OurHistory = () => {
   return (
-    <Box sx={{padding:'100px 0', backgroundColor:'#f5f3f1'}}>
+    <Box sx={{padding:'100px 0'}}>
       <Container>
         <Box>
           <Typography 
-            variant="subtitle1" 
             gutterBottom 
-            component="div" 
-            sx={{color:'#dcbb87', fontWeight:'700', fontSize:'20px', fontFamily:'"Mulish", sans-serif', marginBottom:'20px', lineHeight:'1.5em', textAlign:'center'}}
+            sx={{color:'#5e35b1', fontWeight:'700', fontSize:'20px',marginBottom:'10px', textAlign:'center'}}
             > 
             Our History 
           </Typography>
           <Typography 
-            variant="h1" 
-            component="h2" 
-            sx={{fontSize:'40px', fontWeight:'700', color:'#19232d', lineHeight:'1.3em', fontFamily:'"Playfair Display", sans-serif', textAlign:'center'}}
+            variant="h2"
+            sx={{textAlign:'center'}}
             > 
             What Make Us Special 
           </Typography>
-          <Box sx={{marginTop:'50px'}}>
+          <Box sx={{marginTop:'50px', display: { xs: 'none', sm: 'none', md: 'block' }}}>
             <React.Fragment>
-              <Timeline position="alternate">
-                <TimelineItem>
-                  <TimelineOppositeContent>
-                    <Box sx={{display:'flex', justifyContent:'flex-end'}}>
-                      <Box sx={{width:'500px', height:'400px'}}>
-                        <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/history/history-1.png" alt="" />
-                      </Box>
-                    </Box>
+              <Timeline position="alternate" style={{paddingLeft: 0, paddingRight: 0}}>
+
+              <TimelineItem>
+                  <TimelineOppositeContent 
+                    style={{paddingLeft: 0, paddingRight: 0}}
+                    > 
+                    <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/history/history-1.png" alt="" />
                   </TimelineOppositeContent>
-                  <TimelineSeparator >
-                    <TimelineDot />
-                  <TimelineConnector />
+                  <TimelineSeparator sx={{mx: 5, mt: 15, mb: -15,}} >
+                    <TimelineDot 
+                      variant="outlined" 
+                      sx={{my: .5,}} 
+                    />
+                    <TimelineConnector  />
                   </TimelineSeparator>
-                  <TimelineContent>
-                    <Box sx={{width:'500px', height:'400px', display:'flex', alignItems:'center'}}>
-                      <Box sx={{fontFamily:'"Playfair Display", sans-serif'}}>
-                        <span style={{color:'#dcbb87', fontWeight:'700', fontSize:'40px', display:'block'}}>
-                          201
-                          <span style={{fontSize:'45px'}}>2</span>
-                        </span>
+                  <TimelineContent style={{paddingLeft: 0, paddingRight: 0}}>
+                    <Box sx={{width:'100%', height:'100%', display:'flex',    alignItems:'center'}}>
+                      <Box>
                         <Typography 
                           variant="h2" 
-                          component="h2" 
-                          sx={{marginBottom:'15px', fontWeight:'600', fontSize:'24px', lineHeight:'1.3em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', }}
+                          sx={{color:'#5e35b1'}}
+                          > 
+                          2012 
+                        </Typography>
+                        <Typography 
+                          variant="h3"
+                          sx={{my: 1.5}} 
                           > 
                           The First Private Jet 
                         </Typography>
-                        <Typography 
-                          variant="h6" 
-                          component="h2" 
-                          sx={{fontSize:'16px', lineHeight:'1.7em', fontFamily:'"Mulish", sans-serif', fontWeight:'500', color:'#3d3d3d', textAlign:'left'}}
+                        <Typography  
+                          sx={{textAlign:'left'}}
                           >
                           The Morane-Saulnier MS.760 Paris had a gross weight of 7,650 pounds (3.47 t), initially powered by two Turboméca Marboré turbojets of 880 pounds-force (3.9 kN) thrust. 
                         </Typography>
@@ -70,122 +69,120 @@ const OurHistory = () => {
                     </Box>
                   </TimelineContent>
                 </TimelineItem>
+
                 <TimelineItem>
-                  <TimelineOppositeContent>
-                  <Box sx={{display:'flex', justifyContent:'flex-start'}}>
-                    <Box sx={{width:'500px', height:'400px'}}>
-                      <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/history/history-2.png" alt="" />
-                    </Box>
-                    </Box>
+                  <TimelineOppositeContent 
+                    style={{paddingLeft: 0, paddingRight: 0}}
+                    > 
+                    <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/history/history-2.png" alt="" />
                   </TimelineOppositeContent>
-                  <TimelineSeparator>
-                    <TimelineDot />
-                    <TimelineConnector />
+                  <TimelineSeparator sx={{mx: 5, mt: 15, mb: -15,}} >
+                    <TimelineDot 
+                      variant="outlined" 
+                      sx={{my: .5,}} 
+                    />
+                    <TimelineConnector  />
                   </TimelineSeparator>
-                  <TimelineContent>
-                    <Box sx={{display:'flex', justifyContent:'flex-end'}}>
-                      <Box sx={{width:'500px', height:'400px', display:'flex', alignItems:'center'}}>
-                        <Box sx={{fontFamily:'"Playfair Display", sans-serif'}}>
-                          <span style={{color:'#dcbb87', fontWeight:'700', fontSize:'40px', display:'block'}}>
-                            201
-                            <span style={{fontSize:'45px'}}>2</span>
-                          </span>
-                          <Typography 
-                            variant="h2" 
-                            component="h2" 
-                            sx={{marginBottom:'15px', fontWeight:'600', fontSize:'24px', lineHeight:'1.3em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', }}
-                            > 
-                            The First Private Jet 
-                          </Typography>
-                          <Typography 
-                            variant="h6" 
-                            component="h2" 
-                            sx={{fontSize:'16px', lineHeight:'1.7em', fontFamily:'"Mulish", sans-serif', fontWeight:'500', color:'#3d3d3d', textAlign:'right'}}
-                            > 
-                            The Morane-Saulnier MS.760 Paris had a gross weight of 7,650 pounds (3.47 t), initially powered by two Turboméca Marboré turbojets of 880 pounds-force (3.9 kN) thrust. 
-                          </Typography>
-                        </Box>
+                  <TimelineContent style={{paddingLeft: 0, paddingRight: 0}}>
+                    <Box sx={{width:'100%', height:'100%', display:'flex', alignItems:'center'}}>
+                      <Box>
+                        <Typography 
+                          variant="h2" 
+                          sx={{color:'#5e35b1'}}
+                          > 
+                          2016 
+                        </Typography>
+                        <Typography 
+                          variant="h3"
+                          sx={{my: 1.5}} 
+                          > 
+                          The Gulfstream Era 
+                        </Typography>
+                        <Typography  
+                          sx={{textAlign:'right'}}
+                          >
+                          The Lockheed JetStar, designed to meet USAF UCX requirements and seating ten passengers and two crew, first flew on 4 September 1957. A total of 204 aircraft (20.2 t)
+                        </Typography>
                       </Box>
                     </Box>
                   </TimelineContent>
                 </TimelineItem>
+                
                 <TimelineItem>
-                  <TimelineOppositeContent>
-                    <Box sx={{display:'flex', justifyContent:'flex-end'}}>
-                      <Box sx={{width:'500px', height:'400px'}}>
-                        <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/history/history-3.png" alt="" />
-                      </Box>
-                    </Box>
+                  <TimelineOppositeContent style={{paddingLeft: 0, paddingRight: 0}}>
+                    <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/history/history-3.png" alt="" /> 
                   </TimelineOppositeContent>
-                  <TimelineSeparator>
-                    <TimelineDot />
-                    <TimelineConnector />
+                  <TimelineSeparator sx={{mx: 5, mt: 15, mb: -15,}} >
+                    <TimelineDot 
+                      variant="outlined" 
+                      sx={{my: .5,}} 
+                    />
+                    <TimelineConnector  />
                   </TimelineSeparator>
-                  <TimelineContent>
+                  <TimelineContent style={{paddingLeft: 0, paddingRight: 0}}>
                     <Box sx={{display:'flex', justifyContent:'flex-start'}}>
                       <Box sx={{width:'500px', height:'400px', display:'flex', alignItems:'center'}}>
-                        <Box sx={{fontFamily:'"Playfair Display", sans-serif'}}>
-                          <span style={{color:'#dcbb87', fontWeight:'700', fontSize:'40px', display:'block'}}>
-                            201
-                            <span style={{fontSize:'45px'}}>2</span>
-                          </span>
+                        <Box>
                           <Typography 
                             variant="h2" 
-                            component="h2" 
-                            sx={{marginBottom:'15px', fontWeight:'600', fontSize:'24px', lineHeight:'1.3em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', }}
+                            sx={{color:'#5e35b1'}}
                             > 
-                            The First Private Jet 
+                            2018 
                           </Typography>
                           <Typography 
-                            variant="h6" 
-                            component="h2" 
-                            sx={{fontSize:'16px', lineHeight:'1.7em', fontFamily:'"Mulish", sans-serif', fontWeight:'500', color:'#3d3d3d', textAlign:'left'}}> 
-                            The Morane-Saulnier MS.760 Paris had a gross weight of 7,650 pounds (3.47 t), initially powered by two Turboméca Marboré turbojets of 880 pounds-force (3.9 kN) thrust. 
+                            variant="h3"
+                            sx={{my: 1.5}} 
+                            > 
+                            The Gulfstream Era 
+                          </Typography>
+                          <Typography  
+                            sx={{textAlign:'left'}}
+                            >
+                            The smaller, 17,760 pounds (8.06 t) MTOW North American Sabreliner, tailored to the USAF UTX requirement, first flew on 16 September 1958. Powered by two Pratt & Whitney. 
                           </Typography>
                         </Box>
                       </Box>
                     </Box>
                   </TimelineContent>
                 </TimelineItem>
+
                 <TimelineItem>
-                  <TimelineOppositeContent>
-                    <Box sx={{display:'flex', justifyContent:'flex-start'}}>
-                      <Box sx={{width:'500px', height:'400px'}}>
-                        <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/history/history-4.png" alt="" />
-                      </Box>
-                    </Box>
+                  <TimelineOppositeContent style={{paddingLeft: 0, paddingRight: 0}}>
+                    <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/history/history-4.png" alt="" />
                   </TimelineOppositeContent>
-                  <TimelineSeparator>
-                    <TimelineDot />
-                    <TimelineConnector />
+                  <TimelineSeparator sx={{mx: 5, mt: 15, bgcolor: "body"}} >
+                    <TimelineDot 
+                      variant="outlined" 
+                      sx={{my: .5,}} 
+                    />
                   </TimelineSeparator>
-                  <TimelineContent>
+                  <TimelineContent style={{paddingLeft: 0, paddingRight: 0}}>
                     <Box sx={{display:'flex', justifyContent:'flex-end'}}>
                       <Box sx={{width:'500px', height:'400px', display:'flex', alignItems:'center'}}>
-                        <Box sx={{fontFamily:'"Playfair Display", sans-serif'}}>
-                          <span style={{color:'#dcbb87', fontWeight:'700', fontSize:'40px', display:'block'}}>
-                            201
-                            <span style={{fontSize:'45px'}}>2</span>
-                          </span>
+                        <Box>
                           <Typography 
                             variant="h2" 
-                            component="h2" 
-                            sx={{marginBottom:'15px', fontWeight:'600', fontSize:'24px', lineHeight:'1.3em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', }}
+                            sx={{color:'#5e35b1'}}
                             > 
-                            The First Private Jet 
+                            2022 
                           </Typography>
                           <Typography 
-                            variant="h6" 
-                            component="h2" 
-                            sx={{fontSize:'16px', lineHeight:'1.7em', fontFamily:'"Mulish", sans-serif', fontWeight:'500', color:'#3d3d3d', textAlign:'right'}}
+                            variant="h3"
+                            sx={{my: 1.5}} 
                             > 
-                            The Morane-Saulnier MS.760 Paris had a gross weight of 7,650 pounds (3.47 t), initially powered by two Turboméca Marboré turbojets of 880 pounds-force (3.9 kN) thrust. 
+                            Beyond Earth
+                          </Typography>
+                          <Typography  
+                            sx={{textAlign:'right'}}
+                            >
+                            The 25,000 pounds (11 t) MTOW British Aerospace 125 first flew on 13 August 1962 as the de Havilland DH.125, powered by two 3,000 pounds-force (13 kN) Armstrong Siddeley. 
                           </Typography>
                         </Box>
                       </Box>
                     </Box>
                   </TimelineContent>
                 </TimelineItem>
+
               </Timeline>
             </React.Fragment>
           </Box>

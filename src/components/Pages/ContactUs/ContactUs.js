@@ -31,10 +31,7 @@ const ContactButton = styled(Button)({
 const ContactUs = () => {
     return (
         <>
-        <Navigation></Navigation>
-            <Container>
-                <SignUp/>
-            </Container>
+            <Navigation/>
 
             {/* Contact Information Section */}
 
@@ -230,7 +227,7 @@ const ContactUs = () => {
                     </Grid>
                 </Container>
             </Box>
-            <Footer></Footer>
+            <Footer/>
         </>
     );
 };

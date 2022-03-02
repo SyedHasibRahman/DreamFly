@@ -44,14 +44,14 @@ function App() {
           <Route path="/" element={ <Home /> } />
           <Route path="Home" element={ <Home /> } />
           <Route path="Services" element={ <Services /> } />
-          <Route path="aboutus" element={ <AboutUs /> } />
-          <Route path="OurPilots" element={ <OurPilots /> } />
+          <Route path="About" element={ <AboutUs /> } />
+          <Route path="Pilots" element={ <OurPilots /> } />
           <Route path="SearchFlight" element={ <SearchFlights /> } />
-          <Route path="ContactUs" element={ <ContactUs /> } />
+          <Route path="Contact" element={ <ContactUs /> } />
           <Route path="Blogs" element={ <Blogs /> } />
           <Route path="/blogs/:blogId" element={ <BlogDetails /> } />
-          <Route path="/OurCoursesDetails" element={ <OurCoursesDetails /> } />
-          <Route path="/OurCourses" element={ <OurCourses /> } />
+          <Route path="/CoursesDetails" element={ <OurCoursesDetails /> } />
+          <Route path="/Courses" element={ <OurCourses /> } />
           <Route path="/TourPackages" element={ <TourPackages /> } />
           <Route path="/TourPackages/:TourId" element={ <TourDetails /> } />
           {/* <Route path="/payment/" element={ <Payment /> } /> */ }

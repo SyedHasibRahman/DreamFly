@@ -22,7 +22,7 @@ import PersonalFlight from "../PersonalFlight/PersonalFlight/PersonalFlight";
 
 const Home = () => {
   return (
-    <Box>
+    <>
       <Navigation />
       <Banner />
       {/* <Booking></Booking> */ }
@@ -38,7 +38,7 @@ const Home = () => {
       <PersonalFlight />
       <Testimonials />
       <Footer />
-    </Box>
+    </>
   );
 };
 

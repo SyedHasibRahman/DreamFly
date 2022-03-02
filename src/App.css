@@ -4,15 +4,47 @@ Use grey deep : #f5f5f5
 use important text, border, icon : #4527a0
 use bg color, hover : #5e35b1
 where bg (#5e35b1) this color, there use btn color : #FF257B
+inear Background two color  #5e35b1 , #9575cd
 */
+
+/* font family  */
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;900&family=Playfair+Display:wght@400;500;700;900&display=swap');
+
+body, p {
+  font-family: 'Mulish', sans-serif !important;
+  line-height: 1.6 !important;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "Playfair Display", sans-serif !important;
+  line-height: 1.4 !important;
+}
+
+h1{
+  font-size: 65px !important;
+}
+h2{
+  font-size: 40px !important;
+  font-weight:700 !important;
+}
+h3{
+  font-size: 24px !important;
+  font-weight:600 !important;
+}
+h4{
+  font-size: 20px !important;
+  font-weight: 500 !important;
+}
+
 
 .a {
   background-blend-mode: overlay;
 }
-/* *{
+*{
     color: #333333;
     font-weight: 400;
-} */
+}
 .a {
   text-decoration: none;
   color: white;
