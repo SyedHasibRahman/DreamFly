@@ -32,7 +32,7 @@
   line-height: 30px;
   text-align: center;
   background: transparent;
-  border: 1px solid rgba(220, 187, 135, 0.2);
+  border: 1px solid ;
   font-size: 11px;
   border-radius: 50%;
   transition: all 0.5s;
@@ -40,13 +40,13 @@
   margin: 10px 0 !important;
 }
 .socialIcon:hover{
-  background: #dcbb87;
-  border: 1px solid #dcbb87;
+  background: white;
+  border: 1px solid white;
 }
 .socialIcon > i{
   color: #dcbb87;
   font-weight: 500;
 }
 .socialIcon:hover > i{
-  color: white;
+  color: #4527a0;
 }

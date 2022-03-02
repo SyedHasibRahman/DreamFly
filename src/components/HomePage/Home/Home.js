@@ -1,4 +1,3 @@
-import { Box } from "@mui/material";
 import React from "react";
 import About from "../About/About";
 import Banner from "../Banner/Banner";
@@ -20,6 +19,7 @@ import PersonalFlight from "../PersonalFlight/PersonalFlight/PersonalFlight";
 
 
 
+
 const Home = () => {
   return (
     <>
@@ -31,8 +31,8 @@ const Home = () => {
       {/* <MakeAdmin></MakeAdmin> */}
       {/* <ManagePackage></ManagePackage> */}
       {/* <ManageOrders></ManageOrders> */}
-      <BestService />
       <About />
+      <BestService />
       <ServiceCards />
       <TourPackages />
       <PersonalFlight />

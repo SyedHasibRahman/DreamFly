@@ -45,15 +45,16 @@ export default class OurTeam extends Component {
           <Box>
             <Typography 
               gutterBottom 
-              sx={{color:'#5e35b1', fontWeight:'700', fontSize:'20px',marginBottom:'10px',}}
+              sx={{color:'#5e35b1', fontWeight:'700', fontSize:'20px',marginBottom:'10px', textAlign: "center"}}
               > 
               Our team 
             </Typography>
-            <Typography variant="h2"> 
+            <Typography sx={{textAlign: "center"}} variant="h2"> 
               Meet Our Team Members 
             </Typography>
           </Box>
         <Box  sx={{marginTop:'50px'}}>
+        
           <Slider {...settings}>
 
               <Box sx={{display:'flex', justifyContent:'center'}}>

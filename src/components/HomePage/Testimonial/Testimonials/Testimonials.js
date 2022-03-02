@@ -5,17 +5,23 @@ import TestimonialSlider from '../Slider/TestimonialSlider';
 const Testimonials = () => {
     return (
         <div style={ {
-            padding: '50px 0',
+            padding: '20px 0 50px 0',
         } } >
             <Container>
                 <Grid sx={ {
                     textAlign: 'center',
                 } }>
-                    <Typography variant='h6'>
-                        <span style={ {
-                            color: '#2CC0FF',
-                        } }>DreamFly</span> Testimonial</Typography>
-                    <Typography variant='h4'>Our Customer Feedback</Typography>
+                    
+                    <Typography 
+                    gutterBottom 
+                    sx={{fontSize: "20px", fontWeight: 700}}
+                    >
+                        <span style={ { color: '#4527a0', fontSize: "20px", fontWeight: 700 } }>DreamFly</span> Testimonial
+                    </Typography>
+                    <Typography gutterBottom variant="h2">
+                        Our Customer Feedback
+                    </Typography>
+        
                 </Grid>
                 <Grid container spacing={ 2 }>
                     <Grid item xs={ 12 } sm={ 12 } md={ 8 } lg={ 8 } sx={ {

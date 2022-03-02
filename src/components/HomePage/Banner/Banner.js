@@ -1,12 +1,12 @@
 import { Container, Grid, Typography, Link } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import ButtonOutline from '../../StyledComponent/Buttons/ButtonOutline';
 import './Banner.css';
 
 const Banner = () => {
   return (
-    <Box sx={ { backgroundColor: '#5e35b1', minHeight: '90vh', } }>
-      <Box sx={ { backgroundImage: 'url(https://themeim.com/demo/flynext/assets/images/element/element-1.png)', backgroundColor: '#19232d', backgroundPosition: 'right', backgroundRepeat: 'no-repeat', opacity: '1', backgroundSize: 'right',} }>
+    <Box sx={ {} }>
+      <Box sx={ { backgroundImage: 'url(https://static.tickets.com.tr/img/v4/header-bg.svg)', backgroundPosition: 'right', height: "100%" , backgroundRepeat: 'no-repeat', backgroundSize: 'right',} }>
         <Container sx={ { padding: "100px 0", position: 'relative' } }>
           <Box display={ { xs: 'none', md: 'block' } }>
             <Box className='socialIconBox'>
@@ -16,15 +16,15 @@ const Banner = () => {
               <Link href="#" className='socialIcon'><i className="fab fa-instagram"></i></Link>
             </Box>
           </Box>
-          <Grid container spacing={ 0 }>
-            <Grid item xs={ 12 } md={ 6 } order={ { xs: 2, md: 1 } }>
-              <Box>
+          <Grid container >
+            <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
+              
                 <Typography 
-                  variant="h1" 
-                  component="h2" 
+                  variant="h2" 
+                  
                   sx={ { fontWeight: '600', fontStyle: 'italic', fontSize: '30px', fontFamily: "'Mulish', sans-serif", marginBottom: '25px', color: '#FFFFFF' } }
                 > 
-                  <span style={ { color: '#dcbb87' } }>Dream</span>Fly 
+                  <span style={ { color: '#DC1585' } }>Dream</span>Fly 
                 </Typography>
                 <Typography 
                   variant="h1" 
@@ -39,14 +39,16 @@ const Banner = () => {
                 > 
                   Curly Airline proudly raises the bar and exceeds the standard for luxury and corporate private jet charter services. We pride ourselves on offering a professional service. 
                 </Typography>
-                <Box sx={ { marginTop: '65px' } }>
-                  <Link href="#"> Make Your Trip </Link>
+                <Box sx={ { marginTop: '40px' } }>
+                  <Link style={{textDecoration: "none"}} href="#">
+                    <ButtonOutline sx={{":hover" : {borderColor: "white"},}}>Make Your Trip</ButtonOutline>
+                  </Link>
                 </Box>
-              </Box>
+              
             </Grid>
-            <Grid item xs={ 12 } md={ 6 } order={ { xs: 1, md: 2 } }>
-              <Box sx={ { width: '100%', height: '100%' } }>
-                <img style={ { width: '100%', height: '100%', objectFit: 'fill' } } src="https://themeim.com/demo/flynext/assets/images/element/element-2.png" alt="" />
+            <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
+              <Box sx={{ width: '100%', height: '100%' }}>
+                <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src="https://themeim.com/demo/flynext/assets/images/element/element-2.png" alt="" />
               </Box>
             </Grid>
           </Grid>
