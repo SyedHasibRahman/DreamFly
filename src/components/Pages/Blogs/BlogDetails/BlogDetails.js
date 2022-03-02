@@ -15,7 +15,7 @@ const BlogDetails = () => {
     const [blog, setBlog] = useState({});
 
     useEffect(() => {
-        // const url = `https://vast-retreat-08893.herokuapp.com/blogs/${blogId}`
+        // const url = `https://salty-beach-45243.herokuapp.com/blogs/${blogId}`
         const url = `http://localhost:5000/blogs/${blogId}`
         fetch(url)
             .then(res => res.json())
@@ -24,7 +24,7 @@ const BlogDetails = () => {
 
     return (
         <>
-            <Navigation/>
+            <Navigation />
             <Box sx={ { py: 10, bgcolor: "#fafafa" } }>
                 <Container>
                     <Grid container spacing={ 4 }>
@@ -76,80 +76,82 @@ const BlogDetails = () => {
                                 { blog.description }
                             </Typography>
 
-                            <Link style={{textDecoration: "none", textAlign: "center", cursor: "pointer"}} 
-                            to='/Blogs'
+                            <Link style={ { textDecoration: "none", textAlign: "center", cursor: "pointer" } }
+                                to='/Blogs'
                             >
-                                <Box sx={{display: "flex", textAlign: "center", ml: 1}}>
-                                    
-                                        <KeyboardBackspaceIcon sx={{color: '#5e35b1', fontWeight: 600, textTransform: 'capitalize', fontSize: 30,}} />
-                                
-                                    <Typography sx={{color: '#5e35b1', fontWeight: 600, ml: 1, fontSize: "20px",}}>
-                                    Back to Blogs
+                                <Box sx={ { display: "flex", textAlign: "center", ml: 1 } }>
+
+                                    <KeyboardBackspaceIcon sx={ { color: '#5e35b1', fontWeight: 600, textTransform: 'capitalize', fontSize: 30, } } />
+
+                                    <Typography sx={ { color: '#5e35b1', fontWeight: 600, ml: 1, fontSize: "20px", } }>
+                                        Back to Blogs
                                     </Typography>
                                 </Box>
-                            </Link>  
-                            <Box sx={{py: 4}}>
-                                <Typography sx={{fontSize: "24px", fontWeight: 600,}}>
+                            </Link>
+                            <Box sx={ { py: 4 } }>
+                                <Typography sx={ { fontSize: "24px", fontWeight: 600, } }>
                                     Leave A Comments
                                 </Typography>
-                                <Typography sx={{py: 2}}>
-                                Your email address will not be published. Required fields are marked *
+                                <Typography sx={ { py: 2 } }>
+                                    Your email address will not be published. Required fields are marked *
                                 </Typography>
-                                    <Grid container direction="row" sx={{mb: "20px"}}justifyContent="space-between" alignItems="center" spacing={2}>
-                                        <Grid item xs={12} sm={6}>
-                                            <InputTextField 
-                                                label="Name" 
-                                                required
-                                                id="custom-css-outlined-input" 
-                                                fullWidth 
-                                                type="name"
-                                                sx={{bgcolor: "white"}}
-                                                InputProps={{
+                                <Grid container direction="row" sx={ { mb: "20px" } } justifyContent="space-between" alignItems="center" spacing={ 2 }>
+                                    <Grid item xs={ 12 } sm={ 6 }>
+                                        <InputTextField
+                                            label="Name"
+                                            required
+                                            id="custom-css-outlined-input"
+                                            fullWidth
+                                            type="name"
+                                            sx={ { bgcolor: "white" } }
+                                            InputProps={ {
                                                 endAdornment: (
                                                     <InputAdornment position="end">
-                                                    <i className="fa-solid fa-user"></i>
+                                                        <i className="fa-solid fa-user"></i>
                                                     </InputAdornment>
-                                                )}}
-                                            />
-                                            
-                                        </Grid>
-                                        <Grid item xs={12} sm={6}>
-                                            <InputTextField  
-                                                label="Email" 
-                                                id="custom-css-outlined-input" 
-                                                fullWidth 
-                                                required
-                                                type="email"
-                                                sx={{bgcolor: "white"}}
-                                                InputProps={{
-                                                endAdornment: (
-                                                    <InputAdornment position="end">
-                                                    <i className="fa-solid fa-envelope"></i>
-                                                    </InputAdornment>
-                                                )}}
-                                            />
-                                        </Grid>
-                                        <Grid item xs={12}>
-                                            <InputTextField 
-                                                    label="Massage" 
-                                                    id="custom-css-outlined-input" 
-                                                    fullWidth 
-                                                    type="text"
-                                                    rows={6}
-                                                    required
-                                                    multiline 
-                                                    sx={{bgcolor: "white"}}
-                                                />
-                                        </Grid>
+                                                )
+                                            } }
+                                        />
+
                                     </Grid>
-                                    <Button
-                                        sx={{ textTransform: 'capitalize', fontSize: "18px" }}>
-                                        Submit Now
-                                    </Button>
+                                    <Grid item xs={ 12 } sm={ 6 }>
+                                        <InputTextField
+                                            label="Email"
+                                            id="custom-css-outlined-input"
+                                            fullWidth
+                                            required
+                                            type="email"
+                                            sx={ { bgcolor: "white" } }
+                                            InputProps={ {
+                                                endAdornment: (
+                                                    <InputAdornment position="end">
+                                                        <i className="fa-solid fa-envelope"></i>
+                                                    </InputAdornment>
+                                                )
+                                            } }
+                                        />
+                                    </Grid>
+                                    <Grid item xs={ 12 }>
+                                        <InputTextField
+                                            label="Massage"
+                                            id="custom-css-outlined-input"
+                                            fullWidth
+                                            type="text"
+                                            rows={ 6 }
+                                            required
+                                            multiline
+                                            sx={ { bgcolor: "white" } }
+                                        />
+                                    </Grid>
+                                </Grid>
+                                <Button
+                                    sx={ { textTransform: 'capitalize', fontSize: "18px" } }>
+                                    Submit Now
+                                </Button>
                             </Box>
                         </Grid>
 
-                        {/* Blog Sideber  */}
+                        {/* Blog Sideber  */ }
                         <Grid item xs={ 12 } md={ 4 } sx={ {} }>
                             <Grid container>
                                 <BlogSideber></BlogSideber>
@@ -158,7 +160,7 @@ const BlogDetails = () => {
                     </Grid>
                 </Container>
             </Box>
-            <Footer/>
+            <Footer />
         </>
     );
 };
