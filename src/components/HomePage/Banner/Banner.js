@@ -2,8 +2,14 @@ import { Container, Grid, Typography, Link } from '@mui/material';
 import { Box } from '@mui/system';
 import ButtonOutline from '../../StyledComponent/Buttons/ButtonOutline';
 import './Banner.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 const Banner = () => {
+  useEffect(() => {
+    AOS.init();
+  })
   return (
     <Box sx={ {} }>
       <Box sx={ { backgroundImage: 'url(https://static.tickets.com.tr/img/v4/header-bg.svg)', backgroundPosition: 'right', height: "100%" , backgroundRepeat: 'no-repeat', backgroundSize: 'right',} }>
@@ -17,7 +23,7 @@ const Banner = () => {
             </Box>
           </Box>
           <Grid container >
-            <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
+            <Grid data-aos="zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600" item xs={12} md={6} order={{ xs: 2, md: 1 }}>
               
                 <Typography 
                   variant="h2" 

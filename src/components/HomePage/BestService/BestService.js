@@ -2,9 +2,21 @@ import { Box, Container, Typography, Button } from "@mui/material";
 import overview1 from "../../../img/overview-1.png";
 import overview2 from "../../../img/overview-2.png";
 import "./BestService.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 
 const BestService = () => {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 800,
+      easing: 'ease-in-sine',
+      delay: 200,
+
+    });
+  })
 
   return (
     <Box component="div" className="bestService" sx={{ padding: "100px 0" }}>
