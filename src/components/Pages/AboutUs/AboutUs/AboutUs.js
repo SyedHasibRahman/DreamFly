@@ -18,14 +18,21 @@ const AboutUs = () => {
             <CounterArea />
             <OurHistory />
             <OurTeam />
-            <Box sx={{padding:'50px 0'}}>
-            <Container>
-                <Box>
-                <Typography variant="h4" component="h2" sx={{fontWeight:'700', fontSize:'20px', marginBottom:'20px', fontFamily:'"Mulish", sans-serif', color:'#dcbb87', lineHeight:'1.5em', textAlign:'center'}}> Testimonial </Typography>
-                <Typography variant="h3" component="h2" sx={{fontWeight:'700', fontSize:'40px', lineHeight:'1.3em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', textAlign:'center'}}> Our Customer Feedback </Typography>
-                </Box>
-            <TestimonialSlider />
-            </Container>
+            <Box sx={{padding:'100px 0'}}>
+                <Container>
+                    <Typography  
+                        sx={{color:'#5e35b1', fontWeight:'700', fontSize:'20px',marginBottom:'10px', textAlign:'center'}}
+                        >
+                        Testimonial 
+                    </Typography> 
+                    <Typography 
+                        variant="h2" 
+                        sx={{ marginBottom:'10px', textAlign:'center'}}
+                        >
+                        Our Customer Feedback 
+                    </Typography>
+                    <TestimonialSlider sx={{marginTop:'50px'}} />
+                </Container>
             </Box>
             <Footer />
         </Box>

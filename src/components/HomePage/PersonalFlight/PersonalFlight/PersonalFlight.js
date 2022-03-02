@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import { Box } from "@mui/system";
 import { Container, Typography } from "@mui/material";
-import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
 import "./PersonalFlight.css";
 import { useEffect } from "react";
 import axios from "axios";
@@ -10,7 +9,8 @@ import { useDispatch } from "react-redux";
 import {
   addDateAndPass,
   addFilterData,
-} from "../../../Redux/Slice/flightSlice";
+} from "../../../../Redux/Slice/flightSlice";
+import SecondaryButton from "../../../StyledComponent/Buttons/SecondaryButton";
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 
@@ -42,8 +42,7 @@ const PersonalFlight = () => {
     console.log(e);
     const fillterData = flights.filter((item) => {
       if (item.from === e) {
-        return item.to;
-      }
+      return item.to}
     });
     const flightTo = fillterData.map((item) => item.to);
     const filterTo = fillterData.filter(
@@ -52,6 +51,8 @@ const PersonalFlight = () => {
     setTo(filterTo);
     // console.log(fillterData);
   };
+
+  
 
   const dispatch = useDispatch();
 
@@ -85,11 +86,11 @@ const PersonalFlight = () => {
     decrementCounter = () => setCounter(0);
   }
   return (
+    <Container sx={{my: "100px"}}>
     <Box
       className="personal_flight_Container"
       sx={{
-        flexGrow: 1,
-        py: 10,
+        flexGrow: 1
       }}
       data-aos='fade-down'
     >
@@ -106,11 +107,11 @@ const PersonalFlight = () => {
         <Box
           component="div"
           sx={{ textAlign: "center", color: "#fff", paddingTop: "50px" }}
-        >
-          <Typography variant="h6" sx={{ color: "white" }}>
+          >
+          <Typography sx={{color:'white', fontWeight:'700', fontSize:'20px',marginBottom:'10px', textAlign: "center"}}>
             DreamFly Book
           </Typography>
-          <Typography variant="h4" sx={{ padding: "20px 0", color: "white" }}>
+          <Typography variant="h2" sx={{ padding: "20px 0", color: "white" }}>
             Book A Personal Flight
           </Typography>
         </Box>
@@ -129,11 +130,11 @@ const PersonalFlight = () => {
                 ref={fromRef}
                 onChange={() => handleFrom()}
               >
-                <option value="">From</option>
+                <option style={{color: "black"}} value="">From</option>
                 {filterFrom.map((flight) => {
                   const { from } = flight;
                   return (
-                    <option key={flight._id} value={from}>
+                    <option style={{color: "black"}} required key={flight._id} value={from}>
                       {from}
                     </option>
                   );
@@ -145,11 +146,11 @@ const PersonalFlight = () => {
             <Box className="selector_box">
               <Box className="label">To</Box>
               <select className="selector" ref={toRef}>
-                <option value="">To</option>
+                <option style={{color: "black"}} value="">To</option>
                 {to.map((flight) => {
                   const { to } = flight;
                   return (
-                    <option key={flight._id} value={to}>
+                    <option style={{color: "black"}} required key={flight._id} value={to}>
                       {to}
                     </option>
                   );
@@ -193,16 +194,14 @@ const PersonalFlight = () => {
             </Box>
           </Grid>
           <Box className="personal_flight_btn" component="div">
-            <button onClick={handleSubmit}>
-              <span className="arrow_plan">
-                <AirplanemodeActiveIcon />
-              </span>
-              Book Now
-            </button>
+            <SecondaryButton onClick={handleSubmit}>
+              search now
+            </SecondaryButton>
           </Box>
         </Grid>
       </Container>
     </Box>
+    </Container>
   );
 };
 

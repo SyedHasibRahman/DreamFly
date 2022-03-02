@@ -18,7 +18,6 @@ import {
   Typography,
 } from "@mui/material";
 import VideoCameraBackIcon from "@mui/icons-material/VideoCameraBack";
-import BookingModal from '../BookingModal/BookingModal';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 
@@ -33,10 +32,6 @@ const TourPackages = () => {
 
     });
   })
-
-  const [openBooking, setBookingOpen] = React.useState(false);
-  const handleBookingOpen = () => setBookingOpen(true);
-  const handleBookingClose = () => setBookingOpen(false);
 
   const sliderRef = useRef(null);
   const [packages, setPackages] = useState([]);
@@ -77,15 +72,18 @@ const TourPackages = () => {
     <>
       <Box className="tour_packages" data-aos='zoom-in-down'>
         <Container>
-          <Box style={{ padding: "40px 0px" }} data-aos='zoom-in'>
-            <Box component="div" sx={{ textAlign: "center" }} data-aos='zoom-in-up'>
-              <Typography variant="h6" sx={{ fontWeight: 600, color: "#fff" }}>
-                <span style={{ color: "#dcbb87" }}>Flynext</span> Package
+          <Box data-aos='zoom-in' style={ { } }>
+            <Box data-aos='zoom-in-up' style={ { textAlign: 'center'} }>
+              <Typography 
+                gutterBottom 
+                sx={{fontSize: "20px", color: 'white', fontWeight: 700}}
+                >
+                Discover DreamFly Packages
               </Typography>
-              <Typography
-                variant="h3"
-                sx={{ py: 3, fontWeight: 600, fontSize: "2.5rem", color: "#fff" }}
-              >
+              <Typography 
+                gutterBottom 
+                variant="h2"
+                sx={{color: 'white', mb: "50px"}}>
                 DreamFly Tour Packages
               </Typography>
             </Box>
@@ -206,13 +204,6 @@ const TourPackages = () => {
           </Box>
         </Container>
       </Box>
-
-      <BookingModal
-        openBooking={openBooking}
-        handleBookingClose={handleBookingClose}
-      // setBookingSuccess={setBookingSuccess}
-      ></BookingModal>
-
     </>
   );
 };
