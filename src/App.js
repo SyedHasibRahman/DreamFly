@@ -33,6 +33,7 @@ import ManageOrders from "./components/Dashboard/Admin/ManageOrder/ManageOrders"
 import UserCourse from "./components/Dashboard/User/UserCourse/UserCourse";
 import CouserDetails from "./components/Dashboard/User/UserCourse/CouserDetails/CouserDetails";
 import AdminRoute from "./components/Pages/Login/OtherRoutes/AdminRoute/AdminRoute";
+import Invoice from "./components/Dashboard/Payment/Invoice";
 
 
 
@@ -71,6 +72,7 @@ function App() {
             <Route path="ManageUsers" element={ <ManageUsers /> } />
             {/* <Route path="payment/" element={ <Payment /> } /> */ }
             <Route path="payment/:bookedId" element={ <Payment /> } />
+            <Route path="invoice/:bookedId" element={ <Invoice /> } />
             <Route path="UpdateBlog/:id" element={ <UpdateBlog /> } />
             <Route path="DeleteBlog" element={ <DeleteBlog /> } />
             <Route path="MakeAdmin" element={ <MakeAdmin /> } />
