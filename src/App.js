@@ -26,7 +26,6 @@ import UpdateBlog from "./components/Dashboard/Admin/Blog/UpdateBlog/UpdateBlog"
 import AddBlog from "./components/Dashboard/Admin/Blog/AddBlog/AddBlog";
 import TourPackages from "./components/Shared/TourPackages/TourPackages/TourPackages";
 import ManageFlight from "./components/Dashboard/Admin/ManageFlight/ManageFlight";
-import UserPanel from "./components/Dashboard/User/UserPanel/UserPanel";
 import MakeAdmin from "./components/Dashboard/Admin/MakeAdmin/MakeAdmin";
 import ManagePackage from "./components/Dashboard/Admin/ManagePackage/ManagePackage";
 import ManageOrders from "./components/Dashboard/Admin/ManageOrder/ManageOrders";
