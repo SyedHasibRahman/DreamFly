@@ -17,7 +17,7 @@ const Payment = () => {
             .then(res => res.json())
             .then(data => setBooked(data));
 
-    }, [bookedId])
+    }, [bookedId]);
     return (
         <div style={ {
             padding: '25px',

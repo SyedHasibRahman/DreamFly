@@ -34,6 +34,7 @@ import CouserDetails from "./components/Dashboard/User/UserCourse/CouserDetails/
 import AdminRoute from "./components/Pages/Login/OtherRoutes/AdminRoute/AdminRoute";
 import UpadatePackage from "./components/Dashboard/Admin/CustomizePackage/UpadatePackage/UpadatePackage";
 import CustomizePackages from "./components/Dashboard/Admin/CustomizePackage/CustomizePackages/CustomizePackages";
+import Invoice from "./components/Dashboard/Payment/Invoice";
 
 
 
@@ -82,6 +83,19 @@ function App() {
             <Route path="CustomizePackages" element={<CustomizePackages />} />
             <Route path="UpdatePackage/:id" element={<UpadatePackage />} />
 
+            <Route path="UserOrder" element={<UserOrder />} />
+            <Route path="UserProfile" element={<UserProfile />} />
+            <Route path="ManageUsers" element={<ManageUsers />} />
+            {/* <Route path="payment/" element={ <Payment /> } /> */}
+            <Route path="payment/:bookedId" element={<Payment />} />
+            <Route path="invoice/:bookedId" element={<Invoice />} />
+            <Route path="UpdateBlog/:id" element={<UpdateBlog />} />
+            <Route path="DeleteBlog" element={<DeleteBlog />} />
+            <Route path="MakeAdmin" element={<MakeAdmin />} />
+            <Route path="ManagePackage" element={<ManagePackage />} />
+            <Route path="ManageOrders" element={<ManageOrders />} />
+            <Route path="UserCourse" element={<UserCourse />} />
+            <Route path="CouserDetails" element={<CouserDetails />} />
           </Route>
           <Route
             path="Dashboard"
