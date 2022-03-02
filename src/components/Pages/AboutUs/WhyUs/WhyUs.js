@@ -6,77 +6,171 @@ const WhyUs = () => {
   return (
     <Box sx={{backgroundColor:'#f5f3f1'}}>
       <Container sx={{padding:'100px 0'}}>
-        <Typography variant="subtitle1" gutterBottom component="div" sx={{color:'#dcbb87', fontWeight:'700', fontSize:'20px', fontFamily:'"Mulish", sans-serif', marginBottom:'20px', lineHeight:'1.5em', textAlign:'center'}}> Why Us </Typography>
-        <Typography variant="h1" component="h2" sx={{fontSize:'40px', fontWeight:'700', color:'#19232d', lineHeight:'1.3em', fontFamily:'"Playfair Display", sans-serif', textAlign:'center'}}> Why Choose Our Flynext? </Typography>
+        <Typography 
+          gutterBottom 
+          sx={{color:'#5e35b1', fontWeight:'700', fontSize:'20px',marginBottom:'10px', textAlign:'center'}}
+          > 
+          Why Us 
+        </Typography>
+        <Typography 
+          variant="h2"
+          sx={{textAlign:'center'}}
+          > 
+          Why Choose Our Dream Fly? 
+        </Typography>
         <Box sx={{marginTop:'50px'}}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={4}>
-            <Box sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/choose.png)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center', borderRadius:'10px'}}>
-              <Box sx={{padding:'30px 20px', backgroundColor:'#FFFFFF'}}>
-                <Box>
-                <Typography variant="h1" component="h2" sx={{color:'#E8E9EA', fontSize:'65px', lineHeight:'65px', fontWeight:'900', marginBottom:'15px', fontFamily:'"Mulish", sans-serif', textAlign:'left'}}> 01 </Typography>
-                <Typography variant="h3" component="h3" sx={{fontSize:'24px', fontWeight:'600', marginBottom:'15px', lineHeight:'1.4em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', textAlign:'left'}}> Leading private aviation </Typography>
-                <Typography variant="body1" gutterBottom sx={{lineHeight:'1.7em', fontFamily:'"Mulish", sans-serif', fontSize:'16px', fontWeight:'500', color:'#3d3d3d', textAlign:'left'}}> As well as getting to fly to many different destinations as part of their job, airplane pilots get big discounts on </Typography>
+          <Grid container g spacing={4}>
+            <Grid item xs={12} md={4}>
+              <Box 
+                sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/choose.png)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center', borderRadius:'10px'}}
+                >
+                <Box 
+                  sx={{padding:'30px 20px', backgroundColor:'#FFFFFF', borderRadius: "10px"}}
+                  >
+                  <Typography 
+                    variant="h1" 
+                    sx={{color:'#E8E9EA', fontWeight:'900', fontFamily:'"Mulish", sans-serif !important', textAlign:'left'}}> 
+                    01 
+                  </Typography>
+                  <Typography 
+                    variant="h3" 
+                    sx={{fontSize:'24px', fontWeight:'600', marginBottom:'15px', lineHeight:'1.4em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', textAlign:'left'}}> 
+                    Leading private aviation 
+                  </Typography>
+                  <Typography 
+                    gutterBottom 
+                    sx={{fontWeight:'500', color:'#3d3d3d', textAlign:'left'}}> 
+                    As well as getting to fly to many different destinations as part of their job, airplane pilots get big discounts on 
+                  </Typography> 
                 </Box>
               </Box>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Box sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/choose.png)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center', borderRadius:'10px'}}>
-              <Box sx={{padding:'30px 20px', backgroundColor:'#FFFFFF'}}>
-                <Box>
-                <Typography variant="h1" component="h2" sx={{color:'#E8E9EA', fontSize:'65px', lineHeight:'65px', fontWeight:'900', marginBottom:'15px', fontFamily:'"Mulish", sans-serif', textAlign:'left'}}> 01 </Typography>
-                <Typography variant="h3" component="h3" sx={{fontSize:'24px', fontWeight:'600', marginBottom:'15px', lineHeight:'1.4em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', textAlign:'left'}}> Leading private aviation </Typography>
-                <Typography variant="body1" gutterBottom sx={{lineHeight:'1.7em', fontFamily:'"Mulish", sans-serif', fontSize:'16px', fontWeight:'500', color:'#3d3d3d', textAlign:'left'}}> As well as getting to fly to many different destinations as part of their job, airplane pilots get big discounts on </Typography>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box 
+                sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/choose.png)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center', borderRadius:'10px'}}
+                >
+                <Box 
+                  sx={{padding:'30px 20px', backgroundColor:'#FFFFFF', borderRadius: "10px"}}
+                  >
+                  <Typography 
+                    variant="h1" 
+                    sx={{color:'#E8E9EA', fontWeight:'900', fontFamily:'"Mulish", sans-serif !important', textAlign:'left'}}> 
+                    02 
+                  </Typography>
+                  <Typography 
+                    variant="h3" 
+                    sx={{fontSize:'24px', fontWeight:'600', marginBottom:'15px', lineHeight:'1.4em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', textAlign:'left'}}> 
+                    Tailored memberships 
+                  </Typography>
+                  <Typography 
+                    gutterBottom 
+                    sx={{fontWeight:'500', color:'#3d3d3d', textAlign:'left'}}> 
+                    Tailored memberships Charter an entire jet, or offer the seats you don’t need through our app a need for full
+                  </Typography> 
                 </Box>
               </Box>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Box sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/choose.png)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center', borderRadius:'10px'}}>
-              <Box sx={{padding:'30px 20px', backgroundColor:'#FFFFFF'}}>
-                <Box>
-                <Typography variant="h1" component="h2" sx={{color:'#E8E9EA', fontSize:'65px', lineHeight:'65px', fontWeight:'900', marginBottom:'15px', fontFamily:'"Mulish", sans-serif', textAlign:'left'}}> 01 </Typography>
-                <Typography variant="h3" component="h3" sx={{fontSize:'24px', fontWeight:'600', marginBottom:'15px', lineHeight:'1.4em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', textAlign:'left'}}> Leading private aviation </Typography>
-                <Typography variant="body1" gutterBottom sx={{lineHeight:'1.7em', fontFamily:'"Mulish", sans-serif', fontSize:'16px', fontWeight:'500', color:'#3d3d3d', textAlign:'left'}}> As well as getting to fly to many different destinations as part of their job, airplane pilots get big discounts on </Typography>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box 
+                sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/choose.png)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center', borderRadius:'10px'}}
+                >
+                <Box 
+                  sx={{padding:'30px 20px', backgroundColor:'#FFFFFF', borderRadius: "10px"}}
+                  >
+                  <Typography 
+                    variant="h1" 
+                    sx={{color:'#E8E9EA', fontWeight:'900', fontFamily:'"Mulish", sans-serif !important', textAlign:'left'}}> 
+                    03 
+                  </Typography>
+                  <Typography 
+                    variant="h3" 
+                    sx={{fontSize:'24px', fontWeight:'600', marginBottom:'15px', lineHeight:'1.4em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', textAlign:'left'}}> 
+                    Leading safety & privacy 
+                  </Typography>
+                  <Typography 
+                    gutterBottom 
+                    sx={{fontWeight:'500', color:'#3d3d3d', textAlign:'left'}}> 
+                    XO is not simply a private jet service. Whether you’re traveling for business or leisure, XO Membership also delivers 
+                  </Typography> 
                 </Box>
               </Box>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Box sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/choose.png)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center', borderRadius:'10px'}}>
-              <Box sx={{padding:'30px 20px', backgroundColor:'#FFFFFF'}}>
-                <Box>
-                <Typography variant="h1" component="h2" sx={{color:'#E8E9EA', fontSize:'65px', lineHeight:'65px', fontWeight:'900', marginBottom:'15px', fontFamily:'"Mulish", sans-serif', textAlign:'left'}}> 01 </Typography>
-                <Typography variant="h3" component="h3" sx={{fontSize:'24px', fontWeight:'600', marginBottom:'15px', lineHeight:'1.4em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', textAlign:'left'}}> Leading private aviation </Typography>
-                <Typography variant="body1" gutterBottom sx={{lineHeight:'1.7em', fontFamily:'"Mulish", sans-serif', fontSize:'16px', fontWeight:'500', color:'#3d3d3d', textAlign:'left'}}> As well as getting to fly to many different destinations as part of their job, airplane pilots get big discounts on </Typography>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box 
+                sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/choose.png)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center', borderRadius:'10px'}}
+                >
+                <Box 
+                  sx={{padding:'30px 20px', backgroundColor:'#FFFFFF', borderRadius: "10px"}}
+                  >
+                  <Typography 
+                    variant="h1" 
+                    sx={{color:'#E8E9EA', fontWeight:'900', fontFamily:'"Mulish", sans-serif !important', textAlign:'left'}}> 
+                    04 
+                  </Typography>
+                  <Typography 
+                    variant="h3" 
+                    sx={{fontSize:'24px', fontWeight:'600', marginBottom:'15px', lineHeight:'1.4em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', textAlign:'left'}}> 
+                    Client ratings & reviews 
+                  </Typography>
+                  <Typography 
+                    gutterBottom 
+                    sx={{fontWeight:'500', color:'#3d3d3d', textAlign:'left'}}> 
+                    Search the world with ease and transparency.As the only tech-forward private aviation companyn 
+                  </Typography> 
                 </Box>
               </Box>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Box sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/choose.png)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center', borderRadius:'10px'}}>
-              <Box sx={{padding:'30px 20px', backgroundColor:'#FFFFFF'}}>
-                <Box>
-                <Typography variant="h1" component="h2" sx={{color:'#E8E9EA', fontSize:'65px', lineHeight:'65px', fontWeight:'900', marginBottom:'15px', fontFamily:'"Mulish", sans-serif', textAlign:'left'}}> 01 </Typography>
-                <Typography variant="h3" component="h3" sx={{fontSize:'24px', fontWeight:'600', marginBottom:'15px', lineHeight:'1.4em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', textAlign:'left'}}> Leading private aviation </Typography>
-                <Typography variant="body1" gutterBottom sx={{lineHeight:'1.7em', fontFamily:'"Mulish", sans-serif', fontSize:'16px', fontWeight:'500', color:'#3d3d3d', textAlign:'left'}}> As well as getting to fly to many different destinations as part of their job, airplane pilots get big discounts on </Typography>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box 
+                sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/choose.png)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center', borderRadius:'10px'}}
+                >
+                <Box 
+                  sx={{padding:'30px 20px', backgroundColor:'#FFFFFF', borderRadius: "10px"}}
+                  >
+                  <Typography 
+                    variant="h1" 
+                    sx={{color:'#E8E9EA', fontWeight:'900', fontFamily:'"Mulish", sans-serif !important', textAlign:'left'}}> 
+                    05 
+                  </Typography>
+                  <Typography 
+                    variant="h3" 
+                    sx={{fontSize:'24px', fontWeight:'600', marginBottom:'15px', lineHeight:'1.4em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', textAlign:'left'}}> 
+                    Exceptional service 
+                  </Typography>
+                  <Typography 
+                    gutterBottom 
+                    sx={{fontWeight:'500', color:'#3d3d3d', textAlign:'left'}}> 
+                    Our technology consistently delivers the best pricing for charters – and the unique ability to buy individual seats. 
+                  </Typography> 
                 </Box>
               </Box>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Box sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/choose.png)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center', borderRadius:'10px'}}>
-              <Box sx={{padding:'30px 20px', backgroundColor:'#FFFFFF'}}>
-                <Box>
-                <Typography variant="h1" component="h2" sx={{color:'#E8E9EA', fontSize:'65px', lineHeight:'65px', fontWeight:'900', marginBottom:'15px', fontFamily:'"Mulish", sans-serif', textAlign:'left'}}> 01 </Typography>
-                <Typography variant="h3" component="h3" sx={{fontSize:'24px', fontWeight:'600', marginBottom:'15px', lineHeight:'1.4em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', textAlign:'left'}}> Leading private aviation </Typography>
-                <Typography variant="body1" gutterBottom sx={{lineHeight:'1.7em', fontFamily:'"Mulish", sans-serif', fontSize:'16px', fontWeight:'500', color:'#3d3d3d', textAlign:'left'}}> As well as getting to fly to many different destinations as part of their job, airplane pilots get big discounts on </Typography>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box 
+                sx={{backgroundImage:'url(https://themeim.com/demo/flynext/assets/images/choose.png)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center', borderRadius:'10px'}}
+                >
+                <Box 
+                  sx={{padding:'30px 20px', backgroundColor:'#FFFFFF', borderRadius: "10px"}}
+                  >
+                  <Typography 
+                    variant="h1" 
+                    sx={{color:'#E8E9EA', fontWeight:'900', fontFamily:'"Mulish", sans-serif !important', textAlign:'left'}}> 
+                    06 
+                  </Typography>
+                  <Typography 
+                    variant="h3" 
+                    sx={{fontSize:'24px', fontWeight:'600', marginBottom:'15px', lineHeight:'1.4em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif', textAlign:'left'}}> 
+                    Faster & smarter response 
+                  </Typography>
+                  <Typography 
+                    gutterBottom 
+                    sx={{fontWeight:'500', color:'#3d3d3d', textAlign:'left'}}> 
+                    The first small jet-powered civil aircraft was the Morane-Saulnier MS.760 Paris, developed privately in the early 1950s 
+                  </Typography> 
                 </Box>
               </Box>
-            </Box>
+            </Grid>
           </Grid>
-        </Grid>
         </Box>
       </Container>
     </Box>

@@ -21,21 +21,24 @@ const ServiceCards = () => {
     })
 
     return (
+        <Box sx={{bgcolor: "#F5F3F1" }}>
         <Container>
+            <Box sx={ { flexGrow: 1, padding: "100px 0"} }>
+                <Box data-aos='zoom-in-down' style={ { textAlign: 'center'} }>
 
-            <Box sx={{ flexGrow: 1 }}>
-                <Box style={{ textAlign: 'center', margin: '20px', padding: '10px' }} data-aos='zoom-in-down'>
-
-                    <Typography gutterBottom variant="h6" component="div">
-                        Discover <span style={{ color: '#DCBB87' }}>Flynext</span> Benefits
+                    <Typography 
+                    gutterBottom 
+                    sx={{fontSize: "20px", fontWeight: 700}}
+                    >
+                        Discover <span style={ { color: '#4527a0', fontSize: "20px", fontWeight: 700 } }>DreamFly</span> Benefits
                     </Typography>
-                    <Typography gutterBottom variant="h3" component="div">
+                    <Typography gutterBottom variant="h2">
                         Discover Private Jet Benefits
                     </Typography>
                 </Box>
-                <Grid container spacing={0} columns={{ xs: 4, sm: 8, md: 12 }}>
-                    {Array.from(Array(6)).map((_, index) => (
-                        <Grid item xs={12} sm={12} md={4} lg={4} key={index}>
+                <Grid container spacing={ 0 } sx={{mt: "50px"}} columns={ { xs: 4, sm: 8, md: 12 } }>
+                    { Array.from(Array(6)).map((_, index) => (
+                        <Grid item xs={ 12 } sm={ 12 } md={ 4 } lg={ 4 } key={ index }>
                             <Card className='cardBody' data-aos='zoom-in'>
                                 <>
 
@@ -57,6 +60,7 @@ const ServiceCards = () => {
                 </Grid>
             </Box>
         </Container>
+        </Box>
     );
 };
 

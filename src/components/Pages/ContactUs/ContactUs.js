@@ -7,7 +7,6 @@ import './ContactUs.css'
 import { styled } from '@mui/material/styles';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../../Shared/Footer/Footer';
-import SignUp from '../Login/SignUp/SignUp';
 import InputTextField from '../../StyledComponent/InputTextField/InputTextField';
 
 
@@ -45,10 +44,7 @@ const ContactUs = () => {
     };
     return (
         <>
-            <Navigation></Navigation>
-            <Container>
-                <SignUp />
-            </Container>
+            <Navigation/>
 
             {/* Contact Information Section */ }
 
@@ -257,7 +253,7 @@ const ContactUs = () => {
                     </Grid>
                 </Container>
             </Box>
-            <Footer></Footer>
+            <Footer/>
         </>
     );
 };

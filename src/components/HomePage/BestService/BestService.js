@@ -19,44 +19,57 @@ const BestService = () => {
   })
 
   return (
-    <Box component="div" className="bestService" sx={{ py: 10 }}>
+    <Box component="div" className="bestService" sx={{ padding: "100px 0" }}>
       <Container>
         <Box className="jatService">
-          <Box component="div" className="card" data-aos='zoom-in-right'>
+          <Box component="div" className="card" xs={ 12 } sm={ 12 } md={ 7 } lg={ 7 }>
+            <Box className="card_img">
+              <img src={ overview1 } alt="" />
+            </Box>
+            <Box className="card_content">
+              <Typography sx={{color: "white" }} variant="h3">
+                Business Jet Charter
+              </Typography>
+              <Typography sx={{color: "white"}}>
+                Trade crowded airports and wasted time for the ease, comfort,
+                and convenience of travel by private jet.
+              </Typography>
+              <Button sx={ { color: "#fff !important", fontWeight: 500, fontSize: "18px" } }>
+                Book Now
+              </Button>
+            </Box>
+          </Box>
+          <Box component="div" className="card">
             <Box className="card_img">
               <img src={overview2} alt="" />
             </Box>
             <Box className="card_content" xs={12} sm={12} md={6} lg={6}>
-              <Typography variant="stong">#1 Private Jet Charter</Typography>
+              <Typography sx={{color: "white"}} variant="stong">
+                #1 Private Jet Charter
+              </Typography>
               <Typography
-                variant="h5"
-                sx={{
-                  margin: "10px 0",
-                  padding: "10px 0",
+                variant="h3"
+                sx={ {
+                  my: "8px",
+                  pb: "20px",
+                  color: "white",
                   borderBottom: "1px dashed rgba(255, 255, 255, 0.3)",
                 }}
               >
                 Find the Best Service For You
               </Typography>
-              <Typography variant="h6">Private Jet Charter</Typography>
-              <Typography variant="h6">02 Business Jet Charter</Typography>
-              <Typography variant="h6">03 Private Helicopter</Typography>
-              <Typography variant="h6">04 Air Ambulance</Typography>
-            </Box>
-          </Box>
-          <Box component="div" className="card" xs={12} sm={12} md={7} lg={7} data-aos='zoom-in-left'>
-            <Box className="card_img">
-              <img src={overview1} alt="" />
-            </Box>
-            <Box className="card_content">
-              <Typography variant="h5">overview Air Ambulance</Typography>
-              <Typography>
-                Trade crowded airports and wasted time for the ease, comfort,
-                and convenience of travel by private jet.
+              <Typography sx={{color: "white"}} variant="h6">
+                01 Private Jet Charter
               </Typography>
-              <Button sx={{ color: "#dcbb87 !important", fontWeight: 700 }}>
-                Book Now
-              </Button>
+              <Typography sx={{color: "white"}} variant="h6">
+                02 Business Jet Charter
+              </Typography>
+              <Typography sx={{color: "white"}} variant="h6">
+                03 Private Helicopter
+              </Typography>
+              <Typography sx={{color: "white"}} variant="h6">
+                04 Air Ambulance
+              </Typography>
             </Box>
           </Box>
         </Box>
