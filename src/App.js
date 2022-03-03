@@ -14,7 +14,7 @@ import AboutUs from "./components/Pages/AboutUs/AboutUs/AboutUs";
 import OurCoursesDetails from "./components/Pages/OurCourses/OurCoursesDetails/OurCoursesDetails";
 import OurCourses from "./components/Pages/OurCourses/OurCourses";
 import SignUp from "./components/Pages/Login/SignUp/SignUp";
-import SignInSide from "./components/Pages/Login/SignIn/SignInSide"; 
+import SignInSide from "./components/Pages/Login/SignIn/SignInSide";
 import UserOrder from "./components/Dashboard/User/UserOrder/UserOrder";
 import UserProfile from "./components/Dashboard/User/UserProfile/UserProfile";
 import ManageUsers from "./components/Dashboard/Admin/AdminPanel/ManageUsers/ManageUsers/ManageUsers";
@@ -86,6 +86,7 @@ function App() {
               </AdminRoute>
             }
           >
+            <Route path="/Dashboard" element={ <UserProfile /> } />
             <Route path="AddBlog" element={ <AddBlog /> } />
             <Route path="AddFlight" element={ <ManageFlight /> } />
             <Route path="ManageUsers" element={ <ManageUsers /> } />
