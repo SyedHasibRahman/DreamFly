@@ -10,21 +10,13 @@ import {
   addDateAndPass,
   addFilterData,
 } from "../../../../Redux/Slice/flightSlice";
+
+import { Link } from "react-router-dom";
 import SecondaryButton from "../../../StyledComponent/Buttons/SecondaryButton";
-import AOS from 'aos';
-import 'aos/dist/aos.css'
 
 
 const PersonalFlight = () => {
-  useEffect(() => {
-    AOS.init({
-      offset: 200,
-      duration: 400,
-      easing: 'ease-in-sine',
-      delay: 100,
 
-    });
-  })
   const [flights, setFlights] = useState([]);
   const [to, setTo] = useState([]);
   const fromRef = useRef();
@@ -92,7 +84,6 @@ const PersonalFlight = () => {
       sx={{
         flexGrow: 1
       }}
-      data-aos='fade-down'
     >
       <Container
         className="personal_flight"
@@ -105,14 +96,13 @@ const PersonalFlight = () => {
         }}
       >
         <Box
-          component="div"
-          sx={{ textAlign: "center", color: "#fff", paddingTop: "50px" }}
+          sx={{ textAlign: "center", color: "#fff", paddingTop: "50px", paddingBottom: "40px" }}
           >
-          <Typography sx={{color:'white', fontWeight:'700', fontSize:'20px',marginBottom:'10px', textAlign: "center"}}>
+          <Typography sx={{fontWeight:'600', color: "#fff", fontSize:'18px',marginBottom:'10px'}}>
             DreamFly Book
           </Typography>
-          <Typography variant="h2" sx={{ padding: "20px 0", color: "white" }}>
-            Book A Personal Flight
+          <Typography variant="h2" sx={{ color: "#fff", }}>
+            Book A Flight
           </Typography>
         </Box>
         <Grid
@@ -120,7 +110,7 @@ const PersonalFlight = () => {
           spacing={{ xs: 2, md: 3, lg: 3 }}
           className="flight_box"
         >
-          <Grid item xs={12} sm={12} md={6} lg={3} data-aos='zoom-in'>
+          <Grid item xs={12} sm={12} md={6} lg={3}>
             <Box className="selector_box">
               <Box for="cars" className="label">
                 From
@@ -130,7 +120,7 @@ const PersonalFlight = () => {
                 ref={fromRef}
                 onChange={() => handleFrom()}
               >
-                <option style={{color: "black"}} value="">From</option>
+                <option style={{color: "black"}} required  value="From">From</option>
                 {filterFrom.map((flight) => {
                   const { from } = flight;
                   return (
@@ -142,11 +132,11 @@ const PersonalFlight = () => {
               </select>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3} data-aos='zoom-in'>
+          <Grid item xs={12} sm={12} md={6} lg={3}>
             <Box className="selector_box">
               <Box className="label">To</Box>
               <select className="selector" ref={toRef}>
-                <option style={{color: "black"}} value="">To</option>
+                <option style={{color: "black"}} required  value="To">To</option>
                 {to.map((flight) => {
                   const { to } = flight;
                   return (
@@ -158,7 +148,7 @@ const PersonalFlight = () => {
               </select>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3} data-aos='zoom-in'>
+          <Grid item xs={12} sm={12} md={6} lg={3}>
             <Box className="selector_box">
               <Box for="cars" className="label">
                 Date
@@ -173,7 +163,7 @@ const PersonalFlight = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3} data-aos='zoom-in'>
+          <Grid item xs={12} sm={12} md={6} lg={3}>
             <Box className="selector_box">
               <Box for="cars" className="label">
                 Passenger
@@ -193,10 +183,12 @@ const PersonalFlight = () => {
               </Box>
             </Box>
           </Grid>
-          <Box className="personal_flight_btn" component="div">
-            <SecondaryButton onClick={handleSubmit}>
-              search now
-            </SecondaryButton>
+          <Box className="personal_flight_btn">
+            <Link to="/Services" style={{textDecoration: "none"}}>
+              <SecondaryButton onClick={handleSubmit}>
+                search now
+              </SecondaryButton>
+            </Link>
           </Box>
         </Grid>
       </Container>

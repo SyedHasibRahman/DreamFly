@@ -18,7 +18,7 @@ const AboutUs = () => {
             <CounterArea />
             <OurHistory />
             <OurTeam />
-            <Box sx={{padding:'100px 0'}}>
+            <Box className="paddingY90">
                 <Container>
                     <Typography  
                         sx={{color:'#5e35b1', fontWeight:'700', fontSize:'20px',marginBottom:'10px', textAlign:'center'}}

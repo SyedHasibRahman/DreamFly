@@ -10,7 +10,7 @@ const CounterArea = () => {
       <Container sx={{padding:'100px 0'}}>
         <Box>
           <Box>
-          <Grid container spacing={4}>
+          <Grid container spacing={{xs: 8, md: 5}}>
             <Grid item xs={12} sm={6} md={3}>
               <Box 
                 sx={{width:'100%', height:'100%', borderRight:'1px dotted #dcbb87'}}
