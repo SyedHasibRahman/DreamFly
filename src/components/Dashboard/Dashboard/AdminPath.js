@@ -1,7 +1,16 @@
-import { ListItem, ListItemIcon, ListItemText } from '@mui/material'; 
+import { ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import AirplaneTicketIcon from '@mui/icons-material/AirplaneTicket';
+import AddBusinessIcon from '@mui/icons-material/AddBusiness';
+import GroupIcon from '@mui/icons-material/Group';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import Inventory2Icon from '@mui/icons-material/Inventory2';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import AddCommentIcon from '@mui/icons-material/AddComment';
+import StoreIcon from '@mui/icons-material/Store';
 
 const AdminPath = () => {
     return (
@@ -16,11 +25,20 @@ const AdminPath = () => {
                     <ListItemText primary="Home" />
                 </ListItem>
             </Link>
-
+            <Link to='' >
+                <ListItem button key="Test" primary="Test Primary"  >
+                    <ListItemIcon>
+                        <AccountBoxIcon style={ {
+                            color: 'white'
+                        } } />
+                    </ListItemIcon>
+                    <ListItemText primary="User Profile" />
+                </ListItem>
+            </Link>
             <Link to='/Dashboard/AddFlight' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <HomeIcon style={ {
+                        <AirplaneTicketIcon style={ {
                             color: 'white'
                         } } />
                     </ListItemIcon>
@@ -30,7 +48,7 @@ const AdminPath = () => {
             <Link to='/Dashboard/ManageUsers' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <HomeIcon style={ {
+                        <ManageAccountsIcon style={ {
                             color: 'white'
                         } } />
                     </ListItemIcon>
@@ -40,7 +58,7 @@ const AdminPath = () => {
             <Link to='/Dashboard/AddPackage' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <HomeIcon style={ {
+                        <AddBusinessIcon style={ {
                             color: 'white'
                         } } />
                     </ListItemIcon>
@@ -50,7 +68,7 @@ const AdminPath = () => {
             <Link to='/Dashboard/ManagePackages' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <HomeIcon style={ {
+                        <Inventory2Icon style={ {
                             color: 'white'
                         } } />
                     </ListItemIcon>
@@ -60,7 +78,7 @@ const AdminPath = () => {
             <Link to='/Dashboard/ManageOrders' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <HomeIcon style={ {
+                        <ShoppingCartIcon style={ {
                             color: 'white'
                         } } />
                     </ListItemIcon>
@@ -71,7 +89,7 @@ const AdminPath = () => {
             <Link to='/Dashboard/AddBlog' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <HomeIcon style={ {
+                        <AddCommentIcon style={ {
                             color: 'white'
                         } } />
                     </ListItemIcon>
@@ -81,7 +99,7 @@ const AdminPath = () => {
             <Link to='/Dashboard/ManageBlog' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <HomeIcon style={ {
+                        <StoreIcon style={ {
                             color: 'white'
                         } } />
                     </ListItemIcon>

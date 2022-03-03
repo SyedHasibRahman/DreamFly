@@ -11,11 +11,12 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'; 
-import { Avatar } from '@mui/material';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import { Avatar, Button } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import AdminPath from './AdminPath';
 import PrivatePath from './PrivatePath';
+import useAuth from '../../../hooks/useAuth';
 
 const drawerWidth = 240;
 
@@ -85,7 +86,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const Dashboard = () => {
-
+    const { user, admin, logOut } = useAuth()
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -121,9 +122,24 @@ const Dashboard = () => {
                         width: '93%'
                     } }>
                         <Typography variant="h6" noWrap component="div">
-                            Mini variant drawer
+                            { user.displayName || user?.email }
                         </Typography>
-                        <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+                        <Box sx={ {
+                            display: 'flex',
+                        } }>
+                            { user.email &&
+                                <Button
+                                    sx={ {
+                                        textDecoration: "none",
+                                        color: "black",
+                                        fontWeight: 600,
+                                    } }
+                                    onClick={ logOut }>
+                                    LogOut
+                                </Button>
+                            }
+                            <Avatar alt="Travis Howard" src={ user?.photoURL } />
+                        </Box>
                     </Box>
                 </Toolbar>
             </AppBar>
@@ -139,19 +155,28 @@ const Dashboard = () => {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <List sx={ {
-                    backgroundColor: '#5E35B1 !important',
-                    height: '100vh',
-                    color: 'white'
-                } }>
-                    <AdminPath />
-                </List>
-                <Divider />
-                <List sx={ {
-                    backgroundColor: '#5E35B1 !important',
-                } }>
-                    <PrivatePath />
-                </List>
+                { admin ?
+                    <List sx={ {
+                        backgroundColor: '#5E35B1 !important',
+                        height: '100vh',
+                        color: 'white'
+                    } }>
+
+                        <AdminPath />
+
+                    </List>
+                    :
+                    <List sx={ {
+                        backgroundColor: '#5E35B1 !important',
+                        height: '100vh',
+                        color: 'white'
+                    } }>
+
+                        <PrivatePath />
+
+                    </List>
+                }
+
             </Drawer>
             <Box component="main" sx={ { flexGrow: 1, p: 3 } }>
                 <DrawerHeader />
