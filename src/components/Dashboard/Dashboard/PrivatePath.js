@@ -1,8 +1,5 @@
-import React from 'react'; import { ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import HomeIcon from '@mui/icons-material/Home';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import React from 'react'; import { ListItem, ListItemIcon, ListItemText } from '@mui/material'; 
+import HomeIcon from '@mui/icons-material/Home'; 
 import { Link } from 'react-router-dom';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
