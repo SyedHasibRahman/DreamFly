@@ -1,23 +1,22 @@
 import { Container, Grid, Typography, Link } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import ButtonOutline from "../../StyledComponent/Buttons/ButtonOutline";
 import "./Banner.css";
 
 const Banner = () => {
   return (
-    <Box sx={{ backgroundColor: "#19232d", minHeight: "100vh" }}>
+    <Box sx={{}}>
       <Box
         sx={{
           backgroundImage:
-            "url(https://themeim.com/demo/flynext/assets/images/element/element-1.png)",
-          backgroundColor: "#19232d",
+            "url(https://static.tickets.com.tr/img/v4/header-bg.svg)",
           backgroundPosition: "right",
+          height: "100%",
           backgroundRepeat: "no-repeat",
-          opacity: "1",
           backgroundSize: "right",
         }}
       >
-        <Container sx={{ padding: "200px 0", position: "relative" }}>
+        <Container sx={{ padding: "100px 0", position: "relative" }}>
           <Box display={{ xs: "none", md: "block" }}>
             <Box className="socialIconBox">
               <Link href="#" className="socialIcon">
@@ -34,63 +33,63 @@ const Banner = () => {
               </Link>
             </Box>
           </Box>
-          <Grid container spacing={0}>
-            <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
-              <Box>
-                <Typography
-                  variant="h1"
-                  component="h2"
-                  sx={{
-                    fontWeight: "600",
-                    fontStyle: "italic",
-                    fontSize: "30px",
-                    fontFamily: "'Mulish', sans-serif",
-                    marginBottom: "25px",
-                    color: "#FFFFFF",
-                  }}
-                >
-                  {" "}
-                  <span style={{ color: "#dcbb87" }}>Dream</span>fly{" "}
-                </Typography>
-                <Typography
-                  variant="h1"
-                  component="h2"
-                  sx={{
-                    fontWeight: "700",
-                    marginBottom: "25px",
-                    color: "#FFFFFF",
-                    fontSize: "65px",
-                    lineHeight: "1.3em",
-                    fontFamily: "'Playfair Display', serif",
-                  }}
-                >
-                  {" "}
-                  Book a private jet instantly{" "}
-                </Typography>
-                <Typography
-                  variant="body1"
-                  gutterBottom
-                  sx={{
-                    width: "80%",
-                    fontSize: "16px",
-                    lineHeight: "1.7em",
-                    marginBottom: "15px",
-                    color: "#FFFFFF",
-                    fontFamily: "'Mulish', sans-serif",
-                    fontWeight: "500",
-                  }}
-                >
-                  {" "}
-                  Curly Airline proudly raises the bar and exceeds the standard
-                  for luxury and corporate private jet charter services. We
-                  pride ourselves on offering a professional service.{" "}
-                </Typography>
-                <Box sx={{ marginTop: "65px" }}>
-                  <Link href="#"> Make Your Trip </Link>
-                </Box>
+          <Grid container>
+            <Grid item xs={12} md={6} lg={7} order={{ xs: 2, md: 1 }}>
+              <Typography
+                variant="h2"
+                className="banner_logo"
+                sx={{
+                  fontWeight: "600",
+                  fontStyle: "italic",
+                  fontSize: "30px",
+                  fontFamily: "'Mulish', sans-serif",
+                  marginBottom: "25px",
+                  color: "#FFFFFF",
+                }}
+              >
+                <span style={{ color: "#DC1585" }}>Dream</span>Fly
+              </Typography>
+              <Typography
+                className="banner_logo"
+                variant="h1"
+                sx={{
+                  fontWeight: "700",
+                  marginBottom: "25px",
+                  color: "#FFFFFF",
+                  fontSize: "65px",
+                  lineHeight: "1.3em",
+                  fontFamily: "'Playfair Display', serif",
+                }}
+              >
+                Book a private <br /> jet instantly
+              </Typography>
+              <Typography
+                className="banner_logo"
+                variant="body1"
+                gutterBottom
+                sx={{
+                  width: "80%",
+                  fontSize: "16px",
+                  lineHeight: "1.7em",
+                  marginBottom: "15px",
+                  color: "#FFFFFF",
+                  fontFamily: "'Mulish', sans-serif",
+                  fontWeight: "500",
+                }}
+              >
+                Curly Airline proudly raises the bar and exceeds the standard
+                for luxury and corporate private jet charter services. We pride
+                ourselves on offering a professional service.
+              </Typography>
+              <Box sx={{ marginTop: "40px" }}>
+                <Link style={{ textDecoration: "none" }} href="#">
+                  <ButtonOutline sx={{ ":hover": { borderColor: "white" } }}>
+                    Make Your Trip
+                  </ButtonOutline>
+                </Link>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
+            <Grid item xs={12} md={6} lg={5} order={{ xs: 1, md: 2 }}>
               <Box sx={{ width: "100%", height: "100%" }}>
                 <img
                   className="banner_img"

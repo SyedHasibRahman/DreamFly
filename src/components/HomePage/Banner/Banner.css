@@ -1,4 +1,4 @@
-.socialIconBox{
+.socialIconBox {
   position: absolute;
   left: -50px;
   top: 50%;
@@ -8,45 +8,49 @@
   justify-content: center;
   align-items: center;
 }
-.socialIconBox::before{
+.socialIconBox::before {
   position: absolute;
-  content: '';
+  content: "";
   top: -200px;
   left: 13px;
   width: 1px;
   height: 180px;
   background-color: rgba(255, 255, 255, 0.1);
 }
-.socialIconBox::after{
+.socialIconBox::after {
   position: absolute;
-  content: '';
+  content: "";
   bottom: -200px;
   left: 13px;
   width: 1px;
   height: 180px;
   background-color: rgba(255, 255, 255, 0.1);
 }
-.socialIcon{
+.socialIcon {
   width: 30px;
   height: 30px;
   line-height: 30px;
   text-align: center;
   background: transparent;
-  border: 1px solid rgba(220, 187, 135, 0.2);
+  border: 1px solid;
   font-size: 11px;
   border-radius: 50%;
   transition: all 0.5s;
   text-decoration: none;
   margin: 10px 0 !important;
 }
-.socialIcon:hover{
-  background: #dcbb87;
-  border: 1px solid #dcbb87;
+.socialIcon:hover {
+  background: white;
+  border: 1px solid white;
 }
-.socialIcon > i{
+.socialIcon > i {
   color: #dcbb87;
   font-weight: 500;
 }
-.socialIcon:hover > i{
-  color: white;
+.socialIcon:hover > i {
+  color: #4527a0;
+}
+
+.banner_img {
+  margin-left: -130px;
 }

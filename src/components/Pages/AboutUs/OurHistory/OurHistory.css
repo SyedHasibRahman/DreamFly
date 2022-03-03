@@ -1,0 +1,8 @@
+.MuiTimelineDot-outlined{
+    border-color: #4527a0 !important;  
+    padding: 5px !important;
+}
+.MuiTimelineConnector-root{
+    background-color: #4527a0 !important;
+    width: 1px !important;
+}

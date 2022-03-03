@@ -8,23 +8,30 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
 import "./TourPackages.css";
 import {
-  Box, 
+  Box,
   Card,
   CardActionArea,
   CardActions,
   CardContent,
   CardMedia,
-  Container, 
+  Container,
   Typography,
 } from "@mui/material";
 import VideoCameraBackIcon from "@mui/icons-material/VideoCameraBack";
-import BookingModal from '../BookingModal/BookingModal';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+
 
 const TourPackages = () => {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 400,
+      easing: 'ease-in-sine',
+      delay: 100,
 
-  const [openBooking, setBookingOpen] = React.useState(false);
-  const handleBookingOpen = () => setBookingOpen(true);
-  const handleBookingClose = () => setBookingOpen(false);
+    });
+  })
 
   const sliderRef = useRef(null);
   const [packages, setPackages] = useState([]);
@@ -63,56 +70,59 @@ const TourPackages = () => {
   };
   return (
     <>
-      <Box className="tour_packages">
+      <Box className="tour_packages" data-aos='zoom-in-down'>
         <Container>
-          <Box style={ { padding: "40px 0px" } }>
-            <Box component="div" sx={ { textAlign: "center" } }>
-              <Typography variant="h6" sx={ { fontWeight: 600, color: "#fff" } }>
-                <span style={ { color: "#dcbb87" } }>Flynext</span> Package
+          <Box data-aos='zoom-in' style={ { } }>
+            <Box data-aos='zoom-in-up' style={ { textAlign: 'center'} }>
+              <Typography 
+                gutterBottom 
+                sx={{fontSize: "20px", color: 'white', fontWeight: 700}}
+                >
+                Discover DreamFly Packages
               </Typography>
-              <Typography
-                variant="h3"
-                sx={ { py: 3, fontWeight: 600, fontSize: "2.5rem", color: "#fff" } }
-              >
+              <Typography 
+                gutterBottom 
+                variant="h2"
+                sx={{color: 'white', mb: "50px"}}>
                 DreamFly Tour Packages
               </Typography>
             </Box>
             <Slider
-              { ...settings }
-              ref={ sliderRef }
-              slidesToShow={ 3 }
-              slidesToScroll={ 1 }
-              customPaging={ (i) => (
+              {...settings}
+              ref={sliderRef}
+              slidesToShow={3}
+              slidesToScroll={1}
+              customPaging={(i) => (
                 <div
-                  style={ {
+                  style={{
                     position: "absolute",
                     width: "100%",
                     top: "-10px",
                     opacity: 0,
-                  } }
+                  }}
                 >
-                  { i }
+                  {i}
                 </div>
-              ) }
+              )}
             >
-              { packages.map((item) => (
-                <Box style={ {} } key={ item._id }>
+              {packages.map((item) => (
+                <Box style={{}} key={item._id} data-aos='zoom-in-up'>
                   <Card
-                    sx={ {
+                    sx={{
                       maxWidth: "100%",
                       margin: "10px",
                       position: "relative",
-                    } }
+                    }}
                   >
                     <CardActionArea>
                       <Box className="tour_img">
                         <CardMedia
                           component="img"
-                          image={ item?.images }
+                          image={item?.images}
                           alt="green iguana"
                         />
                         <Typography className="tour_price">
-                          ${ item?.price }
+                          ${item?.price}
                         </Typography>
                       </Box>
                       <CardContent>
@@ -120,35 +130,35 @@ const TourPackages = () => {
                           gutterBottom
                           variant="h5"
                           component="div"
-                          sx={ { fontWeight: 600, fontSize: "1.4rem" } }
+                          sx={{ fontWeight: 600, fontSize: "1.4rem" }}
                         >
-                          { item?.title }
+                          {item?.title}
                         </Typography>
                         <Typography
-                          sx={ { color: "#111", fontWeight: 500, py: 1 } }
+                          sx={{ color: "#111", fontWeight: 500, py: 1 }}
                         >
-                          Date: { item?.date }
+                          Date: {item?.date}
                         </Typography>
-                        <Typography sx={ { color: "#111", fontWeight: 500 } }>
-                          Person: { item?.person }
+                        <Typography sx={{ color: "#111", fontWeight: 500 }}>
+                          Person: {item?.person}
                         </Typography>
                       </CardContent>
                       <CardActions
-                        sx={ { display: "flex", justifyContent: "space-between" } }
+                        sx={{ display: "flex", justifyContent: "space-between" }}
                       >
                         <Box>
                           <span className="airplane">
                             <AirplanemodeActiveIcon />
                           </span>
-                          <a style={ { textDecoration: "none" } }
-                            href={ `/TourPackages/${item._id}` }
+                          <a style={{ textDecoration: "none" }}
+                            href={`/TourPackages/${item._id}`}
                           >
-                            <Box sx={ { display: "flex", fontSize: "25px", textAlign: "center", ml: 1 } }>
-                              <Typography sx={ { color: '#5e35b1', fontWeight: 600, textTransform: 'capitalize', } }>
+                            <Box sx={{ display: "flex", fontSize: "25px", textAlign: "center", ml: 1 }}>
+                              <Typography sx={{ color: '#5e35b1', fontWeight: 600, textTransform: 'capitalize', }}>
                                 Book Now
                               </Typography>
-                              <Typography sx={ { color: '#5e35b1', fontWeight: 600, ml: 1 } }>
-                                {/* <ArrowRightAltIcon/> */ }
+                              <Typography sx={{ color: '#5e35b1', fontWeight: 600, ml: 1 }}>
+                                {/* <ArrowRightAltIcon/> */}
                               </Typography>
                             </Box>
                           </a>
@@ -160,33 +170,33 @@ const TourPackages = () => {
                     </CardActionArea>
                   </Card>
                 </Box>
-              )) }
+              ))}
             </Slider>
           </Box>
           <Box
-            style={ {
+            style={{
               display: "flex",
               justifyContent: "space-between",
               padding: "0 10px",
-            } }
+            }}
           >
             <Box
-              style={ {
+              style={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 width: "100%",
-              } }
+              }}
             >
               <Box
                 className="arrow_buttons left"
-                onClick={ () => sliderRef.current.slickPrev() }
+                onClick={() => sliderRef.current.slickPrev()}
               >
                 <ArrowBackIosNewIcon />
               </Box>
               <Box
                 className="arrow_buttons"
-                onClick={ () => sliderRef.current.slickNext() }
+                onClick={() => sliderRef.current.slickNext()}
               >
                 <ArrowForwardIosIcon />
               </Box>
@@ -194,13 +204,6 @@ const TourPackages = () => {
           </Box>
         </Container>
       </Box>
-
-      <BookingModal
-        openBooking={ openBooking }
-        handleBookingClose={ handleBookingClose }
-      // setBookingSuccess={setBookingSuccess}
-      ></BookingModal>
-
     </>
   );
 };

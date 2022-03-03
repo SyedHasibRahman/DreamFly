@@ -23,12 +23,10 @@ const Navigation = () => {
   const pages = [
     "Home",
     "Services",
-    "AboutUs",
-    "OurPilots",
-    "ContactUs",
+    "About",
+    "Contact",
     "Blogs",
-    "OurCourses",
-    "OurCoursesDetails",
+    "Courses",
   ];
   const settings = ["Profile", "Account", "Dashboard"];
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -51,17 +49,15 @@ const Navigation = () => {
 
   return (
     <>
-      {/* background: 'linear-gradient(90deg, #93FFD8, #CFFFDC) || #512DA8*/}
-      {/* background: 'linear-gradient(90deg, #99FEFF, #94DAFF)' */}
       <AppBar
         position="sticky"
         sx={{
-          background: "linear-gradient(90deg, #512DA8, #512DA8)",
-          py: "10px",
+          background: "linear-gradient(90deg, #5e35b1, #5e35b1)",
+          py: "5px"
         }}
       >
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
+        <Container>
+          <Toolbar disableGutters sx={{p: 0, m: 0}}>
             <Typography
               variant="h6"
               noWrap
@@ -104,7 +100,7 @@ const Navigation = () => {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography sx={{ color: "white" }}>{page}</Typography>
+                    <Typography sx={{ fontWeight: 600 }}>{page}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -115,7 +111,7 @@ const Navigation = () => {
               component="div"
               sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
             >
-              <img src={logo} width="200px" alt="logo" />
+              <img src={logo} width="150px" alt="logo" />
             </Typography>
             <Box
               sx={{
@@ -192,10 +188,16 @@ const Navigation = () => {
                 ))}
                 <MenuItem>
                   {user.email ? (
-                    <Button onClick={logOut} color="inherit">
+                    <Typography 
+                    sx={{
+                        textDecoration: "none",
+                        color: "black",
+                        fontWeight: 600,
+                      }} 
+                      onClick={logOut}>
                       LogOut
-                    </Button>
-                  ) : (
+                    </Typography>
+                    ) : (
                     <Link
                       style={{
                         textDecoration: "none",

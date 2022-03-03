@@ -2,10 +2,10 @@ import { styled } from '@mui/system';
 import { Button } from "@mui/material";
 
 
-const PrimaryButton = styled(Button)({
+const ButtonOutline = styled(Button)({
     '&' : {
-        background: '#5e35b1',
-        color: '#FFF',
+        background: "white",
+        color: '#4527a0',
         fontWeight: '600',
         padding: '5px 30px',
         borderRadius: "50px",
@@ -16,12 +16,12 @@ const PrimaryButton = styled(Button)({
     },
     '&:hover': {
     borderColor: '#4527a0',
-    background: "white",
-    color: '#4527a0',
     transition: ".9s",
     fontWeight: '600',
+    background: '#5e35b1',
+    color: '#FFF',
   }
 });
 
-export default PrimaryButton;
+export default ButtonOutline;
 
