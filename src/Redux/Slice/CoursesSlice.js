@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchCourses = createAsyncThunk(
   "course/fetchCourses",
   async () => {
-    const response = await fetch("http://localhost:5000/course").then((res) =>
+    const response = await fetch("https://salty-beach-45243.herokuapp.com/course").then((res) =>
       res.json()
     );
     return response;
@@ -12,7 +12,7 @@ export const fetchCourses = createAsyncThunk(
 export const postCourses = createAsyncThunk(
   "course/postCourses",
   async (data) => {
-    const response = await fetch("http://localhost:5000/course", {
+    const response = await fetch("https://salty-beach-45243.herokuapp.com/course", {
       method: "post",
       headers: {
         "content-type": "application/json",
@@ -26,7 +26,7 @@ export const deleteCourses = createAsyncThunk(
   "course/deleteCourses",
   async (id) => {
     const response = await fetch(
-      `http://localhost:5000/course/deleteCourse/${id}`,
+      `https://salty-beach-45243.herokuapp.com/course/deleteCourse/${id}`,
       {
         method: "delete",
       }
@@ -37,7 +37,7 @@ export const deleteCourses = createAsyncThunk(
 export const updateCourses = createAsyncThunk(
   "course/updateCourses",
   async (data, id) => {
-    const response = await fetch(`http://localhost:5000/course/${id}`, {
+    const response = await fetch(`https://salty-beach-45243.herokuapp.com/course/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
