@@ -8,9 +8,9 @@
         "departure": "07:15 PM",
         "arrival": "08:05 PM",
         "fare": "7,999",
-        "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
+        "img": "https://bdtickets.com/images/airlines/NOVOAIR.png",
+        "category": "Genarel"
     },
-
     {
         "id": "2",
         "from": "Dhaka",
@@ -22,7 +22,6 @@
         "fare": "8,000",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "3",
         "from": "Dhaka",
@@ -34,7 +33,6 @@
         "fare": "7,000",
         "img": "https://bdtickets.com/images/airlines/BIMAN.png"
     },
-
     {
         "id": "4",
         "from": "Barisal",
@@ -57,7 +55,6 @@
         "fare": "11,999",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "6",
         "from": "Chittagong",
@@ -69,7 +66,6 @@
         "fare": "7,999",
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "7",
         "from": "Chittagong",
@@ -81,7 +77,6 @@
         "fare": "7,999",
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "8",
         "from": "Coxs Bazar",
@@ -93,7 +88,6 @@
         "fare": "7,999",
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "9",
         "from": "Coxs Bazar",
@@ -105,7 +99,6 @@
         "fare": "13,999",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "10",
         "from": "Jessore",
@@ -117,7 +110,6 @@
         "fare": "7,000",
         "img": "https://bdtickets.com/images/airlines/BIMAN.png"
     },
-
     {
         "id": "11",
         "from": "Jessore",
@@ -129,7 +121,6 @@
         "fare": "7,999",
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "12",
         "from": "Jessore",
@@ -141,7 +132,6 @@
         "fare": "7,000",
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "13",
         "from": "Jessore",
@@ -153,7 +143,6 @@
         "fare": "7,999",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "14",
         "from": "Jessore",
@@ -165,7 +154,6 @@
         "fare": "6,999",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "15",
         "from": "Jessore",
@@ -177,7 +165,6 @@
         "fare": "9,999",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "16",
         "from": "Jessore",
@@ -189,7 +176,6 @@
         "fare": "7,999",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "17",
         "from": "Jessore",
@@ -201,7 +187,6 @@
         "fare": "6,999",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "18",
         "from": "Rajshahi",
@@ -213,7 +198,6 @@
         "fare": "8,999",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "19",
         "from": "Rajshahi",
@@ -225,7 +209,6 @@
         "fare": "7,999",
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "20",
         "from": "Saidpur",
@@ -237,7 +220,6 @@
         "fare": "7,999",
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "21",
         "from": "Saidpur",
@@ -249,7 +231,6 @@
         "fare": "7,999",
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "22",
         "from": "Saidpur",
@@ -261,7 +242,6 @@
         "fare": "8,999",
         "img": "https://bdtickets.com/images/airlines/BIMAN.png"
     },
-
     {
         "id": "23",
         "from": "Saidpur",
@@ -284,7 +264,6 @@
         "fare": "8,600",
         "img": "https://bdtickets.com/images/airlines/BIMAN.png"
     },
-
     {
         "id": "25",
         "from": "Sylhet",
@@ -296,7 +275,6 @@
         "fare": "9,800",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "26",
         "from": "Chittagong",
@@ -308,7 +286,6 @@
         "fare": "21,800",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "27",
         "from": "Chittagong",
@@ -320,7 +297,6 @@
         "fare": "19,999",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "28",
         "from": "Chittagong",
@@ -332,7 +308,6 @@
         "fare": "33,000",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "29",
         "from": "Chittagong",
@@ -344,7 +319,6 @@
         "fare": "21,999",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "30",
         "from": "Chittagong",
@@ -356,7 +330,6 @@
         "fare": "15,999",
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "31",
         "from": "Chittagong",
@@ -368,7 +341,6 @@
         "fare": "21,999",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "32",
         "from": "Coxs Bazar",
@@ -380,7 +352,6 @@
         "fare": "17,999",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "33",
         "from": "Coxs Bazar",
@@ -392,7 +363,6 @@
         "fare": "19,999",
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "34",
         "from": "Sylhet",
@@ -404,7 +374,6 @@
         "fare": "17,999",
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "35",
         "from": "Sylhet",
@@ -416,7 +385,6 @@
         "fare": "16,999",
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "36",
         "from": "Sylhet",
@@ -428,7 +396,6 @@
         "fare": "22,999",
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "37",
         "from": "Sylhet",

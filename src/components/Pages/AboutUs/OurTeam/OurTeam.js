@@ -40,81 +40,125 @@ export default class OurTeam extends Component {
       ]
     };
     return (
-      <Box sx={{padding:'100px 0'}}>
+      <Box sx={{padding:'100px 0', backgroundColor:'#f5f3f1'}}>
         <Container>
-        <div>
-          <Box sx={{marginBottom:'50px'}}>
-          <Typography variant="h4" component="h2" sx={{fontWeight:'700', fontSize:'20px', marginBottom:'20px', fontFamily:'"Mulish", sans-serif', color:'#dcbb87', lineHeight:'1.5em'}}> Our team </Typography>
-          <Typography variant="h3" component="h2" sx={{fontWeight:'700', fontSize:'40px', lineHeight:'1.3em', color:'#19232d', fontFamily:'"Playfair Display", sans-serif'}}> Meet Our Team Members </Typography>
+          <Box>
+            <Typography 
+              gutterBottom 
+              sx={{color:'#5e35b1', fontWeight:'700', fontSize:'20px',marginBottom:'10px', textAlign: "center"}}
+              > 
+              Our team 
+            </Typography>
+            <Typography sx={{textAlign: "center"}} variant="h2"> 
+              Meet Our Team Members 
+            </Typography>
           </Box>
-        <Slider {...settings}>
-          <div>
+        <Box  sx={{marginTop:'50px'}}>
+        
+          <Slider {...settings}>
+
+              <Box sx={{display:'flex', justifyContent:'center'}}>
+                <Box sx={{backgroundColor:'#f5f3f1', borderRadius:'5px', width:'360px'}}>
+                  <Box 
+                    sx={{display:'flex', justifyContent:'center', borderRadius:'5px 5px 5px 5px '}}
+                    >
+                    <Box 
+                      sx={{width:'100%', height:'370px', backgroundColor:'#DDE6EF', borderRadius:'5px 5px 0 0 '}}
+                      >
+                      <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/team/team-2.png" alt="" />
+                    </Box>
+                  </Box>
+                  <Typography 
+                    sx={{backgroundColor:'transparent', fontFamily:'"Mulish", sans-serif', fontWeight:'800', fontSize: "24px", textAlign:'center', paddingTop:'16px', margin:'0', color:'#19232d',}}
+                    > 
+                    Alex Moure 
+                  </Typography>
+                  <Typography 
+                    sx={{ textAlign:'center', fontFamily:'"Mulish", sans-serif', fontSize:'18px', fontWeight:'700', fontStyle:'italic', margin:'0', paddingBottom:'16px', color:'#19232d'}}
+                    > 
+                    Director of Finance 
+                  </Typography>
+                </Box>
+              </Box>
+            
+
             <Box sx={{display:'flex', justifyContent:'center'}}>
-            <Box sx={{backgroundColor:'#f5f3f1', borderRadius:'5px', width:'360px'}}>
-            <Box sx={{display:'flex', justifyContent:'center', borderRadius:'5px 5px 5px 5px '}}>
-              <Box sx={{width:'100%', height:'370px', backgroundColor:'#DDE6EF', borderRadius:'5px 5px 0 0 '}}>
-                <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/team/team-2.png" alt="" />
+                <Box sx={{backgroundColor:'#f5f3f1', borderRadius:'5px', width:'360px'}}>
+                  <Box 
+                    sx={{display:'flex', justifyContent:'center', borderRadius:'5px 5px 5px 5px '}}
+                    >
+                    <Box 
+                      sx={{width:'100%', height:'370px', backgroundColor:'#DDE6EF', borderRadius:'5px 5px 0 0 '}}
+                      >
+                      <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/team/team-2.png" alt="" />
+                    </Box>
+                  </Box>
+                  <Typography 
+                    sx={{backgroundColor:'transparent', fontFamily:'"Mulish", sans-serif', fontWeight:'800', fontSize: "24px", textAlign:'center', paddingTop:'16px', margin:'0', color:'#19232d',}}
+                    > 
+                    Alex Moure 
+                  </Typography>
+                  <Typography 
+                    sx={{ textAlign:'center', fontFamily:'"Mulish", sans-serif', fontSize:'18px', fontWeight:'700', fontStyle:'italic', margin:'0', paddingBottom:'16px', color:'#19232d'}}
+                    > 
+                    Director of Finance 
+                  </Typography>
+                </Box>
               </Box>
-            </Box>
-            <Typography variant="h3" component="h2" sx={{transition:'all 0.5s', backgroundColor:'transparent', fontFamily:'"Mulish", sans-serif', fontWeight:'800', fontSize:'24px', lineHeight:'1.3em', textAlign:'center', padding:'16px 0', color:'#19232d', margin:'0'}}> Alex Moure </Typography>
-            <Typography variant="h4" component="h2"sx={{color:'#19232d', textAlign:'center', fontFamily:'"Mulish", sans-serif', fontSize:'16px', lineHeight:'1.5em', fontWeight:'700', fontStyle:'italic', margin:'0', paddingBottom:'16px'}}> Director of Finance </Typography>
-            </Box>
-            </Box>
-          </div>
-          <div>
-          <Box sx={{display:'flex', justifyContent:'center'}}>
-            <Box sx={{backgroundColor:'#f5f3f1', borderRadius:'5px', width:'360px'}}>
-            <Box sx={{display:'flex', justifyContent:'center', borderRadius:'5px 5px 5px 5px '}}>
-              <Box sx={{width:'100%', height:'370px', backgroundColor:'#DDE6EF', borderRadius:'5px 5px 0 0 '}}>
-                <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/team/team-2.png" alt="" />
+            
+
+            <Box sx={{display:'flex', justifyContent:'center'}}>
+                <Box sx={{backgroundColor:'#f5f3f1', borderRadius:'5px', width:'360px'}}>
+                  <Box 
+                    sx={{display:'flex', justifyContent:'center', borderRadius:'5px 5px 5px 5px '}}
+                    >
+                    <Box 
+                      sx={{width:'100%', height:'370px', backgroundColor:'#DDE6EF', borderRadius:'5px 5px 0 0 '}}
+                      >
+                      <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/team/team-2.png" alt="" />
+                    </Box>
+                  </Box>
+                  <Typography 
+                    sx={{backgroundColor:'transparent', fontFamily:'"Mulish", sans-serif', fontWeight:'800', fontSize: "24px", textAlign:'center', paddingTop:'16px', margin:'0', color:'#19232d',}}
+                    > 
+                    Alex Moure 
+                  </Typography>
+                  <Typography 
+                    sx={{ textAlign:'center', fontFamily:'"Mulish", sans-serif', fontSize:'18px', fontWeight:'700', fontStyle:'italic', margin:'0', paddingBottom:'16px', color:'#19232d'}}
+                    > 
+                    Director of Finance 
+                  </Typography>
+                </Box>
               </Box>
-            </Box>
-            <Typography variant="h3" component="h2" sx={{transition:'all 0.5s', backgroundColor:'transparent', fontFamily:'"Mulish", sans-serif', fontWeight:'800', fontSize:'24px', lineHeight:'1.3em', textAlign:'center', padding:'16px 0', color:'#19232d', margin:'0'}}> Alex Moure </Typography>
-            <Typography variant="h4" component="h2"sx={{color:'#19232d', textAlign:'center', fontFamily:'"Mulish", sans-serif', fontSize:'16px', lineHeight:'1.5em', fontWeight:'700', fontStyle:'italic', margin:'0', paddingBottom:'16px'}}> Director of Finance </Typography>
-            </Box>
-            </Box>
-          </div>
-          <div>
-          <Box sx={{display:'flex', justifyContent:'center'}}>
-            <Box sx={{backgroundColor:'#f5f3f1', borderRadius:'5px', width:'360px'}}>
-            <Box sx={{display:'flex', justifyContent:'center', borderRadius:'5px 5px 5px 5px '}}>
-              <Box sx={{width:'100%', height:'370px', backgroundColor:'#DDE6EF', borderRadius:'5px 5px 0 0 '}}>
-                <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/team/team-2.png" alt="" />
+           
+
+            <Box sx={{display:'flex', justifyContent:'center'}}>
+                <Box sx={{backgroundColor:'#f5f3f1', borderRadius:'5px', width:'360px'}}>
+                  <Box 
+                    sx={{display:'flex', justifyContent:'center', borderRadius:'5px 5px 5px 5px '}}
+                    >
+                    <Box 
+                      sx={{width:'100%', height:'370px', backgroundColor:'#DDE6EF', borderRadius:'5px 5px 0 0 '}}
+                      >
+                      <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/team/team-2.png" alt="" />
+                    </Box>
+                  </Box>
+                  <Typography 
+                    sx={{backgroundColor:'transparent', fontFamily:'"Mulish", sans-serif', fontWeight:'800', fontSize: "24px", textAlign:'center', paddingTop:'16px', margin:'0', color:'#19232d',}}
+                    > 
+                    Alex Moure 
+                  </Typography>
+                  <Typography 
+                    sx={{ textAlign:'center', fontFamily:'"Mulish", sans-serif', fontSize:'18px', fontWeight:'700', fontStyle:'italic', margin:'0', paddingBottom:'16px', color:'#19232d'}}
+                    > 
+                    Director of Finance 
+                  </Typography>
+                </Box>
               </Box>
-            </Box>
-            <Typography variant="h3" component="h2" sx={{transition:'all 0.5s', backgroundColor:'transparent', fontFamily:'"Mulish", sans-serif', fontWeight:'800', fontSize:'24px', lineHeight:'1.3em', textAlign:'center', padding:'16px 0', color:'#19232d', margin:'0'}}> Alex Moure </Typography>
-            <Typography variant="h4" component="h2"sx={{color:'#19232d', textAlign:'center', fontFamily:'"Mulish", sans-serif', fontSize:'16px', lineHeight:'1.5em', fontWeight:'700', fontStyle:'italic', margin:'0', paddingBottom:'16px'}}> Director of Finance </Typography>
-            </Box>
-            </Box>
-          </div>
-          <div>
-          <Box sx={{display:'flex', justifyContent:'center'}}>
-            <Box sx={{backgroundColor:'#f5f3f1', borderRadius:'5px', width:'360px'}}>
-            <Box sx={{display:'flex', justifyContent:'center', borderRadius:'5px 5px 5px 5px '}}>
-              <Box sx={{width:'100%', height:'370px', backgroundColor:'#DDE6EF', borderRadius:'5px 5px 0 0 '}}>
-                <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/team/team-2.png" alt="" />
-              </Box>
-            </Box>
-            <Typography variant="h3" component="h2" sx={{transition:'all 0.5s', backgroundColor:'transparent', fontFamily:'"Mulish", sans-serif', fontWeight:'800', fontSize:'24px', lineHeight:'1.3em', textAlign:'center', padding:'16px 0', color:'#19232d', margin:'0'}}> Alex Moure </Typography>
-            <Typography variant="h4" component="h2"sx={{color:'#19232d', textAlign:'center', fontFamily:'"Mulish", sans-serif', fontSize:'16px', lineHeight:'1.5em', fontWeight:'700', fontStyle:'italic', margin:'0', paddingBottom:'16px'}}> Director of Finance </Typography>
-            </Box>
-            </Box>
-          </div>
-          <div>
-          <Box sx={{display:'flex', justifyContent:'center'}}>
-            <Box sx={{backgroundColor:'#f5f3f1', borderRadius:'5px', width:'360px'}}>
-            <Box sx={{display:'flex', justifyContent:'center', borderRadius:'5px 5px 5px 5px '}}>
-              <Box sx={{width:'100%', height:'370px', backgroundColor:'#DDE6EF', borderRadius:'5px 5px 0 0 '}}>
-                <img style={{width:'100%', height:'100%', objectFit:'fill'}} src="https://themeim.com/demo/flynext/assets/images/team/team-2.png" alt="" />
-              </Box>
-            </Box>
-            <Typography variant="h3" component="h2" sx={{transition:'all 0.5s', backgroundColor:'transparent', fontFamily:'"Mulish", sans-serif', fontWeight:'800', fontSize:'24px', lineHeight:'1.3em', textAlign:'center', padding:'16px 0', color:'#19232d', margin:'0'}}> Alex Moure </Typography>
-            <Typography variant="h4" component="h2"sx={{color:'#19232d', textAlign:'center', fontFamily:'"Mulish", sans-serif', fontSize:'16px', lineHeight:'1.5em', fontWeight:'700', fontStyle:'italic', margin:'0', paddingBottom:'16px'}}> Director of Finance </Typography>
-            </Box>
-            </Box>
-          </div>
-        </Slider>
-      </div>
+           
+
+          </Slider>
+        </Box>
         </Container>
       </Box>
     );

@@ -19,9 +19,6 @@ const Book = (props) => {
                     </div>
                     <hr />
                     <Button className='btn'><ConnectingAirportsIcon className='icon'></ConnectingAirportsIcon> Book Now</Button>
-
-
-
                 </div>
             </div>
         </div>

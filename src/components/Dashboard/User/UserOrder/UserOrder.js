@@ -13,17 +13,12 @@ import useAuth from "../../../../hooks/useAuth";
 import { Link } from "react-router-dom";
 
 
-
-
-
-
-
 const UserOrder = () => {
     const [orders, setOrders] = useState([]);
 
     const { user } = useAuth()
     useEffect(() => {
-        fetch(`http://localhost:5000/myorders/?email=${user.email}`)
+        fetch(`https://salty-beach-45243.herokuapp.com/myorders/?email=${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user.email]);
@@ -46,6 +41,7 @@ const UserOrder = () => {
                             <TableCell style={ textcolor } align="center">Price</TableCell>
                             <TableCell style={ textcolor } align="center">Shipment Status</TableCell>
                             <TableCell style={ textcolor } align="center">Payment Status</TableCell>
+                            <TableCell style={ textcolor } align="center">Invoise</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -62,9 +58,14 @@ const UserOrder = () => {
                                 <TableCell align="center">{ row.name }</TableCell>
                                 <TableCell align="center">{ row.price }</TableCell>
                                 <TableCell align="center"><Button>{ row.status }</Button></TableCell>
-                                <TableCell align="center"><Button>{ row.payment ? 'Paid' :
-                                    <Link to={ `/dashboard/payment/${row._id}` }><Button>Pay</Button></Link>
-                                }</Button></TableCell>
+                                <TableCell align="center"><Button>{ row.status }</Button></TableCell>
+                                <TableCell align="center"><Button>
+                                    { row.payment ?
+                                        <Link to={ `/dashboard/invoice/${row._id}` }><Button>Invoice</Button></Link>
+                                        :
+                                        <Link to={ `/dashboard/payment/${row._id}` }><Button>Pay</Button>
+                                        </Link>
+                                    }</Button></TableCell>
                             </TableRow>
                         )) }
                     </TableBody>

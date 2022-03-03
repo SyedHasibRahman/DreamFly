@@ -18,7 +18,7 @@ const UserProfile = () => {
     }
     const updateUser = (updateData) => {
         const user = { updateData };
-        fetch('http://localhost:5000/users', {
+        fetch('https://salty-beach-45243.herokuapp.com/users', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

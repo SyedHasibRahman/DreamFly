@@ -1,4 +1,4 @@
-import { Container } from '@mui/material';
+import { Container, MenuItem, Select } from '@mui/material';
 import React, { useState } from 'react';
 import { Alert } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
@@ -8,7 +8,7 @@ const ManagePackage = () => {
     const { register, handleSubmit, reset } = useForm();
     const [success, setSuccess] = useState();
     const onSubmit = (data) => {
-        fetch('https://intense-plateau-36885.herokuapp.com/products', {
+        fetch('https://salty-beach-45243.herokuapp.com/tourPackages', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -33,7 +33,7 @@ const ManagePackage = () => {
                     <div className='add-product box-shadow bg-white p-4 packageDiv'>
                         <h3 className='mb-5 heading-main text-light'>Add a Package</h3>
 
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <form onSubmit={ handleSubmit(onSubmit) }>
                             <div className='col-12 d-md-flex'>
                                 <div className='w-100 '>
                                     <label htmlFor='name' className='mb-2'>
@@ -42,7 +42,7 @@ const ManagePackage = () => {
                                     <input
                                         required
                                         placeholder='Package Name'
-                                        {...register('name')}
+                                        { ...register('title') }
                                     />
                                 </div>
 
@@ -53,7 +53,7 @@ const ManagePackage = () => {
                                     <input
                                         required
                                         placeholder='Enter price'
-                                        {...register('price')}
+                                        { ...register('price') }
                                     />
                                 </div>
                             </div>
@@ -62,7 +62,7 @@ const ManagePackage = () => {
                                     <label htmlFor='image' className='mb-2'>
                                         Image
                                     </label>
-                                    <input required placeholder='Image Url' {...register('img')} />
+                                    <input required placeholder='Image Url' { ...register('images') } />
                                 </div>
                                 <div className='w-100 '></div>
                                 <div className='w-100 '>
@@ -72,8 +72,30 @@ const ManagePackage = () => {
                                     <input
                                         required
                                         placeholder='Persion'
-                                        {...register('stock')}
+                                        { ...register('person') }
                                     />
+                                </div>
+                                <div className='w-100 '>
+                                    <label htmlFor='image' className='mb-2'>
+                                        Category
+                                    </label>
+                                    {/* <input
+                                        required
+                                        placeholder='Category'
+                                        {...register('category')}
+                                    /> */}
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+
+                                        label="Age"
+                                        { ...register('category') }
+                                    >
+                                        <MenuItem value={ 'General' }>General</MenuItem>
+                                        <MenuItem value={ 'Packages' }>Packages</MenuItem>
+                                        <MenuItem value={ 'Services' }>Services</MenuItem>
+
+                                    </Select>
                                 </div>
                                 <div class="w-100 form-outline datepicker">
                                     <label for="exampleDatepicker1" class="form-label">Select a date</label>
@@ -81,9 +103,15 @@ const ManagePackage = () => {
                                         type="date"
                                         class="form-control"
                                         id="exampleDatepicker1"
+                                        { ...register('date') }
                                     />
                                 </div>
-                                <div className='w-100 '>
+
+                                {/* .....................
+                                In the fure implement this 
+                                ......................*/}
+
+                                {/* <div className='w-100 '>
                                     <label htmlFor='description' className='mb-2'>
                                         Description
                                     </label>
@@ -93,20 +121,21 @@ const ManagePackage = () => {
                                         placeholder='Short description'
                                         {...register('description', { required: true })}
                                     />
-                                </div>
+                                </div> */}
+
                             </div>
                             <button
                                 type='submit'
                                 className='btn text-light'
-                                style={{ marginLeft: `calc(100% - 115px)`, background: '#FF257B', color: 'white' }}
+                                style={ { marginLeft: `calc(100% - 115px)`, background: '#FF257B', color: 'white' } }
                             >
                                 Submit
                             </button>
-                            {success && (
+                            { success && (
                                 <Alert variant='success' className='mt-2 py-2'>
                                     packages added successfully
                                 </Alert>
-                            )}
+                            ) }
                         </form>
                     </div>
                 </div>

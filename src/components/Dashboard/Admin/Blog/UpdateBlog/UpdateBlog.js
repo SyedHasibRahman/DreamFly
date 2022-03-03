@@ -7,13 +7,13 @@ import InputTextField from '../../../../StyledComponent/InputTextField/InputText
 
 const UpdateBlog = () => {
 
-    const { register} = useForm();
+    const { register } = useForm();
     const [blog, setBlog] = useState({});
     console.log(blog)
     const { id } = useParams();
 
     useEffect(() => {
-        const url = `http://localhost:5000/blogs/${id}`;
+        const url = `https://salty-beach-45243.herokuapp.com/blogs/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setBlog(data));
@@ -28,11 +28,11 @@ const UpdateBlog = () => {
 
     const handleEmailChange = e => {
         const updatedInfo = e.target.value;
-        const updatedBlog = {...blog}
+        const updatedBlog = { ...blog }
         updatedBlog.info = updatedInfo;
     }
     const handleUpdateBlog = e => {
-        const url = `http://localhost:5000/blogs/${id}`;
+        const url = `https://salty-beach-45243.herokuapp.com/blogs/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -51,53 +51,53 @@ const UpdateBlog = () => {
         e.preventDefault();
     }
 
-    
+
     return (
-         <div>
+        <div>
             <h2>Update</h2>
-            <p><small>{id}</small></p>
-            <form onSubmit={handleUpdateBlog}>
-                <Grid item xs={ 12 } md={6}>
+            <p><small>{ id }</small></p>
+            <form onSubmit={ handleUpdateBlog }>
+                <Grid item xs={ 12 } md={ 6 }>
                     <InputTextField
                         label="Blog title"
-                        onChange={handleNameChange} 
+                        onChange={ handleNameChange }
                         defaultValue={ blog.title || '' }
-                        fullWidth 
+                        fullWidth
                         type="text"
-                        sx={{}}
-                        {...register("info")}
+                        sx={ {} }
+                        { ...register("info") }
                     />
                     <InputTextField
-                            sx={{bgcolor: "white", my:2}}
-                            label="Name" 
-                            id="custom-css-outlined-input" 
-                            fullWidth 
-                            required
-                            type="text"
-                            onChange={handleNameChange} 
-                            defaultValue={ blog.title || '' }
-                        />
+                        sx={ { bgcolor: "white", my: 2 } }
+                        label="Name"
+                        id="custom-css-outlined-input"
+                        fullWidth
+                        required
+                        type="text"
+                        onChange={ handleNameChange }
+                        defaultValue={ blog.title || '' }
+                    />
                 </Grid>
-                <Grid item xs={ 12 } md={6}>
+                <Grid item xs={ 12 } md={ 6 }>
                     <InputTextField
                         label="Blog Info"
-                        onChange={handleEmailChange} 
-                        value={blog.info || ''}
-                        fullWidth 
+                        onChange={ handleEmailChange }
+                        value={ blog.info || '' }
+                        fullWidth
                         type="text"
-                        sx={{bgcolor: "white"}}
-                        {...register("info")}
+                        sx={ { bgcolor: "white" } }
+                        { ...register("info") }
                     />
                     <InputTextField
-                            sx={{bgcolor: "white", my:2}}
-                            label="Blog Info" 
-                            
-                            fullWidth 
-                            required
-                            type="text"
-                            onChange={handleNameChange} 
-                            defaultValue={ blog.title }
-                        />
+                        sx={ { bgcolor: "white", my: 2 } }
+                        label="Blog Info"
+
+                        fullWidth
+                        required
+                        type="text"
+                        onChange={ handleNameChange }
+                        defaultValue={ blog.title }
+                    />
                 </Grid>
                 <PrimaryButton type="submit">submit</PrimaryButton>
             </form>
