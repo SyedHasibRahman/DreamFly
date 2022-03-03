@@ -6,7 +6,7 @@ import BookingCard from '../BookingCard/BookingCard';
 
 const About = () => {
   return (
-    <Box sx={{padding:'100px 0'}}>
+    <Box className="paddingY90">
       <Container>
         <Grid container spacing={5}>
           <Grid item xs={12} md={6}>

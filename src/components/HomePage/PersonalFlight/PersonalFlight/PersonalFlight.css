@@ -11,7 +11,6 @@
   margin: 0 auto !important;
   position: relative;
   z-index: 5;
-   border-radius: 15px;
 }
 
 /* .personal_flight {
@@ -25,7 +24,6 @@
   height: 100%;
   background: rgba(25, 35, 45, 0.623);
   z-index: -999;
-  border-radius: 15px;
 }
 .selector_box {
   margin: 0px 15px;
@@ -72,7 +70,7 @@
 .personal_flight_btn {
   width: 100%;
   text-align: center;
-  padding: 60px 0px 30px 0px;
+  padding: 40px 0px 30px 0px;
 }
 .personal_flight_btn button {
   background: #512DA8;
@@ -81,7 +79,7 @@
   border-radius: 25px;
   color: #fff;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   outline: none;
   transition: 0.5s;
   cursor: pointer;

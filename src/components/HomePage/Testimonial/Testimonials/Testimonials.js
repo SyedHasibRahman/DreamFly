@@ -16,10 +16,8 @@ const Testimonials = () => {
         });
     })
     return (
-        <div style={ {
-            padding: '20px 0 50px 0',
-        } } >
-            <Container data-aos='zoom-in-down'>
+        <div className='paddingY90' >
+            <Container>
                 <Grid sx={ {
                     textAlign: 'center',
                 } }>
@@ -49,7 +47,6 @@ const Testimonials = () => {
                         alignItems: 'center',
                         justifyContent: 'space-between'
                     }}
-                        data-aos='zoom-in'
                     >
                         <img style={{ width: "100%" }} src="https://themeim.com/demo/flynext/assets/images/client/client-big.png" alt="" />
                     </Grid>
