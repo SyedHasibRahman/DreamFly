@@ -1,9 +1,8 @@
 import React from 'react';
-import { Container, Box, Typography, Grid } from "@mui/material";
+import { Container, Box, Typography, Grid, Button } from "@mui/material";
 import { useSelector} from "react-redux";
 import './SeaechFlight.css'
 ;
-import SecondaryButton from '../../../StyledComponent/Buttons/SecondaryButton';
 
 const SearchFlights = () => {
 
@@ -122,7 +121,7 @@ const SearchFlights = () => {
                                     {fare}</Grid>
                                 <Grid item sm={2} 
                                     sx={{textAlign: "center",}}>
-                                    <SecondaryButton>Book Now</SecondaryButton>
+                                    <Button>Book Now</Button>
                                 </Grid>
                             </Grid>
                         )})

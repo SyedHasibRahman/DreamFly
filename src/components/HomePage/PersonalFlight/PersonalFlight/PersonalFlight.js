@@ -58,7 +58,7 @@ const PersonalFlight = () => {
     };
     if (from && to) {
       axios
-        .post("http://localhost:5000/filter", data)
+        .post("https://salty-beach-45243.herokuapp.com/filter", data)
         .then((res) => dispatch(addFilterData(res.data)));
     }
     dispatch(
