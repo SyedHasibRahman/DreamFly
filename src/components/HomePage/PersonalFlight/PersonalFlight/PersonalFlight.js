@@ -10,21 +10,13 @@ import {
   addDateAndPass,
   addFilterData,
 } from "../../../../Redux/Slice/flightSlice";
+
+import { Link } from "react-router-dom";
 import SecondaryButton from "../../../StyledComponent/Buttons/SecondaryButton";
-import AOS from 'aos';
-import 'aos/dist/aos.css'
 
 
 const PersonalFlight = () => {
-  useEffect(() => {
-    AOS.init({
-      offset: 200,
-      duration: 400,
-      easing: 'ease-in-sine',
-      delay: 100,
 
-    });
-  })
   const [flights, setFlights] = useState([]);
   const [to, setTo] = useState([]);
   const fromRef = useRef();
@@ -87,95 +79,92 @@ const PersonalFlight = () => {
     decrementCounter = () => setCounter(0);
   }
   return (
-    <Container sx={ { my: "100px" } }>
-      <Box
-        className="personal_flight_Container"
-        sx={ {
-          flexGrow: 1
-        } }
-        data-aos='fade-down'
+    <Box
+      className="personal_flight_Container"
+      sx={{
+        flexGrow: 1
+      }}
       >
-        <Container
-          className="personal_flight"
-          spacing={ { xs: 2, md: 3 } }
-          style={ {
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
-          } }
+      <Container
+        className="personal_flight"
+        spacing={{ xs: 2, md: 3 }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <Box
+          sx={{ textAlign: "center", color: "#fff", paddingTop: "50px", paddingBottom: "40px" }}
+          >
+          <Typography sx={{fontWeight:'600', color: "#fff", fontSize:'18px',marginBottom:'10px'}}>
+            DreamFly Book
+          </Typography>
+          <Typography variant="h2" sx={{ color: "#fff", }}>
+            Book A Flight
+          </Typography>
+        </Box>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3, lg: 3 }}
+          className="flight_box"
         >
-          <Box
-            component="div"
-            sx={ { textAlign: "center", color: "#fff", paddingTop: "50px" } }
-          >
-            <Typography sx={ { color: 'white', fontWeight: '700', fontSize: '20px', marginBottom: '10px', textAlign: "center" } }>
-              DreamFly Book
-            </Typography>
-            <Typography variant="h2" sx={ { padding: "20px 0", color: "white" } }>
-              Book A Personal Flight
-            </Typography>
-          </Box>
-          <Grid
-            container
-            spacing={ { xs: 2, md: 3, lg: 3 } }
-            className="flight_box"
-          >
-            <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 } data-aos='zoom-in'>
-              <Box className="selector_box">
-                <Box for="cars" className="label">
-                  From
-                </Box>
-                <select
-                  className="selector"
-                  ref={ fromRef }
-                  onChange={ () => handleFrom() }
-                >
-                  <option style={ { color: "black" } } value="">From</option>
-                  { filterFrom.map((flight) => {
-                    const { from } = flight;
-                    return (
-                      <option style={ { color: "black" } } required key={ flight._id } value={ from }>
-                        { from }
-                      </option>
-                    );
-                  }) }
-                </select>
+          <Grid item xs={12} sm={12} md={6} lg={3}>
+            <Box className="selector_box">
+              <Box for="cars" className="label">
+                From
               </Box>
-            </Grid>
-            <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 } data-aos='zoom-in'>
-              <Box className="selector_box">
-                <Box className="label">To</Box>
-                <select className="selector" ref={ toRef }>
-                  <option style={ { color: "black" } } value="">To</option>
-                  { to.map((flight) => {
-                    const { to } = flight;
-                    return (
-                      <option style={ { color: "black" } } required key={ flight._id } value={ to }>
-                        { to }
-                      </option>
-                    );
-                  }) }
-                </select>
+              <select
+                className="selector"
+                ref={fromRef}
+                onChange={() => handleFrom()}
+              >
+                <option style={{color: "black"}} required  value="From">From</option>
+                {filterFrom.map((flight) => {
+                  const { from } = flight;
+                  return (
+                    <option style={{color: "black"}} required key={flight._id} value={from}>
+                      {from}
+                    </option>
+                  );
+                })}
+              </select>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={12} md={6} lg={3}>
+            <Box className="selector_box">
+              <Box className="label">To</Box>
+              <select className="selector" ref={toRef}>
+                <option style={{color: "black"}} required  value="To">To</option>
+                {to.map((flight) => {
+                  const { to } = flight;
+                  return (
+                    <option style={{color: "black"}} required key={flight._id} value={to}>
+                      {to}
+                    </option>
+                  );
+                })}
+              </select>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={12} md={6} lg={3}>
+            <Box className="selector_box">
+              <Box for="cars" className="label">
+                Date
               </Box>
-            </Grid>
-            <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 } data-aos='zoom-in'>
-              <Box className="selector_box">
-                <Box for="cars" className="label">
-                  Date
-                </Box>
-                <input
-                  ref={ dateRef }
-                  type="date"
-                  required
-                  size="small"
-                  className="form-control selector"
-                  id="exampleDatepicker1"
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 } data-aos='zoom-in'>
-              <Box className="selector_box">
+              <input
+                ref={dateRef}
+                type="date"
+                required
+                size="small"
+                className="form-control selector"
+                id="exampleDatepicker1"
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={12} md={6} lg={3}>
+            <Box className="selector_box">
                 <Box for="cars" className="label">
                   Passenger
                 </Box>
@@ -192,17 +181,18 @@ const PersonalFlight = () => {
                     </span>
                   </Box>
                 </Box>
-              </Box>
-            </Grid>
-            <Box className="personal_flight_btn" component="div">
-              <SecondaryButton onClick={ handleSubmit }>
-                search now
-              </SecondaryButton>
             </Box>
           </Grid>
-        </Container>
+          <Box className="personal_flight_btn">
+            <Link to="/Services" style={{textDecoration: "none"}}>
+              <SecondaryButton onClick={handleSubmit}>
+                search now
+              </SecondaryButton>
+            </Link>
+          </Box>
+        </Grid>
+      </Container>
       </Box>
-    </Container>
   );
 };
 
