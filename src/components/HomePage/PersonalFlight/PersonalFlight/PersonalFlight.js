@@ -24,7 +24,7 @@ const PersonalFlight = () => {
   const toRef = useRef();
 
   useEffect(() => {
-    fetch("http://localhost:5000/flight")
+    fetch("https://salty-beach-45243.herokuapp.com/flight")
       .then((res) => res.json())
       .then((data) => setFlights(data));
   }, []);
@@ -34,7 +34,8 @@ const PersonalFlight = () => {
     console.log(e);
     const fillterData = flights.filter((item) => {
       if (item.from === e) {
-      return item.to}
+        return item.to
+      }
     });
     const flightTo = fillterData.map((item) => item.to);
     const filterTo = fillterData.filter(
@@ -44,7 +45,7 @@ const PersonalFlight = () => {
     // console.log(fillterData);
   };
 
-  
+
 
   const dispatch = useDispatch();
 
@@ -78,13 +79,12 @@ const PersonalFlight = () => {
     decrementCounter = () => setCounter(0);
   }
   return (
-    <Container sx={{my: "100px"}}>
     <Box
       className="personal_flight_Container"
       sx={{
         flexGrow: 1
       }}
-    >
+      >
       <Container
         className="personal_flight"
         spacing={{ xs: 2, md: 3 }}
@@ -165,22 +165,22 @@ const PersonalFlight = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={3}>
             <Box className="selector_box">
-              <Box for="cars" className="label">
-                Passenger
-              </Box>
-              <Box className="selector">
-                <Box className="passenger">
-                  <span className="int" onClick={() => decrementCounter()}>
-                    <i style={{ color: "white" }} className="fas fa-minus"></i>
-                  </span>
-                  <span style={{ color: "white" }} className="number">
-                    {counter}
-                  </span>
-                  <span className="dec" onClick={() => incrementCounter()}>
-                    <i style={{ color: "white" }} className="fas fa-plus"></i>
-                  </span>
+                <Box for="cars" className="label">
+                  Passenger
                 </Box>
-              </Box>
+                <Box className="selector">
+                  <Box className="passenger">
+                    <span className="int" onClick={ () => decrementCounter() }>
+                      <i style={ { color: "white" } } className="fas fa-minus"></i>
+                    </span>
+                    <span style={ { color: "white" } } className="number">
+                      { counter }
+                    </span>
+                    <span className="dec" onClick={ () => incrementCounter() }>
+                      <i style={ { color: "white" } } className="fas fa-plus"></i>
+                    </span>
+                  </Box>
+                </Box>
             </Box>
           </Grid>
           <Box className="personal_flight_btn">
@@ -192,8 +192,7 @@ const PersonalFlight = () => {
           </Box>
         </Grid>
       </Container>
-    </Box>
-    </Container>
+      </Box>
   );
 };
 

@@ -91,7 +91,7 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, [auth])
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://salty-beach-45243.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -118,7 +118,7 @@ const useFirebase = () => {
     // }
     const saveUser = (email, displayName, photoURL, uid, method) => {
         const user = { email, displayName, photoURL, uid };
-        fetch('http://localhost:5000/users', {
+        fetch('https://salty-beach-45243.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
