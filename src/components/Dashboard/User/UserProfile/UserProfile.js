@@ -6,6 +6,7 @@ import PrimaryButton from '../../../StyledComponent/Buttons/PrimaryButton';
 const UserProfile = () => {
     const { registerUser, user } = useAuth({})
     const [updateData, setUpdateData] = useState({})
+    const [diableInput, setDiableInput] = useState(true)
     // const [loginData, setLoginData] = useState({})
     const handleOnChange = e => {
         const field = e.target.name;
@@ -16,18 +17,11 @@ const UserProfile = () => {
         setUpdateData(newUpdateData);
         console.log(newUpdateData);
     }
+    const handleEdit = () => {
+        setDiableInput(false)
+    }
     const updateUser = (updateData) => {
-        const user = { updateData };
-        fetch('https://salty-beach-45243.herokuapp.com/users', {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-            .then()
-
-        registerUser(updateData.email, updateData.password, updateData.detail);
+        setDiableInput(true)
     }
 
     console.log(user);
@@ -66,6 +60,7 @@ const UserProfile = () => {
                                     color: "success",
                                     name: "detail"
                                 } }
+                                    disabled={ diableInput }
                                 />
                                 <TextField
                                     margin="normal"
@@ -91,6 +86,7 @@ const UserProfile = () => {
                                     name="name"
                                     type="name"
                                     color="success"
+                                    disabled={ diableInput }
                                     defaultValue={ user.displayName || '' }
                                     onChange={ handleOnChange }
                                     autoComplete="name"
@@ -121,12 +117,16 @@ const UserProfile = () => {
                                     name="password"
                                     type="password"
                                     color="success"
+                                    disabled={ true }
                                     onChange={ handleOnChange }
                                     autoComplete="password"
                                     autoFocus
                                 />
+                                { diableInput ? <PrimaryButton type="submit" onClick={ handleEdit }>Edit Profile</PrimaryButton>
+                                    :
+                                    <PrimaryButton type="submit" onClick={ updateUser }>Update</PrimaryButton>
+                                }
 
-                                <PrimaryButton type="submit" onClick={ updateUser }>Edit Profile</PrimaryButton>
                             </FormControl>
                         </Grid>
                     </Grid>

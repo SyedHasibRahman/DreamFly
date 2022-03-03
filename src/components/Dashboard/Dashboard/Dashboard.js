@@ -158,7 +158,7 @@ const Dashboard = () => {
                 { admin ?
                     <List sx={ {
                         backgroundColor: '#5E35B1 !important',
-                        height: '100vh',
+                        height: '100%',
                         color: 'white'
                     } }>
 
@@ -168,7 +168,7 @@ const Dashboard = () => {
                     :
                     <List sx={ {
                         backgroundColor: '#5E35B1 !important',
-                        height: '100vh',
+                        height: '100%',
                         color: 'white'
                     } }>
 
