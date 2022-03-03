@@ -18,7 +18,7 @@ const About = () => {
         });
     })
     return (
-        <div style={ {
+        <div style={{
             paddingTop: '100px',
             paddingBottom: '100px',
             display: 'flex',
@@ -31,7 +31,7 @@ const About = () => {
             color: '#fff',
             position: 'relative',
         }}
-            data-aos='zoom-in-down'
+
         >
             <Grid sx={{
                 position: 'absolute',
@@ -41,7 +41,7 @@ const About = () => {
             }}>
                 <img style={{
                     animation: 'scroll-down 2s cubic-bezier(0.4, 0, 1, 1) infinite',
-                } } src="https://i.ibb.co/rfNppjH/element-8.png" alt="" />
+                }} src="https://i.ibb.co/rfNppjH/element-8.png" alt="" />
             </Grid>
             <Container>
                 <Grid container spacing={2} sx={{
@@ -49,7 +49,7 @@ const About = () => {
 
                 }}>
                     <Grid item xs={12} sm={12} md={7} lg={7}
-                        data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600"
+                        data-aos='zoom-in-right'
                     >
                         <Typography variant='h5' sx={{
                         }}>
@@ -57,15 +57,15 @@ const About = () => {
                                 color: '#2CC0FF',
                             }}>About</span> DreamFly
                         </Typography>
-                        <Typography variant='h2' sx={ {
+                        <Typography variant='h2' sx={{
                             py: 3,
                             color: "white"
-                        } }>
+                        }}>
                             Private Jet Charters save your time and give more comfort
                         </Typography>
-                        <Typography sx={ {
-                           color: "white"
-                        } }>
+                        <Typography sx={{
+                            color: "white"
+                        }}>
                             DreamFly is the only way to fully travel on your terms. Whether it’s accessing a remote destination or taking back control of productivity and flight scheduling
                         </Typography>
                         <Grid sx={{
@@ -84,14 +84,14 @@ const About = () => {
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                            } }>
+                            }}>
                                 <Box>
-                                <Typography variant='h3' sx={ {  } }>
-                                    Call for book an order
-                                </Typography>
-                                <Typography variant='h3' sx={ { } }>
-                                    8-800-10-500
-                                </Typography>
+                                    <Typography variant='h3' sx={{}}>
+                                        Call for book an order
+                                    </Typography>
+                                    <Typography variant='h3' sx={{}}>
+                                        8-800-10-500
+                                    </Typography>
                                 </Box>
                             </Box>
                             <PrimaryButton> Book Now</PrimaryButton>
