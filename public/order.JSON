@@ -4,13 +4,15 @@
     "name": "Luxury & Comfort Travel",
     "pname": "Air Basics Course",
     "price": "5000",
-    "status": "pending"
+    "status": "pending",
+    "role": "user"
   },
   {
     "id": "02",
     "name": "Luxury & Comfort Travel",
     "pname": "Air Basics Course",
     "price": "5000",
-    "status": "pending"
+    "status": "pending",
+    "role": "user"
   }
 ]

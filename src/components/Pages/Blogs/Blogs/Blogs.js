@@ -10,7 +10,8 @@ const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('https://vast-retreat-08893.herokuapp.com/blogs')
+        // fetch('Old/https://vast()-retreat-08893.herokuapp.com/blogs')
+        fetch('https://salty-beach-45243.herokuapp.com/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, []);
@@ -24,48 +25,48 @@ const Blogs = () => {
     return (
         <>
             <Navigation></Navigation>
-        
-        <Box sx={ { py: 10, bgcolor: "#fafafa" } }>
-            <Container>
-                <Box>
-                    <Typography
-                        variant="h3"
-                        sx={ { pb: 8, fontWeight: 600, fontSize: "2.5rem", textAlign: "center" } }
-                    >
-                        Welcome To Our Blogs
-                    </Typography>
-                </Box>
 
-                <Box>
-                    <Grid container spacing={ 4 }>
-                        <Grid item xs={ 12 } md={ 8 } sx={ {} }>
-                            <Grid container spacing={ 4 } columns={ 12 }>
-                                { blogs.map((blog) => (
-                                    <Grid key={ blog.id } item xs={ 12 } md={ 6 } sx={ {} }>
-                                        <Blog
-                                            gridColumn="span 8"
-                                            blog={ blog }>
-                                        </Blog>
-                                    </Grid>
-                                )) }
+            <Box sx={ { py: 10, bgcolor: "#fafafa" } }>
+                <Container>
+                    <Box>
+                        <Typography
+                            variant="h3"
+                            sx={ { pb: 8, fontWeight: 600, fontSize: "2.5rem", textAlign: "center" } }
+                        >
+                            Welcome To Our Blogs
+                        </Typography>
+                    </Box>
+
+                    <Box>
+                        <Grid container spacing={ 4 }>
+                            <Grid item xs={ 12 } md={ 8 } sx={ {} }>
+                                <Grid container spacing={ 4 } columns={ 12 }>
+                                    { blogs.map((blog) => (
+                                        <Grid key={ blog.id } item xs={ 12 } md={ 6 } sx={ {} }>
+                                            <Blog
+                                                gridColumn="span 8"
+                                                blog={ blog }>
+                                            </Blog>
+                                        </Grid>
+                                    )) }
+                                </Grid>
+                            </Grid>
+                            <Grid item xs={ 12 } md={ 4 } sx={ {} }>
+                                <Grid container>
+                                    <BlogSideber></BlogSideber>
+                                </Grid>
                             </Grid>
                         </Grid>
-                        <Grid item xs={ 12 } md={ 4 } sx={ {} }>
-                            <Grid container>
-                                <BlogSideber></BlogSideber>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Box>
+                    </Box>
 
-                <Box sx={ { pt: 4 } }>
-                    <Stack spacing={ 2 }>
-                        <Pagination count={ 10 } page={ page } onChange={ handleChange } />
-                    </Stack>
-                </Box>
-            </Container>
-        </Box>
-        <Footer></Footer>
+                    <Box sx={ { pt: 4 } }>
+                        <Stack spacing={ 2 }>
+                            <Pagination count={ 10 } page={ page } onChange={ handleChange } />
+                        </Stack>
+                    </Box>
+                </Container>
+            </Box>
+            <Footer></Footer>
         </>
     );
 };

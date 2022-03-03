@@ -8,9 +8,12 @@ import Documents from './../../../assets/draft.svg';
 import PowerOff from './../../../assets/power-off-solid.svg';
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
+import { Avatar } from '@mui/material';
+
 
 const Container = styled.div`
-  position: fixed;
+  /* position: fixed; */
   .active {
     border-right: 4px solid var(--white);
     img {
@@ -42,17 +45,18 @@ const Button = styled.button`
     transition: all 0.3s ease;
   }
   &::before {
-    top: ${(props) => (props.clicked ? "1.5" : "1rem")};
+    top: ${(props) => (props.clicked ? "1.4" : "1rem")};
     transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
   }
   &::after {
-    top: ${(props) => (props.clicked ? "1.2" : "1.5rem")};
+    top: ${(props) => (props.clicked ? "1.2" : "1.4rem")};
     transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
   }
 `;
 
 const SidebarContainer = styled.div`
-  background-color: var(--black);
+  background-color: #512DA8;
+  /* background-color: var(--black); */
   width: 3.5rem;
   height: 80vh;
   margin-top: 1rem;
@@ -79,7 +83,7 @@ const SlickBar = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--black);
+  background-color: #512DA8;
   padding: 2rem 0;
   position: absolute;
   top: 6rem;
@@ -187,86 +191,167 @@ const Logout = styled.button`
     }
   }
 `;
-
 const Sidebar = () => {
+
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
-
+  const { admin, user } = useAuth()
   const [profileClick, setprofileClick] = useState(false);
   const handleProfileClick = () => setprofileClick(!profileClick);
 
   return (
-    <Container>
-      <Button clicked={ click } onClick={ () => handleClick() }>
+    <Container sx={{
+      // zIndex: '1'
+    }}>
+      <Button clicked={click} onClick={() => handleClick()}>
         Click
       </Button>
       <SidebarContainer>
         <Logo>
-          <img src={ logo } alt="logo" />
+          <img src={logo} alt="logo" />
         </Logo>
-        <SlickBar clicked={ click }>
+        <SlickBar clicked={click}>
           <Item
-            onClick={ () => setClick(false) }
+            onClick={() => setClick(false)}
             exact
             activeClassName="active"
             to="/"
           >
-            <img src={ Home } alt="Home" />
-            <Text clicked={ click }>Home</Text>
+            <img src={Home} alt="Home" />
+            <Text clicked={click}>Home</Text>
           </Item>
-          <Item
-            onClick={ () => setClick(false) }
-            activeClassName="active"
-            to="/team"
-          >
-            <img src={ Team } alt="Team" />
-            <Text clicked={ click }>Team</Text>
-          </Item>
-          <Item
-            onClick={ () => setClick(false) }
-            activeClassName="active"
-            to="/calender"
-          >
-            <img src={ Calender } alt="Calender" />
-            <Text clicked={ click }>Calender</Text>
-          </Item>
-          <Item
-            onClick={ () => setClick(false) }
-            activeClassName="active"
-            to="/AddPost"
-          >
-            <img src={ Documents } alt="Documents" />
-            <Text clicked={ click }>Documents</Text>
-          </Item>
-          <Item
-            onClick={ () => setClick(false) }
-            activeClassName="active"
-            to="/projects"
-          >
-            <img src={ Projects } alt="Projects" />
-            <Text clicked={ click }>Projects</Text>
-          </Item>
+          {/* { admin && user?.email ?  */}
+          <>
+
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/Dashboard/AddBlog"
+            >
+              <img src={Team} alt="AddBlog" />
+              <Text clicked={click}>Add Blog</Text>
+            </Item>
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/Dashboard/DeleteBlog"
+            >
+              <img src={Team} alt="DeleteBlog" />
+              <Text clicked={click}>Delete Blog</Text>
+            </Item>
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/Dashboard/UpdateBlog"
+            >
+              <img src={Team} alt="UpdateBlog" />
+              <Text clicked={click}>Update Blog</Text>
+            </Item>
+
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/Dashboard/AddPost"
+            >
+              <img src={Documents} alt="AddPost" />
+              <Text clicked={click}>AddPost</Text>
+            </Item>
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/dashboard/ManageFlight"
+            >
+              <img src={Projects} alt="ManageFlight" />
+              <Text clicked={click}>ManageFlight</Text>
+            </Item>
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/Dashboard/MakeAdmin"
+            >
+              <img src={Projects} alt="MakeAdmin" />
+              <Text clicked={click}>MakeAdmin</Text>
+            </Item>
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/Dashboard/ManagePackage"
+            >
+              <img src={Projects} alt="Projects" />
+              <Text clicked={click}>ManagePackage</Text>
+            </Item>
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/Dashboard/ManageOrders"
+            >
+              <img src={Projects} alt="ManageOrders" />
+              <Text clicked={click}>ManageOrders</Text>
+            </Item>
+          </> : <>
+
+
+
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/Dashboard/UserCourse"
+            >
+              <img src={Projects} alt="UserCourse" />
+              <Text clicked={click}>UserCourse</Text>
+            </Item>
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/Dashboard/UserOrder"
+            >
+              <img src={Team} alt="UserOrder" />
+              <Text clicked={click}>UserOrder</Text>
+            </Item>
+            {/* </>
+          } */}
+            <Item
+              onClick={() => setClick(false)}
+              activeClassName="active"
+              to="/Dashboard/UserProfile"
+            >
+              <img src={Calender} alt="UserProfile" />
+              <Text clicked={click}>UserProfile</Text>
+            </Item>
+
+          </>
+          {/* } */}
+
+
+
+
+
         </SlickBar>
 
-        <Profile clicked={ profileClick }>
-          <img
+        <Profile clicked={profileClick} sx={{
+          marginLeft: '20px'
+        }}>
+          {/* <img
             onClick={ () => handleProfileClick() }
-            src="https://picsum.photos/200"
+            // src="https://picsum.photos/200"
+            src={ user?.photoURL }
             alt="Profile"
-          />
-          <Details clicked={ profileClick }>
+          /> */}
+          <Avatar alt="Remy Sharp"
+            onClick={() => handleProfileClick()}
+            src={user?.photoURL} />
+          <Details clicked={profileClick} >
             <Name>
               <h4>Sohel&nbsp;Rana</h4>
-              <a href="/#">view&nbsp;profile</a>
+              <a href="Dashboard/UserProfile">view&nbsp;profile</a>
             </Name>
 
             <Logout>
-              <img src={ PowerOff } alt="logout" />
+              <img src={PowerOff} alt="logout" />
             </Logout>
           </Details>
         </Profile>
       </SidebarContainer>
-
     </Container>
   );
 };

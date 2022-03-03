@@ -4,13 +4,15 @@ import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, s
 import { useEffect } from "react";
 
 
-
 initializeFirebase();
+
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-
+    const [admin, setAdmin] = useState(false)
+    console.log(user);
+    const uid = user.uid;
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
     const registerUser = (email, password, name, navigate) => {
@@ -20,11 +22,11 @@ const useFirebase = () => {
                 // Signed in 
                 setAuthError('');
                 const newUser = { email, displayName: name }
+                const photoURL = user.photoURL;
                 setUser(newUser);
-                // const user = userCredential.user;
-                // const destination = location?.state?.from || '/';
-                // navigate(-2);
-                // ...
+
+                // save user to the Database 
+                saveUser(email, name, photoURL, uid, 'POST');
 
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
@@ -35,7 +37,7 @@ const useFirebase = () => {
                 navigate(-2);
             })
             .catch((error) => {
-                const errorCode = error.code;
+                // const errorCode = error.code;
                 const errorMessage = error.message;
                 setAuthError(errorMessage);
             })
@@ -50,7 +52,7 @@ const useFirebase = () => {
                 navigate(destination);
                 // Signed in 
                 setAuthError('');
-                const user = userCredential.user;
+                // const user = userCredential.user;
                 // ...
             })
             .catch((error) => {
@@ -65,7 +67,10 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
-                // const user = result.user;
+                const user = result.user;
+                const photoURL = user.photoURL;
+                // save user to the Database 
+                saveUser(user.email, user.displayName, photoURL, uid, 'PUT');
                 const destination = location?.state?.from || '/';
                 navigate(destination);
                 setAuthError('');
@@ -85,6 +90,11 @@ const useFirebase = () => {
         });
         return () => unsubscribe;
     }, [auth])
+    useEffect(() => {
+        fetch(`https://salty-beach-45243.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
     const logOut = (navigate) => {
         setIsLoading(true)
         signOut(auth).then(() => {
@@ -96,15 +106,37 @@ const useFirebase = () => {
         })
             .finally(() => setIsLoading(false));
     }
-
+    // const handleDeleteUser = (uid) => {
+    //     // const uid = user.uid;
+    //     auth.deleteUser(uid)
+    //         .then(() => {
+    //             console.log('Successfully deleted user');
+    //         })
+    //         .catch((error) => {
+    //             console.log('Error deleting user:', error);
+    //         });
+    // }
+    const saveUser = (email, displayName, photoURL, uid, method) => {
+        const user = { email, displayName, photoURL, uid };
+        fetch('https://salty-beach-45243.herokuapp.com/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
     return {
         user,
+        admin,
         registerUser,
         logOut,
         logInUser,
         isLoading,
         authError,
-        signInWithGoogle
+        signInWithGoogle,
+        // handleDeleteUser
     }
 
 }
