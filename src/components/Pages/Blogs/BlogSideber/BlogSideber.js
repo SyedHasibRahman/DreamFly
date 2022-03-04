@@ -13,8 +13,8 @@ const BlogSideber = () => {
     const [recentBlogs, setRecentBlogs] = useState([]);
 
     useEffect(() => {
-        // fetch('https://salty-beach-45243.herokuapp.com/blogs')
-        fetch('https://salty-beach-45243.herokuapp.com/blogs')
+        // fetch('https://agile-lowlands-71900.herokuapp.com/blogs')
+        fetch('https://agile-lowlands-71900.herokuapp.com/blogs')
             .then(res => res.json())
             .then(data => setRecentBlogs(data))
     }, [])

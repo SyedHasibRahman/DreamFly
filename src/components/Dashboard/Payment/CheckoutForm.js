@@ -17,7 +17,7 @@ const CheckoutForm = ({ booked }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('https://salty-beach-45243.herokuapp.com/create-payment-intent', {
+        fetch('https://agile-lowlands-71900.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -84,7 +84,7 @@ const CheckoutForm = ({ booked }) => {
                 last4: paymentMethod.card.last4,
                 transaction: paymentIntent.client_secret.slice('_secret')[0]
             }
-            const url = `https://salty-beach-45243.herokuapp.com/myorders/${_id}`
+            const url = `https://agile-lowlands-71900.herokuapp.com/myorders/${_id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {
