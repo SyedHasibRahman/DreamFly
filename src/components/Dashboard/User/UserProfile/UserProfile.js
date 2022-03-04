@@ -4,7 +4,8 @@ import useAuth from '../../../../hooks/useAuth';
 import PrimaryButton from '../../../StyledComponent/Buttons/PrimaryButton';
 
 const UserProfile = () => {
-    const { registerUser, user } = useAuth({})
+    const {  user } = useAuth({})
+    console.log(user)
     const [updateData, setUpdateData] = useState({})
     const [diableInput, setDiableInput] = useState(true)
     // const [loginData, setLoginData] = useState({})
@@ -20,8 +21,9 @@ const UserProfile = () => {
     const handleEdit = () => {
         setDiableInput(false)
     }
+
     const updateUser = (updateData) => {
-        setDiableInput(true)
+        setDiableInput(true);  
     }
 
     console.log(user);

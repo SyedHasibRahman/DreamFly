@@ -105,7 +105,6 @@ const Dashboard = () => {
             } }>
                 <Toolbar>
                     <IconButton
-                        color="inherit"
                         aria-label="open drawer"
                         onClick={ handleDrawerOpen }
                         edge="start"
@@ -114,14 +113,23 @@ const Dashboard = () => {
                             ...(open && { display: 'none' }),
                         } }
                     >
-                        <MenuIcon />
+                        <MenuIcon 
+                            sx={{
+                                '& > :not(style)': {color: "white"}
+                            }}
+                        />
                     </IconButton>
                     <Box sx={ {
                         display: 'flex',
                         justifyContent: 'space-between',
                         width: '93%'
                     } }>
-                        <Typography variant="h6" noWrap component="div">
+                        <Typography 
+                            variant="h6" 
+                            noWrap 
+                            component="div"
+                            sx={ {color: "white !important"} }
+                            >
                             { user.displayName || user?.email }
                         </Typography>
                         <Box sx={ {
@@ -131,7 +139,7 @@ const Dashboard = () => {
                                 <Button
                                     sx={ {
                                         textDecoration: "none",
-                                        color: "black",
+                                        color: "white !important",
                                         fontWeight: 600,
                                     } }
                                     onClick={ logOut }>
@@ -151,7 +159,9 @@ const Dashboard = () => {
                 } }>
                     <IconButton onClick={ handleDrawerClose }>
                         {/* <ChevronLeftIcon /> */ }
-                        { theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon /> }
+                        { theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon sx={{
+                                '& > :not(style)': {color: "white"}
+                            }} /> }
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
@@ -159,7 +169,7 @@ const Dashboard = () => {
                     <List sx={ {
                         backgroundColor: '#5E35B1 !important',
                         height: '100%',
-                        color: 'white'
+                        color: 'white !important'
                     } }>
 
                         <AdminPath />
@@ -169,7 +179,7 @@ const Dashboard = () => {
                     <List sx={ {
                         backgroundColor: '#5E35B1 !important',
                         height: '100%',
-                        color: 'white'
+                        color: 'white !important'
                     } }>
 
                         <PrivatePath />
