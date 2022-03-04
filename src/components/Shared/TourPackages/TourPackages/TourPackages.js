@@ -36,7 +36,7 @@ const TourPackages = () => {
   const sliderRef = useRef(null);
   const [packages, setPackages] = useState([]);
   useEffect(() => {
-    fetch('https://salty-beach-45243.herokuapp.com/tourPackages')
+    fetch('https://agile-lowlands-71900.herokuapp.com/tourPackages')
       .then(res => res.json())
       .then(data => setPackages(data))
   }, []);
@@ -70,13 +70,13 @@ const TourPackages = () => {
   };
   return (
     <>
-      <Box className="tour_packages" data-aos='zoom-in-down'>
+      <Box className="tour_packages">
         <Container>
-          <Box data-aos='zoom-in' style={ {} }>
-            <Box data-aos='zoom-in-up' style={ { textAlign: 'center' } }>
+          <Box style={ {} }>
+            <Box style={ { textAlign: 'center' } }>
               <Typography
                 gutterBottom
-                sx={ { fontSize: "20px", color: 'white', fontWeight: 700 } }
+                sx={ { fontSize: "20px", color: 'white', fontWeight: 600 } }
               >
                 Discover DreamFly Packages
               </Typography>

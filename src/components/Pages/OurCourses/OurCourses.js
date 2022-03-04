@@ -5,7 +5,6 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Navigation from "../../../components/Shared/Navigation/Navigation";
 import "./OurCourses.css";
 import {
-  Button,
   Card,
   CardActionArea,
   CardActions,
@@ -14,8 +13,8 @@ import {
   Container,
   Typography,
 } from "@mui/material";
-import { NavLink } from "react-router-dom";
 import Footer from "../../Shared/Footer/Footer";
+import ButtonOutline from "../../StyledComponent/Buttons/ButtonOutline";
 
 const OurCourses = () => {
   const data = [
@@ -26,7 +25,7 @@ const OurCourses = () => {
       dec: "As well as getting to fly to many different destinations as part of their job, airplane pilots get big discounts on",
       images:
         "https://images.unsplash.com/photo-1506695939086-156c2eff767b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGxhbmUlMjBjb2NrcGl0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      price: "399.00",
+      price: "399",
     },
     {
       id: 2,
@@ -35,7 +34,7 @@ const OurCourses = () => {
       dec: "The first small jet-powered civil aircraft was the Morane-Saulnier MS.760 Paris, developed privately in the early 1950s",
       images:
         "https://images.unsplash.com/photo-1529521914207-a330038e35a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGxhbmUlMjBjb2NrcGl0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      price: "299.00",
+      price: "299",
     },
     {
       id: 3,
@@ -44,7 +43,7 @@ const OurCourses = () => {
       dec: "Our technology consistently delivers the best pricing for charters – and the unique ability to buy individual seats.",
       images:
         "https://images.unsplash.com/photo-1596899223071-723a26d67f9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBsYW5lJTIwY29ja3BpdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      price: "499.00",
+      price: "499",
     },
     {
       id: 4,
@@ -53,7 +52,7 @@ const OurCourses = () => {
       dec: "Search the world with ease and transparency.As the only tech-forward private aviation company",
       images:
         "https://images.unsplash.com/photo-1581300907482-9ab70b31b69f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHBsYW5lJTIwY29ja3BpdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      price: "199.00",
+      price: "199",
     },
     {
       id: 5,
@@ -62,7 +61,7 @@ const OurCourses = () => {
       dec: "Charter an entire jet, or offer the seats you don’t need through our app a need for full or even fractional jet ownership",
       images:
         "https://images.unsplash.com/photo-1610081206051-a73bc07abf23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fHBsYW5lJTIwY29ja3BpdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      price: "599.00",
+      price: "599",
     },
     {
       id: 6,
@@ -71,47 +70,29 @@ const OurCourses = () => {
       dec: "XO is not simply a private jet service. Whether you’re traveling for business or leisure, XO Membership also delivers",
       images:
         "https://images.unsplash.com/photo-1509541206217-cde45c41aa6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fHBsYW5lJTIwY29ja3BpdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      price: "699.00",
+      price: "699",
     },
   ];
   return (
     <Box>
       <Navigation />
-      <Typography
-        variant="h3"
-        sx={{ textAlign: "center", padding: "100px 0px 10px 0px" }}
-      >
-        Our Courses
-      </Typography>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          paddingBottom: "100px",
-        }}
-      >
-        <Typography variant="h6" className="our_course_link">
-          <NavLink to={"/"}>Home</NavLink>
-        </Typography>
-        <Typography variant="h6" sx={{ paddingLeft: "10px" }}>
-          / Courses
-        </Typography>
-      </Box>
       <Container>
-        <Box style={{ padding: "40px 0px" }}>
-          <Box component="div" sx={{ textAlign: "center" }}>
-            <Typography variant="h6" sx={{ fontWeight: 500, color: "#dcbb87" }}>
-              Choose Course
+        <Box className="paddingY">
+          <Box sx={{ textAlign: "center", mb: 5 }}>
+            <Typography 
+              gutterBottom 
+              sx={{color:'#5e35b1', fontWeight:'700', fontSize:'20px',marginBottom:'10px', textAlign:'center'}}
+              > 
+              Choose Course 
             </Typography>
-            <Typography
-              variant="h3"
-              sx={{ py: 4, fontWeight: 600, fontSize: "2.5rem", color: "#111" }}
-            >
-              Find The Right Course For You
+            <Typography 
+              variant="h2"
+              sx={{textAlign:'center'}}
+              > 
+              Find The Right Course For You 
             </Typography>
           </Box>
-          <Grid container spacing={{ xs: 2, md: 3 }}>
+          <Grid container spacing={{ xs: 1, md: 3 }}>
             {data.map((item) => (
               <Grid item xs={12} sm={6} md={4} key={item.id}>
                 <Card
@@ -135,10 +116,8 @@ const OurCourses = () => {
                     <CardContent>
                       <Typography
                         gutterBottom
-                        variant="h5"
-                        component="div"
-                        sx={{ fontWeight: 600, fontSize: "1.4rem" }}
-                      >
+                        variant="h3"
+                        >
                         {item?.title}
                       </Typography>
                       <Box
@@ -163,17 +142,13 @@ const OurCourses = () => {
                         {item?.dec}
                       </Typography>
                     </CardContent>
-                    <CardActions
-                      sx={{ display: "flex", justifyContent: "space-between" }}
-                    >
-                      <Typography className="courses_btn">
-                        <Button>
+                    <CardActions sx={{pb: 2}}>
+                      <ButtonOutline>
                           Enroll Now
                           <span className="course_arrow">
                             <i className="fas fa-arrow-right"></i>
                           </span>
-                        </Button>
-                      </Typography>
+                      </ButtonOutline>
                     </CardActions>
                   </CardActionArea>
                 </Card>

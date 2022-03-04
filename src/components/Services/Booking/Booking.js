@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 import SearchFlights from "../../HomePage/PersonalFlight/SearchFlights/SearchFlights";
@@ -17,19 +17,29 @@ function Booking() {
    
     return (
       <div className="booking">
-      <SearchFlights/>
-            <div>
-            <Container>
-            
-                <h5>Luxury Charters</h5>
-            <h1>Luxury Deals For You</h1>
-          <div className="map">
-          {
-               booking.map(book => <Book book={book}></Book>)
-           }
-          </div>
+        <SearchFlights/>
+
+        <Box sx={{bgcolor: "#fafafa"}}>
+          <Container className="paddingY90">
+            <Typography  
+              sx={{color:'#5e35b1', fontWeight:'700', fontSize:'20px',marginBottom:'10px'}}
+              >
+              Luxury Charters 
+            </Typography> 
+            <Typography 
+              variant="h2" 
+              sx={{ marginBottom:'50px'}}
+              >
+              Luxury Deals For You 
+            </Typography>
+            <Grid container spacing={{xs: 2, md: 3}}>
+            {
+                booking.map(book => <Book book={book}></Book>)
+            }
+            </Grid>
           </Container>
-        </div>
+        </Box>
+        
       </div>
     );
 }

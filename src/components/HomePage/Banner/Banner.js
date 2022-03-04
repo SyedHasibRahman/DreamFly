@@ -13,7 +13,7 @@ const Banner = () => {
   return (
     <Box sx={ {} }>
       <Box sx={ { backgroundImage: 'url(https://static.tickets.com.tr/img/v4/header-bg.svg)', backgroundPosition: 'right', height: "100%" , backgroundRepeat: 'no-repeat', backgroundSize: 'right',} }>
-        <Container sx={ { padding: "100px 0", position: 'relative' } }>
+        <Container className="paddingY90" sx={ { position: 'relative' } }>
           <Box display={ { xs: 'none', md: 'block' } }>
             <Box className='socialIconBox'>
               <Link href="#" className='socialIcon'><i className="fab fa-facebook-f"></i></Link>
@@ -23,7 +23,7 @@ const Banner = () => {
             </Box>
           </Box>
           <Grid container >
-            <Grid data-aos="zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600" item xs={12} md={6} order={{ xs: 2, md: 1 }}>
+            <Grid data-aos="zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600" item xs={12} md={6} order={{  lg: 1 , md: 2,}}>
               
                 <Typography 
                   variant="h2" 
@@ -52,7 +52,7 @@ const Banner = () => {
                 </Box>
               
             </Grid>
-            <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
+            <Grid item xs={12} md={6} order={{ lg: 2, md: 1}}>
               <Box sx={{ width: '100%', height: '100%' }}>
                 <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src="https://themeim.com/demo/flynext/assets/images/element/element-2.png" alt="" />
               </Box>

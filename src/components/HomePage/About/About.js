@@ -31,7 +31,7 @@ const About = () => {
             color: '#fff',
             position: 'relative',
         }}
-            data-aos='zoom-in-down'
+            
         >
             <Grid sx={{
                 position: 'absolute',
