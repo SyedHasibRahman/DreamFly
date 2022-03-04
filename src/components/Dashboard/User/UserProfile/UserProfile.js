@@ -21,6 +21,7 @@ const UserProfile = () => {
         setDiableInput(false)
     }
     const updateUser = (updateData) => {
+        
         setDiableInput(true)
     }
 

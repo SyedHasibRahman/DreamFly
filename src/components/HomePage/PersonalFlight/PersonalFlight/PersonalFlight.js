@@ -81,80 +81,80 @@ const PersonalFlight = () => {
   return (
     <Box
       className="personal_flight_Container"
-      sx={{
+      sx={ {
         flexGrow: 1
-      }}
-      >
+      } }
+    >
       <Container
         className="personal_flight"
-        spacing={{ xs: 2, md: 3 }}
-        style={{
+        spacing={ { xs: 2, md: 3 } }
+        style={ {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
-        }}
+        } }
       >
         <Box
-          sx={{ textAlign: "center", color: "#fff", paddingTop: "50px", paddingBottom: "40px" }}
-          >
-          <Typography sx={{fontWeight:'600', color: "#fff", fontSize:'18px',marginBottom:'10px'}}>
+          sx={ { textAlign: "center", color: "#fff", paddingTop: "50px", paddingBottom: "40px" } }
+        >
+          <Typography sx={ { fontWeight: '600', color: "#fff", fontSize: '18px', marginBottom: '10px' } }>
             DreamFly Book
           </Typography>
-          <Typography variant="h2" sx={{ color: "#fff", }}>
+          <Typography variant="h2" sx={ { color: "#fff", } }>
             Book A Flight
           </Typography>
         </Box>
         <Grid
           container
-          spacing={{ xs: 2, md: 3, lg: 3 }}
+          spacing={ { xs: 2, md: 3, lg: 3 } }
           className="flight_box"
         >
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 }>
             <Box className="selector_box">
               <Box for="cars" className="label">
                 From
               </Box>
               <select
                 className="selector"
-                ref={fromRef}
-                onChange={() => handleFrom()}
+                ref={ fromRef }
+                onChange={ () => handleFrom() }
               >
-                <option style={{color: "black"}} required  value="From">From</option>
-                {filterFrom.map((flight) => {
+                <option style={ { color: "black" } } required value="From">From</option>
+                { filterFrom.map((flight) => {
                   const { from } = flight;
                   return (
-                    <option style={{color: "black"}} required key={flight._id} value={from}>
-                      {from}
+                    <option style={ { color: "black" } } required key={ flight._id } value={ from }>
+                      { from }
                     </option>
                   );
-                })}
+                }) }
               </select>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 }>
             <Box className="selector_box">
               <Box className="label">To</Box>
-              <select className="selector" ref={toRef}>
-                <option style={{color: "black"}} required  value="To">To</option>
-                {to.map((flight) => {
+              <select className="selector" ref={ toRef }>
+                <option style={ { color: "black" } } required value="To">To</option>
+                { to.map((flight) => {
                   const { to } = flight;
                   return (
-                    <option style={{color: "black"}} required key={flight._id} value={to}>
-                      {to}
+                    <option style={ { color: "black" } } required key={ flight._id } value={ to }>
+                      { to }
                     </option>
                   );
-                })}
+                }) }
               </select>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 }>
             <Box className="selector_box">
               <Box for="cars" className="label">
                 Date
               </Box>
               <input
-                ref={dateRef}
+                ref={ dateRef }
                 type="date"
                 required
                 size="small"
@@ -163,36 +163,36 @@ const PersonalFlight = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 }>
             <Box className="selector_box">
-                <Box for="cars" className="label">
-                  Passenger
+              <Box for="cars" className="label">
+                Passenger
+              </Box>
+              <Box className="selector">
+                <Box className="passenger">
+                  <span className="int" onClick={ () => decrementCounter() }>
+                    <i style={ { color: "white" } } className="fas fa-minus"></i>
+                  </span>
+                  <span style={ { color: "white" } } className="number">
+                    { counter }
+                  </span>
+                  <span className="dec" onClick={ () => incrementCounter() }>
+                    <i style={ { color: "white" } } className="fas fa-plus"></i>
+                  </span>
                 </Box>
-                <Box className="selector">
-                  <Box className="passenger">
-                    <span className="int" onClick={ () => decrementCounter() }>
-                      <i style={ { color: "white" } } className="fas fa-minus"></i>
-                    </span>
-                    <span style={ { color: "white" } } className="number">
-                      { counter }
-                    </span>
-                    <span className="dec" onClick={ () => incrementCounter() }>
-                      <i style={ { color: "white" } } className="fas fa-plus"></i>
-                    </span>
-                  </Box>
-                </Box>
+              </Box>
             </Box>
           </Grid>
           <Box className="personal_flight_btn">
-            <Link to="/Services" style={{textDecoration: "none"}}>
-              <SecondaryButton onClick={handleSubmit}>
+            <Link to="/Services" style={ { textDecoration: "none" } }>
+              <SecondaryButton onClick={ handleSubmit }>
                 search now
               </SecondaryButton>
             </Link>
           </Box>
         </Grid>
       </Container>
-      </Box>
+    </Box>
   );
 };
 
