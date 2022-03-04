@@ -12,10 +12,10 @@ const Blogs = () => {
     const [page, setPage] = useState(0);
     const [pageCount, setPageCount] = useState(0);
     const size = 4;
-    
+
     useEffect(() => {
-        fetch(`https://salty-beach-45243.herokuapp.com/blogs?page=${page}&&size=${size}`)
-        // fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
+        fetch(`https://agile-lowlands-71900.herokuapp.com/blogs?page=${page}&&size=${size}`)
+            // fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setBlogs(data.blogs);
@@ -63,14 +63,14 @@ const Blogs = () => {
                     </Box>
 
                     <Box sx={ { pt: 4, display: "flex" } }>
-                    {
-                        [...Array(pageCount).keys()]
-                            .map(number => <Button style={{marginRight: '10px', borderRadius: "50%",}}
-                                className={number === page ? 'selected' : ''}
-                                key={number}
-                                onClick={() => setPage(number)}
-                            >{number + 1}</Button>)
-                    }
+                        {
+                            [...Array(pageCount).keys()]
+                                .map(number => <Button style={ { marginRight: '10px', borderRadius: "50%", } }
+                                    className={ number === page ? 'selected' : '' }
+                                    key={ number }
+                                    onClick={ () => setPage(number) }
+                                >{ number + 1 }</Button>)
+                        }
                     </Box>
                 </Container>
             </Box>

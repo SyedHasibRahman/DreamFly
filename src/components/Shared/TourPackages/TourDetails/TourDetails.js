@@ -21,7 +21,7 @@ const TourDetails = () => {
     const { register, handleSubmit } = useForm();
 
     useEffect(() => {
-        const url = `https://salty-beach-45243.herokuapp.com/tourPackages/${TourId}`
+        const url = `https://agile-lowlands-71900.herokuapp.com/tourPackages/${TourId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setTourPackage(data))
@@ -34,7 +34,7 @@ const TourDetails = () => {
         data.price = tourPackage.price;
         data.discription = tourPackage.discription;
         data.status = "pending"
-        axios.post('https://salty-beach-45243.herokuapp.com/orders', data)
+        axios.post('https://agile-lowlands-71900.herokuapp.com/orders', data)
             // axios.post('https://still-bastion-57482.herokuapp.com/orders', { ...data, img, name, price, discription })
             .then(res => {
                 console.log(res)

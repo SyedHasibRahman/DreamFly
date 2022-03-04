@@ -6,7 +6,7 @@ import './CustomizePackages.css'
 const CustomizePackages = () => {
     const [packages, setPackages] = useState([]);
     useEffect(() => {
-        fetch('https://salty-beach-45243.herokuapp.com/tourPackages')
+        fetch('https://agile-lowlands-71900.herokuapp.com/tourPackages')
             .then(res => res.json())
             .then(data => setPackages(data));
     }, [])
