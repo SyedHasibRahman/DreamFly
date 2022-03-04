@@ -106,6 +106,16 @@ const AdminPath = () => {
                     <ListItemText primary="Manage Blog" />
                 </ListItem>
             </Link>
+            <Link to='/Dashboard/makeAdmin' >
+                <ListItem button key="Test" primary="Test Primary"  >
+                    <ListItemIcon>
+                        <StoreIcon style={ {
+                            color: 'white'
+                        } } />
+                    </ListItemIcon>
+                    <ListItemText primary="Manage Blog" />
+                </ListItem>
+            </Link>
 
         </div>
     );
