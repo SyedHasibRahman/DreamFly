@@ -66,7 +66,7 @@ const PersonalFlight = () => {
     );
   };
 
-  //remove the duplicate items
+  //remove the duplicate item
   const flightFrom = flights.map((item) => item.from);
   const filterFrom = flights.filter(
     ({ from }, index) => !flightFrom.includes(from, index + 1)
