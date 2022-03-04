@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Grid, Container, Typography, Stack, Pagination } from '@mui/material';
+import { Box, Grid, Container, Typography } from '@mui/material';
 import Blog from '../Blog/Blog';
 import BlogSideber from '../BlogSideber/BlogSideber';
 import Navigation from '../../../Shared/Navigation/Navigation';
 import Footer from '../../../Shared/Footer/Footer';
+import { Button } from 'react-bootstrap';
 
 const Blogs = () => {
 
     const [blogs, setBlogs] = useState([]);
-
+    const [page, setPage] = useState(0);
+    const [pageCount, setPageCount] = useState(0);
+    const size = 4;
+    
     useEffect(() => {
-        // fetch('Old/https://vast()-retreat-08893.herokuapp.com/blogs')
-        fetch('https://salty-beach-45243.herokuapp.com/blogs')
+        fetch(`https://salty-beach-45243.herokuapp.com/blogs?page=${page}&&size=${size}`)
+        // fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
             .then(res => res.json())
-            .then(data => setBlogs(data))
-    }, []);
-
-    const [page, setPage] = React.useState(1);
-    const handleChange = (event, value) => {
-        setPage(value);
-    };
-
+            .then(data => {
+                setBlogs(data.blogs);
+                const count = data.count;
+                const pageNumber = Math.ceil(count / size);
+                setPageCount(pageNumber);
+            });
+    }, [page]);
 
     return (
         <>
@@ -59,10 +62,15 @@ const Blogs = () => {
                         </Grid>
                     </Box>
 
-                    <Box sx={ { pt: 4 } }>
-                        <Stack spacing={ 2 }>
-                            <Pagination count={ 10 } page={ page } onChange={ handleChange } />
-                        </Stack>
+                    <Box sx={ { pt: 4, display: "flex" } }>
+                    {
+                        [...Array(pageCount).keys()]
+                            .map(number => <Button style={{marginRight: '10px', borderRadius: "50%",}}
+                                className={number === page ? 'selected' : ''}
+                                key={number}
+                                onClick={() => setPage(number)}
+                            >{number + 1}</Button>)
+                    }
                     </Box>
                 </Container>
             </Box>
