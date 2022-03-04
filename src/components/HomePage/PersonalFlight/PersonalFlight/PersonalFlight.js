@@ -24,7 +24,7 @@ const PersonalFlight = () => {
   const toRef = useRef();
 
   useEffect(() => {
-    fetch("https://salty-beach-45243.herokuapp.com/flight")
+    fetch("http://localhost:5000/flight")
       .then((res) => res.json())
       .then((data) => setFlights(data));
   }, []);
@@ -58,7 +58,7 @@ const PersonalFlight = () => {
     };
     if (from && to) {
       axios
-        .post("https://salty-beach-45243.herokuapp.com/filter", data)
+        .post("http://localhost:5000/filter", data)
         .then((res) => dispatch(addFilterData(res.data)));
     }
     dispatch(
