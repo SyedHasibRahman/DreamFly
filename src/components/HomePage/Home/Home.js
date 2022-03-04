@@ -29,9 +29,9 @@ const Home = () => {
       {/* <ManageOrders></ManageOrders> */}
       <About />
       <BestService />
-      <ServiceCards />
       <TourPackages />
-      <PersonalFlight />
+      <ServiceCards />
+      <PersonalFlight/>
       <Testimonials />
       <Footer />
     </>
