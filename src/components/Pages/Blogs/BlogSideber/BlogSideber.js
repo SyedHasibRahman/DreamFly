@@ -11,7 +11,7 @@ const BlogSideber = ({handleSearch}) => {
         // fetch('https://salty-beach-45243.herokuapp.com/blogs')
         fetch('http://localhost:5000/blogs')
             .then(res => res.json())
-            .then(data => setRecentBlogs(data.blogs))
+            .then(data => setRecentBlogs(data))
     }, []);
 
     return (
