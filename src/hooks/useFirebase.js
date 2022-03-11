@@ -91,7 +91,7 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, [auth])
     useEffect(() => {
-        fetch(`https://salty-beach-45243.herokuapp.com/users/${user.email}`)
+        fetch(`https://agile-lowlands-71900.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -118,7 +118,7 @@ const useFirebase = () => {
     // }
     const saveUser = (email, displayName, photoURL, uid, method) => {
         const user = { email, displayName, photoURL, uid };
-        fetch('https://salty-beach-45243.herokuapp.com/users', {
+        fetch('https://agile-lowlands-71900.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

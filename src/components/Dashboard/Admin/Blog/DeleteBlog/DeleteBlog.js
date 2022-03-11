@@ -16,8 +16,8 @@ const DeleteBlog = () => {
     const [blogs, setBlogs] = React.useState([]);
 
     React.useEffect(() => {
-        // fetch('https://salty-beach-45243.herokuapp.com/blogs')
-        fetch('https://salty-beach-45243.herokuapp.com/blogs')
+        // fetch('https://agile-lowlands-71900.herokuapp.com/blogs')
+        fetch('https://agile-lowlands-71900.herokuapp.com/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, []);
@@ -28,7 +28,7 @@ const DeleteBlog = () => {
 
         if(proceed){
 
-            axios.delete(`https://salty-beach-45243.herokuapp.com/blogs/${id}`, id)
+            axios.delete(`https://agile-lowlands-71900.herokuapp.com/blogs/${id}`, id)
                 .then(res => {
                     alert('deleted successfully')
                 })

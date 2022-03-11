@@ -14,7 +14,7 @@ const Blogs = () => {
     const [page, setPage] = useState(0);
     const [pageCount, setPageCount] = useState(0);
     const size = 4;
-    
+
     useEffect(() => {
         // fetch(`https://salty-beach-45243.herokuapp.com/blogs?page=${page}&&size=${size}`)
         fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)

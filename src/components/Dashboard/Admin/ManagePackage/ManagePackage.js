@@ -8,7 +8,7 @@ const ManagePackage = () => {
     const { register, handleSubmit, reset } = useForm();
     const [success, setSuccess] = useState();
     const onSubmit = (data) => {
-        fetch('https://salty-beach-45243.herokuapp.com/tourPackages', {
+        fetch('https://agile-lowlands-71900.herokuapp.com/tourPackages', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
