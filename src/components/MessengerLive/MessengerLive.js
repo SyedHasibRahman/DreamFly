@@ -1,17 +1,16 @@
 import React from 'react';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 
-const Messenger = () => {
+const MessengerLive = () => {
     return (
         <div>
             <MessengerCustomerChat
                 pageId="<571915953489074>"
-                appId="<4372403822836363
-                >"
+                appId="<498806025092594>"
 
             />
         </div>
     );
 };
 
-export default Messenger;
+export default MessengerLive;

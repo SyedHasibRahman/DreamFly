@@ -24,7 +24,7 @@ const PersonalFlight = () => {
   const toRef = useRef();
 
   useEffect(() => {
-    fetch("http://localhost:5000/flight")
+    fetch("https://dashboard.heroku.com/flight")
       .then((res) => res.json())
       .then((data) => setFlights(data));
   }, []);

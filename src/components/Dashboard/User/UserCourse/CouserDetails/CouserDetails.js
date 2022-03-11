@@ -40,7 +40,7 @@ function CouserDetails() {
                             <div>100%</div>
                         </Box>
                         <Box className='search'>
-                            <input autocomplete="off" placeholder="Search Lesson" type="text" aria-autocomplete="both" aria-expanded="true" aria-haspopup="listbox" role="combobox" class="rbt-input-main form-control rbt-input" value="" aria-owns="lesson-search" />
+                            <input autocomplete="off" placeholder="Search Lesson" type="text" aria-autocomplete="both" aria-expanded="true" aria-haspopup="listbox" role="combobox" className="rbt-input-main form-control rbt-input" value="" aria-owns="lesson-search" />
                         </Box>
                         <Box mt={2}>
                             <div className='courseDetails'>

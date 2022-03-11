@@ -31,6 +31,7 @@ const About = () => {
             color: '#fff',
             position: 'relative',
         }}
+
         >
             <Grid sx={{
                 position: 'absolute',

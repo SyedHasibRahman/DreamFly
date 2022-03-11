@@ -5,6 +5,7 @@ import PrimaryButton from '../../../StyledComponent/Buttons/PrimaryButton';
 
 const UserProfile = () => {
     const { registerUser, user } = useAuth({})
+    console.log(user)
     const [updateData, setUpdateData] = useState({})
     // const [loginData, setLoginData] = useState({})
     const handleOnChange = e => {
