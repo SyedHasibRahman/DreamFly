@@ -1,29 +1,38 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Grid, Container, Typography } from '@mui/material';
+import { Box, Grid, Container, Typography, } from '@mui/material';
 import Blog from '../Blog/Blog';
 import BlogSideber from '../BlogSideber/BlogSideber';
 import Navigation from '../../../Shared/Navigation/Navigation';
 import Footer from '../../../Shared/Footer/Footer';
-import { Button } from 'react-bootstrap';
+import "./Blog.css";
+
 
 const Blogs = () => {
 
     const [blogs, setBlogs] = useState([]);
+    const [searchblogs, setSearchBlogs] = useState([]);
     const [page, setPage] = useState(0);
     const [pageCount, setPageCount] = useState(0);
     const size = 4;
     
     useEffect(() => {
-        fetch(`https://salty-beach-45243.herokuapp.com/blogs?page=${page}&&size=${size}`)
-        // fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
+        // fetch(`https://salty-beach-45243.herokuapp.com/blogs?page=${page}&&size=${size}`)
+        fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setBlogs(data.blogs);
+                setSearchBlogs(data.blogs);
                 const count = data.count;
                 const pageNumber = Math.ceil(count / size);
                 setPageCount(pageNumber);
             });
     }, [page]);
+
+    const handleSearch = event => {
+        const searchText = event.target.value;
+        const matchedBlogs = blogs.filter(blog => blog.title.toLowerCase().includes(searchText.toLowerCase()));
+        setSearchBlogs(matchedBlogs);
+    }
 
     return (
         <>
@@ -44,8 +53,8 @@ const Blogs = () => {
                         <Grid container spacing={ 4 }>
                             <Grid item xs={ 12 } md={ 8 } sx={ {} }>
                                 <Grid container spacing={ 4 } columns={ 12 }>
-                                    { blogs.map((blog) => (
-                                        <Grid key={ blog.id } item xs={ 12 } md={ 6 } sx={ {} }>
+                                    { searchblogs.map((blog) => (
+                                        <Grid key={ blog._id } item xs={ 12 } md={ 6 }>
                                             <Blog
                                                 gridColumn="span 8"
                                                 blog={ blog }>
@@ -55,9 +64,7 @@ const Blogs = () => {
                                 </Grid>
                             </Grid>
                             <Grid item xs={ 12 } md={ 4 } sx={ {} }>
-                                <Grid container>
-                                    <BlogSideber></BlogSideber>
-                                </Grid>
+                                <BlogSideber handleSearch={handleSearch}></BlogSideber>
                             </Grid>
                         </Grid>
                     </Box>
@@ -65,11 +72,15 @@ const Blogs = () => {
                     <Box sx={ { pt: 4, display: "flex" } }>
                     {
                         [...Array(pageCount).keys()]
-                            .map(number => <Button style={{marginRight: '10px', borderRadius: "50%",}}
+                            .map(number => 
+                            <Typography 
+                                sx={{ width: "35px", height: "35px", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", bgcolor: '#5e35b1', color: "white"}} 
+                                style={{marginRight: '10px',  borderRadius: "50%"}}
                                 className={number === page ? 'selected' : ''}
                                 key={number}
                                 onClick={() => setPage(number)}
-                            >{number + 1}</Button>)
+                                >{number + 1}
+                            </Typography>)
                     }
                     </Box>
                 </Container>

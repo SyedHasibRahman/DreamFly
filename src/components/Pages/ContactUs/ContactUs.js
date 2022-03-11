@@ -223,7 +223,7 @@ const ContactUs = () => {
                                             InputProps={ {
                                                 endAdornment: (
                                                     <InputAdornment position="end">
-                                                        <i class="fa-solid fa-file-lines"></i>
+                                                        <i className="fa-solid fa-file-lines"></i>
                                                     </InputAdornment>
                                                 )
                                             } }

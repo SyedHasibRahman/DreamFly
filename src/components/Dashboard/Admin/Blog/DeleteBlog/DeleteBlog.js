@@ -24,7 +24,9 @@ const DeleteBlog = () => {
 
     const handleDeleteBlogs = (id, e) => {
 
-        if (window.confirm('Are you sure, you want to delete?')) {
+        const proceed = window.confirm('Are you sure, you want to delete?');
+
+        if(proceed){
 
             axios.delete(`https://salty-beach-45243.herokuapp.com/blogs/${id}`, id)
                 .then(res => {

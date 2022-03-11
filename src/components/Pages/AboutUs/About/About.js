@@ -44,17 +44,17 @@ const About = () => {
             >
               <span 
                 style={{fontWeight:'800', display:'inline-block', marginRight:'15px'}}>
-                <i style={{color:'#5e35b1', marginRight:'5px'}} class="fa-solid fa-check"></i>  
+                <i style={{color:'#5e35b1', marginRight:'5px'}} className="fa-solid fa-check"></i>  
                 Private Jet 
               </span>
               <span 
                 style={{fontWeight:'800', display:'inline-block', marginRight:'15px'}}>
-                <i style={{color:'#5e35b1', marginRight:'5px'}} class="fa-solid fa-check"></i>  
+                <i style={{color:'#5e35b1', marginRight:'5px'}} className="fa-solid fa-check"></i>  
                 Business Jet
               </span>
               <span 
                 style={{fontWeight:'800', display:'inline-block', marginRight:'15px'}}>
-                <i style={{color:'#5e35b1', marginRight:'5px'}} class="fa-solid fa-check"></i>  
+                <i style={{color:'#5e35b1', marginRight:'5px'}} className="fa-solid fa-check"></i>  
                 Air Ambulance
                 </span>
             </Box>
