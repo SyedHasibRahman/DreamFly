@@ -15,12 +15,12 @@ import axios from 'axios';
 const BlogDetails = () => {
 
     const { blogId } = useParams();
-    const{user} = useAuth();
+    const { user } = useAuth();
     const [blog, setBlog] = useState({});
 
     useEffect(() => {
         // const url = `https://salty-beach-45243.herokuapp.com/blogs/${blogId}`
-        const url = `http://localhost:5000/blogs/${blogId}`
+        const url = `https://agile-lowlands-71900.herokuapp.com/blogs/${blogId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setBlog(data))
@@ -35,11 +35,11 @@ const BlogDetails = () => {
     }
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (comments) => {
-        const combinedData = {comments, CommentInfo}
+        const combinedData = { comments, CommentInfo }
         console.log(combinedData)
         console.log(combinedData.data)
-        
-        axios.post('http://localhost:5000/comments', combinedData)
+
+        axios.post('https://agile-lowlands-71900.herokuapp.com/comments', combinedData)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added successfully');
@@ -51,7 +51,7 @@ const BlogDetails = () => {
     // get comment section
     const [comments, setComments] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/comments')
+        fetch('https://agile-lowlands-71900.herokuapp.com/comments')
             .then(res => res.json())
             .then(data => setComments(data))
     }, [comments]);
@@ -62,9 +62,9 @@ const BlogDetails = () => {
 
         const proceed = window.confirm('Are you sure, you want to delete?');
 
-        if(proceed){
+        if (proceed) {
 
-            const url = `http://localhost:5000/comments/${id}`;
+            const url = `https://agile-lowlands-71900.herokuapp.com/comments/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -77,9 +77,9 @@ const BlogDetails = () => {
                     }
                 });
         }
-        
+
     }
-   
+
 
     return (
         <>
@@ -135,50 +135,50 @@ const BlogDetails = () => {
                                 { blog.description }
                             </Typography>
 
-                            {/* comment section */}
-                            <Box 
-                                sx={{display: "flex", alighnItems: "center", justifyContent: "space-around", pb: 4 }}
-                                >
-                                <Typography sx={{fontSize: "18px"}}>
-                                    <span>5</span> <i style={{padding: "", color: "blue"}} className="fa-solid fa-thumbs-up"></i>
+                            {/* comment section */ }
+                            <Box
+                                sx={ { display: "flex", alighnItems: "center", justifyContent: "space-around", pb: 4 } }
+                            >
+                                <Typography sx={ { fontSize: "18px" } }>
+                                    <span>5</span> <i style={ { padding: "", color: "blue" } } className="fa-solid fa-thumbs-up"></i>
                                 </Typography>
-                                <Typography sx={{fontSize: "18px"}}>
-                                    <span>7</span> <i style={{padding: "", color: "red"}} className="fa-solid fa-heart"></i>
+                                <Typography sx={ { fontSize: "18px" } }>
+                                    <span>7</span> <i style={ { padding: "", color: "red" } } className="fa-solid fa-heart"></i>
                                 </Typography>
-                                
-                                <Typography sx={{fontSize: "16px"}}>10 Comment</Typography>
+
+                                <Typography sx={ { fontSize: "16px" } }>10 Comment</Typography>
                             </Box>
-                            
+
                             {
-                                comments.map((comment) => 
-                                <Box 
-                                    sx={{display: "flex", alignItems: "center", justiflyContent: "center", my: 2}}
+                                comments.map((comment) =>
+                                    <Box
+                                        sx={ { display: "flex", alignItems: "center", justiflyContent: "center", my: 2 } }
                                     >
-                                    <Avatar alt="Remy Sharp" src={user?.photoURL} />
-                                    <Typography 
-                                        sx={{fontSize: "18px", marginLeft: "15px", bgcolor: "#ede7f6", py: .5, px: 2, borderRadius: "5px"}}
+                                        <Avatar alt="Remy Sharp" src={ user?.photoURL } />
+                                        <Typography
+                                            sx={ { fontSize: "18px", marginLeft: "15px", bgcolor: "#ede7f6", py: .5, px: 2, borderRadius: "5px" } }
                                         >
-                                        {comment.comments.comment}
-                                        <i 
-                                        onClick={ () => handleDeleteComment(comment._id) }
-                                        style={{ color: "red", fontSize: "14px" ,paddingLeft: "15px"}} className="fa-solid fa-trash"></i>
-                                    </Typography>
-                                </Box>) 
+                                            { comment.comments.comment }
+                                            <i
+                                                onClick={ () => handleDeleteComment(comment._id) }
+                                                style={ { color: "red", fontSize: "14px", paddingLeft: "15px" } } className="fa-solid fa-trash"></i>
+                                        </Typography>
+                                    </Box>)
                             }
 
-                            <Box 
+                            <Box
                                 sx={ { pb: 4 } }>
-                                <Typography sx={ { fontSize: "24px", fontWeight: 600, my:2 } }>
+                                <Typography sx={ { fontSize: "24px", fontWeight: 600, my: 2 } }>
                                     Leave A Comments
                                 </Typography>
-                                <Grid 
+                                <Grid
                                     component="form"
                                     autoComplete="off"
                                     onSubmit={ handleSubmit(onSubmit) }
-                                    container 
-                                    direction="row" 
+                                    container
+                                    direction="row"
                                     sx={ { mb: "20px" } } justifyContent="space-between" alignItems="center" spacing={ 2 }
-                                    >
+                                >
                                     <Grid item xs={ 12 }>
                                         <InputTextField
                                             label="Massage"
@@ -186,7 +186,7 @@ const BlogDetails = () => {
                                             type="text"
                                             rows="4"
                                             required
-                                            { ...register("comment", { required: true })}
+                                            { ...register("comment", { required: true }) }
                                             sx={ { bgcolor: "white" } }
                                         />
                                     </Grid>
@@ -195,7 +195,7 @@ const BlogDetails = () => {
                                         sx={ { textTransform: 'capitalize', fontSize: "18px" } }>
                                         Submit Now
                                     </Button>
-                                </Grid> 
+                                </Grid>
                             </Box>
 
                             <Link style={ { textDecoration: "none", textAlign: "center", cursor: "pointer" } }
@@ -219,7 +219,7 @@ const BlogDetails = () => {
                             </Grid>
                         </Grid>
                         {/* Blog Sideber end */ }
-        
+
                     </Grid>
                 </Container>
             </Box>
