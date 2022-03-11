@@ -16,12 +16,11 @@ const Blogs = () => {
     const size = 4;
 
     useEffect(() => {
-        // fetch(`https://salty-beach-45243.herokuapp.com/blogs?page=${page}&&size=${size}`)
-        fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
+        fetch(`https://agile-lowlands-71900.herokuapp.com/blogs?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
-                setBlogs(data);
-                setSearchBlogs(data);
+                setBlogs(data.blogs);
+                setSearchBlogs(data.blogs);
                 const count = data.count;
                 const pageNumber = Math.ceil(count / size);
                 setPageCount(pageNumber);
@@ -69,7 +68,7 @@ const Blogs = () => {
                         </Grid>
                     </Box>
 
-                    {/* <Box sx={ { pt: 4, display: "flex" } }>
+                    <Box sx={ { pt: 4, display: "flex" } }>
                         {
                             [...Array(pageCount).keys()]
                                 .map(number =>
@@ -82,7 +81,7 @@ const Blogs = () => {
                                     >{ number + 1 }
                                     </Typography>)
                         }
-                    </Box> */}
+                    </Box>
                 </Container>
             </Box>
             <Footer></Footer>
