@@ -40,7 +40,7 @@ export default class OurTeam extends Component {
       ]
     };
     return (
-      <Box sx={{padding:'100px 0', backgroundColor:'#f5f3f1'}}>
+      <Box className="paddingY90" sx={{backgroundColor:'#f5f3f1'}}>
         <Container>
           <Box>
             <Typography 

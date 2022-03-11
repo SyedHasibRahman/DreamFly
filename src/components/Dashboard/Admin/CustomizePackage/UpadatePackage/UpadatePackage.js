@@ -14,7 +14,7 @@ const UpadatePackage = () => {
     console.log(service.date)
     console.log(service.description)
     useEffect(() => {
-        const url = `https://salty-beach-45243.herokuapp.com/tourPackages/${id}`;
+        const url = `https://agile-lowlands-71900.herokuapp.com/tourPackages/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data));
@@ -65,7 +65,7 @@ const UpadatePackage = () => {
     // handleUpdateuser
     const handleUpdateuser = e => {
 
-        const url = `https://salty-beach-45243.herokuapp.com/tourPackages/${id}`;
+        const url = `https://agile-lowlands-71900.herokuapp.com/tourPackages/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

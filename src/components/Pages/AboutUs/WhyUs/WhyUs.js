@@ -5,7 +5,7 @@ import React from 'react';
 const WhyUs = () => {
   return (
     <Box sx={{backgroundColor:'#f5f3f1'}}>
-      <Container sx={{padding:'100px 0'}}>
+      <Container className="paddingY90">
         <Typography 
           gutterBottom 
           sx={{color:'#5e35b1', fontWeight:'700', fontSize:'20px',marginBottom:'10px', textAlign:'center'}}

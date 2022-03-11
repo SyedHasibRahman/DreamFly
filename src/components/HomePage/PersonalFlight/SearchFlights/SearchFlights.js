@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container, Box, Typography } from "@mui/material";
+import { Container, Box, Typography, Grid, Button } from "@mui/material";
 import { useSelector} from "react-redux";
+import './SeaechFlight.css'
 ;
 
 const SearchFlights = () => {
@@ -11,35 +12,120 @@ const SearchFlights = () => {
     const booking = useSelector((state) => state.flightSlice.filterDate);
     const dateAndPass = useSelector((state) => state.flightSlice.dateAndPass);
 
-    const from = booking.map((data) => data.from)
-    const to = booking.map((data) => data.to)
+    const from =  [...new Map((booking.map((data) => data.from)).map(item => [item.id, item])).values()];
 
-    console.log(to );
-    console.log(from);
+    const to =  [...new Map((booking.map((data) => data.to)).map(item => [item.id, item])).values()];
 
     return (
         <div style={{bgcolor: "#f5f5f5"}}>
             <Container>
             
-                <Box sx={{bgcolor: "#5e35b1", p: 5}}>
-                    <Box sx={{display: "flex", justifyContent: 'space-between'}}>
-                        <Typography sx={{color: "white", fontSize: "20px", fontWeight: 600}}> {from}  {to} </Typography>
-                        <Typography sx={{color: "white", fontSize: "20px", fontWeight: 600}}> {dateAndPass.date} </Typography>
-                    </Box>
+                <Box sx={{py: 5}}>
+                    <Grid container sx={{bgcolor: "#5e35b1", borderRadius: 2, mb: 2, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        <Grid item xs={12}>
+                            <Box sx={{display: "flex", justifyContent: 'space-between', py:2, px:2}}>
+                                <Typography 
+                                    sx={{color: "white", fontSize: "20px", fontWeight: 600}}
+                                    >
+                                    Place: {from} to {to} 
+                                </Typography>
+                                <Typography 
+                                    sx={{color: "white", fontSize: "20px", fontWeight: 600}}
+                                    > 
+                                  Date: {dateAndPass.date} 
+                                </Typography>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Grid container sx={{display: "flex", alignItems: "center", pb:3}}>
+                                <Grid item sm={2}>
+                                    <Typography variant="h4"
+                                        sx={{textAlign: "center", color: "white"}}
+                                        >
+                                        Img
+                                    </Typography>
+                                </Grid>
+                                <Grid item sm={2}> 
+                                    <Typography variant="h4"
+                                        sx={{textAlign: "center", color: "white"}}
+                                        >
+                                        Airlines
+                                    </Typography>
+                                </Grid>
+                                <Grid item sm={2}>
+                                    <Typography variant="h4"
+                                        sx={{textAlign: "center", color: "white"}}
+                                        >
+                                        Departure
+                                    </Typography>
+                                </Grid>
+                                <Grid item sm={2}>
+                                    <Typography variant="h4"
+                                        sx={{textAlign: "center", color: "white"}}
+                                        >
+                                        Arrival
+                                    </Typography>
+                                </Grid>
+                                <Grid item sm={2}>
+                                    <Typography variant="h4"
+                                        sx={{textAlign: "center", color: "white"}}
+                                        >
+                                        Price
+                                    </Typography>
+                                </Grid>
+                                <Grid item sm={2}>
+                                    <Typography variant="h4"
+                                        sx={{textAlign: "center", color: "white"}}
+                                        >
+                                        Booking
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    
                     {
                         booking.map((data) => {
                         
-                        const {from, to, fare, flightName} = data;
+                            const {departure, arrival, fare, flightName, img} = data;
 
-                        return(
-                            <Box sx={{display: "flex", mt: 3, justifyContent: 'space-between'}}>
-                                <Typography sx={{color: "white",}}> {flightName} </Typography>
-                                <Typography sx={{color: "white",}}> {from} </Typography>
-                                <Typography sx={{color: "white",}}> {to} </Typography>
-                                <Typography sx={{color: "white",}}> {fare} </Typography>
-                            </Box>
+                            return (
+                                
+                            <Grid container 
+                                sx={{display: "flex", alignItems: "center", bgcolor: "#ede7f6", mb: 2, py: 1, borderRadius: 3}}
+                                >
+                                <Grid item sm={2} 
+                                    sx={{textAlign: "center"}}
+                                    >
+                                    <img className='flight-img' src={img} alt="" />
+                                </Grid>
+                                <Grid item sm={2} 
+                                    sx={{textAlign: "center", fontWeight: 700, fontSize: "20px"}}>
+                                    {flightName}
+                                </Grid>
+                                <Grid item 
+                                    sm={2} sx={{textAlign: "center", fontWeight: 700, fontSize: "20px"}}
+                                    >
+                                    {departure}
+                                </Grid>
+                                <Grid item 
+                                    sm={2} sx={{textAlign: "center", fontWeight: 700, fontSize: "20px"}}
+                                    >
+                                    {arrival}
+                                </Grid>
+                                <Grid item 
+                                    sm={2} sx={{textAlign: "center", fontWeight: 700, fontSize: "20px"}}
+                                    >
+                                    {fare}</Grid>
+                                <Grid item sm={2} 
+                                    sx={{textAlign: "center",}}>
+                                    <Button>Book Now</Button>
+                                </Grid>
+                            </Grid>
                         )})
                     }
+
+                
                 </Box>
             
 

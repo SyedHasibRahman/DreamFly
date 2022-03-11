@@ -13,7 +13,7 @@ import './OurHistory.css'
 
 const OurHistory = () => {
   return (
-    <Box sx={{padding:'100px 0'}}>
+    <Box className="paddingY90">
       <Container>
         <Box>
           <Typography 

@@ -13,7 +13,7 @@ import { DeleteForever } from "@mui/icons-material";
 const ManageUsers = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        const url = `https://salty-beach-45243.herokuapp.com/users`;
+        const url = `https://agile-lowlands-71900.herokuapp.com/users`;
         fetch(url)
             .then(res => res.json())
             .then(data => setUsers(data));
@@ -25,7 +25,7 @@ const ManageUsers = () => {
     const handleDelete = id => {
         const deleteMassege = window.confirm("Delete the User?");
         if (deleteMassege) {
-            const url = `https://salty-beach-45243.herokuapp.com/users/${id}`;
+            const url = `https://agile-lowlands-71900.herokuapp.com/users/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

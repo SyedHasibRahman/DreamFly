@@ -1,12 +1,9 @@
-import { Button, CardMedia, Container, Grid, InputAdornment, Link, Typography } from '@mui/material';
+import { CardMedia, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import BlogSideber from '../../../Pages/Blogs/BlogSideber/BlogSideber';
-import InputTextField from '../../../StyledComponent/InputTextField/InputTextField';
 import Footer from '../../Footer/Footer';
 import Navigation from '../../Navigation/Navigation';
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import useAuth from '../../../../hooks/useAuth';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -99,7 +96,7 @@ const TourDetails = () => {
                         {/* Blog Sideber  */ }
                         <Grid item xs={ 12 } md={ 6 } sx={ {} }>
                             <Grid container>
-                                <h2 className="pt-4">Shipping & Billing</h2>
+                                <h2 className="pt-4">Shipping and Billing</h2>
                                 {/* <input type="date" /> */ }
                                 <form className='tourdetails' onSubmit={ handleSubmit(onSubmit) }>
                                     <input { ...register("userName", { required: true, maxLength: 200 }) } defaultValue={ user?.displayName || 'User Name' } />

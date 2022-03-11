@@ -14,6 +14,7 @@ import Footer from "../../Shared/Footer/Footer";
 // import ManageFlight from "../../Dashboard/Admin/ManageFlight/ManageFlight";
 import PersonalFlight from "../PersonalFlight/PersonalFlight/PersonalFlight";
 import TourPackages from "../../Shared/TourPackages/TourPackages/TourPackages";
+import MessengerLive from "../../MessengerLive/MessengerLive";
 
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
     <>
       <Navigation />
       <Banner />
+      <MessengerLive />
       {/* <Booking></Booking> */}
       {/* <UserCourse></UserCourse> */}
       {/* <CouserDetails></CouserDetails> */}
@@ -29,8 +31,8 @@ const Home = () => {
       {/* <ManageOrders></ManageOrders> */}
       <About />
       <BestService />
-      <ServiceCards />
       <TourPackages />
+      <ServiceCards />
       <PersonalFlight />
       <Testimonials />
       <Footer />

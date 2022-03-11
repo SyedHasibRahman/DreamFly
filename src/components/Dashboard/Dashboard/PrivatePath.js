@@ -8,40 +8,64 @@ import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 const PrivatePath = () => {
     return (
         <div>
-            <Link to='/' >
+            <Link className='link-td-none' to='/' >
                 <ListItem button key="Test" primary="Test Primary"  >
-                    <ListItemIcon>
-                        <HomeIcon style={ {
-                            color: 'white'
-                        } } />
+                    <ListItemIcon >
+                        <HomeIcon  
+                            sx={{
+                                '& > :not(style)': {color: "white"}
+                            }}    
+                        />
                     </ListItemIcon>
-                    <ListItemText primary="Home" />
+                    <ListItemText 
+                        primaryTypographyProps={{color: "white"}} 
+                        primary="Home" 
+                    />
                 </ListItem>
             </Link>
-            <Link to='' >
+            <Link className='link-td-none' to='' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <AccountBoxIcon style={ {
-                            color: 'white'
-                        } } />
+                        <AccountBoxIcon 
+                            sx={{
+                                '& > :not(style)': {color: "white"}
+                            }}
+                        />
                     </ListItemIcon>
-                    <ListItemText primary="User Profile" />
+                    <ListItemText 
+                        primaryTypographyProps={{color: "white"}} 
+                        primary="User Profile" 
+                    />
                 </ListItem>
             </Link>
-            <Link to='UserOrder' primary="Test Primary" >
+            <Link className='link-td-none' to='UserOrder' primary="Test Primary" >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <ShoppingBasketIcon sx={ { color: 'red' } } />
+                        <ShoppingBasketIcon 
+                            sx={{
+                                '& > :not(style)': {color: "white"}
+                            }}
+                        />
                     </ListItemIcon>
-                    <ListItemText primary="User Order" />
+                    <ListItemText 
+                        primaryTypographyProps={{color: "white"}} 
+                        primary="User Order" 
+                    />
                 </ListItem>
             </Link>
-            <Link to="UserCourse" primary="Test Primary" >
+            <Link className='link-td-none' to="UserCourse" primary="Test Primary" >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <LocalLibraryIcon />
+                        <LocalLibraryIcon 
+                            sx={{
+                                '& > :not(style)': {color: "white"}
+                            }}
+                        />
                     </ListItemIcon>
-                    <ListItemText primary="User Course" />
+                    <ListItemText 
+                        primaryTypographyProps={{color: "white"}} 
+                        primary="User Course" 
+                    />
                 </ListItem>
             </Link>
 
