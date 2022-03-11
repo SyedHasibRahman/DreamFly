@@ -97,11 +97,11 @@ const ManagePackage = () => {
 
                                     </Select>
                                 </div>
-                                <div class="w-100 form-outline datepicker">
-                                    <label for="exampleDatepicker1" class="form-label">Select a date</label>
+                                <div className="w-100 form-outline datepicker">
+                                    <label for="exampleDatepicker1" className="form-label">Select a date</label>
                                     <input
                                         type="date"
-                                        class="form-control"
+                                        className="form-control"
                                         id="exampleDatepicker1"
                                         { ...register('date') }
                                     />
