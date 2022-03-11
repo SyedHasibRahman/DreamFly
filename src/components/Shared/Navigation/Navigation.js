@@ -68,7 +68,7 @@ const Navigation = () => {
               </Link>
             </Typography>
 
-            <Box sx={ { flexGrow: 1, display: { xs: "flex", md: "none" } } }>
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -148,14 +148,13 @@ const Navigation = () => {
                 flexGrow: 0,
               } }
             >
-              <Tooltip title="Open settings" sx={ { ml: 5 } }>
-                <IconButton onClick={ handleOpenUserMenu }>
-                  {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */ }
-                  <Avatar alt="Remy Sharp" src={ user?.photoURL } />
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu}>
+                  {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+                  <Avatar alt="Remy Sharp" src={user?.photoURL} />
                 </IconButton>
               </Tooltip>
               <Menu
-                sx={ { mt: "45px" } }
                 id="menu-appbar"
                 anchorEl={ anchorElUser }
                 anchorOrigin={ {

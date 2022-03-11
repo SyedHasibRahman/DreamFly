@@ -1,4 +1,4 @@
-import { Button, CardMedia, Container, Grid, InputAdornment, Typography, } from '@mui/material';
+import { Avatar, Button, CardMedia, Container, Grid, Typography, } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -7,20 +7,79 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import Navigation from '../../../Shared/Navigation/Navigation';
 import Footer from '../../../Shared/Footer/Footer';
 import InputTextField from '../../../StyledComponent/InputTextField/InputTextField';
+import useAuth from '../../../../hooks/useAuth';
+import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 
 const BlogDetails = () => {
 
     const { blogId } = useParams();
+    const{user} = useAuth();
     const [blog, setBlog] = useState({});
 
     useEffect(() => {
-        // const url = `https://agile-lowlands-71900.herokuapp.com/blogs/${blogId}`
-        const url = `https://agile-lowlands-71900.herokuapp.com/blogs/${blogId}`
+        // const url = `https://salty-beach-45243.herokuapp.com/blogs/${blogId}`
+        const url = `http://localhost:5000/blogs/${blogId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setBlog(data))
     }, [blogId]);
+
+    // Post comment section
+    const CommentInfo = {
+        name: user.displayName,
+        email: user.email,
+        publishDate: new Date().toLocaleDateString(),
+        blogId: blogId
+    }
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = (comments) => {
+        const combinedData = {comments, CommentInfo}
+        console.log(combinedData)
+        console.log(combinedData.data)
+        
+        axios.post('http://localhost:5000/comments', combinedData)
+            .then(res => {
+                if (res.data.insertedId) {
+                    alert('Added successfully');
+                    reset();
+                }
+            })
+    }
+
+    // get comment section
+    const [comments, setComments] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/comments')
+            .then(res => res.json())
+            .then(data => setComments(data))
+    }, [comments]);
+    console.log(comments);
+
+    // Delete comment section
+    const handleDeleteComment = (id) => {
+
+        const proceed = window.confirm('Are you sure, you want to delete?');
+
+        if(proceed){
+
+            const url = `http://localhost:5000/comments/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('deleted successfully');
+                        const remaining = comments.filter(comment => comment._id !== id)
+                        setComments(remaining);
+                    }
+                });
+        }
+        
+    }
+   
 
     return (
         <>
@@ -76,6 +135,69 @@ const BlogDetails = () => {
                                 { blog.description }
                             </Typography>
 
+                            {/* comment section */}
+                            <Box 
+                                sx={{display: "flex", alighnItems: "center", justifyContent: "space-around", pb: 4 }}
+                                >
+                                <Typography sx={{fontSize: "18px"}}>
+                                    <span>5</span> <i style={{padding: "", color: "blue"}} className="fa-solid fa-thumbs-up"></i>
+                                </Typography>
+                                <Typography sx={{fontSize: "18px"}}>
+                                    <span>7</span> <i style={{padding: "", color: "red"}} className="fa-solid fa-heart"></i>
+                                </Typography>
+                                
+                                <Typography sx={{fontSize: "16px"}}>10 Comment</Typography>
+                            </Box>
+                            
+                            {
+                                comments.map((comment) => 
+                                <Box 
+                                    sx={{display: "flex", alignItems: "center", justiflyContent: "center", my: 2}}
+                                    >
+                                    <Avatar alt="Remy Sharp" src={user?.photoURL} />
+                                    <Typography 
+                                        sx={{fontSize: "18px", marginLeft: "15px", bgcolor: "#ede7f6", py: .5, px: 2, borderRadius: "5px"}}
+                                        >
+                                        {comment.comments.comment}
+                                        <i 
+                                        onClick={ () => handleDeleteComment(comment._id) }
+                                        style={{ color: "red", fontSize: "14px" ,paddingLeft: "15px"}} className="fa-solid fa-trash"></i>
+                                    </Typography>
+                                </Box>) 
+                            }
+
+                            <Box 
+                                sx={ { pb: 4 } }>
+                                <Typography sx={ { fontSize: "24px", fontWeight: 600, my:2 } }>
+                                    Leave A Comments
+                                </Typography>
+                                <Grid 
+                                    component="form"
+                                    autoComplete="off"
+                                    onSubmit={ handleSubmit(onSubmit) }
+                                    container 
+                                    direction="row" 
+                                    sx={ { mb: "20px" } } justifyContent="space-between" alignItems="center" spacing={ 2 }
+                                    >
+                                    <Grid item xs={ 12 }>
+                                        <InputTextField
+                                            label="Massage"
+                                            fullWidth
+                                            type="text"
+                                            rows="4"
+                                            required
+                                            { ...register("comment", { required: true })}
+                                            sx={ { bgcolor: "white" } }
+                                        />
+                                    </Grid>
+                                    <Button
+                                        type="submit"
+                                        sx={ { textTransform: 'capitalize', fontSize: "18px" } }>
+                                        Submit Now
+                                    </Button>
+                                </Grid> 
+                            </Box>
+
                             <Link style={ { textDecoration: "none", textAlign: "center", cursor: "pointer" } }
                                 to='/Blogs'
                             >
@@ -88,75 +210,16 @@ const BlogDetails = () => {
                                     </Typography>
                                 </Box>
                             </Link>
-                            <Box sx={ { py: 4 } }>
-                                <Typography sx={ { fontSize: "24px", fontWeight: 600, } }>
-                                    Leave A Comments
-                                </Typography>
-                                <Typography sx={ { py: 2 } }>
-                                    Your email address will not be published. Required fields are marked *
-                                </Typography>
-                                <Grid container direction="row" sx={ { mb: "20px" } } justifyContent="space-between" alignItems="center" spacing={ 2 }>
-                                    <Grid item xs={ 12 } sm={ 6 }>
-                                        <InputTextField
-                                            label="Name"
-                                            required
-                                            id="custom-css-outlined-input"
-                                            fullWidth
-                                            type="name"
-                                            sx={ { bgcolor: "white" } }
-                                            InputProps={ {
-                                                endAdornment: (
-                                                    <InputAdornment position="end">
-                                                        <i className="fa-solid fa-user"></i>
-                                                    </InputAdornment>
-                                                )
-                                            } }
-                                        />
-
-                                    </Grid>
-                                    <Grid item xs={ 12 } sm={ 6 }>
-                                        <InputTextField
-                                            label="Email"
-                                            id="custom-css-outlined-input"
-                                            fullWidth
-                                            required
-                                            type="email"
-                                            sx={ { bgcolor: "white" } }
-                                            InputProps={ {
-                                                endAdornment: (
-                                                    <InputAdornment position="end">
-                                                        <i className="fa-solid fa-envelope"></i>
-                                                    </InputAdornment>
-                                                )
-                                            } }
-                                        />
-                                    </Grid>
-                                    <Grid item xs={ 12 }>
-                                        <InputTextField
-                                            label="Massage"
-                                            id="custom-css-outlined-input"
-                                            fullWidth
-                                            type="text"
-                                            rows={ 6 }
-                                            required
-                                            multiline
-                                            sx={ { bgcolor: "white" } }
-                                        />
-                                    </Grid>
-                                </Grid>
-                                <Button
-                                    sx={ { textTransform: 'capitalize', fontSize: "18px" } }>
-                                    Submit Now
-                                </Button>
-                            </Box>
                         </Grid>
 
-                        {/* Blog Sideber  */ }
-                        <Grid item xs={ 12 } md={ 4 } sx={ {} }>
+                        {/* Blog Sideber start */ }
+                        <Grid item xs={ 12 } md={ 4 }>
                             <Grid container>
                                 <BlogSideber></BlogSideber>
                             </Grid>
                         </Grid>
+                        {/* Blog Sideber end */ }
+        
                     </Grid>
                 </Container>
             </Box>
