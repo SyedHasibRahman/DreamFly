@@ -59,7 +59,8 @@ function App() {
           <Route path="/TourPackages/:TourId" element={ <TourDetails /> } />
           {/* <Route path="/payment/" element={ <Payment /> } /> */ }
           <Route path="SignIn" element={ <SignInSide /> } />
-          <Route path="SignUp" element={ <SignUp /> } />
+          <Route path="SignUp" element={ <SignUp /> } />          
+          <Route path="MakeAdmin" element={ <MakeAdmin /> } />
           <Route
             path="Dashboard"
             element={
@@ -92,11 +93,10 @@ function App() {
             <Route path="ManageUsers" element={ <ManageUsers /> } />
             <Route path="UpdateBlog/:id" element={ <UpdateBlog /> } />
             <Route path="ManageBlog" element={ <DeleteBlog /> } />
-            <Route path="MakeAdmin" element={ <MakeAdmin /> } />
             <Route path="AddPackage" element={ <ManagePackage /> } />
             <Route path="ManageOrders" element={ <ManageOrders /> } />
             <Route path="UpdatePackage/:id" element={ <UpadatePackage /> } />
-            <Route path="ManagePackages" element={ <CustomizePackages /> } />
+            <Route path="ManagePackages" element={ <CustomizePackages /> } /> 
           </Route>
           <Route path="*" element={ <NotFound /> } />
         </Routes>
