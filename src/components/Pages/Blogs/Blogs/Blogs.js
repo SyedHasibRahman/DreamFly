@@ -16,8 +16,7 @@ const Blogs = () => {
     const size = 4;
 
     useEffect(() => {
-        // fetch(`https://salty-beach-45243.herokuapp.com/blogs?page=${page}&&size=${size}`)
-        fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
+        fetch(`https://agile-lowlands-71900.herokuapp.com/blogs?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setBlogs(data.blogs);
@@ -82,9 +81,9 @@ const Blogs = () => {
                                     >{number + 1}
                                     </Typography>)
                         }
-                    </Box >
-                </Container >
-            </Box >
+                    </Box>
+                </Container>
+            </Box>
             <Footer></Footer>
         </>
     );

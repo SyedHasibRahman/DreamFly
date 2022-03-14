@@ -20,7 +20,7 @@ const BlogDetails = () => {
 
     useEffect(() => {
         // const url = `https://salty-beach-45243.herokuapp.com/blogs/${blogId}`
-        const url = `http://localhost:5000/blogs/${blogId}`
+        const url = `https://agile-lowlands-71900.herokuapp.com/blogs/${blogId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setBlog(data))
@@ -39,7 +39,7 @@ const BlogDetails = () => {
         console.log(combinedData)
         console.log(combinedData.data)
 
-        axios.post('http://localhost:5000/comments', combinedData)
+        axios.post('https://agile-lowlands-71900.herokuapp.com/comments', combinedData)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added successfully');
@@ -51,7 +51,7 @@ const BlogDetails = () => {
     // get comment section
     const [comments, setComments] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/comments')
+        fetch('https://agile-lowlands-71900.herokuapp.com/comments')
             .then(res => res.json())
             .then(data => setComments(data))
     }, [comments]);
@@ -64,7 +64,7 @@ const BlogDetails = () => {
 
         if (proceed) {
 
-            const url = `http://localhost:5000/comments/${id}`;
+            const url = `https://agile-lowlands-71900.herokuapp.com/comments/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -9,7 +9,7 @@ const BlogSideber = ({ handleSearch }) => {
     const [recentBlogs, setRecentBlogs] = useState([]);
     useEffect(() => {
         // fetch('https://salty-beach-45243.herokuapp.com/blogs')
-        fetch('http://localhost:5000/blogs')
+        fetch('https://agile-lowlands-71900.herokuapp.com/blogs')
             .then(res => res.json())
             .then(data => setRecentBlogs(data.blogs))
     }, []);
@@ -24,11 +24,6 @@ const BlogSideber = ({ handleSearch }) => {
                     <Typography sx={{ fontWeight: 600, fontSize: "20px", mb: 2 }}>
                         Search
                     </Typography>
-                    {/* <input
-                        type="text"
-                        onChange={handleSearch}
-                        placeholder="Search"
-                    /> */}
                     <Paper
                         component="form"
                         sx={{ p: '2px 4px', border: '1px solid #512da8', display: 'flex', alignItems: 'center', }}

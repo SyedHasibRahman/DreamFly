@@ -36,6 +36,7 @@ import UpadatePackage from "./components/Dashboard/Admin/CustomizePackage/Upadat
 import CustomizePackages from "./components/Dashboard/Admin/CustomizePackage/CustomizePackages/CustomizePackages";
 import Invoice from "./components/Dashboard/Payment/Invoice";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import MessengerLive from "./components/MessengerLive/MessengerLive";
 
 
 
@@ -102,6 +103,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* <Footer /> */}
+        <MessengerLive />
       </AuthProvider>
     </div>
   );

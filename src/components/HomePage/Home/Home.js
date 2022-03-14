@@ -8,7 +8,9 @@ import Navigation from "../../Shared/Navigation/Navigation";
 import Footer from "../../Shared/Footer/Footer";
 import PersonalFlight from "../PersonalFlight/PersonalFlight/PersonalFlight";
 import TourPackages from "../../Shared/TourPackages/TourPackages/TourPackages";
-import MessengerLive from "../../MessengerLive/MessengerLive";
+
+
+
 
 
 const Home = () => {
@@ -16,7 +18,6 @@ const Home = () => {
     <>
       <Navigation />
       <Banner />
-      <MessengerLive />
       {/* <Booking></Booking> */}
       {/* <UserCourse></UserCourse> */}
       {/* <CouserDetails></CouserDetails> */}

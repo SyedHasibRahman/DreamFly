@@ -24,7 +24,8 @@ const PersonalFlight = () => {
   const toRef = useRef();
 
   useEffect(() => {
-    fetch("https://dashboard.heroku.com/flight")
+    // fetch("https://dashboard.heroku.com/flight")
+    fetch("https://agile-lowlands-71900.herokuapp.com/flight")
       .then((res) => res.json())
       .then((data) => setFlights(data));
   }, []);
@@ -59,6 +60,7 @@ const PersonalFlight = () => {
     };
     if (from && to) {
       axios
+        // .post("https://agile-lowlands-71900.herokuapp.com/filter", data)
         .post("http://localhost:5000/filter", data)
         .then((res) => dispatch(addFilterData(res.data)));
     }
