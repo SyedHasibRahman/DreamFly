@@ -8,6 +8,11 @@ import Navigation from "../../Shared/Navigation/Navigation";
 import Footer from "../../Shared/Footer/Footer";
 import PersonalFlight from "../PersonalFlight/PersonalFlight/PersonalFlight";
 import TourPackages from "../../Shared/TourPackages/TourPackages/TourPackages";
+import CounterArea from "../../Pages/AboutUs/CounterArea/CounterArea";
+import { Box } from "@mui/material";
+
+
+
 
 
 const Home = () => {
@@ -16,10 +21,13 @@ const Home = () => {
       <Navigation />
       <Banner />
       <BestService />
-      <About />
+      <PersonalFlight/>
+      <Box className="marginY90">
+        <CounterArea/>
+      </Box>
       <TourPackages />
       <ServiceCards />
-      <PersonalFlight/>
+      <About />
       <Testimonials />
       <Footer />
     </>
