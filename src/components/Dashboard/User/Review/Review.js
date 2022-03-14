@@ -23,7 +23,7 @@ const Review = () => {
         ratingInfo.users = userdata;
         ratingInfo.img = ratingInfo.img ? ratingInfo.img : user.photoURL;
         console.log(ratingInfo);
-        fetch('https://intense-plateau-36885.herokuapp.com/reviews', {
+        fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(ratingInfo),
@@ -98,7 +98,7 @@ const Review = () => {
                                 rows={3}
                             />
                         </Form.Group>
-                        <SecondaryButton type='submit' className='btn btn-warning'>
+                        <SecondaryButton type='submit'>
                             Submit Reveiw
                         </SecondaryButton>
                     </Form>
