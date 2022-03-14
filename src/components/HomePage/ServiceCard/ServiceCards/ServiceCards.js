@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Card, CardContent, Container, Typography } from '@mui/material';
 import './ServiceCards.css'
-import CleanHandsRoundedIcon from '@mui/icons-material/CleanHandsRounded';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 
@@ -48,7 +47,7 @@ const ServiceCards = () => {
                                 <Card className='cardBody' data-aos='zoom-in'>
                                     <>
 
-                                        <CleanHandsRoundedIcon className='cardIcon' style={{ width: '100px', height: '100px', padding: '20px' }} color="dark" />
+                                        <img style={{ paddingLeft: '15px' }} width='70' height='70' src={service.icon} alt="" />
 
                                         <CardContent>
                                             <Typography gutterBottom variant="h5" component="div">
