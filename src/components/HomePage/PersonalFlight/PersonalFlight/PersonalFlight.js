@@ -115,7 +115,7 @@ const PersonalFlight = () => {
         >
           <Grid item xs={12} sm={12} md={6} lg={3}>
             <Box className="selector_box">
-              <Box for="cars" className="label">
+              <Box htmlFor="cars" className="label">
                 From
               </Box>
               <select
@@ -153,7 +153,7 @@ const PersonalFlight = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={3}>
             <Box className="selector_box">
-              <Box for="cars" className="label">
+              <Box htmlFor="cars" className="label">
                 Date
               </Box>
               <input
@@ -168,7 +168,7 @@ const PersonalFlight = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={3}>
             <Box className="selector_box">
-              <Box for="cars" className="label">
+              <Box htmlFor="cars" className="label">
                 Passenger
               </Box>
               <Box className="selector">

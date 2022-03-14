@@ -1,6 +1,6 @@
 import { useState } from "react";
 import initializeFirebase from "../components/Pages/Login/Firebase/firebase.init";
-import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, updateProfile, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, updateProfile, signInWithPopup, GoogleAuthProvider, deleteUser } from "firebase/auth";
 import { useEffect } from "react";
 
 
@@ -106,16 +106,28 @@ const useFirebase = () => {
         })
             .finally(() => setIsLoading(false));
     }
-    // const handleDeleteUser = (uid) => {
-    //     // const uid = user.uid;
-    //     auth.deleteUser(uid)
-    //         .then(() => {
-    //             console.log('Successfully deleted user');
-    //         })
-    //         .catch((error) => {
-    //             console.log('Error deleting user:', error);
-    //         });
-    // }
+    const handleDeleteUser = () => {
+
+        // const uid = user.uid;
+        // auth.deleteUser(uid)
+        //     .then(() => {
+        //         console.log('Successfully deleted user');
+        //     })
+        //     .catch((error) => {
+        //         console.log('Error deleting user:', error);
+        //     });
+        const user = auth.currentUser;
+
+        deleteUser(user).then(() => {
+            console.log('Successfully deleted user');
+        }).catch((error) => {
+            console.log('Error deleting user:', error);
+        });
+          
+        
+    }
+
+
     const saveUser = (email, displayName, photoURL, uid, method) => {
         const user = { email, displayName, photoURL, uid };
         fetch('https://agile-lowlands-71900.herokuapp.com/users', {
@@ -136,7 +148,7 @@ const useFirebase = () => {
         isLoading,
         authError,
         signInWithGoogle,
-        // handleDeleteUser
+        handleDeleteUser
     }
 
 }

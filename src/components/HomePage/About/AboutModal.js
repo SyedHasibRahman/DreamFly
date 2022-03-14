@@ -24,7 +24,7 @@ const AboutModal = () => {
     const handleClose = () => setOpen(false);
     return (
         <div>
-            <SecondaryButton onClick={handleOpen}><PlayCircleIcon sx={{ background: 'white', borderRadius: '50%' }} /></SecondaryButton>
+            <SecondaryButton onClick={handleOpen}><PlayCircleIcon /></SecondaryButton>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
