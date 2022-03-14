@@ -12,6 +12,9 @@ import CounterArea from "../../Pages/AboutUs/CounterArea/CounterArea";
 import { Box } from "@mui/material";
 
 
+
+
+
 const Home = () => {
   return (
     <>

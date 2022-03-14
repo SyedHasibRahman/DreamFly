@@ -1,4 +1,4 @@
-import { Container, Grid, Typography, Link } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import ButtonOutline from '../../StyledComponent/Buttons/ButtonOutline';
 import { Typewriter } from 'react-simple-typewriter'
@@ -6,6 +6,7 @@ import './Banner.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
   useEffect(() => {
@@ -57,9 +58,9 @@ const Banner = () => {
                 > 
                   Curly Airline proudly raises the bar and exceeds the standard for luxury and corporate private jet charter services. We pride ourselves on offering a professional service. 
                 </Typography>
-                <Box sx={ { mt: 4 } }>
-                  <Link style={{textDecoration: "none"}} href="#">
-                    <ButtonOutline sx={{":hover" : {borderColor: "white"},}}>Make Your Trip</ButtonOutline>
+                <Box sx={{ mt: 4 }}>
+                  <Link style={{ textDecoration: "none" }} to="/Services">
+                    <ButtonOutline sx={{ ":hover": { borderColor: "white" }, }}>Make Your Trip</ButtonOutline>
                   </Link>
                 </Box>
               </Box>
