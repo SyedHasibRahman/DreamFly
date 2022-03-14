@@ -4,8 +4,8 @@ import { Box } from "@mui/system";
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import StarIcon from '@mui/icons-material/Star';
 
-const Testimonial = ({ review }) => {
-    // const { stars, Feedback, users.name, users.email, img } = review;
+const Testimonial = () => {
+
     return (
         <div style={{
             marginTop: '70px',
