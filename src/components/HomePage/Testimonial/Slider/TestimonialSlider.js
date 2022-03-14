@@ -1,4 +1,4 @@
-import { Grid} from "@mui/material";
+import { Grid } from "@mui/material";
 import React, { Component } from "react";
 import Slider from "react-slick";
 import Testimonial from "../Testimonial/Testimonial";
@@ -41,20 +41,20 @@ export default class TestimonialSlider extends Component {
         };
 
         return (
-            <div 
-                style={{
-                backgroundImage: `url(https://themeim.com/demo/flynext/assets/images/client/map.png)`,
-                backgroundSize: 'cover',
-                objectFit: 'contain',
-                padding: '20px 0'
-                }}
-                >
+            <div
+                style={ {
+                    backgroundImage: `url(https://themeim.com/demo/flynext/assets/images/client/map.png)`,
+                    backgroundSize: 'cover',
+                    objectFit: 'contain',
+                    padding: '20px 0'
+                } }
+            >
                 <Slider { ...settings }>
                     { Array.from(Array(10)).map((_, index) => (
                         <Grid item xs={ 12 } key={ index }>
                             <Testimonial />
                         </Grid>
-                    ))}
+                    )) }
                 </Slider >
             </div >
         );
