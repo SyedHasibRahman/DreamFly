@@ -1,10 +1,12 @@
-import { Box, Container, Typography, Button } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import overview1 from "../../../img/overview-1.png";
 import overview2 from "../../../img/overview-2.png";
 import "./BestService.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import SecondaryButton from "../../StyledComponent/Buttons/SecondaryButton";
 
 
 const BestService = () => {
@@ -34,9 +36,11 @@ const BestService = () => {
                 Trade crowded airports and wasted time for the ease, comfort,
                 and convenience of travel by private jet.
               </Typography>
-              <Button sx={{ color: "#fff !important", fontWeight: 500, fontSize: "18px" }}>
-                Book Now
-              </Button>
+              <Link style={{ textDecoration: "none" }} to="/Services">
+                <SecondaryButton>
+                  Book Now
+                </SecondaryButton>
+              </Link>
             </Box>
           </Box>
           <Box component="div" className="card" data-aos='zoom-in-left'>
