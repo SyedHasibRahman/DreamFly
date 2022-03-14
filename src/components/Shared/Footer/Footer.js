@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import logo from '../../../images/Logo.png';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 import { Container, Typography } from '@mui/material';
 import './Footer.css'
 
@@ -30,7 +31,7 @@ const Footer = () => {
                         <Box sx={{width: "250px", mt: -5, mb: 2}}>
                             <img src={logo} width="200px" alt="" />
                         </Box>
-                        <Typography sx={{fontWeight: 500}}>Dream Fly was founded in 1991 by a group of safety-focused professionals who created The Wingman Standard for rigorously vetting air charter operators.</Typography>
+                        <Typography sx={{fontWeight: 500}}>Dream Fly was founded in 2022 by a group of safety-focused professionals who created The Wingman Standard for rigorously vetting air charter operators.</Typography>
                     </Grid>
                     <Grid item xs={ 12 } sm={ 6 } md={ 6 } lg={ 2.6 }>
                         <Typography sx={{lineHeight: 2, fontWeight: 600, fontSize: "20px", color: '#512da8'}}>
@@ -83,67 +84,83 @@ const Footer = () => {
                         <Typography sx={{lineHeight: 2, fontWeight: 600, fontSize: "20px", color: 'white' }}>
                             Get started
                         </Typography>
-                        <Typography sx={{lineHeight: 2 }} className='footer-box'>
-                            Private jet
-                        </Typography>
-                        <Typography sx={{lineHeight: 2 }} className='footer-box'>
-                            Register
-                        </Typography>
-                        <Typography sx={{lineHeight: 2}} className='footer-box'>
-                            Get started
-                        </Typography>
-                        <Typography sx={{lineHeight: 2 }} className='footer-box'>
-                            Current Jet Deals
-                        </Typography>
-                        <Typography sx={{lineHeight: 2 }} className='footer-box'>
-                            Flynext mobile app
-                        </Typography>
+                        <Link className="link-td-none" to="/Home">
+                            <Typography sx={{lineHeight: 2}} className='footer-box'>
+                                Get started
+                            </Typography>
+                        </Link>
+                        <Link className="link-td-none" to="/Services">
+                            <Typography sx={{lineHeight: 2 }} className='footer-box'>
+                                Private jet
+                            </Typography>
+                        </Link>
+                        <Link className="link-td-none" to="/SignUp">
+                            <Typography sx={{lineHeight: 2 }} className='footer-box'>
+                                Register
+                            </Typography>
+                        </Link>
+                        <Link className="link-td-none" to="/SignIn">
+                            <Typography sx={{lineHeight: 2 }} className='footer-box'>
+                                Sign In
+                            </Typography>
+                        </Link> 
                     </Grid>
                     <Grid item xs={ 12 } sm={ 6 } md={ 6 } lg={ 2.6 } sx={{pt:2,}}>
                         <Typography sx={{lineHeight: 2, fontWeight: 600, fontSize: "20px", color: 'white'}}>
                             How it works
                         </Typography>
-                        <Typography sx={{lineHeight: 2 }} className='footer-box'>
-                            How it works
-                        </Typography>
-                        <Typography sx={{lineHeight: 2 }} className='footer-box'>
-                            Ways to fly
-                        </Typography>
-                        <Typography sx={{lineHeight: 2 }} className='footer-box'>
-                         Ways to buy
-                        </Typography>
-                        <Typography sx={{lineHeight: 2 }} className='footer-box'>
-                            Private charter</Typography>
-                        <Typography sx={{lineHeight: 2 }} className='footer-box'>
-                            Private Jet Cost
-                        </Typography>
+                        <Link className="link-td-none" to="/About">
+                            <Typography sx={{lineHeight: 2 }} className='footer-box'>
+                                Ways to fly
+                            </Typography>
+                        </Link>
+                        <Link className="link-td-none" to="/Services">
+                            <Typography sx={{lineHeight: 2 }} className='footer-box'>
+                                Ways to buy
+                            </Typography>
+                        </Link>
+                        <Link className="link-td-none" to="/Home">
+                            <Typography sx={{lineHeight: 2 }} className='footer-box'>
+                                Tour Packages
+                            </Typography>
+                        </Link>
+                        <Link className="link-td-none" to="/Services">
+                            <Typography sx={{lineHeight: 2 }} className='footer-box'>
+                                Private Jet Cost
+                            </Typography>
+                        </Link>
                     </Grid>
                     <Grid item xs={ 12 } sm={ 6 } md={ 6 } lg={ 2.6 } sx={{pt:2,}}>
-                        <Typography sx={{lineHeight: 2, fontWeight: 600, fontSize: "20px", color: 'white'}}>
+                        <Typography variant="h4" sx={{mb: 1,color: "white"}}>
                             About us
                         </Typography>
-                        <Typography sx={{lineHeight: 2 }} className='footer-box'>
-                            About us
-                        </Typography>
-                        <Typography sx={{lineHeight: 2 }} className='footer-box'>
-                            News & press
-                        </Typography>
-                        <Typography sx={{lineHeight: 2 }} className='footer-box'>
-                            Blog
-                        </Typography>
-                        <Typography sx={{lineHeight: 2 }} className='footer-box'>
-                            FAQs
-                        </Typography>
-                        <Typography sx={{lineHeight: 2 }} className='footer-box'>
-                            Careers
-                        </Typography>
+                        <Link className="link-td-none" to="/About">
+                            <Typography sx={{lineHeight: 2 }} className='footer-box'>
+                                About us
+                            </Typography>
+                        </Link>
+                        <Link className="link-td-none" to="/Blogs">
+                            <Typography sx={{lineHeight: 2 }} className='footer-box'>
+                                Blog
+                            </Typography>
+                        </Link>
+                        <Link className="link-td-none" to="/Contact">
+                            <Typography sx={{lineHeight: 2 }} className='footer-box'>
+                                FAQs
+                            </Typography>
+                        </Link>
+                        <Link className="link-td-none" to="/Courses">
+                            <Typography sx={{lineHeight: 2 }} className='footer-box'>
+                                Careers
+                            </Typography>
+                        </Link>
                     </Grid>
                     <Grid item xs={ 12 } sm={ 6 } md={ 6 } lg={ 4 } sx={{pt:2,}}>
                         <Typography sx={{lineHeight: 2, fontWeight: 600, fontSize: "20px", color: 'white'}}>
                             Newsletter
                         </Typography>
                         <Typography sx={{ color: 'white' }}>
-                            Dream Fly was founded in 1991 by a group of safety-focused professionals erators.
+                            Dream Fly was founded in 2022 by a group of safety-focused professionals erators.
                         </Typography>
                         <Box>
                             <input className='input-field' type="email" name="" id="" placeholder="Enter Email"/>
@@ -159,7 +176,7 @@ const Footer = () => {
             
             <Container  sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between',}} >
                 <Box sx={{display: "flex",  mt: 4 }}>
-                    <a href="#a" sx={{mr: 1}} className='social-icon-box'>
+                    <a href="https://www.facebook.com/" sx={{mr: 1}} className='social-icon-box'>
                         <i className="fab fa-facebook-f social-icon"></i>
                     </a>
                     <a href="#a" sx={{mr: 1}} className='social-icon-box'>
@@ -173,7 +190,7 @@ const Footer = () => {
                 </Box>
                 <Box sx={{ mt: 4 }}>
                     <Typography sx={{}}>
-                        © 2022 Fly Next Airlines. All rights reserved.
+                        © 2022 Dream Fly Airlines. All rights reserved.
                     </Typography>
                 </Box>
             </Container>
