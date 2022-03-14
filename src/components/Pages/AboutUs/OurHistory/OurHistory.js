@@ -59,7 +59,12 @@ const OurHistory = () => {
                   </TimelineSeparator>
                   <TimelineContent style={{ paddingLeft: 0, paddingRight: 0 }}>
                     <Box sx={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center' }}>
-                      <Box>
+                      <Box
+                        data-aos="fade-left"
+                        data-aos-offset="200"
+                        data-aos-easing="ease-in-sine"
+                        data-aos-duration="800s"
+                      >
                         <Typography
                           variant="h2"
                           sx={{ color: '#5e35b1' }}
@@ -99,7 +104,12 @@ const OurHistory = () => {
                   </TimelineSeparator>
                   <TimelineContent style={{ paddingLeft: 0, paddingRight: 0 }}>
                     <Box sx={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center' }}>
-                      <Box>
+                      <Box
+                        data-aos="fade-right"
+                        data-aos-offset="200"
+                        data-aos-easing="ease-in-sine"
+                        data-aos-duration="800s"
+                      >
                         <Typography
                           variant="h2"
                           sx={{ color: '#5e35b1' }}
@@ -138,7 +148,12 @@ const OurHistory = () => {
                   <TimelineContent style={{ paddingLeft: 0, paddingRight: 0 }}>
                     <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
                       <Box sx={{ width: '500px', height: '400px', display: 'flex', alignItems: 'center' }}>
-                        <Box>
+                        <Box
+                          data-aos="fade-left"
+                          data-aos-offset="200"
+                          data-aos-easing="ease-in-sine"
+                          data-aos-duration="800s"
+                        >
                           <Typography
                             variant="h2"
                             sx={{ color: '#5e35b1' }}
@@ -177,7 +192,12 @@ const OurHistory = () => {
                   <TimelineContent style={{ paddingLeft: 0, paddingRight: 0 }}>
                     <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                       <Box sx={{ width: '500px', height: '400px', display: 'flex', alignItems: 'center' }}>
-                        <Box>
+                        <Box
+                          data-aos="fade-left"
+                          data-aos-offset="200"
+                          data-aos-easing="ease-in-sine"
+                          data-aos-duration="800s"
+                        >
                           <Typography
                             variant="h2"
                             sx={{ color: '#5e35b1' }}
