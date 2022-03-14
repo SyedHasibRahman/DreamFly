@@ -56,7 +56,7 @@ const UserProfile = () => {
                         <Grid item xs={ 7 }>
                             {/* <h1>2</h1> */ }
                             <FormControl sx={ { width: '100%' } }>
-                                <label for="about">Short Brefing about:</label>
+                                <label htmlFor="about">Short Brefing about:</label>
                                 <textarea style={ {
                                     width: '100%',
                                     color: "success",

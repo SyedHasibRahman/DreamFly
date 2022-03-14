@@ -95,7 +95,7 @@ const UpadatePackage = () => {
                         <form onSubmit={ handleUpdateuser }>
                             <div className='col-12 d-md-flex'>
                                 <div className='w-100 '>
-                                    <label htmlFor='name' className='mb-2'>
+                                    <label htmlhtmlFor='name' className='mb-2'>
                                         Package Title
                                     </label>
                                     <input
@@ -108,7 +108,7 @@ const UpadatePackage = () => {
                                 </div>
 
                                 <div className='w-100 ps-0 ps-md-3'>
-                                    <label htmlFor='price' className='mb-2'>
+                                    <label htmlhtmlFor='price' className='mb-2'>
                                         Price
                                     </label>
                                     <input
@@ -121,7 +121,7 @@ const UpadatePackage = () => {
                             </div>
                             <div className='col-12 '>
                                 <div className='w-100 '>
-                                    <label htmlFor='image' className='mb-2'>
+                                    <label htmlhtmlFor='image' className='mb-2'>
                                         Image
                                     </label>
                                     <input
@@ -130,7 +130,7 @@ const UpadatePackage = () => {
                                 </div>
                                 <div className='w-100 '></div>
                                 <div className='w-100 '>
-                                    <label htmlFor='image' className='mb-2'>
+                                    <label htmlhtmlFor='image' className='mb-2'>
                                         Total persion
                                     </label>
                                     <input
@@ -142,7 +142,7 @@ const UpadatePackage = () => {
                                     />
                                 </div>
                                 <div className='w-100 '>
-                                    <label htmlFor='image' className='mb-2'>
+                                    <label htmlhtmlFor='image' className='mb-2'>
                                         Category
                                     </label>
                                     {/* <input
@@ -165,7 +165,7 @@ const UpadatePackage = () => {
                                     </Select>
                                 </div>
                                 {/* <div className="w-100 form-outline datepicker">
-                                    <label for="exampleDatepicker1" className="form-label">Select a date</label>
+                                    <label htmlFor="exampleDatepicker1" className="form-label">Select a date</label>
                                     <input
                                         value={service.date || ''}
                                         type="date"
@@ -185,7 +185,7 @@ const UpadatePackage = () => {
                                     />
                                 </div>
                                 {/* <div className='w-100 '>
-                                    <label htmlFor='description' className='mb-2'>
+                                    <label htmlhtmlFor='description' className='mb-2'>
                                         Description
                                     </label>
                                     <textarea

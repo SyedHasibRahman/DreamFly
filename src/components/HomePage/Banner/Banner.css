@@ -56,3 +56,7 @@
 .socialIcon:hover > i{
   color: #4527a0;
 }
+
+.type-writer{
+  color: white !important;
+}

@@ -1,6 +1,7 @@
 import { Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
+import CountUp from 'react-countup';
 
 const CounterArea = () => {
   return (
@@ -20,7 +21,7 @@ const CounterArea = () => {
                   gutterBottom 
                   sx={{color:'#FFFFFF', margin:'0', textAlign:'center'}}
                   > 
-                  95 
+                  <CountUp delay={1} end={95} /> 
                 </Typography>
                 <Typography 
                   variant="h4" 
@@ -40,7 +41,7 @@ const CounterArea = () => {
                   gutterBottom 
                   sx={{color:'#FFFFFF', margin:'0', textAlign:'center'}}
                   > 
-                  68 
+                  <CountUp delay={1} end={68} />
                 </Typography>
                 <Typography 
                   variant="h4" 
@@ -60,7 +61,7 @@ const CounterArea = () => {
                   gutterBottom 
                   sx={{color:'#FFFFFF', margin:'0', textAlign:'center'}}
                   > 
-                  290 
+                  <CountUp delay={1} end={290} />
                 </Typography>
                 <Typography 
                   variant="h4" 
@@ -78,7 +79,7 @@ const CounterArea = () => {
                   gutterBottom 
                   sx={{color:'#FFFFFF', margin:'0', textAlign:'center'}}
                   > 
-                  195 
+                  <CountUp delay={1} end={195} /> 
                 </Typography>
                 <Typography 
                   variant="h4" 

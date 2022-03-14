@@ -55,7 +55,7 @@ const BlogDetails = () => {
         fetch('http://localhost:5000/comments')
             .then(res => res.json())
             .then(data => setComments(data))
-    }, [comments]);
+    }, []);
     
 
     // Delete comment section
