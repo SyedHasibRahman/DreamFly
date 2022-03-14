@@ -146,7 +146,7 @@ const BlogDetails = () => {
                                     <span>7</span> <i style={{ padding: "", color: "red" }} className="fa-solid fa-heart"></i>
                                 </Typography>
 
-                                <Typography sx={{ fontSize: "16px" }}>10 Comment</Typography>
+                                <Typography sx={{ fontSize: "16px" }}>{comments.length} Comment</Typography>
                             </Box>
 
                             {
@@ -154,7 +154,7 @@ const BlogDetails = () => {
                                     <Box
                                         sx={{ display: "flex", alignItems: "center", justiflyContent: "center", my: 2 }}
                                     >
-                                        <Avatar alt="Remy Sharp" src={user?.photoURL} />
+                                        <Avatar alt="Remy Sharp" src={comment.CommentInfo.photoURL} />
                                         <Typography
                                             sx={{ fontSize: "18px", marginLeft: "15px", bgcolor: "#ede7f6", py: .5, px: 2, borderRadius: "5px" }}
                                         >
