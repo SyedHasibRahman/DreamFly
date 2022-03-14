@@ -10,16 +10,25 @@ import PersonalFlight from "../PersonalFlight/PersonalFlight/PersonalFlight";
 import TourPackages from "../../Shared/TourPackages/TourPackages/TourPackages";
 
 
+
+
+
 const Home = () => {
   return (
     <>
       <Navigation />
       <Banner />
-      <BestService />
+      {/* <Booking></Booking> */}
+      {/* <UserCourse></UserCourse> */}
+      {/* <CouserDetails></CouserDetails> */}
+      {/* <MakeAdmin></MakeAdmin> */}
+      {/* <ManagePackage></ManagePackage> */}
+      {/* <ManageOrders></ManageOrders> */}
       <About />
+      <BestService />
       <TourPackages />
       <ServiceCards />
-      <PersonalFlight/>
+      <PersonalFlight />
       <Testimonials />
       <Footer />
     </>

@@ -4,10 +4,9 @@ import useAuth from '../../../../hooks/useAuth';
 import PrimaryButton from '../../../StyledComponent/Buttons/PrimaryButton';
 
 const UserProfile = () => {
-    const {  user } = useAuth({})
+    const { registerUser, user } = useAuth({})
     console.log(user)
     const [updateData, setUpdateData] = useState({})
-    const [diableInput, setDiableInput] = useState(true)
     // const [loginData, setLoginData] = useState({})
     const handleOnChange = e => {
         const field = e.target.name;
@@ -18,51 +17,56 @@ const UserProfile = () => {
         setUpdateData(newUpdateData);
         console.log(newUpdateData);
     }
-    const handleEdit = () => {
-        setDiableInput(false)
-    }
-
     const updateUser = (updateData) => {
-        setDiableInput(true);  
+        const user = { updateData };
+        fetch('https://salty-beach-45243.herokuapp.com/users', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+
+        registerUser(updateData.email, updateData.password, updateData.detail);
     }
 
     console.log(user);
     return (
         <div>
             <Box>
-                <Container fixed sx={ {
+                <Container fixed sx={{
                     height: '100%',
                     py: 5,
-                } }>
+                }}>
 
                     <Typography variant="h3" gutterBottom component="div">
                         My Profile
-                        {/* <hr /> */ }
+                        {/* <hr /> */}
                         <Divider />
                     </Typography>
-                    <Grid item container rowSpacing={ 1 } columnSpacing={ { xs: 1, sm: 2, md: 3 } } sx={ {
+                    <Grid item container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-around'
-                    } }>
-                        <Grid item xs={ 5 } >
-                            <Avatar alt="Remy Sharp" src={ user?.photoURL } sx={ {
+                    }}>
+                        <Grid item xs={5} >
+                            <Avatar alt="Remy Sharp" src={user?.photoURL} sx={{
                                 height: '150px',
                                 width: '150px',
                                 marginBottom: '50px'
-                            } } />
+                            }} />
 
                         </Grid>
-                        <Grid item xs={ 7 }>
-                            {/* <h1>2</h1> */ }
-                            <FormControl sx={ { width: '100%' } }>
+                        <Grid item xs={7}>
+                            {/* <h1>2</h1> */}
+                            <FormControl sx={{ width: '100%' }}>
                                 <label for="about">Short Brefing about:</label>
-                                <textarea style={ {
+                                <textarea style={{
                                     width: '100%',
                                     color: "success",
                                     name: "detail"
-                                } }
-                                    disabled={ diableInput }
+                                }}
                                 />
                                 <TextField
                                     margin="normal"
@@ -70,12 +74,12 @@ const UserProfile = () => {
                                     fullWidth
                                     id="userid"
                                     label='UserId'
-                                    defaultValue={ user.uid || '' }
+                                    defaultValue={user.uid || ''}
                                     name="userid"
                                     type="text"
                                     color="success"
-                                    disabled={ true }
-                                    onChange={ handleOnChange }
+                                    disabled={true}
+                                    onChange={handleOnChange}
                                     autoComplete="name"
                                     autoFocus
                                 />
@@ -88,9 +92,8 @@ const UserProfile = () => {
                                     name="name"
                                     type="name"
                                     color="success"
-                                    disabled={ diableInput }
-                                    defaultValue={ user.displayName || '' }
-                                    onChange={ handleOnChange }
+                                    defaultValue={user.displayName || ''}
+                                    onChange={handleOnChange}
                                     autoComplete="name"
                                     autoFocus
                                 />
@@ -103,9 +106,9 @@ const UserProfile = () => {
                                     name="name"
                                     type="email"
                                     color="success"
-                                    defaultValue={ user.email || '' }
+                                    defaultValue={user.email || ''}
                                     disabled
-                                    onChange={ handleOnChange }
+                                    onChange={handleOnChange}
                                     autoComplete="name"
                                     autoFocus
                                 />
@@ -119,16 +122,12 @@ const UserProfile = () => {
                                     name="password"
                                     type="password"
                                     color="success"
-                                    disabled={ true }
-                                    onChange={ handleOnChange }
+                                    onChange={handleOnChange}
                                     autoComplete="password"
                                     autoFocus
                                 />
-                                { diableInput ? <PrimaryButton type="submit" onClick={ handleEdit }>Edit Profile</PrimaryButton>
-                                    :
-                                    <PrimaryButton type="submit" onClick={ updateUser }>Update</PrimaryButton>
-                                }
 
+                                <PrimaryButton type="submit" onClick={updateUser}>Edit Profile</PrimaryButton>
                             </FormControl>
                         </Grid>
                     </Grid>

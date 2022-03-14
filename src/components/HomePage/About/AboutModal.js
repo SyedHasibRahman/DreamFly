@@ -3,8 +3,8 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-import PrimaryButton from '../../StyledComponent/Buttons/PrimaryButton';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import SecondaryButton from '../../StyledComponent/Buttons/SecondaryButton';
 
 
 const style = {
@@ -24,20 +24,20 @@ const AboutModal = () => {
     const handleClose = () => setOpen(false);
     return (
         <div>
-            <PrimaryButton onClick={ handleOpen }><PlayCircleIcon /></PrimaryButton>
+            <SecondaryButton onClick={handleOpen}><PlayCircleIcon sx={{ background: 'white', borderRadius: '50%' }} /></SecondaryButton>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
-                open={ open }
-                onClose={ handleClose }
+                open={open}
+                onClose={handleClose}
                 closeAfterTransition
-                BackdropComponent={ Backdrop }
-                BackdropProps={ {
+                BackdropComponent={Backdrop}
+                BackdropProps={{
                     timeout: 500,
-                } }
+                }}
             >
-                <Fade in={ open }>
-                    <Box sx={ style }>
+                <Fade in={open}>
+                    <Box sx={style}>
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/xHGkOQUtlRk?start=11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </Box>
                 </Fade>
