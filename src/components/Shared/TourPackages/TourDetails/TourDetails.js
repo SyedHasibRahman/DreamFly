@@ -1,12 +1,9 @@
-import { Button, CardMedia, Container, Grid, InputAdornment, Link, Typography } from '@mui/material';
+import { CardMedia, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import BlogSideber from '../../../Pages/Blogs/BlogSideber/BlogSideber';
-import InputTextField from '../../../StyledComponent/InputTextField/InputTextField';
 import Footer from '../../Footer/Footer';
 import Navigation from '../../Navigation/Navigation';
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import useAuth from '../../../../hooks/useAuth';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -21,7 +18,7 @@ const TourDetails = () => {
     const { register, handleSubmit } = useForm();
 
     useEffect(() => {
-        const url = `https://salty-beach-45243.herokuapp.com/tourPackages/${TourId}`
+        const url = `https://agile-lowlands-71900.herokuapp.com/tourPackages/${TourId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setTourPackage(data))
@@ -34,7 +31,7 @@ const TourDetails = () => {
         data.price = tourPackage.price;
         data.discription = tourPackage.discription;
         data.status = "pending"
-        axios.post('https://salty-beach-45243.herokuapp.com/orders', data)
+        axios.post('https://agile-lowlands-71900.herokuapp.com/orders', data)
             // axios.post('https://still-bastion-57482.herokuapp.com/orders', { ...data, img, name, price, discription })
             .then(res => {
                 console.log(res)
@@ -99,7 +96,7 @@ const TourDetails = () => {
                         {/* Blog Sideber  */ }
                         <Grid item xs={ 12 } md={ 6 } sx={ {} }>
                             <Grid container>
-                                <h2 className="pt-4">Shipping & Billing</h2>
+                                <h2 className="pt-4">Shipping and Billing</h2>
                                 {/* <input type="date" /> */ }
                                 <form className='tourdetails' onSubmit={ handleSubmit(onSubmit) }>
                                     <input { ...register("userName", { required: true, maxLength: 200 }) } defaultValue={ user?.displayName || 'User Name' } />

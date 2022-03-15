@@ -24,7 +24,8 @@ const PersonalFlight = () => {
   const toRef = useRef();
 
   useEffect(() => {
-    fetch("https://salty-beach-45243.herokuapp.com/flight")
+    // fetch("https://dashboard.heroku.com/flight")
+    fetch("https://agile-lowlands-71900.herokuapp.com/flight")
       .then((res) => res.json())
       .then((data) => setFlights(data));
   }, []);
@@ -32,6 +33,7 @@ const PersonalFlight = () => {
   const handleFrom = () => {
     const e = fromRef.current.value;
     console.log(e);
+    // eslint-disable-next-line array-callback-return
     const fillterData = flights.filter((item) => {
       if (item.from === e) {
         return item.to
@@ -58,7 +60,8 @@ const PersonalFlight = () => {
     };
     if (from && to) {
       axios
-        .post("https://salty-beach-45243.herokuapp.com/filter", data)
+        // .post("https://agile-lowlands-71900.herokuapp.com/filter", data)
+        .post("http://localhost:5000/filter", data)
         .then((res) => dispatch(addFilterData(res.data)));
     }
     dispatch(
@@ -66,7 +69,7 @@ const PersonalFlight = () => {
     );
   };
 
-  //remove the duplicate items
+  //remove the duplicate item
   const flightFrom = flights.map((item) => item.from);
   const filterFrom = flights.filter(
     ({ from }, index) => !flightFrom.includes(from, index + 1)
@@ -84,7 +87,7 @@ const PersonalFlight = () => {
       sx={{
         flexGrow: 1
       }}
-      >
+    >
       <Container
         className="personal_flight"
         spacing={{ xs: 2, md: 3 }}
@@ -97,8 +100,8 @@ const PersonalFlight = () => {
       >
         <Box
           sx={{ textAlign: "center", color: "#fff", paddingTop: "50px", paddingBottom: "40px" }}
-          >
-          <Typography sx={{fontWeight:'600', color: "#fff", fontSize:'18px',marginBottom:'10px'}}>
+        >
+          <Typography sx={{ fontWeight: '600', color: "#fff", fontSize: '18px', marginBottom: '10px' }}>
             DreamFly Book
           </Typography>
           <Typography variant="h2" sx={{ color: "#fff", }}>
@@ -112,19 +115,20 @@ const PersonalFlight = () => {
         >
           <Grid item xs={12} sm={12} md={6} lg={3}>
             <Box className="selector_box">
-              <Box for="cars" className="label">
+              <Box htmlFor="cars" className="label">
                 From
               </Box>
               <select
                 className="selector"
                 ref={fromRef}
                 onChange={() => handleFrom()}
+                required
               >
-                <option style={{color: "black"}} required  value="From">From</option>
+                <option style={{ color: "black" }} required value="From">From</option>
                 {filterFrom.map((flight) => {
                   const { from } = flight;
                   return (
-                    <option style={{color: "black"}} required key={flight._id} value={from}>
+                    <option style={{ color: "black" }} required key={flight._id} value={from}>
                       {from}
                     </option>
                   );
@@ -135,12 +139,12 @@ const PersonalFlight = () => {
           <Grid item xs={12} sm={12} md={6} lg={3}>
             <Box className="selector_box">
               <Box className="label">To</Box>
-              <select className="selector" ref={toRef}>
-                <option style={{color: "black"}} required  value="To">To</option>
+              <select className="selector" ref={toRef} required>
+                <option style={{ color: "black" }} required value="To">To</option>
                 {to.map((flight) => {
                   const { to } = flight;
                   return (
-                    <option style={{color: "black"}} required key={flight._id} value={to}>
+                    <option style={{ color: "black" }} required key={flight._id} value={to}>
                       {to}
                     </option>
                   );
@@ -150,7 +154,7 @@ const PersonalFlight = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={3}>
             <Box className="selector_box">
-              <Box for="cars" className="label">
+              <Box htmlFor="cars" className="label">
                 Date
               </Box>
               <input
@@ -165,26 +169,26 @@ const PersonalFlight = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={3}>
             <Box className="selector_box">
-                <Box for="cars" className="label">
-                  Passenger
+              <Box htmlFor="cars" className="label">
+                Passenger
+              </Box>
+              <Box className="selector">
+                <Box className="passenger">
+                  <span className="int" onClick={() => decrementCounter()}>
+                    <i style={{ color: "white" }} className="fas fa-minus"></i>
+                  </span>
+                  <span style={{ color: "white" }} className="number">
+                    {counter}
+                  </span>
+                  <span className="dec" onClick={() => incrementCounter()}>
+                    <i style={{ color: "white" }} className="fas fa-plus"></i>
+                  </span>
                 </Box>
-                <Box className="selector">
-                  <Box className="passenger">
-                    <span className="int" onClick={ () => decrementCounter() }>
-                      <i style={ { color: "white" } } className="fas fa-minus"></i>
-                    </span>
-                    <span style={ { color: "white" } } className="number">
-                      { counter }
-                    </span>
-                    <span className="dec" onClick={ () => incrementCounter() }>
-                      <i style={ { color: "white" } } className="fas fa-plus"></i>
-                    </span>
-                  </Box>
-                </Box>
+              </Box>
             </Box>
           </Grid>
           <Box className="personal_flight_btn">
-            <Link to="/Services" style={{textDecoration: "none"}}>
+            <Link to="/Services" style={{ textDecoration: "none" }}>
               <SecondaryButton onClick={handleSubmit}>
                 search now
               </SecondaryButton>
@@ -192,7 +196,7 @@ const PersonalFlight = () => {
           </Box>
         </Grid>
       </Container>
-      </Box>
+    </Box>
   );
 };
 

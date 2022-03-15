@@ -1,13 +1,52 @@
-import { Container, Grid, Typography } from '@mui/material';
+import { styled, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import PrimaryButton from '../../StyledComponent/Buttons/PrimaryButton';
 import AboutModal from './AboutModal';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
+import ModalUnstyled from '@mui/base/ModalUnstyled';
+import PersonalFlight from '../PersonalFlight/PersonalFlight/PersonalFlight';
+import SecondaryButton from '../../StyledComponent/Buttons/SecondaryButton';
+
+
+const StyledModal = styled(ModalUnstyled)`
+  position: fixed;
+  z-index: 1300;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Backdrop = styled('div')`
+  z-index: -1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-tap-highlight-color: transparent;
+`;
+
+const style = {
+    width: '80%',
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    p: 2,
+    px: 4,
+    pb: 3,
+};
+
 
 const About = () => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     useEffect(() => {
         AOS.init({
             offset: 200,
@@ -18,7 +57,7 @@ const About = () => {
         });
     })
     return (
-        <div style={ {
+        <div style={{
             paddingTop: '100px',
             paddingBottom: '100px',
             display: 'flex',
@@ -31,7 +70,7 @@ const About = () => {
             color: '#fff',
             position: 'relative',
         }}
-            
+
         >
             <Grid sx={{
                 position: 'absolute',
@@ -41,7 +80,7 @@ const About = () => {
             }}>
                 <img style={{
                     animation: 'scroll-down 2s cubic-bezier(0.4, 0, 1, 1) infinite',
-                } } src="https://i.ibb.co/rfNppjH/element-8.png" alt="" />
+                }} src="https://i.ibb.co/rfNppjH/element-8.png" alt="" />
             </Grid>
             <Container>
                 <Grid container spacing={2} sx={{
@@ -49,23 +88,25 @@ const About = () => {
 
                 }}>
                     <Grid item xs={12} sm={12} md={7} lg={7}
-                        data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600"
+                        data-aos='zoom-in-right'
                     >
                         <Typography variant='h5' sx={{
+                            color: "white"
                         }}>
+                            About
                             <span style={{
-                                color: '#2CC0FF',
-                            }}>About</span> DreamFly
+                                color: 'white',
+                            }}> DreamFly</span>
                         </Typography>
-                        <Typography variant='h2' sx={ {
+                        <Typography variant='h2' sx={{
                             py: 3,
                             color: "white"
-                        } }>
+                        }}>
                             Private Jet Charters save your time and give more comfort
                         </Typography>
-                        <Typography sx={ {
-                           color: "white"
-                        } }>
+                        <Typography sx={{
+                            color: "white"
+                        }}>
                             DreamFly is the only way to fully travel on your terms. Whether it’s accessing a remote destination or taking back control of productivity and flight scheduling
                         </Typography>
                         <Grid sx={{
@@ -84,17 +125,32 @@ const About = () => {
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                            } }>
+                            }}>
                                 <Box>
-                                <Typography variant='h3' sx={ {  } }>
-                                    Call for book an order
-                                </Typography>
-                                <Typography variant='h3' sx={ { } }>
-                                    8-800-10-500
-                                </Typography>
+                                    <Typography variant='h3' sx={{}}>
+                                        Call for book an order
+                                    </Typography>
+                                    <Typography variant='h3' sx={{}}>
+                                        8-800-10-500
+                                    </Typography>
                                 </Box>
                             </Box>
-                            <PrimaryButton> Book Now</PrimaryButton>
+                            <div>
+                                <SecondaryButton type="button" onClick={handleOpen}>
+                                    Book Now
+                                </SecondaryButton>
+                                <StyledModal
+                                    aria-labelledby="unstyled-modal-title"
+                                    aria-describedby="unstyled-modal-description"
+                                    open={open}
+                                    onClose={handleClose}
+                                    BackdropComponent={Backdrop}
+                                >
+                                    <Box sx={style}>
+                                        <PersonalFlight />
+                                    </Box>
+                                </StyledModal>
+                            </div>
                         </Grid>
                     </Grid>
                     <Grid item xs={12} sm={12} md={5} lg={5} sx={{

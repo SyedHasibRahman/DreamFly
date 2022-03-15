@@ -195,7 +195,7 @@ const Sidebar = () => {
 
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
-  const { admin, user } = useAuth()
+  const { user } = useAuth()
   const [profileClick, setprofileClick] = useState(false);
   const handleProfileClick = () => setprofileClick(!profileClick);
 

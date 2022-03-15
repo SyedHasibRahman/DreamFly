@@ -12,11 +12,9 @@ const SearchFlights = () => {
     const booking = useSelector((state) => state.flightSlice.filterDate);
     const dateAndPass = useSelector((state) => state.flightSlice.dateAndPass);
 
-    const from = booking.map((data) => data.from)
-    const to = booking.map((data) => data.to)
+    const from =  [...new Map((booking.map((data) => data.from)).map(item => [item.id, item])).values()];
 
-    console.log(to );
-    console.log(from);
+    const to =  [...new Map((booking.map((data) => data.to)).map(item => [item.id, item])).values()];
 
     return (
         <div style={{bgcolor: "#f5f5f5"}}>
@@ -25,16 +23,16 @@ const SearchFlights = () => {
                 <Box sx={{py: 5}}>
                     <Grid container sx={{bgcolor: "#5e35b1", borderRadius: 2, mb: 2, display: "flex", alignItems: "center", justifyContent: "center" }}>
                         <Grid item xs={12}>
-                            <Box sx={{display: "flex", justifyContent: 'space-between', py:2}}>
+                            <Box sx={{display: "flex", justifyContent: 'space-between', py:2, px:2}}>
                                 <Typography 
                                     sx={{color: "white", fontSize: "20px", fontWeight: 600}}
                                     >
-                                     {from}  {to} 
+                                    Place: {from} to {to} 
                                 </Typography>
                                 <Typography 
                                     sx={{color: "white", fontSize: "20px", fontWeight: 600}}
                                     > 
-                                  {dateAndPass.date} 
+                                  Date: {dateAndPass.date} 
                                 </Typography>
                             </Box>
                         </Grid>

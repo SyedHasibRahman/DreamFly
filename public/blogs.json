@@ -60,7 +60,21 @@
         "quote": "Producing Ideas Is The Main Way To Grow The Economy Life Insurance for Stay-at-Home Parents",
         "quoteName": "JHON SMITH",
         "tag1": "Corporate",
-        "tag2": "Business"
+        "tag2": "Business",
+        "user": 
+            [
+                {   "id": 0,
+                    "like": "Like",
+                    "comment": "Hi",
+                    "react": "Love React",
+                    "email": "email",
+                    "name": "Name"
+                },
+
+                {
+
+                }
+            ]
     },
 
     { 

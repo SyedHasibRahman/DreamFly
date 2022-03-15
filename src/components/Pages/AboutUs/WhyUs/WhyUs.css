@@ -1,0 +1,19 @@
+.whyusimg{
+    background-color: white;
+    border-radius: 10px;
+    color: '#19232d';
+    transition: all 0.5s;
+}
+
+.whyusimg:hover{
+    background-image: url('https://themeim.com/demo/flynext/assets/images/choose.png');
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+    color:white;
+   
+}
+.whyusimg :hover h1{
+    color:pink !important;
+    font-weight: 800;
+}
