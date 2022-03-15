@@ -30,6 +30,7 @@ const BlogDetails = () => {
     const CommentInfo = {
         name: user.displayName,
         email: user.email,
+        photo: user.photoURL,
         publishDate: new Date().toLocaleDateString(),
         blogId: blogId
     }
@@ -42,7 +43,7 @@ const BlogDetails = () => {
         axios.post('https://agile-lowlands-71900.herokuapp.com/comments', combinedData)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Added successfully');
+                    // alert('Added successfully');
                     reset();
                 }
             })
@@ -51,11 +52,18 @@ const BlogDetails = () => {
     // get comment section
     const [comments, setComments] = useState([]);
     useEffect(() => {
-        fetch('https://agile-lowlands-71900.herokuapp.com/comments')
+        fetch('http://localhost:5000/comments')
             .then(res => res.json())
-            .then(data => setComments(data))
+            .then(data => setComments(data.reverse())
+                // {
+                // const filter = data.reverse().map(e => e.CommentInfo.blogId === blogId);
+                // console.log(filter)
+                // if(filter ){
+                // setComments(data)
+                // }
+            );
     }, []);
-    
+    console.log(comments)
 
     // Delete comment section
     const handleDeleteComment = (id) => {
@@ -71,13 +79,19 @@ const BlogDetails = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('deleted successfully');
+                        // alert('deleted successfully');
                         const remaining = comments.filter(comment => comment._id !== id)
                         setComments(remaining);
                     }
                 });
         }
 
+    }
+
+    // load more comments
+    const [noOfElement, setNoOfElement] = useState(5);
+    const loadMore = () => {
+        setNoOfElement(noOfElement + noOfElement)
     }
 
 
@@ -149,8 +163,9 @@ const BlogDetails = () => {
                                 <Typography sx={{ fontSize: "16px" }}>{comments.length} Comment</Typography>
                             </Box>
 
+                            <Box>
                             {
-                                comments.map((comment) =>
+                                comments.slice(0, noOfElement).map((comment) =>
                                     <Box
                                         sx={{ display: "flex", alignItems: "center", justiflyContent: "center", my: 2 }}
                                     >
@@ -165,6 +180,12 @@ const BlogDetails = () => {
                                         </Typography>
                                     </Box>)
                             }
+                            <Box>
+                                <Typography onClick={() => loadMore()} sx={{fontSize: "18px", fontWeight: 700, cursor: "pointer", pl: 1, textDecoration:"underline"}}>
+                                    View more comments
+                                </Typography>
+                            </Box>
+                            </Box>
 
                             <Box
                                 sx={{ pb: 4 }}>
