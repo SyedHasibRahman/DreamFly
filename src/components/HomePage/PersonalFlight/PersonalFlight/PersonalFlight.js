@@ -122,7 +122,6 @@ const PersonalFlight = () => {
                 className="selector"
                 ref={fromRef}
                 onChange={() => handleFrom()}
-                required
               >
                 <option style={{ color: "black" }} required value="From">From</option>
                 {filterFrom.map((flight) => {
@@ -139,7 +138,7 @@ const PersonalFlight = () => {
           <Grid item xs={12} sm={12} md={6} lg={3}>
             <Box className="selector_box">
               <Box className="label">To</Box>
-              <select className="selector" ref={toRef} required>
+              <select className="selector" ref={toRef}>
                 <option style={{ color: "black" }} required value="To">To</option>
                 {to.map((flight) => {
                   const { to } = flight;

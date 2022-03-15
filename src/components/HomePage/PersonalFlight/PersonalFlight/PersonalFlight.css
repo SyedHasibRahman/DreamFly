@@ -72,19 +72,7 @@
   text-align: center;
   padding: 40px 0px 30px 0px;
 }
-.personal_flight_btn button {
-  background: #512DA8;
-  border: 1px solid #F5F5F5;
-  padding: 12px 35px;
-  border-radius: 25px;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  outline: none;
-  transition: 0.5s;
-  cursor: pointer;
-  transition: .5s;
-}
+
 .arrow_plan svg {
   margin-right: 7px;
   font-size: 20px !important;
@@ -92,15 +80,8 @@
   transform: rotate(60deg);
   transition: 0.2s;
 }
-.personal_flight_btn button:hover {
-  background: #F5F5F5;
-  border: 1px solid #512DA8;
-  color: #512DA8;
-}
-.personal_flight_btn button:hover .arrow_plan svg {
-  color: #dcbb87;
-  transform: rotate(90deg);
-}
+
+
 @media only screen and (max-width: 1000px) {
   .personal_flight {
     height: 100%;
