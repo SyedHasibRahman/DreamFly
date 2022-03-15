@@ -9,9 +9,7 @@ import Footer from "../../Shared/Footer/Footer";
 import PersonalFlight from "../PersonalFlight/PersonalFlight/PersonalFlight";
 import TourPackages from "../../Shared/TourPackages/TourPackages/TourPackages";
 import CounterArea from "../../Pages/AboutUs/CounterArea/CounterArea";
-import { Box } from "@mui/material";
-
-
+import { Box, Container } from "@mui/material";
 
 
 
@@ -21,13 +19,15 @@ const Home = () => {
       <Navigation />
       <Banner />
       <BestService />
-      <PersonalFlight/>
+      <About />
+      <ServiceCards />
+      <CounterArea/>
       <Box className="marginY90">
-        <CounterArea/>
+        <Container>
+          <PersonalFlight sx={{borderRadius: "15px !important"}}/>
+        </Container>
       </Box>
       <TourPackages />
-      <ServiceCards />
-      <About />
       <Testimonials />
       <Footer />
     </>
