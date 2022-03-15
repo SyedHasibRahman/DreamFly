@@ -5,6 +5,7 @@ import './WhyUs.css';
 
 const WhyUs = () => {
   return (
+    // Why us section
     <Box sx={{ backgroundColor: '#f5f3f1' }}>
       <Container className="paddingY90">
         <Typography
