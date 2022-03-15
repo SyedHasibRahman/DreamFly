@@ -17,7 +17,8 @@ const Testimonial = ({ review }) => {
                     sx={ {
                         boxShadow: `rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset`,
                         padding: '15px',
-                        borderRadius: '5px'
+                        borderRadius: '5px',
+                        height: '335px'
                     } }
                 >
                     <Grid item xs={ 12 } sm={ 12 } md={ 4 } lg={ 4 } sx={ {
@@ -29,14 +30,14 @@ const Testimonial = ({ review }) => {
                         <img style={ {
                             float: "right",
                             marginTop: '-50px',
-                            height: '80px',
-                            width: '70px',
+                            height: '100px',
+                            width: '95px',
                             borderRadius: '30px'
                         } } src={ img } alt="" />
                     </Grid>
                     <Grid item xs={ 12 }>
 
-                        <Typography> { Feedback } </Typography>
+                        <Typography> { Feedback.slice(0, 150) } </Typography>
                         <Typography variant="h5" sx={ {
                             py: 1,
                         } }>

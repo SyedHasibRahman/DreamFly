@@ -8,7 +8,7 @@ const TestimonialSlider = () => {
     // render() {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://agile-lowlands-71900.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);
