@@ -1,4 +1,4 @@
-import { Avatar, Button, CardMedia, Container, Grid, Typography, } from '@mui/material';
+import { Avatar, CardMedia, Container, Grid, Typography, } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -17,6 +17,7 @@ const BlogDetails = () => {
     const { blogId } = useParams();
     const { user } = useAuth();
     const [blog, setBlog] = useState({});
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         // const url = `https://salty-beach-45243.herokuapp.com/blogs/${blogId}`
@@ -42,28 +43,40 @@ const BlogDetails = () => {
 
         axios.post('https://agile-lowlands-71900.herokuapp.com/comments', combinedData)
             .then(res => {
+                
                 if (res.data.insertedId) {
                     // alert('Added successfully');
-                    reset();
+                    fetch('https://agile-lowlands-71900.herokuapp.com/comments')
+                    .then(res => res.json())
+                    .then(data => 
+                        {
+                            const filter = data.reverse().filter(e => e.CommentInfo.blogId === blogId);
+                            console.log(filter)
+                            if(filter ){
+                            setComments(filter)
+                            }
+                            reset();
+                        }) 
                 }
+                
             })
     }
 
     // get comment section
-    const [comments, setComments] = useState([]);
+    
     useEffect(() => {
         fetch('https://agile-lowlands-71900.herokuapp.com/comments')
             .then(res => res.json())
-            .then(data => setComments(data.reverse())
-                // {
-                // const filter = data.reverse().map(e => e.CommentInfo.blogId === blogId);
-                // console.log(filter)
-                // if(filter ){
-                // setComments(data)
-                // }
+            .then(data => {
+                const filter = data.reverse().filter(e => e.CommentInfo.blogId === blogId);
+                console.log(filter)
+                if(filter ){
+                setComments(filter)
+                }}
             );
     }, []);
     console.log(comments)
+
 
     // Delete comment section
     const handleDeleteComment = (id) => {
@@ -90,6 +103,7 @@ const BlogDetails = () => {
 
     // load more comments
     const [noOfElement, setNoOfElement] = useState(5);
+    console.log(noOfElement, comments.length)
     const loadMore = () => {
         setNoOfElement(noOfElement + noOfElement)
     }
@@ -149,7 +163,7 @@ const BlogDetails = () => {
                                 { blog.description }
                             </Typography>
 
-                            {/* comment section */ }
+                            {/* comment section start*/ }
                             <Box
                                 sx={ { display: "flex", alighnItems: "center", justifyContent: "space-around", pb: 4 } }
                             >
@@ -161,6 +175,34 @@ const BlogDetails = () => {
                                 </Typography>
 
                                 <Typography sx={ { fontSize: "16px" } }>{ comments.length } Comment</Typography>
+                            </Box>
+
+                            <Box
+                                sx={ { } }>
+                                <Typography variant="h3" sx={ { my: 2 } }>
+                                    Leave a comment now
+                                </Typography>
+                                <Grid
+                                    component="form"
+                                    autoComplete="off"
+                                    onSubmit={ handleSubmit(onSubmit) }
+                                    container
+                                    direction="row"
+                                    sx={ { mb: "20px" } } justifyContent="space-between" alignItems="center" spacing={ 2 }
+                                >
+                                    <Grid item xs={ 12 }>
+                                        <InputTextField
+                                            label="Massage"
+                                            fullWidth
+                                            placeholder="Write a comment..."
+                                            type="text"
+                                            rows="4"
+                                            required
+                                            { ...register("comment", { required: true }) }
+                                            sx={ { bgcolor: "white" } }
+                                        />
+                                    </Grid>
+                                </Grid>
                             </Box>
 
                             <Box>
@@ -180,49 +222,21 @@ const BlogDetails = () => {
                                             </Typography>
                                         </Box>)
                                 }
-                                <Box>
+
+                                {
+                                    noOfElement <= comments.length && <Box>
                                     <Typography onClick={ () => loadMore() } sx={ { fontSize: "18px", fontWeight: 700, cursor: "pointer", pl: 1, textDecoration: "underline" } }>
                                         View more comments
                                     </Typography>
                                 </Box>
+                                }
+
                             </Box>
 
-                            <Box
-                                sx={ { pb: 4 } }>
-                                <Typography sx={ { fontSize: "24px", fontWeight: 600, my: 2 } }>
-                                    Leave A Comments
-                                </Typography>
-                                <Grid
-                                    component="form"
-                                    autoComplete="off"
-                                    onSubmit={ handleSubmit(onSubmit) }
-                                    container
-                                    direction="row"
-                                    sx={ { mb: "20px" } } justifyContent="space-between" alignItems="center" spacing={ 2 }
-                                >
-                                    <Grid item xs={ 12 }>
-                                        <InputTextField
-                                            label="Massage"
-                                            fullWidth
-                                            type="text"
-                                            rows="4"
-                                            required
-                                            { ...register("comment", { required: true }) }
-                                            sx={ { bgcolor: "white" } }
-                                        />
-                                    </Grid>
-                                    <Button
-                                        type="submit"
-                                        sx={ { textTransform: 'capitalize', fontSize: "18px" } }>
-                                        Submit Now
-                                    </Button>
-                                </Grid>
-                            </Box>
-
-                            <Link style={ { textDecoration: "none", textAlign: "center", cursor: "pointer" } }
+                            <Link style={ {textDecoration: "none", textAlign: "center", cursor: "pointer" } }
                                 to='/Blogs'
                             >
-                                <Box sx={ { display: "flex", textAlign: "center", ml: 1 } }>
+                                <Box sx={ { display: "flex", textAlign: "center", ml: 1, mt: 4 } }>
 
                                     <KeyboardBackspaceIcon sx={ { color: '#5e35b1', fontWeight: 600, textTransform: 'capitalize', fontSize: 30, } } />
 
@@ -232,6 +246,7 @@ const BlogDetails = () => {
                                 </Box>
                             </Link>
                         </Grid>
+                        {/* comment section start*/ }
 
                         {/* Blog Sideber start */ }
                         <Grid item xs={ 12 } md={ 4 }>

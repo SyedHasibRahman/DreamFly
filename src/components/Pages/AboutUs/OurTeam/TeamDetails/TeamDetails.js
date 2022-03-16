@@ -7,6 +7,7 @@ import InputTextField from '../../../../StyledComponent/InputTextField/InputText
 import emailjs from '@emailjs/browser'
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
+import './TeamDetails.css'
 
 const ContactButton = styled(Button)({
     '&': {
@@ -44,62 +45,139 @@ const TeamDetails = () => {
     return (
         <div>
             <Navigation></Navigation>
-            <Container>
-                <Grid container>
-                    <Grid item xs={12} sm={4} md={4} lg={4}>
-                        <img src="https://themeim.com/demo/flynext/assets/images/team/team-1.png" alt="" />
+            <Container className="paddingY90">
+            <Box sx={{ mx: { sm: "50px", md: 0, lg: 0 }}}>
+                <Grid container spacing={{lg: 3, md: 3, xs: 5}}>
+                    <Grid item xs={12} sm={12} md={4} lg={4}>
+                        <Box sx={{bgcolor: "#DDE6EF", borderRadius: "10px", height:"100%", width:"100%"}}>
+                            <img src="https://themeim.com/demo/flynext/assets/images/team/team-1.png" alt="" height="100%" width="100%" style={{borderRadius: "10px"}} />
+                        </Box>
                     </Grid>
-                    <Grid item xs={12} sm={8} md={8} lg={8}>
-                        <Box sx={{ bgcolor: '#F5F3F1', p: 3 }}>
+                    <Grid item xs={12} sm={12} md={8} lg={8}>
+                        <Box sx={{ bgcolor: '#F5F3F1', p: 3, borderRadius: "10px" }}>
                             <Typography variant='h3' sx={{ mb: 1 }}>Alif Ahmed Nowshad</Typography>
                             <Typography >Managing Director</Typography>
                             <Typography sx={{ my: 3 }}>The first small jet-powered civil aircraft was the Morane-Saulnier MS.760 Paris, developed privately in the early 1950s from the MS.755 Fleuret two-seat jet trainer.</Typography>
-                            <Typography sx={{ mb: 1 }}>
-                                <i class="fa-solid fa-phone"></i>
+                            <Typography sx={{ mb: 1, display : "flex", alignItems: "center" }}>
+                                <i style={{marginRight: "10px", color: "#512da8"}} className="fa-solid fa-phone"></i>
                                 +1 814 929 4269
                             </Typography>
-                            <Typography sx={{ mb: 1 }}>
-                                <i class="fa-solid fa-envelope"></i>
+                            <Typography sx={{ mb: 1, display : "flex", alignItems: "center"}}>
+                                <i style={{marginRight: "10px", color: "#512da8"}} className="fa-solid fa-envelope"></i>
                                 contact@flynext.com
                             </Typography>
-                            <Typography sx={{ mt: 2, fontSize: '20px', fontWeight: 800 }}>
+                            <Typography sx={{ my: 1, fontSize: '20px', fontWeight: 700 }}>
                                 Follow Me
                             </Typography>
-                            <Box sx={{ display: "flex", mt: 2 }}>
-                                <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
+                            <Box sx={{display: "flex",}}>
+                                <a href="#a" className='social-icon-box'>
                                     <i className="fab fa-facebook-f social-icon"></i>
                                 </a>
-                                <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
+                                <a href="#a" className='social-icon-box'>
                                     <i className="fab fa-twitter social-icon"></i></a>
-                                <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
+                                <a href="#a" sx={{}} className='social-icon-box'>
                                     <i className="fab fa-youtube social-icon"></i>
                                 </a>
-                                <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
+                                <a href="#a" sx={{}} className='social-icon-box'>
                                     <i className="fab fa-instagram social-icon"></i>
                                 </a>
                             </Box>
                         </Box>
                     </Grid>
                     <Grid item>
-                        <Typography variant='h3' sx={{ mb: 1, mt: 4 }}>
+                        <Typography variant='h3' sx={{ mb: 1, mt: 4, fontWeight: "700 !important" }}>
                             About Me
                         </Typography>
                         <Typography sx={{ mb: 1 }}>
                             Our technology consistently delivers the best pricing for charters – and the unique ability to buy individual seats. Search the world with ease and transparency.As the only tech-forward private aviation company, XO is able to bring you innovative ways to buy and fly. Charter an entire jet, or offer the seats you don’t need through our app. Either way, there’s no longer a need for full or even fractional jet ownership – or rigid, non-refundable jet cards.
                         </Typography>
                     </Grid>
-                    <Grid item sx={{ mb: 1 }}>
-                        <Typography variant='h3' sx={{ mb: 1 }}>
+                    <Grid item>
+                        <Typography variant='h3' sx={{ mb: 1, fontWeight: "700 !important" }}>
                             Experience & Skill
                         </Typography>
                         <Typography sx={{ mb: 1 }}>
                             XO is not simply a private jet service. Whether you’re traveling for business or leisure, XO Membership also delivers insider access to unique experiences, exclusive amenities, and lifestyle services that enrich and broaden the journey. For more details regarding current Member Benefits, see below, contact your dedicated Aviation Advisor.
                         </Typography>
+                        <Grid container sx={{py: 2}} spacing={{lg: 4, md: 3, sm: 2, xs: 4}}>
+                            <Grid item md={3} sm={6} xs={12} >
+                                <Box  
+                                    sx={{px: 3, py: 4, borderRadius: "5px", border: "1px solid grey", textAlign: "center"}}
+                                    >
+                                    <Box className="teamDetailsCard">
+                                        <Box 
+                                            sx={{mx: "0 auto", display: "flex", justifyContent:"center", alignItems:"center", text: "center", border: "10px solid #5e35b1", width: "140px", height: "140px", borderRadius: "50%",}}
+                                            >
+                                            <Typography variant="h2">96 %</Typography>
+                                        </Box>
+                                    </Box>
+                                    <Typography 
+                                        sx={{fontWeight: 700, mt: 3}}
+                                        >
+                                        BUSINESS ANALYSIS
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid item md={3} sm={6} xs={12} >
+                                <Box  
+                                    sx={{px: 3, py: 4, borderRadius: "5px", border: "1px solid grey", textAlign: "center"}}
+                                    >
+                                    <Box className="teamDetailsCard">
+                                        <Box 
+                                            sx={{mx: "0 auto", display: "flex", justifyContent:"center", alignItems:"center", text: "center", border: "10px solid #5e35b1", width: "140px", height: "140px", borderRadius: "50%",}}
+                                            >
+                                            <Typography variant="h2">96 %</Typography>
+                                        </Box>
+                                    </Box>
+                                    <Typography 
+                                        sx={{fontWeight: 700, mt: 3}}
+                                        >
+                                        BUSINESS ANALYSIS
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid item md={3} sm={6} xs={12} >
+                                <Box  
+                                    sx={{px: 3, py: 4, borderRadius: "5px", border: "1px solid grey", textAlign: "center"}}
+                                    >
+                                    <Box className="teamDetailsCard">
+                                        <Box 
+                                            sx={{mx: "0 auto", display: "flex", justifyContent:"center", alignItems:"center", text: "center", border: "10px solid #5e35b1", width: "140px", height: "140px", borderRadius: "50%",}}
+                                            >
+                                            <Typography variant="h2">96 %</Typography>
+                                        </Box>
+                                    </Box>
+                                    <Typography 
+                                        sx={{fontWeight: 700, mt: 3}}
+                                        >
+                                        BUSINESS ANALYSIS
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid item md={3} sm={6} xs={12} >
+                                <Box  
+                                    sx={{px: 3, py: 4, borderRadius: "5px", border: "1px solid grey", textAlign: "center"}}
+                                    >
+                                    <Box className="teamDetailsCard">
+                                        <Box 
+                                            sx={{mx: "0 auto", display: "flex", justifyContent:"center", alignItems:"center", text: "center", border: "10px solid #5e35b1", width: "140px", height: "140px", borderRadius: "50%",}}
+                                            >
+                                            <Typography variant="h2">96 %</Typography>
+                                        </Box>
+                                    </Box>
+                                    <Typography 
+                                        sx={{fontWeight: 700, mt: 3}}
+                                        >
+                                        BUSINESS ANALYSIS
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                        </Grid>
                     </Grid>
-                    <Grid item sx={{ mb: 1 }}>
-                    </Grid>
-                    <Grid item sx={{ mb: 1 }}>
-                        <Typography variant='h3' sx={{ mb: 1 }}>
+                    
+                    
+                    <Grid item >
+                        <Typography variant='h3' sx={{ mb: 1,fontWeight: "700 !important" }}>
                             Qualification & Experience
                         </Typography>
                         <Typography sx={{ mb: 1 }}>
@@ -108,9 +186,11 @@ const TeamDetails = () => {
                     </Grid>
                 </Grid>
 
+            </Box>
             </Container>
             <Box className='contact paddingY90'>
                 <Container>
+                <Box sx={{mx: { sm: "50px", md: 0, lg: 0 }}}>
                     <Grid container spacing={{ md: 5, xs: 8 }}>
                         <Grid item xs={12} md={6}>
                             <Typography sx={{ fontSize: "20px", color: "#512da8", fontWeight: 600, mb: 1 }}>
@@ -122,11 +202,8 @@ const TeamDetails = () => {
                             <Typography variant='h2'>
                                 Fell Free to Contact
                             </Typography>
-                            <Typography sx={{ fontSize: "18px", pt: 1 }}>
-                                With a vast array of popular private planes to choose from,
-                            </Typography>
-                            <Typography sx={{ fontSize: "18px", pb: 1 }}>
-                                travelling by private jet charter is the most efficient
+                            <Typography sx={{ fontSize: "18px", mt: 2, mb: 3 }}>
+                                With a vast array of popular private planes to choose from, travelling by private jet charter is the most efficient.
                             </Typography>
                             <Box sx={{ display: "flex", mt: 2 }}>
                                 <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
@@ -148,8 +225,8 @@ const TeamDetails = () => {
                         <Grid item xs={12} md={6}>
 
                             <form ref={form} onSubmit={sendEmail}>
-                                <Grid container direction="row" sx={{ mb: "20px" }} justifyContent="space-between" alignItems="center" spacing={2}>
-                                    <Grid item xs={12} sm={6}>
+                                <Grid container direction="row" sx={{ mb: "20px" }} justifyContent="space-between" alignItems="center" spacing={{xs: 3, md: 1.5}}>
+                                    <Grid item xs={12} md={6}>
                                         <InputTextField
                                             label="Name"
                                             id="custom-css-outlined-input"
@@ -167,7 +244,7 @@ const TeamDetails = () => {
                                         />
 
                                     </Grid>
-                                    <Grid item xs={12} sm={6}>
+                                    <Grid item xs={12} md={6}>
                                         <InputTextField
                                             label="Email"
                                             id="custom-css-outlined-input"
@@ -185,7 +262,7 @@ const TeamDetails = () => {
                                             }}
                                         />
                                     </Grid>
-                                    <Grid item xs={12} sm={6}>
+                                    <Grid item xs={12} md={6}>
                                         <InputTextField
                                             label="Phone"
                                             id="custom-css-outlined-input"
@@ -202,7 +279,7 @@ const TeamDetails = () => {
                                             }}
                                         />
                                     </Grid>
-                                    <Grid item xs={12} sm={6}>
+                                    <Grid item xs={12} md={6}>
                                         <InputTextField
                                             label="Subject"
                                             id="custom-css-outlined-input"
@@ -241,6 +318,7 @@ const TeamDetails = () => {
                             </form>
                         </Grid>
                     </Grid>
+                    </Box>
                 </Container>
             </Box>
             <Footer></Footer>
