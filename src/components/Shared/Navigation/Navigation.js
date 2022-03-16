@@ -2,7 +2,6 @@ import {
   AppBar,
   Avatar,
   Box,
-  Button,
   Container,
   IconButton,
   Menu,
@@ -57,7 +56,7 @@ const Navigation = () => {
         }}
       >
         <Container>
-          <Toolbar disableGutters sx={{p: 0, m: 0}}>
+          <Toolbar disableGutters sx={{ p: 0, m: 0 }}>
             <Typography
               variant="h6"
               noWrap
@@ -69,7 +68,7 @@ const Navigation = () => {
               </Link>
             </Typography>
 
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -149,14 +148,13 @@ const Navigation = () => {
                 flexGrow: 0,
               }}
             >
-              <Tooltip title="Open settings" sx={{ ml: 5 }}>
+              <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu}>
                   {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
                   <Avatar alt="Remy Sharp" src={user?.photoURL} />
                 </IconButton>
               </Tooltip>
               <Menu
-                sx={{ mt: "45px" }}
                 id="menu-appbar"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
@@ -188,16 +186,16 @@ const Navigation = () => {
                 ))}
                 <MenuItem>
                   {user.email ? (
-                    <Typography 
-                    sx={{
+                    <Typography
+                      sx={{
                         textDecoration: "none",
                         color: "black",
                         fontWeight: 600,
-                      }} 
+                      }}
                       onClick={logOut}>
                       LogOut
                     </Typography>
-                    ) : (
+                  ) : (
                     <Link
                       style={{
                         textDecoration: "none",

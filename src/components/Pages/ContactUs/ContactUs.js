@@ -48,18 +48,18 @@ const ContactUs = () => {
 
             {/* Contact Information Section */ }
 
-            <Container sx={ { py: 12 } }>
-                <Grid container spacing={ 8 } >
-                    <Grid item xs={ 12 } md={ 6 }>
-                        <Box sx={ { width: "100%", height: "100%", border: 'none' } }>
+            <Container className='paddingY90'>
+                <Grid container spacing={{ xs: 5, lg: 8 }}>
+                    <Grid item xs={ 12 } md={ 6 } order={{ xs: 2, sm: 1 }}>
+                        <Box className="map-img" sx={ { width: "100%", height: "100%", border: 'none' } }>
                             <iframe title="This is a Dream Fly location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.8990681563923!2d90.37139331434842!3d23.750978394672508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf4d6018f643%3A0x603d2d083289b4a3!2sDhanmondi%2032%20Road%20Bridge%2C%20Dhanmondi%20Bridge%2C%20Dhaka%201209!5e0!3m2!1sen!2sbd!4v1644859032836!5m2!1sen!2sbd" width="100%" height="100%" style={ { border: "1px solid #e6e6e6", marginTop: "5px" } } allowfullscreen="" loading="lazy"></iframe>
                         </Box>
                     </Grid>
-                    <Grid item xs={ 12 } md={ 6 }>
+                    <Grid item xs={ 12 } md={ 6 } order={{ xs: 1, sm: 2 }}>
                         <Typography sx={ { fontSize: "20px", color: "#512da8", fontWeight: 700, mb: 1 } }>
                             Luxury Charters
                         </Typography>
-                        <Typography sx={ { fontSize: "40px", fontWeight: 700, } }>
+                        <Typography variant='h2'>
                             How to Contact with Us?
                         </Typography>
                         <Typography sx={ { fontSize: "18px", pt: 1 } }>
@@ -70,7 +70,7 @@ const ContactUs = () => {
                                 <Link href="#"><i className="fa-solid fa-location-dot contact-icon"></i></Link>
                             </Box>
                             <Box sx={ { ml: 3 } }>
-                                <Typography sx={ { fontSize: "24px", fontWeight: 700, mb: "5px" } }>
+                                <Typography variant='h3'>
                                     Our Location
                                 </Typography>
                                 <Typography>
@@ -86,7 +86,7 @@ const ContactUs = () => {
                                 <Link href="#"><Link href="#" ><i className="fa-solid fa-phone contact-icon"></i></Link></Link>
                             </Box>
                             <Box sx={ { ml: 3 } }>
-                                <Typography sx={ { fontSize: "24px", fontWeight: 700, mb: "5px" } }>
+                                <Typography variant='h3'>
                                     Our Phone
                                 </Typography>
                                 <Typography>
@@ -102,7 +102,7 @@ const ContactUs = () => {
                                 <Link href="#"><i className="fa-solid fa-envelope contact-icon"></i></Link>
                             </Box>
                             <Box sx={ { ml: 3 } }>
-                                <Typography sx={ { fontSize: "24px", fontWeight: 700, mb: "5px", } }>
+                                <Typography variant='h3'>
                                     Our Email
                                 </Typography>
                                 <Typography>
@@ -119,65 +119,63 @@ const ContactUs = () => {
 
             {/* Contact From Section */ }
 
-            <Box className='contact' sx={ { py: 12 } }>
+            <Box className='contact paddingY90'>
                 <Container>
-                    <Grid container spacing={ 5 } sx={ {} }>
-                        <Grid item xs={ 12 } md={ 6 }>
-                            <Typography sx={ { fontSize: "20px", color: "#512da8", fontWeight: 600, mb: 1 } }>
+                <Box sx={{mx: { sm: "50px", md: 0, lg: 0 }}}>
+                    <Grid container spacing={{ md: 5, xs: 8 }}>
+                        <Grid item xs={12} md={6}>
+                            <Typography sx={{ fontSize: "20px", color: "#512da8", fontWeight: 600, mb: 1 }}>
                                 Talk to us
                             </Typography>
-                            <Typography sx={ { fontSize: "40px", fontWeight: 700, } }>
+                            <Typography variant='h2'>
                                 Any Question?
                             </Typography>
-                            <Typography sx={ { fontSize: "40px", fontWeight: 700, } }>
+                            <Typography variant='h2'>
                                 Fell Free to Contact
                             </Typography>
-                            <Typography sx={ { fontSize: "18px", pt: 1 } }>
-                                With a vast array of popular private planes to choose from,
+                            <Typography sx={{ fontSize: "18px", mt: 2, mb: 3 }}>
+                                With a vast array of popular private planes to choose from, travelling by private jet charter is the most efficient.
                             </Typography>
-                            <Typography sx={ { fontSize: "18px", pb: 1 } }>
-                                travelling by private jet charter is the most efficient
-                            </Typography>
-                            <Box sx={ { display: "flex", mt: 2 } }>
-                                <a href="#a" sx={ { mr: 1 } } className='social-icon-box'>
+                            <Box sx={{ display: "flex", mt: 2 }}>
+                                <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
                                     <i className="fab fa-facebook-f social-icon"></i>
                                 </a>
-                                <a href="#a" sx={ { mr: 1 } } className='social-icon-box'>
+                                <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
                                     <i className="fab fa-twitter social-icon"></i></a>
-                                <a href="#a" sx={ { mr: 1 } } className='social-icon-box'>
+                                <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
                                     <i className="fab fa-youtube social-icon"></i>
                                 </a>
-                                <a href="#a" sx={ { mr: 1 } } className='social-icon-box'>
+                                <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
                                     <i className="fab fa-instagram social-icon"></i>
                                 </a>
                             </Box>
                         </Grid>
 
-                        {/* Contact From  */ }
+                        {/* Contact From  */}
 
-                        <Grid item xs={ 12 } md={ 6 }>
+                        <Grid item xs={12} md={6}>
 
-                            <form ref={ form } onSubmit={ sendEmail }>
-                                <Grid container direction="row" sx={ { mb: "20px" } } justifyContent="space-between" alignItems="center" spacing={ 2 }>
-                                    <Grid item xs={ 12 } sm={ 6 }>
+                            <form ref={form} onSubmit={sendEmail}>
+                                <Grid container direction="row" sx={{ mb: "20px" }} justifyContent="space-between" alignItems="center" spacing={{xs: 3, md: 1.5}}>
+                                    <Grid item xs={12} md={6}>
                                         <InputTextField
                                             label="Name"
                                             id="custom-css-outlined-input"
                                             fullWidth
                                             name="user_name"
                                             type="name"
-                                            sx={ { bgcolor: "white" } }
-                                            InputProps={ {
+                                            sx={{ bgcolor: "white" }}
+                                            InputProps={{
                                                 endAdornment: (
                                                     <InputAdornment position="end">
                                                         <i className="fa-solid fa-user"></i>
                                                     </InputAdornment>
                                                 )
-                                            } }
+                                            }}
                                         />
 
                                     </Grid>
-                                    <Grid item xs={ 12 } sm={ 6 }>
+                                    <Grid item xs={12} md={6}>
                                         <InputTextField
                                             label="Email"
                                             id="custom-css-outlined-input"
@@ -185,72 +183,73 @@ const ContactUs = () => {
                                             required
                                             name="user_email"
                                             type="email"
-                                            sx={ { bgcolor: "white" } }
-                                            InputProps={ {
+                                            sx={{ bgcolor: "white" }}
+                                            InputProps={{
                                                 endAdornment: (
                                                     <InputAdornment position="end">
                                                         <i className="fa-solid fa-envelope"></i>
                                                     </InputAdornment>
                                                 )
-                                            } }
+                                            }}
                                         />
                                     </Grid>
-                                    <Grid item xs={ 12 } sm={ 6 }>
+                                    <Grid item xs={12} md={6}>
                                         <InputTextField
                                             label="Phone"
                                             id="custom-css-outlined-input"
                                             fullWidth
                                             type="number"
                                             name="phone"
-                                            sx={ { bgcolor: "white" } }
-                                            InputProps={ {
+                                            sx={{ bgcolor: "white" }}
+                                            InputProps={{
                                                 endAdornment: (
                                                     <InputAdornment position="end">
                                                         <i className="fa-solid fa-phone"></i>
                                                     </InputAdornment>
                                                 )
-                                            } }
+                                            }}
                                         />
                                     </Grid>
-                                    <Grid item xs={ 12 } sm={ 6 }>
+                                    <Grid item xs={12} md={6}>
                                         <InputTextField
                                             label="Subject"
                                             id="custom-css-outlined-input"
                                             fullWidth
                                             name="subject"
                                             type="text"
-                                            sx={ { bgcolor: "white" } }
-                                            InputProps={ {
+                                            sx={{ bgcolor: "white" }}
+                                            InputProps={{
                                                 endAdornment: (
                                                     <InputAdornment position="end">
-                                                        <i class="fa-solid fa-file-lines"></i>
+                                                        <i className="fa-solid fa-file-lines"></i>
                                                     </InputAdornment>
                                                 )
-                                            } }
+                                            }}
                                         />
                                     </Grid>
-                                    <Grid item xs={ 12 } md={ 12 }>
+                                    <Grid item xs={12} md={12}>
                                         <InputTextField
                                             label="Massage"
                                             id="custom-css-outlined-input"
                                             fullWidth
                                             type="text"
-                                            rows={ 5 }
+                                            rows={5}
                                             required
                                             multiline
                                             name="message"
-                                            sx={ { bgcolor: "white" } }
+                                            sx={{ bgcolor: "white" }}
                                         />
                                     </Grid>
                                 </Grid>
                                 <ContactButton
                                     type="submit"
-                                    sx={ { textTransform: 'capitalize', fontSize: "18px" } }>
+                                    sx={{ textTransform: 'capitalize', fontSize: "18px" }}>
                                     Submit Now
                                 </ContactButton>
                             </form>
                         </Grid>
                     </Grid>
+                    </Box>
                 </Container>
             </Box>
             <Footer/>

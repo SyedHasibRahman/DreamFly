@@ -6,14 +6,11 @@ import ServiceCards from "../ServiceCard/ServiceCards/ServiceCards";
 import Testimonials from "../Testimonial/Testimonials/Testimonials";
 import Navigation from "../../Shared/Navigation/Navigation";
 import Footer from "../../Shared/Footer/Footer";
-// import UserCourse from "../../Dashboard/User/UserCourse/UserCourse";
-// import CouserDetails from "../../Dashboard/User/UserCourse/CouserDetails/CouserDetails";
-// import MakeAdmin from "../../Dashboard/Admin/MakeAdmin/MakeAdmin";
-// import ManagePackage from "../../Dashboard/Admin/ManagePackage/ManagePackage";
-// import ManageOrders from "../../Dashboard/Admin/ManageOrder/ManageOrders";
-// import ManageFlight from "../../Dashboard/Admin/ManageFlight/ManageFlight";
 import PersonalFlight from "../PersonalFlight/PersonalFlight/PersonalFlight";
 import TourPackages from "../../Shared/TourPackages/TourPackages/TourPackages";
+import CounterArea from "../../Pages/AboutUs/CounterArea/CounterArea";
+import { Box, Container } from "@mui/material";
+
 
 
 
@@ -22,17 +19,16 @@ const Home = () => {
     <>
       <Navigation />
       <Banner />
-      {/* <Booking></Booking> */}
-      {/* <UserCourse></UserCourse> */}
-      {/* <CouserDetails></CouserDetails> */}
-      {/* <MakeAdmin></MakeAdmin> */}
-      {/* <ManagePackage></ManagePackage> */}
-      {/* <ManageOrders></ManageOrders> */}
-      <About />
       <BestService />
+      <About />
       <ServiceCards />
+      <CounterArea/>
+      <Box className="marginY90">
+        <Container>
+          <PersonalFlight sx={{borderRadius: "15px !important"}}/>
+        </Container>
+      </Box>
       <TourPackages />
-      <PersonalFlight />
       <Testimonials />
       <Footer />
     </>

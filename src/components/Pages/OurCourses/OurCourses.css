@@ -5,10 +5,10 @@
   position: absolute;
   left: 20px;
   top: 35px;
-  background: #dcbb87;
+  background: #DC1585;
   width: 90px;
   height: 35px;
-  color: #222 !important;
+  color: white !important;
   font-size: 1.1rem !important;
   font-weight: 700 !important;
   line-height: 35px !important;
@@ -16,16 +16,16 @@
   text-align: center;
 }
 .clock svg {
-  color: #dcbb87;
+  color: #4527a0 !important;
 }
 .courses_btn {
   padding-bottom: 10px;
 }
 .courses_btn button {
   background: transparent;
-  border: 1px solid #dcbb87;
+  border: 1px solid #4527a0;
   border-radius: 20px;
-  color: #dcbb87;
+  color: #4527a0;
   font-size: 14px;
   font-weight: 600;
   padding: 10px 25px;

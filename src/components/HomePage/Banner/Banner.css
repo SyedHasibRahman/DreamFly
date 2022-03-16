@@ -1,3 +1,9 @@
+.bannar{
+  background: url(https://static.tickets.com.tr/img/v4/header-bg.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .socialIconBox{
   position: absolute;
   left: -50px;
@@ -49,4 +55,8 @@
 }
 .socialIcon:hover > i{
   color: #4527a0;
+}
+
+.type-writer{
+  color: white !important;
 }

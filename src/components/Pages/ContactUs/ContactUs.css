@@ -16,7 +16,7 @@
 
 .contact-icon{
     color: #512da8;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .social-icon-box{
@@ -28,7 +28,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px; 
+    margin-right: 7px; 
 }
 
 .social-icon{
@@ -51,3 +51,10 @@
     padding: 20px 10px !important;
     color: #ede7f6 !important;
 }
+
+
+@media only screen and (max-width: 900px) {
+    .map-img{
+        height: 400px !important;
+    }
+  }

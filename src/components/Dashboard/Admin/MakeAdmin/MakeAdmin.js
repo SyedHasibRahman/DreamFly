@@ -12,7 +12,7 @@ const MakeAdmin = () => {
     const onSubmit = (data) => {
         const email = data.email;
         const user = { email };
-        fetch('https://salty-beach-45243.herokuapp.com/users/admin', {
+        fetch('https://agile-lowlands-71900.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -43,7 +43,7 @@ const MakeAdmin = () => {
                         <form onSubmit={ handleSubmit(onSubmit) }>
                             <div className='col-12 d-md-flex'>
                                 <div className='w-100 '>
-                                    <label htmlFor='name' className='mb-2'>
+                                    <label htmlhtmlFor='name' className='mb-2'>
                                         Enter email
                                     </label>
                                     <input

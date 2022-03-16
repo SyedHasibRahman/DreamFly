@@ -5,6 +5,7 @@ import PrimaryButton from '../../../StyledComponent/Buttons/PrimaryButton';
 
 const UserProfile = () => {
     const { registerUser, user } = useAuth({})
+    console.log(user)
     const [updateData, setUpdateData] = useState({})
     // const [loginData, setLoginData] = useState({})
     const handleOnChange = e => {
@@ -34,38 +35,38 @@ const UserProfile = () => {
     return (
         <div>
             <Box>
-                <Container fixed sx={ {
+                <Container fixed sx={{
                     height: '100%',
                     py: 5,
-                } }>
+                }}>
 
                     <Typography variant="h3" gutterBottom component="div">
                         My Profile
-                        {/* <hr /> */ }
+                        {/* <hr /> */}
                         <Divider />
                     </Typography>
-                    <Grid item container rowSpacing={ 1 } columnSpacing={ { xs: 1, sm: 2, md: 3 } } sx={ {
+                    <Grid item container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-around'
-                    } }>
-                        <Grid item xs={ 5 } >
-                            <Avatar alt="Remy Sharp" src={ user?.photoURL } sx={ {
+                    }}>
+                        <Grid item xs={5} >
+                            <Avatar alt="Remy Sharp" src={user?.photoURL} sx={{
                                 height: '150px',
                                 width: '150px',
                                 marginBottom: '50px'
-                            } } />
+                            }} />
 
                         </Grid>
-                        <Grid item xs={ 7 }>
-                            {/* <h1>2</h1> */ }
-                            <FormControl sx={ { width: '100%' } }>
+                        <Grid item xs={7}>
+                            {/* <h1>2</h1> */}
+                            <FormControl sx={{ width: '100%' }}>
                                 <label for="about">Short Brefing about:</label>
-                                <textarea style={ {
+                                <textarea style={{
                                     width: '100%',
                                     color: "success",
                                     name: "detail"
-                                } }
+                                }}
                                 />
                                 <TextField
                                     margin="normal"
@@ -73,12 +74,12 @@ const UserProfile = () => {
                                     fullWidth
                                     id="userid"
                                     label='UserId'
-                                    defaultValue={ user.uid || '' }
+                                    defaultValue={user.uid || ''}
                                     name="userid"
                                     type="text"
                                     color="success"
-                                    disabled={ true }
-                                    onChange={ handleOnChange }
+                                    disabled={true}
+                                    onChange={handleOnChange}
                                     autoComplete="name"
                                     autoFocus
                                 />
@@ -91,8 +92,8 @@ const UserProfile = () => {
                                     name="name"
                                     type="name"
                                     color="success"
-                                    defaultValue={ user.displayName || '' }
-                                    onChange={ handleOnChange }
+                                    defaultValue={user.displayName || ''}
+                                    onChange={handleOnChange}
                                     autoComplete="name"
                                     autoFocus
                                 />
@@ -105,9 +106,9 @@ const UserProfile = () => {
                                     name="name"
                                     type="email"
                                     color="success"
-                                    defaultValue={ user.email || '' }
+                                    defaultValue={user.email || ''}
                                     disabled
-                                    onChange={ handleOnChange }
+                                    onChange={handleOnChange}
                                     autoComplete="name"
                                     autoFocus
                                 />
@@ -121,12 +122,12 @@ const UserProfile = () => {
                                     name="password"
                                     type="password"
                                     color="success"
-                                    onChange={ handleOnChange }
+                                    onChange={handleOnChange}
                                     autoComplete="password"
                                     autoFocus
                                 />
 
-                                <PrimaryButton type="submit" onClick={ updateUser }>Edit Profile</PrimaryButton>
+                                <PrimaryButton type="submit" onClick={updateUser}>Edit Profile</PrimaryButton>
                             </FormControl>
                         </Grid>
                     </Grid>

@@ -14,7 +14,7 @@ const UpadatePackage = () => {
     console.log(service.date)
     console.log(service.description)
     useEffect(() => {
-        const url = `https://salty-beach-45243.herokuapp.com/tourPackages/${id}`;
+        const url = `https://agile-lowlands-71900.herokuapp.com/tourPackages/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data));
@@ -62,10 +62,10 @@ const UpadatePackage = () => {
         setService(update)
     }
 
-
+    // handleUpdateuser
     const handleUpdateuser = e => {
 
-        const url = `https://salty-beach-45243.herokuapp.com/tourPackages/${id}`;
+        const url = `https://agile-lowlands-71900.herokuapp.com/tourPackages/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -92,57 +92,57 @@ const UpadatePackage = () => {
                     <div className='add-product box-shadow bg-white p-4 packageDiv'>
                         <h3 className='mb-5 heading-main text-light'>Update Package</h3>
 
-                        <form onSubmit={ handleUpdateuser }>
+                        <form onSubmit={handleUpdateuser}>
                             <div className='col-12 d-md-flex'>
                                 <div className='w-100 '>
-                                    <label htmlFor='name' className='mb-2'>
+                                    <label htmlhtmlFor='name' className='mb-2'>
                                         Package Title
                                     </label>
                                     <input
-                                        defaultValue={ service.title || '' }
+                                        defaultValue={service.title || ''}
 
                                         required
                                         placeholder='Package Name'
-                                        onChange={ handleTitlechange }
+                                        onChange={handleTitlechange}
                                     />
                                 </div>
 
                                 <div className='w-100 ps-0 ps-md-3'>
-                                    <label htmlFor='price' className='mb-2'>
+                                    <label htmlhtmlFor='price' className='mb-2'>
                                         Price
                                     </label>
                                     <input
-                                        value={ service.price || '' }
+                                        value={service.price || ''}
                                         required
                                         placeholder='Enter price'
-                                        onChange={ handlePricechange }
+                                        onChange={handlePricechange}
                                     />
                                 </div>
                             </div>
                             <div className='col-12 '>
                                 <div className='w-100 '>
-                                    <label htmlFor='image' className='mb-2'>
+                                    <label htmlhtmlFor='image' className='mb-2'>
                                         Image
                                     </label>
                                     <input
-                                        value={ service.images || '' }
-                                        required placeholder='Image Url' onChange={ handleImagechange } />
+                                        value={service.images || ''}
+                                        required placeholder='Image Url' onChange={handleImagechange} />
                                 </div>
                                 <div className='w-100 '></div>
                                 <div className='w-100 '>
-                                    <label htmlFor='image' className='mb-2'>
+                                    <label htmlhtmlFor='image' className='mb-2'>
                                         Total persion
                                     </label>
                                     <input
-                                        value={ service.person || '' }
+                                        value={service.person || ''}
                                         required
                                         placeholder='Persion'
-                                        onChange={ handlePersonchange }
+                                        onChange={handlePersonchange}
 
                                     />
                                 </div>
                                 <div className='w-100 '>
-                                    <label htmlFor='image' className='mb-2'>
+                                    <label htmlhtmlFor='image' className='mb-2'>
                                         Category
                                     </label>
                                     {/* <input
@@ -153,39 +153,39 @@ const UpadatePackage = () => {
                                     <Select
                                         labelId="demo-simple-select-label"
                                         id="demo-simple-select"
-                                        onChange={ handleCategorychange }
+                                        onChange={handleCategorychange}
                                         label="Age"
-                                        value={ service.category || '' }
+                                        value={service.category || ''}
 
                                     >
-                                        <MenuItem value={ 'General' }>General</MenuItem>
-                                        <MenuItem value={ 'Packages' }>Packages</MenuItem>
-                                        <MenuItem value={ 'Services' }>Services</MenuItem>
+                                        <MenuItem value={'General'}>General</MenuItem>
+                                        <MenuItem value={'Packages'}>Packages</MenuItem>
+                                        <MenuItem value={'Services'}>Services</MenuItem>
 
                                     </Select>
                                 </div>
-                                {/* <div class="w-100 form-outline datepicker">
-                                    <label for="exampleDatepicker1" class="form-label">Select a date</label>
+                                {/* <div className="w-100 form-outline datepicker">
+                                    <label htmlFor="exampleDatepicker1" className="form-label">Select a date</label>
                                     <input
                                         value={service.date || ''}
                                         type="date"
-                                        class="form-control"
+                                        className="form-control"
                                         id="exampleDatepicker1"
                                         onChange={handleDatechange}
                                     />
                                 </div> */}
-                                <div class="w-100 form-outline">
-                                    <label class="form-label">Select a date</label>
+                                <div className="w-100 form-outline">
+                                    <label className="form-label">Select a date</label>
                                     <input
-                                        value={ service.date || '' }
-                                        class="form-control"
+                                        value={service.date || ''}
+                                        className="form-control"
 
                                         placeholder='mm/dd/yyyy'
-                                        onChange={ handleDatechange }
+                                        onChange={handleDatechange}
                                     />
                                 </div>
                                 {/* <div className='w-100 '>
-                                    <label htmlFor='description' className='mb-2'>
+                                    <label htmlhtmlFor='description' className='mb-2'>
                                         Description
                                     </label>
                                     <textarea
@@ -201,15 +201,15 @@ const UpadatePackage = () => {
                             <button
                                 type='submit'
                                 className='btn text-light'
-                                style={ { marginLeft: `calc(100% - 115px)`, background: '#FF257B', color: 'white' } }
+                                style={{ marginLeft: `calc(100% - 115px)`, background: '#FF257B', color: 'white' }}
                             >
                                 Update
                             </button>
-                            { success && (
+                            {success && (
                                 <Alert variant='success' className='mt-2 py-2'>
                                     Packages Update successfully
                                 </Alert>
-                            ) }
+                            )}
                         </form>
                     </div>
                 </div>

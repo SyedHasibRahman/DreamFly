@@ -1,6 +1,6 @@
 import { useState } from "react";
 import initializeFirebase from "../components/Pages/Login/Firebase/firebase.init";
-import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, updateProfile, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, updateProfile, signInWithPopup, GoogleAuthProvider, deleteUser } from "firebase/auth";
 import { useEffect } from "react";
 
 
@@ -11,7 +11,7 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
     const [admin, setAdmin] = useState(false)
-    console.log(user);
+
     const uid = user.uid;
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -91,7 +91,7 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, [auth])
     useEffect(() => {
-        fetch(`https://salty-beach-45243.herokuapp.com/users/${user.email}`)
+        fetch(`https://agile-lowlands-71900.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -106,19 +106,31 @@ const useFirebase = () => {
         })
             .finally(() => setIsLoading(false));
     }
-    // const handleDeleteUser = (uid) => {
-    //     // const uid = user.uid;
-    //     auth.deleteUser(uid)
-    //         .then(() => {
-    //             console.log('Successfully deleted user');
-    //         })
-    //         .catch((error) => {
-    //             console.log('Error deleting user:', error);
-    //         });
-    // }
+    const handleDeleteUser = () => {
+
+        // const uid = user.uid;
+        // auth.deleteUser(uid)
+        //     .then(() => {
+        //         console.log('Successfully deleted user');
+        //     })
+        //     .catch((error) => {
+        //         console.log('Error deleting user:', error);
+        //     });
+        const user = auth.currentUser;
+
+        deleteUser(user).then(() => {
+            console.log('Successfully deleted user');
+        }).catch((error) => {
+            console.log('Error deleting user:', error);
+        });
+          
+        
+    }
+
+
     const saveUser = (email, displayName, photoURL, uid, method) => {
         const user = { email, displayName, photoURL, uid };
-        fetch('https://salty-beach-45243.herokuapp.com/users', {
+        fetch('https://agile-lowlands-71900.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -136,7 +148,7 @@ const useFirebase = () => {
         isLoading,
         authError,
         signInWithGoogle,
-        // handleDeleteUser
+        handleDeleteUser
     }
 
 }

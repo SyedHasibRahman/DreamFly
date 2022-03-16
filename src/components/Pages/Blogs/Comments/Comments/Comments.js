@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Map = () => {
+const Comments = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Map = () => {
     );
 };
 
-export default Map;
+export default Comments;

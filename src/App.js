@@ -15,7 +15,6 @@ import OurCoursesDetails from "./components/Pages/OurCourses/OurCoursesDetails/O
 import OurCourses from "./components/Pages/OurCourses/OurCourses";
 import SignUp from "./components/Pages/Login/SignUp/SignUp";
 import SignInSide from "./components/Pages/Login/SignIn/SignInSide";
-import AdminPanel from "./components/Dashboard/Admin/AdminPanel/AdminPanel";
 import UserOrder from "./components/Dashboard/User/UserOrder/UserOrder";
 import UserProfile from "./components/Dashboard/User/UserProfile/UserProfile";
 import ManageUsers from "./components/Dashboard/Admin/AdminPanel/ManageUsers/ManageUsers/ManageUsers";
@@ -36,8 +35,11 @@ import AdminRoute from "./components/Pages/Login/OtherRoutes/AdminRoute/AdminRou
 import UpadatePackage from "./components/Dashboard/Admin/CustomizePackage/UpadatePackage/UpadatePackage";
 import CustomizePackages from "./components/Dashboard/Admin/CustomizePackage/CustomizePackages/CustomizePackages";
 import Invoice from "./components/Dashboard/Payment/Invoice";
-import UpdateService from "./components/Dashboard/Admin/ManageService/UpdateService/UpdateService";
-import ServiceDetail from "./components/Pages/Services/ServiceDetail/ServiceDetail";
+import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import MessengerLive from "./components/MessengerLive/MessengerLive";
+import BookDetails from "./components/Services/Book/BookDetails";
+import SeaechFlightDetails from "./components/HomePage/PersonalFlight/SearchFlights/SeaechFlightDetails";
+import TeamDetails from "./components/Pages/AboutUs/OurTeam/TeamDetails/TeamDetails";
 
 
 
@@ -49,9 +51,10 @@ function App() {
           <Route path="/" element={ <Home /> } />
           <Route path="Home" element={ <Home /> } />
           <Route path="Services" element={ <Services /> } />
-          <Route path="/Services/:serviceId" element={ <ServiceDetail /> } />
           <Route path="About" element={ <AboutUs /> } />
+          <Route path="TeamDetails" element={ <TeamDetails /> } />
           <Route path="Pilots" element={ <OurPilots /> } />
+          <Route path="SeaechFlightDetails/:SeaechId" element={ <SeaechFlightDetails /> } />
           <Route path="SearchFlight" element={ <SearchFlights /> } />
           <Route path="Contact" element={ <ContactUs /> } />
           <Route path="Blogs" element={ <Blogs /> } />
@@ -60,6 +63,7 @@ function App() {
           <Route path="/Courses" element={ <OurCourses /> } />
           <Route path="/TourPackages" element={ <TourPackages /> } />
           <Route path="/TourPackages/:TourId" element={ <TourDetails /> } />
+          <Route path="/Book/:BookId" element={ <BookDetails /> } />
           {/* <Route path="/payment/" element={ <Payment /> } /> */ }
           <Route path="SignIn" element={ <SignInSide /> } />
           <Route path="SignUp" element={ <SignUp /> } />
@@ -67,58 +71,47 @@ function App() {
             path="Dashboard"
             element={
               <PrivateRoute>
-                <AdminPanel />
+                <Dashboard />
               </PrivateRoute>
             }
           >
-            <Route path="AddBlog" element={<AddBlog />} />
 
-            <Route path="UserOrder" element={<UserOrder />} />
-            <Route path="UserProfile" element={<UserProfile />} />
-            <Route path="ManageUsers" element={<ManageUsers />} />
-            {/* <Route path="payment/" element={ <Payment /> } /> */}
-            <Route path="payment/:bookedId" element={<Payment />} />
-            <Route path="UpdateBlog/:id" element={<UpdateBlog />} />
-            <Route path="DeleteBlog" element={<DeleteBlog />} />
-            <Route path="MakeAdmin" element={<MakeAdmin />} />
-            <Route path="ManagePackage" element={<ManagePackage />} />
-            <Route path="ManageOrders" element={<ManageOrders />} />
-            <Route path="UserCourse" element={<UserCourse />} />
-            <Route path="CouserDetails" element={<CouserDetails />} />
-            <Route path="CustomizePackages" element={<CustomizePackages />} />
-            <Route path="UpdatePackage/:id" element={<UpdateService  />} />
-            <Route path="UpdateService/:id" element={<UpdateService />} />
-
-            <Route path="UserOrder" element={<UserOrder />} />
-            <Route path="UserProfile" element={<UserProfile />} />
-            <Route path="ManageUsers" element={<ManageUsers />} />
-            {/* <Route path="payment/" element={ <Payment /> } /> */}
-            <Route path="payment/:bookedId" element={<Payment />} />
-            <Route path="invoice/:bookedId" element={<Invoice />} />
-            <Route path="UpdateBlog/:id" element={<UpdateBlog />} />
-            <Route path="DeleteBlog" element={<DeleteBlog />} />
-            <Route path="MakeAdmin" element={<MakeAdmin />} />
-            <Route path="ManagePackage" element={<ManagePackage />} />
-            <Route path="ManageOrders" element={<ManageOrders />} />
-            <Route path="UserCourse" element={<UserCourse />} />
-            <Route path="CouserDetails" element={<CouserDetails />} />
+            <Route path="/Dashboard" element={ <UserProfile /> } />
+            <Route path="UserOrder" element={ <UserOrder /> } />
+            {/* <Route path="payment/" element={ <Payment /> } /> */ }
+            <Route path="payment/:bookedId" element={ <Payment /> } />
+            <Route path="UserCourse" element={ <UserCourse /> } />
+            <Route path="CouserDetails" element={ <CouserDetails /> } />
+            <Route path="invoice/:bookedId" element={ <Invoice /> } />
+            <Route path="Dashboard/:userId" element={ <UserProfile /> } />
           </Route>
           <Route
             path="Dashboard"
             element={
               <AdminRoute>
-                <AdminPanel />
+                <Dashboard />
 
               </AdminRoute>
             }
           >
-            <Route path="ManageFlight" element={<ManageFlight />} />
+            <Route path="/Dashboard" element={ <UserProfile /> } />
+            <Route path="AddBlog" element={ <AddBlog /> } />
+            <Route path="AddFlight" element={ <ManageFlight /> } />
+            <Route path="ManageUsers" element={ <ManageUsers /> } />
+            <Route path="UpdateBlog/:id" element={ <UpdateBlog /> } />
+            <Route path="ManageBlog" element={ <DeleteBlog /> } />
+            <Route path="MakeAdmin" element={ <MakeAdmin /> } />
+            <Route path="AddPackage" element={ <ManagePackage /> } />
+            <Route path="ManageOrders" element={ <ManageOrders /> } />
+            <Route path="UpdatePackage/:id" element={ <UpadatePackage /> } />
+            <Route path="ManagePackages" element={ <CustomizePackages /> } />
           </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        {/* <Footer /> */}
-      </AuthProvider>
-    </div>
+          <Route path="*" element={ <NotFound /> } />
+        </Routes >
+        {/* <Footer /> */ }
+        < MessengerLive />
+      </AuthProvider >
+    </div >
   );
 }
 

@@ -7,7 +7,7 @@ const Invoice = () => {
     const { bookedId } = useParams();
     const [item, setBooked] = useState([]);
     useEffect(() => {
-        fetch(`https://salty-beach-45243.herokuapp.com/myorders/${bookedId}`)
+        fetch(`https://agile-lowlands-71900.herokuapp.com/myorders/${bookedId}`)
             .then(res => res.json())
             .then(data => setBooked(data));
 
@@ -104,7 +104,10 @@ const Invoice = () => {
                         <TableBody>
 
                             <TableRow key={ item.name }>
-                                <TableCell>{ item.name }</TableCell>
+                                <TableCell>
+                                    { item.to ? `${item.to} to ${item.from}` : '' }<br></br> by <br></br>
+                                    { item.name }
+                                </TableCell>
                                 <TableCell align="right">
                                     <img src={ item.img } alt="" width={ 100 } height={ 100 } />
                                 </TableCell>
