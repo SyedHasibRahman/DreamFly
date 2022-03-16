@@ -40,6 +40,7 @@ import MessengerLive from "./components/MessengerLive/MessengerLive";
 import BookDetails from "./components/Services/Book/BookDetails";
 import SeaechFlightDetails from "./components/HomePage/PersonalFlight/SearchFlights/SeaechFlightDetails";
 import TeamDetails from "./components/Pages/AboutUs/OurTeam/TeamDetails/TeamDetails";
+import PaymentCard from "./components/Dashboard/Payment/PaymentCard/PaymentCard";
 
 
 
@@ -51,6 +52,7 @@ function App() {
           <Route path="/" element={ <Home /> } />
           <Route path="Home" element={ <Home /> } />
           <Route path="Services" element={ <Services /> } />
+          <Route path="PaymentCard" element={ <PaymentCard/> } />
           <Route path="About" element={ <AboutUs /> } />
           <Route path="TeamDetails" element={ <TeamDetails /> } />
           <Route path="Pilots" element={ <OurPilots /> } />

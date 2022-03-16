@@ -7,10 +7,10 @@
         "flightName": "Novo Air",
         "departure": "07:15 PM",
         "arrival": "08:05 PM",
-        "fare": "7,999",
-        "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
+        "price": 7999,
+        "img": "https://bdtickets.com/images/airlines/NOVOAIR.png",
+        "category": "Genarel"
     },
-
     {
         "id": "2",
         "from": "Dhaka",
@@ -19,10 +19,9 @@
         "flightName": "USB Bangla",
         "departure": "07:00 PM",
         "arrival": "07:50 PM",
-        "fare": "8,000",
+        "price": 7000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "3",
         "from": "Dhaka",
@@ -31,10 +30,9 @@
         "flightName": "Biman",
         "departure": "08:40 PM",
         "arrival": "10:20 PM",
-        "fare": "7,000",
+        "price": 9000,
         "img": "https://bdtickets.com/images/airlines/BIMAN.png"
     },
-
     {
         "id": "4",
         "from": "Barisal",
@@ -43,7 +41,7 @@
         "flightName": "USB Bangla",
         "departure": "05:40 PM",
         "arrival": "07:20 PM",
-        "fare": "7,999",
+        "price": 11000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
     {
@@ -54,10 +52,9 @@
         "flightName": "USB Bangla",
         "departure": "08:55 PM",
         "arrival": "09:50 PM",
-        "fare": "11,999",
+        "price": 13000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "6",
         "from": "Chittagong",
@@ -66,10 +63,9 @@
         "flightName": "Novo Air",
         "departure": "07:40 PM",
         "arrival": "08:30 PM",
-        "fare": "7,999",
+        "price": 12000,
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "7",
         "from": "Chittagong",
@@ -78,10 +74,9 @@
         "flightName": "Novo Air",
         "departure": "08:55 PM",
         "arrival": "09:50 PM",
-        "fare": "7,999",
+        "price": 15000,
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "8",
         "from": "Coxs Bazar",
@@ -90,10 +85,9 @@
         "flightName": "Novo Air",
         "departure": "05:35 PM",
         "arrival": "06:50 PM",
-        "fare": "7,999",
+        "price": 19000,
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "9",
         "from": "Coxs Bazar",
@@ -102,10 +96,9 @@
         "flightName": "USB Bangla",
         "departure": "05:15 PM",
         "arrival": "06:15 PM",
-        "fare": "13,999",
+        "price": 13999,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "10",
         "from": "Jessore",
@@ -114,10 +107,9 @@
         "flightName": "Biman",
         "departure": "06:55 PM",
         "arrival": "07:45 PM",
-        "fare": "7,000",
+        "price": 17000,
         "img": "https://bdtickets.com/images/airlines/BIMAN.png"
     },
-
     {
         "id": "11",
         "from": "Jessore",
@@ -126,10 +118,9 @@
         "flightName": "Novo Air",
         "departure": "06:50 PM",
         "arrival": "07:30 PM",
-        "fare": "7,999",
+        "price": 9990,
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "12",
         "from": "Jessore",
@@ -138,10 +129,9 @@
         "flightName": "Novo Air",
         "departure": "08:40 PM",
         "arrival": "09:30 PM",
-        "fare": "7,000",
+        "price": 7000,
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "13",
         "from": "Jessore",
@@ -150,10 +140,9 @@
         "flightName": "USB Bangla",
         "departure": "05:20 PM",
         "arrival": "06:00 PM",
-        "fare": "7,999",
+        "price": 13000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "14",
         "from": "Jessore",
@@ -162,10 +151,9 @@
         "flightName": "USB Bangla",
         "departure": "05:45 PM",
         "arrival": "06:30 PM",
-        "fare": "6,999",
+        "price": 13000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "15",
         "from": "Jessore",
@@ -174,10 +162,9 @@
         "flightName": "USB Bangla",
         "departure": "07:00 PM",
         "arrival": "07:40 PM",
-        "fare": "9,999",
+        "price": 13000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "16",
         "from": "Jessore",
@@ -186,10 +173,9 @@
         "flightName": "USB Bangla",
         "departure": "08:10 PM",
         "arrival": "08:55 PM",
-        "fare": "7,999",
+        "price": 15000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "17",
         "from": "Jessore",
@@ -198,10 +184,9 @@
         "flightName": "USB Bangla",
         "departure": "09:15 PM",
         "arrival": "09:55 PM",
-        "fare": "6,999",
+        "price": 17000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "18",
         "from": "Rajshahi",
@@ -210,10 +195,9 @@
         "flightName": "USB Bangla",
         "departure": "06:05 PM",
         "arrival": "06:55 PM",
-        "fare": "8,999",
+        "price": 13000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "19",
         "from": "Rajshahi",
@@ -222,10 +206,9 @@
         "flightName": "Novo Air",
         "departure": "05:25 PM",
         "arrival": "06:05 PM",
-        "fare": "7,999",
+        "price": 11000,
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "20",
         "from": "Saidpur",
@@ -234,10 +217,9 @@
         "flightName": "Novo Air",
         "departure": "07:30 PM",
         "arrival": "08:30 PM",
-        "fare": "7,999",
+        "price": 10000,
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "21",
         "from": "Saidpur",
@@ -246,10 +228,9 @@
         "flightName": "Novo Air",
         "departure": "09:30 PM",
         "arrival": "10:30 PM",
-        "fare": "7,999",
+        "price": 21000,
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "22",
         "from": "Saidpur",
@@ -258,10 +239,9 @@
         "flightName": "Biman",
         "departure": "08:30 PM",
         "arrival": "09:20 PM",
-        "fare": "8,999",
+        "price": 14000,
         "img": "https://bdtickets.com/images/airlines/BIMAN.png"
     },
-
     {
         "id": "23",
         "from": "Saidpur",
@@ -270,7 +250,7 @@
         "flightName": "USB Bangla",
         "departure": "09:00 PM",
         "arrival": "09:55 PM",
-        "fare": "9,999",
+        "price": 15000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
     {
@@ -281,10 +261,9 @@
         "flightName": "Biman",
         "departure": "10:00 PM",
         "arrival": "10:55 PM",
-        "fare": "8,600",
+        "price": 16000,
         "img": "https://bdtickets.com/images/airlines/BIMAN.png"
     },
-
     {
         "id": "25",
         "from": "Sylhet",
@@ -293,10 +272,9 @@
         "flightName": "USB Bangla",
         "departure": "08:20 PM",
         "arrival": "09:05 PM",
-        "fare": "9,800",
+        "price": 16000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "26",
         "from": "Chittagong",
@@ -305,10 +283,9 @@
         "flightName": "USB Bangla",
         "departure": "08:45 AM",
         "arrival": "01:40 PM",
-        "fare": "21,800",
+        "price": 12000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "27",
         "from": "Chittagong",
@@ -317,10 +294,9 @@
         "flightName": "USB Bangla",
         "departure": "11:10 AM",
         "arrival": "03:40 PM",
-        "fare": "19,999",
+        "price": 16000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "28",
         "from": "Chittagong",
@@ -329,10 +305,9 @@
         "flightName": "USB Bangla",
         "departure": "08:45 AM",
         "arrival": "01:40 PM",
-        "fare": "33,000",
+        "price": 18000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "29",
         "from": "Chittagong",
@@ -341,10 +316,9 @@
         "flightName": "USB Bangla",
         "departure": "08:45 AM",
         "arrival": "11:40 AM",
-        "fare": "21,999",
+        "price": 12000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "30",
         "from": "Chittagong",
@@ -353,10 +327,9 @@
         "flightName": "Nova",
         "departure": "08:45 AM",
         "arrival": "11:40 AM",
-        "fare": "15,999",
+        "price": 15000,
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "31",
         "from": "Chittagong",
@@ -365,10 +338,9 @@
         "flightName": "USB Bangla",
         "departure": "08:45 AM",
         "arrival": "11:40 AM",
-        "fare": "21,999",
+        "price": 13000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "32",
         "from": "Coxs Bazar",
@@ -377,10 +349,9 @@
         "flightName": "USB Bangla",
         "departure": "09:45 AM",
         "arrival": "01:40 PM",
-        "fare": "17,999",
+        "price": 17000,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "33",
         "from": "Coxs Bazar",
@@ -389,10 +360,9 @@
         "flightName": "USB Bangla",
         "departure": "02:10 PM",
         "arrival": "06:40 pM",
-        "fare": "19,999",
+        "price": 1999,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     },
-
     {
         "id": "34",
         "from": "Sylhet",
@@ -401,10 +371,9 @@
         "flightName": "Nova",
         "departure": "02:10 PM",
         "arrival": "06:40 pM",
-        "fare": "17,999",
+        "price": 19000,
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "35",
         "from": "Sylhet",
@@ -413,10 +382,9 @@
         "flightName": "Nova",
         "departure": "02:10 PM",
         "arrival": "06:40 pM",
-        "fare": "16,999",
+        "price": 17770,
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "36",
         "from": "Sylhet",
@@ -425,10 +393,9 @@
         "flightName": "Nova",
         "departure": "02:10 PM",
         "arrival": "06:40 pM",
-        "fare": "22,999",
+        "price": 18900,
         "img": "https://bdtickets.com/images/airlines/NOVOAIR.png"
     },
-
     {
         "id": "37",
         "from": "Sylhet",
@@ -437,7 +404,7 @@
         "flightName": "USB Bangla",
         "departure": "02:10 PM",
         "arrival": "06:40 pM",
-        "fare": "27,999",
+        "price": 19990,
         "img": "https://bdtickets.com/images/airlines/USBANGLA.png"
     }
 ]

@@ -49,15 +49,16 @@ const PaymentCard = () => {
                         <div className="card-number-box">#################</div>
                         <div className="flexBox">
                             <div className="box">
-                                <span>card holder</span>
+                                <span style={{color: 'black'}}>card holder</span>
                                 <div className="card-holder-name">
                                     full name
                                 </div>
                             </div>
                             <div className="box">
-                                <span>expires</span>
+                                <span style={{color: 'black'}}>expires</span>
                                 <div className="expiration">
                                    <span className='exp-month'>mm</span>
+                                   <span>/</span>
                                    <span className='exp-year'>yy</span>
                                 </div>
                             </div>
