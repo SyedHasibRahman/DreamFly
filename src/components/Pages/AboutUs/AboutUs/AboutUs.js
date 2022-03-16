@@ -7,10 +7,10 @@ import Navigation from '../../../Shared/Navigation/Navigation';
 import About from '../About/About';
 import CounterArea from '../CounterArea/CounterArea';
 import OurHistory from '../OurHistory/OurHistory';
-import OurTeam from '../OurTeam/OurTeam';
 import WhyUs from '../WhyUs/WhyUs';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
 import PrimaryButton from '../../../StyledComponent/Buttons/PrimaryButton';
+import OurTeams from '../OurTeams/OurTeams';
 
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -55,7 +55,7 @@ const AboutUs = () => {
             <WhyUs />
             <CounterArea />
             <OurHistory />
-            <OurTeam />
+            <OurTeams />
             <Box className="paddingY90">
                 <Container>
                     <Typography

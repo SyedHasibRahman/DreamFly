@@ -27,7 +27,7 @@ const Testimonials = () => {
     return (
         <div className='paddingY90' >
             <Container>
-                <Grid sx={ {
+                <Grid sx={{
                     textAlign: 'center',
                 } }>
 
@@ -35,7 +35,7 @@ const Testimonials = () => {
                         gutterBottom
                         sx={ { fontSize: "20px", fontWeight: 700 } }
                     >
-                        <span style={ { color: '#4527a0', fontSize: "20px", fontWeight: 700 } }>DreamFly</span> Testimonial
+                        <span style={{ color: '#4527a0', fontSize: "20px", fontWeight: 700 }}>DreamFly</span> Testimonial
                     </Typography>
                     <Typography gutterBottom variant="h2">
                         Our Customer Feedback

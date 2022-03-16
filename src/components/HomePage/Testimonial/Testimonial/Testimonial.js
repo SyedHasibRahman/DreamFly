@@ -8,9 +8,9 @@ const Testimonial = ({ review }) => {
     const { Feedback, stars, img, users } = review;
     const rate = parseInt(stars)
     return (
-        <div style={ {
+        <div style={{
             marginTop: '70px',
-        } }>
+        }}>
 
             <Container>
                 <Grid item container
@@ -35,7 +35,7 @@ const Testimonial = ({ review }) => {
                             borderRadius: '30px'
                         } } src={ img } alt="" />
                     </Grid>
-                    <Grid item xs={ 12 }>
+                    <Grid item xs={12}>
 
                         <Typography> { Feedback.slice(0, 150) } </Typography>
                         <Typography variant="h5" sx={ {
@@ -43,14 +43,14 @@ const Testimonial = ({ review }) => {
                         } }>
                             { users.name }
                         </Typography>
-                        <Grid item xs={ 12 } sm={ 12 } sx={ {
+                        <Grid item xs={12} sm={12} sx={{
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                        } }>
-                            <Typography variant="body1" sx={ {
+                        }}>
+                            <Typography variant="body1" sx={{
                                 fontWeight: 900
-                            } }>
+                            }}>
                                 Designation
                             </Typography>
                             <Box sx={ {
