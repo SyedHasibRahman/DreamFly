@@ -104,7 +104,10 @@ const Invoice = () => {
                         <TableBody>
 
                             <TableRow key={ item.name }>
-                                <TableCell>{ item.name }</TableCell>
+                                <TableCell>
+                                    { item.to ? `${item.to} to ${item.from}` : '' }<br></br> by <br></br>
+                                    { item.name }
+                                </TableCell>
                                 <TableCell align="right">
                                     <img src={ item.img } alt="" width={ 100 } height={ 100 } />
                                 </TableCell>

@@ -37,6 +37,8 @@ import CustomizePackages from "./components/Dashboard/Admin/CustomizePackage/Cus
 import Invoice from "./components/Dashboard/Payment/Invoice";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import MessengerLive from "./components/MessengerLive/MessengerLive";
+import BookDetails from "./components/Services/Book/BookDetails";
+import SeaechFlightDetails from "./components/HomePage/PersonalFlight/SearchFlights/SeaechFlightDetails";
 import TeamDetails from "./components/Pages/AboutUs/OurTeam/TeamDetails/TeamDetails";
 
 
@@ -46,23 +48,25 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="Home" element={<Home />} />
-          <Route path="Services" element={<Services />} />
-          <Route path="About" element={<AboutUs />} />
-          <Route path="TeamDetails" element={<TeamDetails />} />
-          <Route path="Pilots" element={<OurPilots />} />
-          <Route path="SearchFlight" element={<SearchFlights />} />
-          <Route path="Contact" element={<ContactUs />} />
-          <Route path="Blogs" element={<Blogs />} />
-          <Route path="/blogs/:blogId" element={<BlogDetails />} />
-          <Route path="/CoursesDetails" element={<OurCoursesDetails />} />
-          <Route path="/Courses" element={<OurCourses />} />
-          <Route path="/TourPackages" element={<TourPackages />} />
-          <Route path="/TourPackages/:TourId" element={<TourDetails />} />
-          {/* <Route path="/payment/" element={ <Payment /> } /> */}
-          <Route path="SignIn" element={<SignInSide />} />
-          <Route path="SignUp" element={<SignUp />} />
+          <Route path="/" element={ <Home /> } />
+          <Route path="Home" element={ <Home /> } />
+          <Route path="Services" element={ <Services /> } />
+          <Route path="About" element={ <AboutUs /> } />
+          <Route path="TeamDetails" element={ <TeamDetails /> } />
+          <Route path="Pilots" element={ <OurPilots /> } />
+          <Route path="SeaechFlightDetails/:SeaechId" element={ <SeaechFlightDetails /> } />
+          <Route path="SearchFlight" element={ <SearchFlights /> } />
+          <Route path="Contact" element={ <ContactUs /> } />
+          <Route path="Blogs" element={ <Blogs /> } />
+          <Route path="/blogs/:blogId" element={ <BlogDetails /> } />
+          <Route path="/CoursesDetails" element={ <OurCoursesDetails /> } />
+          <Route path="/Courses" element={ <OurCourses /> } />
+          <Route path="/TourPackages" element={ <TourPackages /> } />
+          <Route path="/TourPackages/:TourId" element={ <TourDetails /> } />
+          <Route path="/Book/:BookId" element={ <BookDetails /> } />
+          {/* <Route path="/payment/" element={ <Payment /> } /> */ }
+          <Route path="SignIn" element={ <SignInSide /> } />
+          <Route path="SignUp" element={ <SignUp /> } />
           <Route
             path="Dashboard"
             element={
@@ -72,14 +76,14 @@ function App() {
             }
           >
 
-            <Route path="/Dashboard" element={<UserProfile />} />
-            <Route path="UserOrder" element={<UserOrder />} />
-            {/* <Route path="payment/" element={ <Payment /> } /> */}
-            <Route path="payment/:bookedId" element={<Payment />} />
-            <Route path="UserCourse" element={<UserCourse />} />
-            <Route path="CouserDetails" element={<CouserDetails />} />
-            <Route path="invoice/:bookedId" element={<Invoice />} />
-            <Route path="Dashboard/:userId" element={<UserProfile />} />
+            <Route path="/Dashboard" element={ <UserProfile /> } />
+            <Route path="UserOrder" element={ <UserOrder /> } />
+            {/* <Route path="payment/" element={ <Payment /> } /> */ }
+            <Route path="payment/:bookedId" element={ <Payment /> } />
+            <Route path="UserCourse" element={ <UserCourse /> } />
+            <Route path="CouserDetails" element={ <CouserDetails /> } />
+            <Route path="invoice/:bookedId" element={ <Invoice /> } />
+            <Route path="Dashboard/:userId" element={ <UserProfile /> } />
           </Route>
           <Route
             path="Dashboard"
@@ -90,24 +94,24 @@ function App() {
               </AdminRoute>
             }
           >
-            <Route path="/Dashboard" element={<UserProfile />} />
-            <Route path="AddBlog" element={<AddBlog />} />
-            <Route path="AddFlight" element={<ManageFlight />} />
-            <Route path="ManageUsers" element={<ManageUsers />} />
-            <Route path="UpdateBlog/:id" element={<UpdateBlog />} />
-            <Route path="ManageBlog" element={<DeleteBlog />} />
-            <Route path="MakeAdmin" element={<MakeAdmin />} />
-            <Route path="AddPackage" element={<ManagePackage />} />
-            <Route path="ManageOrders" element={<ManageOrders />} />
-            <Route path="UpdatePackage/:id" element={<UpadatePackage />} />
-            <Route path="ManagePackages" element={<CustomizePackages />} />
+            <Route path="/Dashboard" element={ <UserProfile /> } />
+            <Route path="AddBlog" element={ <AddBlog /> } />
+            <Route path="AddFlight" element={ <ManageFlight /> } />
+            <Route path="ManageUsers" element={ <ManageUsers /> } />
+            <Route path="UpdateBlog/:id" element={ <UpdateBlog /> } />
+            <Route path="ManageBlog" element={ <DeleteBlog /> } />
+            <Route path="MakeAdmin" element={ <MakeAdmin /> } />
+            <Route path="AddPackage" element={ <ManagePackage /> } />
+            <Route path="ManageOrders" element={ <ManageOrders /> } />
+            <Route path="UpdatePackage/:id" element={ <UpadatePackage /> } />
+            <Route path="ManagePackages" element={ <CustomizePackages /> } />
           </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        {/* <Footer /> */}
-        <MessengerLive />
-      </AuthProvider>
-    </div>
+          <Route path="*" element={ <NotFound /> } />
+        </Routes >
+        {/* <Footer /> */ }
+        < MessengerLive />
+      </AuthProvider >
+    </div >
   );
 }
 
