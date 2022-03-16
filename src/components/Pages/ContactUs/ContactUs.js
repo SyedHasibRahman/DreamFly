@@ -121,9 +121,10 @@ const ContactUs = () => {
 
             <Box className='contact paddingY90'>
                 <Container>
-                    <Grid container spacing={{md: 5, xs: 8}}>
-                        <Grid item xs={ 12 } md={ 6 }>
-                            <Typography sx={ { fontSize: "20px", color: "#512da8", fontWeight: 600, mb: 1 } }>
+                <Box sx={{mx: { sm: "50px", md: 0, lg: 0 }}}>
+                    <Grid container spacing={{ md: 5, xs: 8 }}>
+                        <Grid item xs={12} md={6}>
+                            <Typography sx={{ fontSize: "20px", color: "#512da8", fontWeight: 600, mb: 1 }}>
                                 Talk to us
                             </Typography>
                             <Typography variant='h2'>
@@ -132,52 +133,49 @@ const ContactUs = () => {
                             <Typography variant='h2'>
                                 Fell Free to Contact
                             </Typography>
-                            <Typography sx={ { fontSize: "18px", pt: 1 } }>
-                                With a vast array of popular private planes to choose from,
+                            <Typography sx={{ fontSize: "18px", mt: 2, mb: 3 }}>
+                                With a vast array of popular private planes to choose from, travelling by private jet charter is the most efficient.
                             </Typography>
-                            <Typography sx={ { fontSize: "18px", pb: 1 } }>
-                                travelling by private jet charter is the most efficient
-                            </Typography>
-                            <Box sx={ { display: "flex", mt: 2 } }>
-                                <a href="#a" sx={ { mr: 1 } } className='social-icon-box'>
+                            <Box sx={{ display: "flex", mt: 2 }}>
+                                <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
                                     <i className="fab fa-facebook-f social-icon"></i>
                                 </a>
-                                <a href="#a" sx={ { mr: 1 } } className='social-icon-box'>
+                                <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
                                     <i className="fab fa-twitter social-icon"></i></a>
-                                <a href="#a" sx={ { mr: 1 } } className='social-icon-box'>
+                                <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
                                     <i className="fab fa-youtube social-icon"></i>
                                 </a>
-                                <a href="#a" sx={ { mr: 1 } } className='social-icon-box'>
+                                <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
                                     <i className="fab fa-instagram social-icon"></i>
                                 </a>
                             </Box>
                         </Grid>
 
-                        {/* Contact From  */ }
+                        {/* Contact From  */}
 
-                        <Grid item xs={ 12 } md={ 6 }>
+                        <Grid item xs={12} md={6}>
 
-                            <form ref={ form } onSubmit={ sendEmail }>
-                                <Grid container direction="row" sx={ { mb: "20px" } } justifyContent="space-between" alignItems="center" spacing={ 2 }>
-                                    <Grid item xs={ 12 } sm={ 6 }>
+                            <form ref={form} onSubmit={sendEmail}>
+                                <Grid container direction="row" sx={{ mb: "20px" }} justifyContent="space-between" alignItems="center" spacing={{xs: 3, md: 1.5}}>
+                                    <Grid item xs={12} md={6}>
                                         <InputTextField
                                             label="Name"
                                             id="custom-css-outlined-input"
                                             fullWidth
                                             name="user_name"
                                             type="name"
-                                            sx={ { bgcolor: "white" } }
-                                            InputProps={ {
+                                            sx={{ bgcolor: "white" }}
+                                            InputProps={{
                                                 endAdornment: (
                                                     <InputAdornment position="end">
                                                         <i className="fa-solid fa-user"></i>
                                                     </InputAdornment>
                                                 )
-                                            } }
+                                            }}
                                         />
 
                                     </Grid>
-                                    <Grid item xs={ 12 } sm={ 6 }>
+                                    <Grid item xs={12} md={6}>
                                         <InputTextField
                                             label="Email"
                                             id="custom-css-outlined-input"
@@ -185,72 +183,73 @@ const ContactUs = () => {
                                             required
                                             name="user_email"
                                             type="email"
-                                            sx={ { bgcolor: "white" } }
-                                            InputProps={ {
+                                            sx={{ bgcolor: "white" }}
+                                            InputProps={{
                                                 endAdornment: (
                                                     <InputAdornment position="end">
                                                         <i className="fa-solid fa-envelope"></i>
                                                     </InputAdornment>
                                                 )
-                                            } }
+                                            }}
                                         />
                                     </Grid>
-                                    <Grid item xs={ 12 } sm={ 6 }>
+                                    <Grid item xs={12} md={6}>
                                         <InputTextField
                                             label="Phone"
                                             id="custom-css-outlined-input"
                                             fullWidth
                                             type="number"
                                             name="phone"
-                                            sx={ { bgcolor: "white" } }
-                                            InputProps={ {
+                                            sx={{ bgcolor: "white" }}
+                                            InputProps={{
                                                 endAdornment: (
                                                     <InputAdornment position="end">
                                                         <i className="fa-solid fa-phone"></i>
                                                     </InputAdornment>
                                                 )
-                                            } }
+                                            }}
                                         />
                                     </Grid>
-                                    <Grid item xs={ 12 } sm={ 6 }>
+                                    <Grid item xs={12} md={6}>
                                         <InputTextField
                                             label="Subject"
                                             id="custom-css-outlined-input"
                                             fullWidth
                                             name="subject"
                                             type="text"
-                                            sx={ { bgcolor: "white" } }
-                                            InputProps={ {
+                                            sx={{ bgcolor: "white" }}
+                                            InputProps={{
                                                 endAdornment: (
                                                     <InputAdornment position="end">
                                                         <i className="fa-solid fa-file-lines"></i>
                                                     </InputAdornment>
                                                 )
-                                            } }
+                                            }}
                                         />
                                     </Grid>
-                                    <Grid item xs={ 12 } md={ 12 }>
+                                    <Grid item xs={12} md={12}>
                                         <InputTextField
                                             label="Massage"
                                             id="custom-css-outlined-input"
                                             fullWidth
                                             type="text"
-                                            rows={ 5 }
+                                            rows={5}
                                             required
                                             multiline
                                             name="message"
-                                            sx={ { bgcolor: "white" } }
+                                            sx={{ bgcolor: "white" }}
                                         />
                                     </Grid>
                                 </Grid>
                                 <ContactButton
                                     type="submit"
-                                    sx={ { textTransform: 'capitalize', fontSize: "18px" } }>
+                                    sx={{ textTransform: 'capitalize', fontSize: "18px" }}>
                                     Submit Now
                                 </ContactButton>
                             </form>
                         </Grid>
                     </Grid>
+                    </Box>
                 </Container>
             </Box>
             <Footer/>

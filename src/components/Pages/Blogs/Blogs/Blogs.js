@@ -41,8 +41,8 @@ const Blogs = () => {
                 <Container>
                     <Box>
                         <Typography
-                            variant="h3"
-                            sx={{ pb: 8, fontWeight: 600, fontSize: "2.5rem", textAlign: "center" }}
+                            variant="h2"
+                            sx={{ pb: 8, textAlign: "center" }}
                         >
                             Welcome To Our Blogs
                         </Typography>

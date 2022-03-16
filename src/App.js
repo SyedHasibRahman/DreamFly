@@ -39,6 +39,7 @@ import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import MessengerLive from "./components/MessengerLive/MessengerLive";
 import BookDetails from "./components/Services/Book/BookDetails";
 import SeaechFlightDetails from "./components/HomePage/PersonalFlight/SearchFlights/SeaechFlightDetails";
+import TeamDetails from "./components/Pages/AboutUs/OurTeam/TeamDetails/TeamDetails";
 
 
 
@@ -51,6 +52,7 @@ function App() {
           <Route path="Home" element={ <Home /> } />
           <Route path="Services" element={ <Services /> } />
           <Route path="About" element={ <AboutUs /> } />
+          <Route path="TeamDetails" element={ <TeamDetails /> } />
           <Route path="Pilots" element={ <OurPilots /> } />
           <Route path="SeaechFlightDetails/:SeaechId" element={ <SeaechFlightDetails /> } />
           <Route path="SearchFlight" element={ <SearchFlights /> } />
@@ -105,11 +107,11 @@ function App() {
             <Route path="ManagePackages" element={ <CustomizePackages /> } />
           </Route>
           <Route path="*" element={ <NotFound /> } />
-        </Routes>
+        </Routes >
         {/* <Footer /> */ }
-        <MessengerLive />
-      </AuthProvider>
-    </div>
+        < MessengerLive />
+      </AuthProvider >
+    </div >
   );
 }
 
