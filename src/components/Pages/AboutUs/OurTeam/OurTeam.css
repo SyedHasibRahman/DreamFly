@@ -1,0 +1,11 @@
+.teram-social{
+  background-color: #f5f3f1;
+  padding: 0 10px;
+  transition: all 0.5s;
+}
+.team-member{
+  overflow: hidden !important;
+}
+.team-member:hover .teram-social{
+  right: 0 !important;
+}

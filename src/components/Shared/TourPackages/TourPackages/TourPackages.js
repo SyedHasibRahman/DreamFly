@@ -87,8 +87,7 @@ const TourPackages = () => {
                 DreamFly Tour Packages
               </Typography>
             </Box>
-            <Slider
-              {...settings}
+            <Slider {...settings}
               ref={sliderRef}
               slidesToShow={3}
               slidesToScroll={1}
