@@ -7,11 +7,11 @@ import OurTeam from '../OurTeam/OurTeam';
 
 const OurTeams = () => {
   const [ourTeams, setOurTeams] = useState([]);
-    useEffect(() => {
-        fetch('')
-            .then(res => res.json())
-            .then(data => setOurTeams(data))
-    }, []);
+  useEffect(() => {
+    fetch('http://localhost:5000/teamsInfo')
+      .then(res => res.json())
+      .then(data => setOurTeams(data))
+  }, []);
   var settings = {
     dots: true,
     infinite: false,
@@ -49,27 +49,27 @@ const OurTeams = () => {
   return (
     <Box>
       <Container>
-      <Box>
-            <Typography
-              gutterBottom
-              sx={{ color: '#5e35b1', fontWeight: '700', fontSize: '20px', marginBottom: '10px', textAlign: "center" }}
-            >
-              Our team
-            </Typography>
-            <Typography sx={{ textAlign: "center" }} variant="h2">
-              Meet Our Team Members
-            </Typography>
-          </Box>
-          <Box sx={{ marginTop: '50px' }}>
+        <Box>
+          <Typography
+            gutterBottom
+            sx={{ color: '#5e35b1', fontWeight: '700', fontSize: '20px', marginBottom: '10px', textAlign: "center" }}
+          >
+            Our team
+          </Typography>
+          <Typography sx={{ textAlign: "center" }} variant="h2">
+            Meet Our Team Members
+          </Typography>
+        </Box>
+        <Box sx={{ marginTop: '50px' }}>
           <Slider {...settings}>
             {
-              ourTeams.map(ourTeam => <OurTeam 
-                key={ourTeam._id} 
+              ourTeams.map(ourTeam => <OurTeam
+                key={ourTeam._id}
                 ourTeam={ourTeam}
-                ></OurTeam>)
+              ></OurTeam>)
             }
           </Slider>
-          </Box>
+        </Box>
       </Container>
     </Box>
   );

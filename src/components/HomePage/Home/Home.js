@@ -10,10 +10,11 @@ import PersonalFlight from "../PersonalFlight/PersonalFlight/PersonalFlight";
 import TourPackages from "../../Shared/TourPackages/TourPackages/TourPackages";
 import CounterArea from "../../Pages/AboutUs/CounterArea/CounterArea";
 import { Box, Container } from "@mui/material";
-
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 
 const Home = () => {
+
   return (
     <>
       <Navigation />
@@ -21,14 +22,19 @@ const Home = () => {
       <BestService />
       <About />
       <ServiceCards />
-      <CounterArea/>
+      <CounterArea />
       <Box className="marginY90">
         <Container>
-          <PersonalFlight sx={{borderRadius: "15px !important"}}/>
+          <PersonalFlight sx={{ borderRadius: "15px !important" }} />
         </Container>
       </Box>
       <TourPackages />
       <Testimonials />
+      <MessengerCustomerChat
+        pageId="571915953489074"
+        appId="498806025092594"
+
+      />
       <Footer />
     </>
   );
