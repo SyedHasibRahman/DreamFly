@@ -36,6 +36,8 @@ import AdminRoute from "./components/Pages/Login/OtherRoutes/AdminRoute/AdminRou
 import UpadatePackage from "./components/Dashboard/Admin/CustomizePackage/UpadatePackage/UpadatePackage";
 import CustomizePackages from "./components/Dashboard/Admin/CustomizePackage/CustomizePackages/CustomizePackages";
 import Invoice from "./components/Dashboard/Payment/Invoice";
+import UpdateService from "./components/Dashboard/Admin/ManageService/UpdateService/UpdateService";
+import ServiceDetail from "./components/Pages/Services/ServiceDetail/ServiceDetail";
 
 
 
@@ -47,6 +49,7 @@ function App() {
           <Route path="/" element={ <Home /> } />
           <Route path="Home" element={ <Home /> } />
           <Route path="Services" element={ <Services /> } />
+          <Route path="/Services/:serviceId" element={ <ServiceDetail /> } />
           <Route path="About" element={ <AboutUs /> } />
           <Route path="Pilots" element={ <OurPilots /> } />
           <Route path="SearchFlight" element={ <SearchFlights /> } />
@@ -83,7 +86,8 @@ function App() {
             <Route path="UserCourse" element={<UserCourse />} />
             <Route path="CouserDetails" element={<CouserDetails />} />
             <Route path="CustomizePackages" element={<CustomizePackages />} />
-            <Route path="UpdatePackage/:id" element={<UpadatePackage />} />
+            <Route path="UpdatePackage/:id" element={<UpdateService  />} />
+            <Route path="UpdateService/:id" element={<UpdateService />} />
 
             <Route path="UserOrder" element={<UserOrder />} />
             <Route path="UserProfile" element={<UserProfile />} />

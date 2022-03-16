@@ -2,10 +2,15 @@ import { Button } from '@mui/material';
 import React from 'react';
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
 import './Book.css';
+import BookingModal from '../BookingModal/BookingModal';
 
 const Book = (props) => {
-    const { name, img, seat, title, price } = props.book;
+    const { name, img, seat, title, price, } = props.book;
+    const [openBooking, setOpenBooking] = React.useState(false);
+    const handleBookingOpen = () => setOpenBooking(true);
+    const handleBookingClose = () => setOpenBooking(false);
     return (
+      <>
         <div className='book-card'>
             <div className='book-container'>
                 <img src={ img } alt="" />
@@ -18,10 +23,15 @@ const Book = (props) => {
 
                     </div>
                     <hr />
-                    <Button className='btn'><ConnectingAirportsIcon className='icon'></ConnectingAirportsIcon> Book Now</Button>
+                    <Button className='btn' onClick={handleBookingOpen}><ConnectingAirportsIcon className='icon'></ConnectingAirportsIcon> Book Now </Button>
                 </div>
             </div>
         </div>
+        <BookingModal>
+        openBooking={openBooking}
+        handleBookingClose={handleBookingClose}
+        </BookingModal>
+      </>
     );
 };
 

@@ -9,7 +9,7 @@ import './Booking.css';
 function Booking() {
     const [booking, setBooking] = useState([]);
     useEffect( ()=> {
-        fetch("data.json")
+        fetch("http://localhost:5000/service")
         .then(res => res.json())
         .then((data) => setBooking(data))
     }, [])
