@@ -33,6 +33,7 @@ const PersonalFlight = () => {
   const handleFrom = () => {
     const e = fromRef.current.value;
     console.log(e);
+    // eslint-disable-next-line array-callback-return
     const fillterData = flights.filter((item) => {
       if (item.from === e) {
         return item.to
@@ -60,7 +61,7 @@ const PersonalFlight = () => {
     if (from && to) {
       axios
         // .post("https://agile-lowlands-71900.herokuapp.com/filter", data)
-        .post("http://localhost:5000/filter", data)
+        .post("https://agile-lowlands-71900.herokuapp.com/filter", data)
         .then((res) => dispatch(addFilterData(res.data)));
     }
     dispatch(
@@ -114,7 +115,7 @@ const PersonalFlight = () => {
         >
           <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 }>
             <Box className="selector_box">
-              <Box for="cars" className="label">
+              <Box htmlFor="cars" className="label">
                 From
               </Box>
               <select
@@ -152,7 +153,7 @@ const PersonalFlight = () => {
           </Grid>
           <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 }>
             <Box className="selector_box">
-              <Box for="cars" className="label">
+              <Box htmlFor="cars" className="label">
                 Date
               </Box>
               <input
@@ -167,7 +168,7 @@ const PersonalFlight = () => {
           </Grid>
           <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 3 }>
             <Box className="selector_box">
-              <Box for="cars" className="label">
+              <Box htmlFor="cars" className="label">
                 Passenger
               </Box>
               <Box className="selector">

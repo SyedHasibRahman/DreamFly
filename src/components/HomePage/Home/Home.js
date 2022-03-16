@@ -8,6 +8,9 @@ import Navigation from "../../Shared/Navigation/Navigation";
 import Footer from "../../Shared/Footer/Footer";
 import PersonalFlight from "../PersonalFlight/PersonalFlight/PersonalFlight";
 import TourPackages from "../../Shared/TourPackages/TourPackages/TourPackages";
+import CounterArea from "../../Pages/AboutUs/CounterArea/CounterArea";
+import { Box, Container } from "@mui/material";
+
 
 
 const Home = () => {
@@ -17,9 +20,14 @@ const Home = () => {
       <Banner />
       <BestService />
       <About />
-      <TourPackages />
       <ServiceCards />
-      <PersonalFlight/>
+      <CounterArea/>
+      <Box className="marginY90">
+        <Container>
+          <PersonalFlight sx={{borderRadius: "15px !important"}}/>
+        </Container>
+      </Box>
+      <TourPackages />
       <Testimonials />
       <Footer />
     </>

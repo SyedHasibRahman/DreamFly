@@ -36,6 +36,10 @@ import UpadatePackage from "./components/Dashboard/Admin/CustomizePackage/Upadat
 import CustomizePackages from "./components/Dashboard/Admin/CustomizePackage/CustomizePackages/CustomizePackages";
 import Invoice from "./components/Dashboard/Payment/Invoice";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import MessengerLive from "./components/MessengerLive/MessengerLive";
+import BookDetails from "./components/Services/Book/BookDetails";
+import SeaechFlightDetails from "./components/HomePage/PersonalFlight/SearchFlights/SeaechFlightDetails";
+import TeamDetails from "./components/Pages/AboutUs/OurTeam/TeamDetails/TeamDetails";
 
 
 
@@ -48,7 +52,9 @@ function App() {
           <Route path="Home" element={ <Home /> } />
           <Route path="Services" element={ <Services /> } />
           <Route path="About" element={ <AboutUs /> } />
+          <Route path="TeamDetails" element={ <TeamDetails /> } />
           <Route path="Pilots" element={ <OurPilots /> } />
+          <Route path="SeaechFlightDetails/:SeaechId" element={ <SeaechFlightDetails /> } />
           <Route path="SearchFlight" element={ <SearchFlights /> } />
           <Route path="Contact" element={ <ContactUs /> } />
           <Route path="Blogs" element={ <Blogs /> } />
@@ -57,6 +63,7 @@ function App() {
           <Route path="/Courses" element={ <OurCourses /> } />
           <Route path="/TourPackages" element={ <TourPackages /> } />
           <Route path="/TourPackages/:TourId" element={ <TourDetails /> } />
+          <Route path="/Book/:BookId" element={ <BookDetails /> } />
           {/* <Route path="/payment/" element={ <Payment /> } /> */ }
           <Route path="SignIn" element={ <SignInSide /> } />
           <Route path="SignUp" element={ <SignUp /> } />
@@ -76,6 +83,7 @@ function App() {
             <Route path="UserCourse" element={ <UserCourse /> } />
             <Route path="CouserDetails" element={ <CouserDetails /> } />
             <Route path="invoice/:bookedId" element={ <Invoice /> } />
+            <Route path="Dashboard/:userId" element={ <UserProfile /> } />
           </Route>
           <Route
             path="Dashboard"
@@ -99,10 +107,11 @@ function App() {
             <Route path="ManagePackages" element={ <CustomizePackages /> } />
           </Route>
           <Route path="*" element={ <NotFound /> } />
-        </Routes>
+        </Routes >
         {/* <Footer /> */ }
-      </AuthProvider>
-    </div>
+        < MessengerLive />
+      </AuthProvider >
+    </div >
   );
 }
 
