@@ -37,6 +37,8 @@ import CustomizePackages from "./components/Dashboard/Admin/CustomizePackage/Cus
 import Invoice from "./components/Dashboard/Payment/Invoice";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import MessengerLive from "./components/MessengerLive/MessengerLive";
+import BookDetails from "./components/Services/Book/BookDetails";
+import SeaechFlightDetails from "./components/HomePage/PersonalFlight/SearchFlights/SeaechFlightDetails";
 
 
 
@@ -50,6 +52,7 @@ function App() {
           <Route path="Services" element={ <Services /> } />
           <Route path="About" element={ <AboutUs /> } />
           <Route path="Pilots" element={ <OurPilots /> } />
+          <Route path="SeaechFlightDetails/:SeaechId" element={ <SeaechFlightDetails /> } />
           <Route path="SearchFlight" element={ <SearchFlights /> } />
           <Route path="Contact" element={ <ContactUs /> } />
           <Route path="Blogs" element={ <Blogs /> } />
@@ -58,6 +61,7 @@ function App() {
           <Route path="/Courses" element={ <OurCourses /> } />
           <Route path="/TourPackages" element={ <TourPackages /> } />
           <Route path="/TourPackages/:TourId" element={ <TourDetails /> } />
+          <Route path="/Book/:BookId" element={ <BookDetails /> } />
           {/* <Route path="/payment/" element={ <Payment /> } /> */ }
           <Route path="SignIn" element={ <SignInSide /> } />
           <Route path="SignUp" element={ <SignUp /> } />

@@ -7,16 +7,10 @@ import Navigation from '../../../Shared/Navigation/Navigation';
 const Services = () => {
     return (
         <div>
-            <Navigation></Navigation>
-            {/* <Typography 
-                variant="h2" 
-                sx={{ marginBottom:'10px', textAlign:'center'}}
-                        >
-                Our Services 
-            </Typography> */}
-            <PersonalFlight/>
-            <Booking></Booking>
-            <Footer></Footer>
+            <Navigation />
+            <PersonalFlight />
+            <Booking />
+            <Footer />
         </div>
     );
 };

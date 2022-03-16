@@ -7,41 +7,41 @@ import './Booking.css';
 
 
 function Booking() {
-    const [booking, setBooking] = useState([]);
-    useEffect( ()=> {
-        fetch("data.json")
-        .then(res => res.json())
-        .then((data) => setBooking(data))
-    }, [])
-   
-   
-    return (
-      <div className="booking">
-        <SearchFlights/>
+  const [booking, setBooking] = useState([]);
+  useEffect(() => {
+    fetch("https://agile-lowlands-71900.herokuapp.com/services")
+      .then(res => res.json())
+      .then((data) => setBooking(data))
+  }, [])
 
-        <Box sx={{bgcolor: "#fafafa"}}>
-          <Container className="paddingY90">
-            <Typography  
-              sx={{color:'#5e35b1', fontWeight:'700', fontSize:'20px',marginBottom:'10px'}}
-              >
-              Luxury Charters 
-            </Typography> 
-            <Typography 
-              variant="h2" 
-              sx={{ marginBottom:'50px'}}
-              >
-              Luxury Deals For You 
-            </Typography>
-            <Grid container spacing={{xs: 2, md: 3}}>
+  console.log(booking);
+  return (
+    <div className="booking">
+      <SearchFlights />
+
+      <Box sx={ { bgcolor: "#fafafa" } }>
+        <Container className="paddingY90">
+          <Typography
+            sx={ { color: '#5e35b1', fontWeight: '700', fontSize: '20px', marginBottom: '10px' } }
+          >
+            Luxury Charters
+          </Typography>
+          <Typography
+            variant="h2"
+            sx={ { marginBottom: '50px' } }
+          >
+            Luxury Deals For You
+          </Typography>
+          <Grid container spacing={ { xs: 2, md: 3 } }>
             {
-                booking.map(book => <Book book={book}></Book>)
+              booking.map(book => <Book key={ book._id } book={ book }></Book>)
             }
-            </Grid>
-          </Container>
-        </Box>
-        
-      </div>
-    );
+          </Grid>
+        </Container>
+      </Box>
+
+    </div>
+  );
 }
 
 export default Booking;
