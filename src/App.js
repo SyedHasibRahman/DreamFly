@@ -37,6 +37,7 @@ import CustomizePackages from "./components/Dashboard/Admin/CustomizePackage/Cus
 import Invoice from "./components/Dashboard/Payment/Invoice";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import MessengerLive from "./components/MessengerLive/MessengerLive";
+import TeamDetails from "./components/Pages/AboutUs/OurTeam/TeamDetails/TeamDetails";
 
 
 
@@ -49,6 +50,7 @@ function App() {
           <Route path="Home" element={<Home />} />
           <Route path="Services" element={<Services />} />
           <Route path="About" element={<AboutUs />} />
+          <Route path="TeamDetails" element={<TeamDetails />} />
           <Route path="Pilots" element={<OurPilots />} />
           <Route path="SearchFlight" element={<SearchFlights />} />
           <Route path="Contact" element={<ContactUs />} />

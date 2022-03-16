@@ -14,7 +14,7 @@ import {
   Typography,
 } from "@mui/material";
 import Footer from "../../Shared/Footer/Footer";
-import ButtonOutline from "../../StyledComponent/Buttons/ButtonOutline";
+import SecondaryButton from "../../StyledComponent/Buttons/SecondaryButton";
 
 const OurCourses = () => {
   const data = [
@@ -77,19 +77,19 @@ const OurCourses = () => {
     <Box>
       <Navigation />
       <Container>
-        <Box className="paddingY">
+        <Box className="paddingY90">
           <Box sx={{ textAlign: "center", mb: 5 }}>
-            <Typography 
-              gutterBottom 
-              sx={{color:'#5e35b1', fontWeight:'700', fontSize:'20px',marginBottom:'10px', textAlign:'center'}}
-              > 
-              Choose Course 
+            <Typography
+              gutterBottom
+              sx={{ color: '#5e35b1', fontWeight: '700', fontSize: '20px', marginBottom: '10px', textAlign: 'center' }}
+            >
+              Choose Course
             </Typography>
-            <Typography 
+            <Typography
               variant="h2"
-              sx={{textAlign:'center'}}
-              > 
-              Find The Right Course For You 
+              sx={{ textAlign: 'center' }}
+            >
+              Find The Right Course For You
             </Typography>
           </Box>
           <Grid container spacing={{ xs: 1, md: 3 }}>
@@ -117,7 +117,7 @@ const OurCourses = () => {
                       <Typography
                         gutterBottom
                         variant="h3"
-                        >
+                      >
                         {item?.title}
                       </Typography>
                       <Box
@@ -142,13 +142,13 @@ const OurCourses = () => {
                         {item?.dec}
                       </Typography>
                     </CardContent>
-                    <CardActions sx={{pb: 2}}>
-                      <ButtonOutline>
-                          Enroll Now
-                          <span className="course_arrow">
-                            <i className="fas fa-arrow-right"></i>
-                          </span>
-                      </ButtonOutline>
+                    <CardActions sx={{ pb: 2 }}>
+                      <SecondaryButton>
+                        Enroll Now
+                        <span className="course_arrow">
+                          <i className="fas fa-arrow-right"></i>
+                        </span>
+                      </SecondaryButton>
                     </CardActions>
                   </CardActionArea>
                 </Card>

@@ -13,7 +13,7 @@ import useAuth from "../../../../../../hooks/useAuth";
 
 
 const ManageUsers = () => {
-    const {handleDeleteUser} = useAuth();
+    const { handleDeleteUser } = useAuth();
     const [users, setUsers] = useState([]);
     const [searchUsers, setSearchUsers] = useState([]);
     useEffect(() => {
@@ -64,15 +64,15 @@ const ManageUsers = () => {
                     <Paper
                         component="form"
                         sx={ { p: '6px 4px', border: '1px solid #512da8', display: 'flex', alignItems: 'center', } }
-                        >
+                    >
                         <InputBase
-                            sx={{ ml: 1, flex: 1 }}
+                            sx={ { ml: 1, flex: 1 } }
                             type="text"
-                            onChange={handleSearch}
+                            onChange={ handleSearch }
                             placeholder="Search"
                         />
                         <Button>
-                            <i style={{color: '#512da8'}} className="fa-solid fa-magnifying-glass"></i>
+                            <i style={ { color: '#512da8' } } className="fa-solid fa-magnifying-glass"></i>
                         </Button>
                     </Paper>
                 </Box>
@@ -104,7 +104,9 @@ const ManageUsers = () => {
                                 <TableCell align="center">
                                     <Avatar alt="Remy Sharp" src={ user.photoURL } />
                                 </TableCell>
-                                <TableCell align="center">Comming Soon...</TableCell>
+                                <TableCell align="center">
+                                    { user.role ? 'Admin' : 'User' }
+                                </TableCell>
                                 <TableCell align="center"><Button onClick={ () => handleDelete(user?._id) }><DeleteForever style={ { color: 'red' } } /></Button></TableCell>
                             </TableRow>
                         )) }
