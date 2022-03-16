@@ -39,7 +39,7 @@ const ManageService = ({ packags, packages, setPackages }) => {
                         <Box className="tour_img">
                             <CardMedia
                                 component="img"
-                                image={ packags?.img }
+                                image={ packags?.images }
                                 alt="green iguana"
                             />
                             <Typography className="tour_price">

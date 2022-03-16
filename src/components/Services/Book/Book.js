@@ -5,7 +5,7 @@ import './Book.css';
 import BookingModal from '../BookingModal/BookingModal';
 
 const Book = (props) => {
-    const { name, img, seat, title, price, } = props.book;
+    const { name, images, seat, title, price, } = props.book;
     const [openBooking, setOpenBooking] = React.useState(false);
     const handleBookingOpen = () => setOpenBooking(true);
     const handleBookingClose = () => setOpenBooking(false);
@@ -13,7 +13,7 @@ const Book = (props) => {
       <>
         <div className='book-card'>
             <div className='book-container'>
-                <img src={ img } alt="" />
+                <img src={ images } alt="" />
                 <div>
                     <h2 className='name'> { name } </h2>
                     <h5 className='title'>{ title }</h5>
