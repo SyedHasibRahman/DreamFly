@@ -1,10 +1,12 @@
-import { Link, Typography } from '@material-ui/core';
+import {  Typography } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import { Box } from '@material-ui/system';
 import React from 'react';
+import SecondaryButton from '../../../StyledComponent/Buttons/SecondaryButton';
 import './OurTeam.css';
 
 const OurTeam = (props) => {
-  const { id, name, role, img, mobile, email, facebook, twitter, instragram, website, linkedin } = props.ourTeam;
+  const { _id, name, role, img, mobile, email, facebook, twitter, instragram, website, linkedin } = props.ourTeam;
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center', marginRight:'10px'}}>
                   <Box className="team-member" sx={{ backgroundColor: '#f5f3f1', borderRadius: '5px', width: '350px', position:'relative' }}>
@@ -27,12 +29,13 @@ const OurTeam = (props) => {
                     >
                       {role}
                     </Typography>
+                    <Link to={`/TeamDetails/${_id}`}><SecondaryButton>Details</SecondaryButton></Link>
                     <Box className="teram-social" sx={{position:'absolute', right:'-40px', top:'0'}}>
                     <Box sx={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column', height:'500px'}}>
-                    <Link href={facebook}><i class="fab fa-facebook-f"></i></Link>
-                    <Link href={twitter}><i class="fab fa-twitter"></i></Link>
-                    <Link href='#'><i class="fab fa-youtube"></i></Link>
-                    <Link href={instragram}><i class="fab fa-instagram"></i></Link>
+                    <Link to={facebook}><i class="fab fa-facebook-f"></i></Link>
+                    <Link to={twitter}><i class="fab fa-twitter"></i></Link>
+                    <Link to='#'><i class="fab fa-youtube"></i></Link>
+                    <Link to={instragram}><i class="fab fa-instagram"></i></Link>
                     </Box>
                 </Box>
               </Box>

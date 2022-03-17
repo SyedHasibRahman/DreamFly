@@ -1,6 +1,7 @@
 import { Container, Grid, InputAdornment, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import {  useParams } from 'react-router-dom';
 import Footer from '../../../../Shared/Footer/Footer';
 import Navigation from '../../../../Shared/Navigation/Navigation';
 import InputTextField from '../../../../StyledComponent/InputTextField/InputTextField';
@@ -28,6 +29,8 @@ const ContactButton = styled(Button)({
 });
 
 const TeamDetails = () => {
+    const {teamId}= useParams()
+    const [teamDetails, setTeamDetails] = useState({});
     const form = useRef();
 
     const sendEmail = (e) => {
@@ -42,6 +45,12 @@ const TeamDetails = () => {
         e.target.reset();
         alert('Success')
     };
+    useEffect(() => {
+        const url = `http://localhost:5000/teamsInfo/${teamId}`
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setTeamDetails(data))
+    }, [teamId]);
     return (
         <div>
             <Navigation></Navigation>
@@ -49,22 +58,22 @@ const TeamDetails = () => {
             <Box sx={{ mx: { sm: "50px", md: 0, lg: 0 }}}>
                 <Grid container spacing={{lg: 3, md: 3, xs: 5}}>
                     <Grid item xs={12} sm={12} md={4} lg={4}>
-                        <Box sx={{bgcolor: "#DDE6EF", borderRadius: "10px", height:"100%", width:"100%"}}>
-                            <img src="https://themeim.com/demo/flynext/assets/images/team/team-1.png" alt="" height="100%" width="100%" style={{borderRadius: "10px"}} />
+                        <Box sx={{bgcolor: "#DDE6EF", borderRadius: "10px", height:"400px", width:"100%"}}>
+                            <img src={teamDetails.img} alt="" height="100%" width="100%" style={{borderRadius: "10px", objectFit:'fill'}} />
                         </Box>
                     </Grid>
                     <Grid item xs={12} sm={12} md={8} lg={8}>
-                        <Box sx={{ bgcolor: '#F5F3F1', p: 3, borderRadius: "10px" }}>
-                            <Typography variant='h3' sx={{ mb: 1 }}>Alif Ahmed Nowshad</Typography>
+                        <Box sx={{ minHeight:'400px', bgcolor: '#F5F3F1', p: 3, borderRadius: "10px" }}>
+                            <Typography variant='h3' sx={{ mb: 1 }}>{teamDetails.name}</Typography>
                             <Typography >Managing Director</Typography>
                             <Typography sx={{ my: 3 }}>The first small jet-powered civil aircraft was the Morane-Saulnier MS.760 Paris, developed privately in the early 1950s from the MS.755 Fleuret two-seat jet trainer.</Typography>
                             <Typography sx={{ mb: 1, display : "flex", alignItems: "center" }}>
                                 <i style={{marginRight: "10px", color: "#512da8"}} className="fa-solid fa-phone"></i>
-                                +1 814 929 4269
+                                {teamDetails.mobile}
                             </Typography>
                             <Typography sx={{ mb: 1, display : "flex", alignItems: "center"}}>
                                 <i style={{marginRight: "10px", color: "#512da8"}} className="fa-solid fa-envelope"></i>
-                                contact@flynext.com
+                                {teamDetails.email}
                             </Typography>
                             <Typography sx={{ my: 1, fontSize: '20px', fontWeight: 700 }}>
                                 Follow Me
@@ -206,7 +215,7 @@ const TeamDetails = () => {
                                 With a vast array of popular private planes to choose from, travelling by private jet charter is the most efficient.
                             </Typography>
                             <Box sx={{ display: "flex", mt: 2 }}>
-                                <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
+                                <a href={teamDetails.facebook}  sx={{ mr: 1 }} className='social-icon-box'>
                                     <i className="fab fa-facebook-f social-icon"></i>
                                 </a>
                                 <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
