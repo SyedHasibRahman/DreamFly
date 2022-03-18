@@ -6,8 +6,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
 import { Link } from 'react-router-dom';
-import Particles from "react-tsparticles";
 import SecondaryButton from '../../StyledComponent/Buttons/SecondaryButton';
+
 
 
 const Banner = () => {
@@ -15,107 +15,14 @@ const Banner = () => {
     AOS.init();
   })
 
-  const particlesInit = (main) => {
-    console.log(main);
-
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-  };
-
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
 
   return (
     <Box className="paddingY90 bannar">
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={{
-          fpsLimit: 120,
-          interactivity: {
-            events: {
-              onClick: {
-                enable: true,
-                mode: "push",
-              },
-              onHover: {
-                enable: true,
-                mode: "repulse",
-              },
-              resize: true,
-            },
-            modes: {
-              bubble: {
-                distance: 50,
-                duration: 2,
-                opacity: 0.8,
-                size: 40,
-              },
-              push: {
-                quantity: 4,
-              },
-              repulse: {
-                distance: 100,
-                duration: 0.4,
-              },
-            },
-          },
-          particles: {
-            color: {
-              value: "#ffffff",
-            },
-            links: {
-              color: "#ffffff",
-              distance: 150,
-              enable: true,
-              opacity: 0.5,
-              width: 1,
-            },
-            collisions: {
-              enable: true,
-            },
-            move: {
-              direction: "none",
-              enable: true,
-              outMode: "bounce",
-              random: false,
-              speed: 1,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                area: 1200,
-              },
-              value: 60,
-            },
-            opacity: {
-              value: 0.5,
-            },
-            shape: {
-              type: "circle",
-            },
-            size: {
-              random: true,
-              value: 5,
-            },
-          },
-          detectRetina: true,
-        }}
-      />
       <Container>
         <Grid container >
-          <Grid item xs={12} md={6} order={{ md: 1 }} sx={{ display: "flex" }}>
-            {/* <Box display={{ }}>
-                <Box className=''>
-                  <Link href="#" ><i className="fab fa-facebook-f"></i></Link>
-                  <Link href="#" className='socialIcon'><i className="fab fa-twitter"></i></Link>
-                  <Link href="#" className='socialIcon'><i className="fab fa-youtube"></i></Link>
-                  <Link href="#" className='socialIcon'><i className="fab fa-instagram"></i></Link>
-                </Box>
-              </Box> */}
+          <Grid item xs={12} md={6} order={{xs: 2, sm: 2, md: 1, lg: 1 }} >
             <Box>
+            
               <Typography
                 sx={{ fontWeight: '600', fontStyle: 'italic', fontSize: '30px', fontFamily: "'Mulish', sans-serif", color: '#FFFFFF' }}
               >
@@ -133,7 +40,7 @@ const Banner = () => {
               >
                 jet&nbsp;
                 <Typewriter
-                  words={['instantly']}
+                  words={['instantly', 'quickly']}
                   loop={0}
                   cursor
                   cursorStyle='|'
@@ -155,7 +62,7 @@ const Banner = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6} order={{ md: 2 }}>
+          <Grid item xs={12} md={6} order={{ xs: 1, sm: 1, md: 2, lg: 2 }}>
             <Box sx={{}}>
               <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src="https://themeim.com/demo/flynext/assets/images/element/element-2.png" alt="" />
             </Box>
