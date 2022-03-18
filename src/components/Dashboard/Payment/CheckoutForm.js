@@ -98,9 +98,9 @@ const CheckoutForm = ({ booked }) => {
     }
     return (
         <div>
-            {!booked.payment ? <form onSubmit={handleSubmit}>
+            { !booked.payment ? <form onSubmit={ handleSubmit }>
                 <CardElement
-                    options={{
+                    options={ {
                         style: {
                             base: {
                                 fontSize: '16px',
@@ -113,22 +113,22 @@ const CheckoutForm = ({ booked }) => {
                                 color: '#9e2146',
                             },
                         },
-                    }}
+                    } }
                 />
-                {process ? <CircularProgress /> : <button type="submit" disabled={!stripe || success || booked.payment}>
-                    Pay ${price}
-                </button>}
+                { process ? <CircularProgress /> : <button type="submit" disabled={ !stripe || success || booked.payment }>
+                    Pay ${ price }
+                </button> }
             </form>
                 :
                 <h2>Already Paid</h2>
             }
             {
-                error && <p style={{ color: 'red' }}>{error}</p>
+                error && <p style={ { color: 'red' } }>{ error }</p>
             }
             {
                 success &&
                 <>
-                    <p style={{ color: 'green' }}>{success}</p>
+                    <p style={ { color: 'green' } }>{ success }</p>
                     {
                         navigate('/Dashboard/UserOrder')
                     }
