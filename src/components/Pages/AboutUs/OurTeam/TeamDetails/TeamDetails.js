@@ -8,7 +8,9 @@ import InputTextField from '../../../../StyledComponent/InputTextField/InputText
 import emailjs from '@emailjs/browser'
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
-import './TeamDetails.css'
+import './TeamDetails.css';
+import swal from 'sweetalert';
+
 
 const ContactButton = styled(Button)({
     '&': {
@@ -43,7 +45,12 @@ const TeamDetails = () => {
                 console.log(error.text);
             });
         e.target.reset();
-        alert('Success')
+        swal({
+            title: "Good job!",
+            text: "You Successfully Submitted!!",
+            icon: "success",
+            button: "Done",
+        });
     };
     useEffect(() => {
         const url = `http://localhost:5000/teamsInfo/${teamId}`
