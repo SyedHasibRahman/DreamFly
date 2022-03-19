@@ -29,7 +29,7 @@ const Footer = () => {
     const [subscribes, setSubscribes] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/subscribes')
+        fetch('https://agile-lowlands-71900.herokuapp.com/subscribes')
             .then(res => res.json())
             .then(data => setSubscribes(data))
 

@@ -13,7 +13,7 @@ const Payment = () => {
     const { bookedId } = useParams();
     const [booked, setBooked] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/myorders/${bookedId}`)
+        fetch(`https://agile-lowlands-71900.herokuapp.com/myorders/${bookedId}`)
             .then(res => res.json())
             .then(data => setBooked(data));
 

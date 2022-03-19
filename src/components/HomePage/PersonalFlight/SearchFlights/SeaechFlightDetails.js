@@ -20,7 +20,7 @@ const SeaechFlightDetails = () => {
     const { register, handleSubmit } = useForm();
 
     useEffect(() => {
-        const url = `http://localhost:5000/flight/${SeaechId}`
+        const url = `https://agile-lowlands-71900.herokuapp.com/flight/${SeaechId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setSearchFlight(data))
@@ -35,7 +35,7 @@ const SeaechFlightDetails = () => {
         data.to = SearchFlight.to;
         data.category = "SearchFlight";
         data.status = "pending"
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://agile-lowlands-71900.herokuapp.com/orders', data)
             // axios.post('https://still-bastion-57482.herokuapp.com/orders', { ...data, img, name, price, discription })
             .then(res => {
                 console.log(res)

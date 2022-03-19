@@ -8,11 +8,11 @@ const TestimonialSlider = () => {
     // render() {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://agile-lowlands-71900.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);
-    
+
     var settings = {
         dots: true,
         infinite: true,
@@ -50,24 +50,24 @@ const TestimonialSlider = () => {
 
     return (
         <div
-            style={{
+            style={ {
                 backgroundImage: `url(https://themeim.com/demo/flynext/assets/images/client/map.png)`,
                 backgroundSize: 'cover',
                 objectFit: 'contain',
                 padding: '20px 0'
-            }}
+            } }
         >
-            <Slider {...settings}>
+            <Slider { ...settings }>
                 {/* { Array.from(Array(10)).map((_, index) => (
                     <Grid item xs={ 12 } key={ index }>
                         <Testimonial />
                     </Grid>
                 )) } */}
-                {reviews.map((review, index) => (
-                    <Grid item xs={12} key={index}>
-                        <Testimonial review={review} />
+                { reviews.map((review, index) => (
+                    <Grid item xs={ 12 } key={ index }>
+                        <Testimonial review={ review } />
                     </Grid>
-                ))}
+                )) }
             </Slider >
 
 

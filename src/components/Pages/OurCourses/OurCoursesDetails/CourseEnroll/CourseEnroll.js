@@ -23,7 +23,7 @@ const CourseEnroll = () => {
     const { register, handleSubmit } = useForm();
 
     useEffect(() => {
-        const url = `http://localhost:5000/courses/${courseId}`
+        const url = `https://agile-lowlands-71900.herokuapp.com/courses/${courseId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setCourse(data))
@@ -36,7 +36,7 @@ const CourseEnroll = () => {
         data.price = course.price;
         data.duration = course.duration;
         data.status = "pending"
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://agile-lowlands-71900.herokuapp.com/orders', data)
             // axios.post('https://still-bastion-57482.herokuapp.com/orders', { ...data, img, name, price, discription })
             .then(res => {
                 console.log(res)
@@ -93,7 +93,7 @@ const CourseEnroll = () => {
                                 <form className='tourdetails' onSubmit={ handleSubmit(onSubmit) }>
                                     <InputTextField
                                         fullWidth
-                                        { ...register("Name", { required: true,}) } defaultValue={ user?.displayName || 'Full Name' } />
+                                        { ...register("Name", { required: true, }) } defaultValue={ user?.displayName || 'Full Name' } />
                                     <InputTextField
                                         fullWidth { ...register("email") } value={ user?.email || '' } />
                                     <InputTextField

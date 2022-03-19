@@ -12,7 +12,7 @@ const AddBlog = () => {
 
     const onSubmit = data => {
 
-        axios.post('http://localhost:5000/blogs', data)
+        axios.post('https://agile-lowlands-71900.herokuapp.com/blogs', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added successfully');
