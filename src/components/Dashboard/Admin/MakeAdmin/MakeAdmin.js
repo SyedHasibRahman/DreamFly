@@ -12,7 +12,7 @@ const MakeAdmin = () => {
     const onSubmit = (data) => {
         const email = data.email;
         const user = { email };
-        fetch('https://agile-lowlands-71900.herokuapp.com/users/admin', {
+        fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

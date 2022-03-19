@@ -51,8 +51,8 @@ const Banner = () => {
               </Typography>
               <Typography
                 width={{ sm: "100%", md: "80%" }}
-                sx={{ color: '#FFFFFF', fontWeight: '500', mt: 3 }}
-              >
+                sx={{ color: '#FFFFFF', fontWeight: '500', mt: 3, textAlign: {xs: "justify", sm: "left"} }}
+                >
                 Curly Airline proudly raises the bar and exceeds the standard for luxury and corporate private jet charter services. We pride ourselves on offering a professional service.
               </Typography>
               <Box sx={{ mt: 4 }}>

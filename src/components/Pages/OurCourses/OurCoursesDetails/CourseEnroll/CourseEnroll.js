@@ -2,34 +2,39 @@ import { CardMedia, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import Footer from '../../Footer/Footer';
-import Navigation from '../../Navigation/Navigation';
-import useAuth from '../../../../hooks/useAuth';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import useAuth from '../../../../../hooks/useAuth';
+import Navigation from '../../../../Shared/Navigation/Navigation';
+import InputTextField from '../../../../StyledComponent/InputTextField/InputTextField';
+import SecondaryButton from '../../../../StyledComponent/Buttons/SecondaryButton';
+import Footer from '../../../../Shared/Footer/Footer';
 
-const TourDetails = () => {
-    const { TourId } = useParams();
-    const [tourPackage, setTourPackage] = useState({});
+
+const CourseEnroll = () => {
+
+    const { courseId } = useParams();
+    const [course, setCourse] = useState({});
     const { user } = useAuth();
+    console.log(user.displayName)
     const location = useLocation();
     const navigate = useNavigate();
     const redirect_uri = location.state?.from || '/Dashboard/UserOrder';
     const { register, handleSubmit } = useForm();
 
     useEffect(() => {
-        const url = `http://localhost:5000/tourPackages/${TourId}`
+        const url = `http://localhost:5000/courses/${courseId}`
         fetch(url)
             .then(res => res.json())
-            .then(data => setTourPackage(data))
-    }, [TourId]);
+            .then(data => setCourse(data))
+    }, [courseId]);
 
     const onSubmit = data => {
         data.email = user.email;
-        data.img = tourPackage.images;
-        data.name = tourPackage.title;
-        data.price = tourPackage.price;
-        data.discription = tourPackage.discription;
+        data.img = course.images;
+        data.name = course.title;
+        data.price = course.price;
+        data.duration = course.duration;
         data.status = "pending"
         axios.post('http://localhost:5000/orders', data)
             // axios.post('https://still-bastion-57482.herokuapp.com/orders', { ...data, img, name, price, discription })
@@ -42,9 +47,8 @@ const TourDetails = () => {
             })
     };
 
-
     return (
-        <>
+        <div>
             <Navigation />
             <Box sx={ { py: 10, bgcolor: "#fafafa" } }>
                 <Container>
@@ -54,31 +58,19 @@ const TourDetails = () => {
                                 <CardMedia
                                     component="img"
                                     alt=""
-                                    image={ tourPackage.images }
+                                    image={ course.images }
                                     sx={ { borderRadius: 2, width: "100%", height: "350px" } }
                                 />
                             </Box>
-                            <Typography sx={ { fontSize: '24px', fontWeight: 600, mt: 5 } }>
-                                { tourPackage.fullTitle }
+                            <Typography sx={ { fontSize: '24px', fontWeight: 600, mt: 4 } }>
+                                { course.title }
                             </Typography>
-                            <Typography sx={ { fontSize: '18px', mt: 3 } }>
-                                Package Name: { tourPackage.title }
+                            <Typography sx={ { fontSize: '18px', mt: 1 } }>
+                                Duration: { course.hours }
                             </Typography>
-                            <Typography sx={ { fontSize: '18px', mt: 3 } }>
-                                Package Date: { tourPackage.date }
+                            <Typography sx={ { fontSize: '18px', mt: 1 } }>
+                                Course Price: { course.price }
                             </Typography>
-                            <Typography sx={ { fontSize: '18px', mt: 3 } }>
-                                Package Capacity: { tourPackage.person }
-                            </Typography>
-                            <Typography sx={ { fontSize: '18px', mt: 3 } }>
-                                Package Price: { tourPackage.price }
-                            </Typography>
-
-
-                            <Typography sx={ { fontSize: '18px', my: 4 } }>
-                                { tourPackage.description }
-                            </Typography>
-
                             {/* <Link style={ { textDecoration: "none", textAlign: "center", cursor: "pointer" } }
                                 to='/'
                             >
@@ -99,11 +91,19 @@ const TourDetails = () => {
                                 <h2 className="pt-4">Shipping and Billing</h2>
                                 {/* <input type="date" /> */ }
                                 <form className='tourdetails' onSubmit={ handleSubmit(onSubmit) }>
-                                    <input { ...register("userName", { required: true, maxLength: 200 }) } defaultValue={ user?.displayName || 'User Name' } />
-                                    <input { ...register("email") } value={ user?.email || '' } />
-                                    <input { ...register("address") } placeholder="Address" />
-                                    <input { ...register("phone") } placeholder="Phone Number" />
-                                    <input type="submit" value={ `$ ${tourPackage.price}, Confirm Booked` } />
+                                    <InputTextField
+                                        fullWidth
+                                        { ...register("Name", { required: true,}) } defaultValue={ user?.displayName || 'Full Name' } />
+                                    <InputTextField
+                                        fullWidth { ...register("email") } value={ user?.email || '' } />
+                                    <InputTextField
+                                        fullWidth { ...register("address") } placeholder="Address" />
+                                    <InputTextField
+                                        fullWidth { ...register("phone") } placeholder="Phone Number" />
+                                    <SecondaryButton
+                                        fullWidth type="submit" >
+                                        { course.price } Confirm Booked
+                                    </SecondaryButton>
                                     {/* <input type="submit" value="Confirm Order" /> */ }
                                 </form>
                             </Grid>
@@ -112,8 +112,8 @@ const TourDetails = () => {
                 </Container>
             </Box>
             <Footer />
-        </>
+        </div>
     );
 };
 
-export default TourDetails;
+export default CourseEnroll;

@@ -16,7 +16,7 @@ const Blogs = () => {
     const size = 4;
 
     useEffect(() => {
-        fetch(`https://agile-lowlands-71900.herokuapp.com/blogs?page=${page}&&size=${size}`)
+        fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setBlogs(data.blogs);
