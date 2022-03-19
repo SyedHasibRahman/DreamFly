@@ -1,7 +1,8 @@
 .whyusimg{
     background-color: white;
     border-radius: 10px;
-    color: '#19232d'
+    color: '#19232d';
+    transition: all 0.5s;
 }
 
 .whyusimg:hover{

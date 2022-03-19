@@ -9,7 +9,7 @@ const AdminRoute = ({ children, ...rest }) => {
     if (isLoading) {
         return <img src="https://jthemes.net/themes/html/medservices/files/images/loader.gif" alt="" />
     }
-    if (admin && user?.email) {
+    if (user?.email && admin) {
         return children;
     }
     return <Navigate to="/" state={ { from: location } } />;
