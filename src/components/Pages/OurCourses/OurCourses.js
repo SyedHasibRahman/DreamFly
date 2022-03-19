@@ -94,14 +94,15 @@ const OurCourses = () => {
                       </Typography>
                     </CardContent>
                     <CardActions sx={{ pb: 2 }}>
-                      <SecondaryButton>
-                        <Link to={`/Courses/${item._id}`} style={{ textDecoration: 'none', color: 'pink' }}>
-                          Book Now
-                        </Link>
-                        <span className="course_arrow">
+                    <Link 
+                      style={{textDecoration: "none", textAlign: "center", cursor: "pointer" }}
+                      to={`/Courses/${item._id}`}
+                      >
+                      <SecondaryButton size="small">
+                          Enroll Now &nbsp;
                           <i className="fas fa-arrow-right"></i>
-                        </span>
                       </SecondaryButton>
+                    </Link>
                     </CardActions>
                   </CardActionArea>
                 </Card>

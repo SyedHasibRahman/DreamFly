@@ -9,6 +9,8 @@ import { Container, Typography } from '@mui/material';
 import './Footer.css'
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import SocialIcons from '../SocialIcons/SocialIcons';
+import swal from 'sweetalert';
 
 const SubscribeButton = styled(Button)({
     fontSize: 16,
@@ -27,6 +29,7 @@ const SubscribeButton = styled(Button)({
 const Footer = () => {
 
     const [subscribes, setSubscribes] = useState([]);
+    console.log(subscribes)
     
     useEffect(() => {
         fetch('http://localhost:5000/subscribes')
@@ -49,7 +52,12 @@ const Footer = () => {
             axios.post('http://localhost:5000/subscribes', data)
                 .then(res => {
                     if (res.data.insertedId) {
-                        alert('Added successfully');
+                        swal({
+                            title: "Good job!",
+                            text: "You successfully subscribe us!",
+                            icon: "success",
+                            
+                          });
                         reset();
 
                     }
@@ -118,7 +126,7 @@ const Footer = () => {
             <Container>
                 <Grid container sx={{ px: 5, pb: 5, pt: 3, mt: 5, bgcolor: '#512da8', borderRadius: 3 }}>
                     <Grid item xs={12} sm={6} md={6} lg={2.6} sx={{ pt: 2, }}>
-                        <Typography sx={{ lineHeight: 2, fontWeight: 600, fontSize: "20px", color: 'white' }}>
+                        <Typography variant="h4" sx={{ mb: 1, color: "white" }}>
                             Get started
                         </Typography>
                         <Link className="link-td-none" to="/Home">
@@ -143,7 +151,7 @@ const Footer = () => {
                         </Link>
                     </Grid>
                     <Grid item xs={12} sm={6} md={6} lg={2.6} sx={{ pt: 2, }}>
-                        <Typography sx={{ lineHeight: 2, fontWeight: 600, fontSize: "20px", color: 'white' }}>
+                        <Typography variant="h4" sx={{ mb: 1, color: "white" }}>
                             How it works
                         </Typography>
                         <Link className="link-td-none" to="/About">
@@ -196,13 +204,13 @@ const Footer = () => {
                         <Typography sx={{ lineHeight: 2, fontWeight: 600, fontSize: "20px", color: 'white' }}>
                             Newsletter
                         </Typography>
-                        <Typography sx={{ color: 'white' }}>
-                            Dream Fly was founded in 2022 by a group of safety-focused professionals erators.
-                        </Typography>
                         <Box component='form' onSubmit={handleSubmit(onSubmit)}>
                             <Box>
-                                <input onClick={() => handleInput()} className='input-field' type="email" name="" id="" placeholder="Enter Email"
-                                    {...register("subscribe", { required: true })}
+                                <input onClick={() => handleInput()} className='input-field' 
+                                type="email"
+                                size="small" 
+                                placeholder="Enter Email"
+                                {...register("subscribe", { required: true })}
                                 />
                             </Box>
                             <Box>
@@ -216,21 +224,9 @@ const Footer = () => {
             </Container>
 
             <Container sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', }} >
-                <Box sx={{ display: "flex", mt: 4 }}>
-                    <a href="https://www.facebook.com/" sx={{ mr: 1 }} className='social-icon-box'>
-                        <i className="fab fa-facebook-f social-icon"></i>
-                    </a>
-                    <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
-                        <i className="fab fa-twitter social-icon"></i></a>
-                    <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
-                        <i className="fab fa-youtube social-icon"></i>
-                    </a>
-                    <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
-                        <i className="fab fa-instagram social-icon"></i>
-                    </a>
-                </Box>
+                <SocialIcons/>
                 <Box sx={{ mt: 4 }}>
-                    <Typography sx={{}}>
+                    <Typography sx={{fontWeight: 600}}>
                         © 2022 Dream Fly Airlines. All rights reserved.
                     </Typography>
                 </Box>
