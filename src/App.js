@@ -23,7 +23,6 @@ import UserProfile from "./components/Dashboard/User/UserProfile/UserProfile";
 import ManageUsers from "./components/Dashboard/Admin/AdminPanel/ManageUsers/ManageUsers/ManageUsers";
 import Payment from "./components/Dashboard/Payment/Payment";
 import TourDetails from "./components/Shared/TourPackages/TourDetails/TourDetails";
-import DeleteBlog from "./components/Dashboard/Admin/Blog/DeleteBlog/DeleteBlog";
 import UpdateBlog from "./components/Dashboard/Admin/Blog/UpdateBlog/UpdateBlog";
 import AddBlog from "./components/Dashboard/Admin/Blog/AddBlog/AddBlog";
 import TourPackages from "./components/Shared/TourPackages/TourPackages/TourPackages";
@@ -43,6 +42,7 @@ import BookDetails from "./components/Services/Book/BookDetails";
 import SeaechFlightDetails from "./components/HomePage/PersonalFlight/SearchFlights/SeaechFlightDetails";
 import TeamDetails from "./components/Pages/AboutUs/OurTeam/TeamDetails/TeamDetails";
 import CourseEnroll from "./components/Pages/OurCourses/OurCoursesDetails/CourseEnroll/CourseEnroll";
+import ManageBlogs from "./components/Dashboard/Admin/Blog/DeleteBlog/ManageBlogs";
 
 
 
@@ -80,10 +80,8 @@ function App() {
               </PrivateRoute>
             }
           >
-
             <Route path="/Dashboard" element={ <UserProfile /> } />
             <Route path="UserOrder" element={ <UserOrder /> } />
-            {/* <Route path="payment/" element={ <Payment /> } /> */ }
             <Route path="payment/:bookedId" element={ <Payment /> } />
             <Route path="UserCourse" element={ <UserCourse /> } />
             <Route path="CouserDetails" element={ <CouserDetails /> } />
@@ -104,7 +102,7 @@ function App() {
             <Route path="AddFlight" element={ <ManageFlight /> } />
             <Route path="ManageUsers" element={ <ManageUsers /> } />
             <Route path="UpdateBlog/:id" element={ <UpdateBlog /> } />
-            <Route path="ManageBlog" element={ <DeleteBlog /> } />
+            <Route path="ManageBlog" element={ <ManageBlogs /> } />
             <Route path="MakeAdmin" element={ <MakeAdmin /> } />
             <Route path="AddPackage" element={ <ManagePackage /> } />
             <Route path="ManageOrders" element={ <ManageOrders /> } />

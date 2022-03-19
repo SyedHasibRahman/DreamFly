@@ -3,21 +3,24 @@ import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import { Alert } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../../../hooks/useAuth';
 import './MakeAdmin.css'
 
 const MakeAdmin = () => {
     const { register, handleSubmit, reset } = useForm();
     const [success, setSuccess] = useState();
     const [error, setError] = useState(false);
+    const { token } = useAuth();
     const onSubmit = (data) => {
         const email = data.email;
         const user = { email };
         fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
-                'content-type': 'application/json',
+                'authorization': `Bearer ${token}`,
+                'content-type': 'application/json'
             },
-            body: JSON.stringify(user),
+            body: JSON.stringify(user)
         })
             .then((res) => res.json())
             .then((data) => {
