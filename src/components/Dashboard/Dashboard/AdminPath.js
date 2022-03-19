@@ -17,97 +17,97 @@ const AdminPath = () => {
             <Link className='link-td-none' to='/' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <HomeIcon 
-                            sx={{'& > :not(style)': {color: "white"}}} 
+                        <HomeIcon
+                            sx={ { '& > :not(style)': { color: "white" } } }
                         />
                     </ListItemIcon>
-                    <ListItemText primaryTypographyProps={{color: "white"}} primary="Home" />
+                    <ListItemText primaryTypographyProps={ { color: "white" } } primary="Home" />
                 </ListItem>
             </Link>
             <Link className='link-td-none' to='' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
                         <AccountBoxIcon
-                            sx={{'& > :not(style)': {color: "white"}}}
+                            sx={ { '& > :not(style)': { color: "white" } } }
                         />
                     </ListItemIcon>
-                    <ListItemText primaryTypographyProps={{color: "white"}} primary="User Profile" />
+                    <ListItemText primaryTypographyProps={ { color: "white" } } primary="User Profile" />
                 </ListItem>
             </Link>
             <Link className='link-td-none' to='/Dashboard/AddFlight' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
                         <AirplaneTicketIcon
-                            sx={{'& > :not(style)': {color: "white"}}}
+                            sx={ { '& > :not(style)': { color: "white" } } }
                         />
                     </ListItemIcon>
-                    <ListItemText primaryTypographyProps={{color: "white"}} primary="Add Flight" />
+                    <ListItemText primaryTypographyProps={ { color: "white" } } primary="Add Flight" />
                 </ListItem>
             </Link>
             <Link className='link-td-none' to='/Dashboard/ManageUsers' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <ManageAccountsIcon 
-                            sx={{'& > :not(style)': {color: "white"}}}
+                        <ManageAccountsIcon
+                            sx={ { '& > :not(style)': { color: "white" } } }
                         />
                     </ListItemIcon>
-                    <ListItemText primaryTypographyProps={{color: "white"}} primary="Manage Users" />
+                    <ListItemText primaryTypographyProps={ { color: "white" } } primary="Manage Users" />
                 </ListItem>
             </Link>
             <Link className='link-td-none' to='/Dashboard/AddPackage' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <AddBusinessIcon 
-                            sx={{'& > :not(style)': {color: "white"}}}
+                        <AddBusinessIcon
+                            sx={ { '& > :not(style)': { color: "white" } } }
                         />
                     </ListItemIcon>
-                    <ListItemText primaryTypographyProps={{color: "white"}} primary="Add Package" />
+                    <ListItemText primaryTypographyProps={ { color: "white" } } primary="Add Package" />
                 </ListItem>
             </Link>
             <Link className='link-td-none' to='/Dashboard/ManagePackages' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <Inventory2Icon 
-                            sx={{'& > :not(style)': {color: "white"}}}
+                        <Inventory2Icon
+                            sx={ { '& > :not(style)': { color: "white" } } }
                         />
                     </ListItemIcon>
-                    <ListItemText primaryTypographyProps={{color: "white"}} primary="Manage Packages" />
+                    <ListItemText primaryTypographyProps={ { color: "white" } } primary="Manage Packages" />
                 </ListItem>
             </Link>
             <Link className='link-td-none' to='/Dashboard/ManageOrders' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <ShoppingCartIcon 
-                            sx={{'& > :not(style)': {color: "white"}}}
+                        <ShoppingCartIcon
+                            sx={ { '& > :not(style)': { color: "white" } } }
                         />
                     </ListItemIcon>
-                    <ListItemText primaryTypographyProps={{color: "white"}} primary="Manage Orders" />
+                    <ListItemText primaryTypographyProps={ { color: "white" } } primary="Manage Orders" />
                 </ListItem>
             </Link>
 
             <Link className='link-td-none' to='/Dashboard/AddBlog' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <AddCommentIcon 
-                            sx={{'& > :not(style)': {color: "white"}}}
+                        <AddCommentIcon
+                            sx={ { '& > :not(style)': { color: "white" } } }
                         />
                     </ListItemIcon>
-                    <ListItemText 
-                        primaryTypographyProps={{color: "white"}} 
-                        primary="Add Blog"  
+                    <ListItemText
+                        primaryTypographyProps={ { color: "white" } }
+                        primary="Add Blog"
                     />
                 </ListItem>
             </Link>
-            <Link className='link-td-none' to='/Dashboard/ManageBlog' >
+            <Link className='link-td-none' to='/Dashboard/MakeAdmin' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>
-                        <StoreIcon 
-                            sx={{'& > :not(style)': {color: "white"}}}
+                        <StoreIcon
+                            sx={ { '& > :not(style)': { color: "white" } } }
                         />
                     </ListItemIcon>
-                    <ListItemText 
-                        primary="Manage Blog" 
-                        primaryTypographyProps={{color: "white"}}
+                    <ListItemText
+                        primary="Manage Blog"
+                        primaryTypographyProps={ { color: "white" } }
                     />
                 </ListItem>
             </Link>

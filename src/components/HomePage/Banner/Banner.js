@@ -16,22 +16,22 @@ const Banner = () => {
   })
 
   const particlesInit = (main) => {
-    console.log(main);
+    // console.log(main);
 
     // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
   };
 
   const particlesLoaded = (container) => {
-    console.log(container);
+    // console.log(container);
   };
 
   return (
     <Box className="paddingY90 bannar">
       <Particles
         id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={{
+        init={ particlesInit }
+        loaded={ particlesLoaded }
+        options={ {
           fpsLimit: 120,
           interactivity: {
             events: {
@@ -56,7 +56,7 @@ const Banner = () => {
                 quantity: 4,
               },
               repulse: {
-                distance: 100,
+                distance: 10,
                 duration: 0.4,
               },
             },
@@ -102,11 +102,11 @@ const Banner = () => {
             },
           },
           detectRetina: true,
-        }}
+        } }
       />
       <Container>
         <Grid container >
-          <Grid item xs={12} md={6} order={{ md: 1 }} sx={{ display: "flex" }}>
+          <Grid item xs={ 12 } md={ 6 } order={ { md: 1 } } sx={ { display: "flex" } }>
             {/* <Box display={{ }}>
                 <Box className=''>
                   <Link href="#" ><i className="fab fa-facebook-f"></i></Link>
@@ -117,47 +117,47 @@ const Banner = () => {
               </Box> */}
             <Box>
               <Typography
-                sx={{ fontWeight: '600', fontStyle: 'italic', fontSize: '30px', fontFamily: "'Mulish', sans-serif", color: '#FFFFFF' }}
+                sx={ { fontWeight: '600', fontStyle: 'italic', fontSize: '30px', fontFamily: "'Mulish', sans-serif", color: '#FFFFFF' } }
               >
-                <span style={{ color: '#DC1585' }}>Dream</span>Fly
+                <span style={ { color: '#DC1585' } }>Dream</span>Fly
               </Typography>
               <Typography
                 variant="h1"
-                sx={{ color: 'white', fontFamily: "'Mulish', sans-serif" }}
+                sx={ { color: 'white', fontFamily: "'Mulish', sans-serif" } }
               >
                 Book a private
               </Typography>
               <Typography
                 variant="h1"
-                sx={{ color: 'white', fontFamily: "'Mulish', sans-serif" }}
+                sx={ { color: 'white', fontFamily: "'Mulish', sans-serif" } }
               >
                 jet&nbsp;
                 <Typewriter
-                  words={['instantly']}
-                  loop={0}
+                  words={ ['instantly'] }
+                  loop={ 0 }
                   cursor
                   cursorStyle='|'
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
+                  typeSpeed={ 70 }
+                  deleteSpeed={ 50 }
+                  delaySpeed={ 1000 }
                 />
               </Typography>
               <Typography
-                width={{ sm: "100%", md: "80%" }}
-                sx={{ color: '#FFFFFF', fontWeight: '500', mt: 3 }}
+                width={ { sm: "100%", md: "80%" } }
+                sx={ { color: '#FFFFFF', fontWeight: '500', mt: 3 } }
               >
                 Curly Airline proudly raises the bar and exceeds the standard for luxury and corporate private jet charter services. We pride ourselves on offering a professional service.
               </Typography>
-              <Box sx={{ mt: 4 }}>
-                <Link style={{ textDecoration: "none" }} to="/Services">
-                  <SecondaryButton sx={{ ":hover": { borderColor: "white" }, }}>Make Your Trip</SecondaryButton>
+              <Box sx={ { mt: 4 } }>
+                <Link style={ { textDecoration: "none" } } to="/Services">
+                  <SecondaryButton sx={ { ":hover": { borderColor: "white" }, } }>Make Your Trip</SecondaryButton>
                 </Link>
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6} order={{ md: 2 }}>
-            <Box sx={{}}>
-              <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src="https://themeim.com/demo/flynext/assets/images/element/element-2.png" alt="" />
+          <Grid item xs={ 12 } md={ 6 } order={ { md: 2 } }>
+            <Box sx={ {} }>
+              <img style={ { width: '100%', height: '100%', objectFit: 'fill' } } src="https://themeim.com/demo/flynext/assets/images/element/element-2.png" alt="" />
             </Box>
           </Grid>
         </Grid>
