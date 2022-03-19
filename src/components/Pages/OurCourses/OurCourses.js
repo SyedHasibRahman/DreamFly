@@ -95,7 +95,7 @@ const OurCourses = () => {
                     </CardContent>
                     <CardActions sx={ { pb: 2 } }>
                       <SecondaryButton>
-                        <Link to={ `/Book/${_id}` } style={ { textDecoration: 'none', color: 'pink' } }>
+                        <Link to={ `/Courses/${item._id}` } style={ { textDecoration: 'none', color: 'pink' } }>
                           Book Now
                         </Link>
                         <span className="course_arrow">

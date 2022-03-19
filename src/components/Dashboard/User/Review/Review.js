@@ -23,7 +23,7 @@ const Review = () => {
         ratingInfo.users = userdata;
         ratingInfo.img = ratingInfo.img ? ratingInfo.img : user.photoURL;
         console.log(ratingInfo);
-        fetch('https://agile-lowlands-71900.herokuapp.com/reviews', {
+        fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(ratingInfo),

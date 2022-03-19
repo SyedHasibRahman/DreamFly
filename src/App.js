@@ -1,5 +1,8 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
 import "./App.css";
 import Home from "./components/HomePage/Home/Home";
 import Blogs from "./components/Pages/Blogs/Blogs/Blogs";
@@ -35,10 +38,10 @@ import UpadatePackage from "./components/Dashboard/Admin/CustomizePackage/Upadat
 import CustomizePackages from "./components/Dashboard/Admin/CustomizePackage/CustomizePackages/CustomizePackages";
 import Invoice from "./components/Dashboard/Payment/Invoice";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
-import MessengerLive from "./components/MessengerLive/MessengerLive";
 import BookDetails from "./components/Services/Book/BookDetails";
 import SeaechFlightDetails from "./components/HomePage/PersonalFlight/SearchFlights/SeaechFlightDetails";
 import TeamDetails from "./components/Pages/AboutUs/OurTeam/TeamDetails/TeamDetails";
+import CourseEnroll from "./components/Pages/OurCourses/OurCoursesDetails/CourseEnroll/CourseEnroll";
 import ManageBlogs from "./components/Dashboard/Admin/Blog/DeleteBlog/ManageBlogs";
 
 
@@ -47,6 +50,7 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
+      
         <Routes>
           <Route path="/" element={ <Home /> } />
           <Route path="Home" element={ <Home /> } />
@@ -61,6 +65,7 @@ function App() {
           <Route path="/blogs/:blogId" element={ <BlogDetails /> } />
           <Route path="/CoursesDetails" element={ <OurCoursesDetails /> } />
           <Route path="/Courses" element={ <OurCourses /> } />
+          <Route path="Courses/:courseId" element={ <CourseEnroll /> } />
           <Route path="/TourPackages" element={ <TourPackages /> } />
           <Route path="/TourPackages/:TourId" element={ <TourDetails /> } />
           <Route path="/Book/:BookId" element={ <BookDetails /> } />
@@ -105,11 +110,10 @@ function App() {
             <Route path="ManagePackages" element={ <CustomizePackages /> } />
           </Route>
           <Route path="*" element={ <NotFound /> } />
-        </Routes >
-        {/* <Footer /> */ }
-        < MessengerLive />
-      </AuthProvider >
-    </div >
+        </Routes>
+      
+      </AuthProvider>
+    </div>
   );
 }
 

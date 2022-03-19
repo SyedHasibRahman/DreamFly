@@ -13,7 +13,7 @@ const UpdateBlog = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        const url = `https://agile-lowlands-71900.herokuapp.com/blogs/${id}`;
+        const url = `http://localhost:5000/blogs/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setBlog(data));
@@ -32,7 +32,7 @@ const UpdateBlog = () => {
         updatedBlog.info = updatedInfo;
     }
     const handleUpdateBlog = e => {
-        const url = `https://agile-lowlands-71900.herokuapp.com/blogs/${id}`;
+        const url = `http://localhost:5000/blogs/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
