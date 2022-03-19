@@ -98,8 +98,19 @@ const Navigation = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography sx={{ fontWeight: 600 }}>{page}</Typography>
+                  <MenuItem key={page} sx={{py: 0, my: 0}} onClick={handleCloseNavMenu}>
+                    <Typography sx={{ fontWeight: 600, py: "0 !important", my: 0 }}>
+                      <Link
+                        style={{
+                          textDecoration: "none",
+                          color: "black",
+                          fontWeight: 400,
+                        }}
+                        to={`/${page}`}
+                        >
+                        {page}
+                      </Link>
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -130,10 +141,6 @@ const Navigation = () => {
                       textDecoration: "none",
                       color: "white",
                       fontWeight: 400,
-
-                      // background: '-webkit-linear-gradient(90deg, crimson, #673AB7)',
-                      // WebkitBackgroundClip: 'text',
-                      // WebkitTextFillColor: 'transparent'
                     }}
                     to={`/${page}`}
                   >

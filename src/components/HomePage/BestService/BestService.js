@@ -23,7 +23,9 @@ const BestService = () => {
       <Container>
         <Box sx={{mx: { sm: "50px", md: 0, lg: 0 }}}>
           <Grid container spacing={ 5 }>
-            <Grid item  xs={12} sm={12} md={6} lg={6} data-aos='zoom-in-right'>
+            <Grid item  xs={12} sm={12} md={6} lg={6} 
+              // data-aos='zoom-in-right'
+              >
               <Box
                 sx={{
                 display: "flex",
@@ -43,7 +45,9 @@ const BestService = () => {
                   <Typography sx={{ color: "white", mt: {sm: 10} }} variant="h3">
                     Business Jet Charter
                   </Typography>
-                  <Typography sx={{ color: "white", py: 2 }}>
+                  <Typography 
+                    sx={{ color: "white", py: 2, textAlign: {xs: "justify"}}}
+                    >
                     Trade crowded airports and wasted time for the ease, comfort,
                     and convenience of travel by private jet.
                   </Typography>
@@ -55,8 +59,10 @@ const BestService = () => {
                 </Box>
               </Box>    
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={6} data-aos='zoom-in-left'>
-              <Box 
+            <Grid item xs={12} sm={12} md={6} lg={6} 
+              // data-aos='zoom-in-left'
+              >
+              <Box
                 sx={{
                   display: "flex",
                   alignItems: "center",

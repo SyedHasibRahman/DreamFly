@@ -28,7 +28,7 @@ const ManageBlogs = () => {
 
         if (proceed) {
 
-            axios.delete(`https://agile-lowlands-71900.herokuapp.com/blogs/${id}`, id)
+            axios.delete(`http://localhost:5000/blogs/${id}`, id)
                 .then(res => {
                     alert('deleted successfully')
                 })

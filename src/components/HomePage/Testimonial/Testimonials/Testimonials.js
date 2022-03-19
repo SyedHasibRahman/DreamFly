@@ -9,11 +9,10 @@ const Testimonials = () => {
 
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('https://agile-lowlands-71900.herokuapp.com/reviews')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);
-    // console.log(reviews)
 
     useEffect(() => {
         AOS.init({

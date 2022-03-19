@@ -2,6 +2,7 @@ import { Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import CountUp from 'react-countup';
+import VisibilitySensor from 'react-visibility-sensor';
 
 const CounterArea = () => {
   return (
@@ -20,8 +21,14 @@ const CounterArea = () => {
                       variant="h2"
                       gutterBottom
                       sx={{ color: '#FFFFFF', margin: '0', textAlign: 'center' }}
-                    >
-                      <CountUp delay={1} end={95} duration={3} />
+                      >
+                      <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                        {({ isVisible }) => (
+                          <div>
+                            {isVisible ? <CountUp duration={4} end={95} /> : 95}
+                          </div>
+                        )}
+                      </VisibilitySensor>
                     </Typography>
                     <Typography
                       variant="h4"
@@ -41,7 +48,13 @@ const CounterArea = () => {
                       gutterBottom
                       sx={{ color: '#FFFFFF', margin: '0', textAlign: 'center' }}
                     >
-                      <CountUp delay={1} end={68} duration={3} />
+                      <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                        {({ isVisible }) => (
+                          <div>
+                            {isVisible ? <CountUp duration={4} end={68} /> : 68}
+                          </div>
+                        )}
+                      </VisibilitySensor>
                     </Typography>
                     <Typography
                       variant="h4"
@@ -61,7 +74,13 @@ const CounterArea = () => {
                       gutterBottom
                       sx={{ color: '#FFFFFF', margin: '0', textAlign: 'center' }}
                     >
-                      <CountUp delay={1} end={290} duration={3} />
+                      <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                        {({ isVisible }) => (
+                          <div>
+                            {isVisible ? <CountUp duration={4} end={290} /> : 290}
+                          </div>
+                        )}
+                      </VisibilitySensor>
                     </Typography>
                     <Typography
                       variant="h4"
@@ -79,7 +98,13 @@ const CounterArea = () => {
                       gutterBottom
                       sx={{ color: '#FFFFFF', margin: '0', textAlign: 'center' }}
                     >
-                      <CountUp delay={1} end={195} duration={3} />
+                      <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                        {({ isVisible }) => (
+                          <div>
+                            {isVisible ? <CountUp duration={4} end={195} /> : 195}
+                          </div>
+                        )}
+                      </VisibilitySensor>
                     </Typography>
                     <Typography
                       variant="h4"
