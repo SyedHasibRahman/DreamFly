@@ -82,7 +82,7 @@ const About = () => {
                 Charter an entire jet, or offer the seats you don’t need through our app a need for full or even fractional jet ownership
               </Typography>
             </Box>
-            <Link to=''
+            <Link to='/Contact'
               style={{ fontWeight: '800', textDecoration: 'none' }}
             >
               <ButtonOutline>

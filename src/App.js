@@ -52,7 +52,7 @@ function App() {
           <Route path="Home" element={ <Home /> } />
           <Route path="Services" element={ <Services /> } />
           <Route path="About" element={ <AboutUs /> } />
-          <Route path="TeamDetails" element={ <TeamDetails /> } />
+          <Route path="TeamDetails/:teamId" element={ <TeamDetails /> } />
           <Route path="Pilots" element={ <OurPilots /> } />
           <Route path="SeaechFlightDetails/:SeaechId" element={ <SeaechFlightDetails /> } />
           <Route path="SearchFlight" element={ <SearchFlights /> } />

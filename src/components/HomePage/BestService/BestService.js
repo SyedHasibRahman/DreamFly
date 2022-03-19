@@ -1,6 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
-import overview1 from "../../../img/overview-1.png";
-import overview2 from "../../../img/overview-2.png";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import "./BestService.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css'
@@ -21,61 +19,89 @@ const BestService = () => {
   })
 
   return (
-    <Box component="div" className="bestService" sx={{ padding: "100px 0" }}>
+    <Box className="paddingY90">
       <Container>
-        <Box className="jatService">
-          <Box component="div" className="card" xs={12} sm={12} md={7} lg={7} data-aos='zoom-in-right'>
-            <Box className="card_img">
-              <img src={overview1} alt="" />
-            </Box>
-            <Box className="card_content">
-              <Typography sx={{ color: "white" }} variant="h3">
-                Business Jet Charter
-              </Typography>
-              <Typography sx={{ color: "white" }}>
-                Trade crowded airports and wasted time for the ease, comfort,
-                and convenience of travel by private jet.
-              </Typography>
-              <Link style={{ textDecoration: "none" }} to="/Services">
-                <SecondaryButton>
-                  Book Now
-                </SecondaryButton>
-              </Link>
-            </Box>
-          </Box>
-          <Box component="div" className="card" data-aos='zoom-in-left'>
-            <Box className="card_img">
-              <img src={overview2} alt="" />
-            </Box>
-            <Box className="card_content" xs={12} sm={12} md={6} lg={6}>
-              <Typography sx={{ color: "white" }} variant="stong">
-                #1 Private Jet Charter
-              </Typography>
-              <Typography
-                variant="h3"
+        <Box sx={{mx: { sm: "50px", md: 0, lg: 0 }}}>
+          <Grid container spacing={ 5 }>
+            <Grid item  xs={12} sm={12} md={6} lg={6} data-aos='zoom-in-right'>
+              <Box
                 sx={{
-                  my: "8px",
-                  pb: "20px",
-                  color: "white",
-                  borderBottom: "1px dashed rgba(255, 255, 255, 0.3)",
+                display: "flex",
+                alignItems: "center",
+                backgroundImage: `url("https://themeim.com/demo/flynext/assets/images/overview/overview-1.png"), linear-gradient(360deg, #5e35b1 50%,transparent 100%)`,
+                backgroundBlendMode: 'overlay',
+                objectFit: 'cover',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                color: '#fff',
+                borderRadius: "10px",
+                padding: {xs: 3, sm: 3, md: 4, lg: 5}, 
+                minHeight: "350px"
                 }}
-              >
-                Find the Best Service For You
-              </Typography>
-              <Typography sx={{ color: "white" }} variant="h6">
-                01 Private Jet Charter
-              </Typography>
-              <Typography sx={{ color: "white" }} variant="h6">
-                02 Business Jet Charter
-              </Typography>
-              <Typography sx={{ color: "white" }} variant="h6">
-                03 Private Helicopter
-              </Typography>
-              <Typography sx={{ color: "white" }} variant="h6">
-                04 Air Ambulance
-              </Typography>
-            </Box>
-          </Box>
+                >
+                <Box>
+                  <Typography sx={{ color: "white", mt: {sm: 10} }} variant="h3">
+                    Business Jet Charter
+                  </Typography>
+                  <Typography sx={{ color: "white", py: 2 }}>
+                    Trade crowded airports and wasted time for the ease, comfort,
+                    and convenience of travel by private jet.
+                  </Typography>
+                  <Link style={{ textDecoration: "none" }} to="/Services">
+                    <SecondaryButton>
+                      Book Now
+                    </SecondaryButton>
+                  </Link>
+                </Box>
+              </Box>    
+            </Grid>
+            <Grid item xs={12} sm={12} md={6} lg={6} data-aos='zoom-in-left'>
+              <Box 
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  backgroundImage: `url("https://themeim.com/demo/flynext/assets/images/overview/overview-2.png"), linear-gradient(360deg, #5e35b1 50%,transparent 100%)`,
+                  backgroundBlendMode: 'overlay',
+                  objectFit: 'cover',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  color: '#fff',
+                  borderRadius: "10px",
+                  padding: {xs: 3, sm: 3, md: 4, lg: 5} ,
+                  minHeight: "350px"
+                  }}
+                >
+                <Box>
+                  <Typography sx={{ color: "white" }} variant="stong">
+                    #1 Private Jet Charter
+                  </Typography>
+                  <Typography
+                    variant="h3"
+                    sx={{
+                      my: "8px",
+                      pb: "25px",
+                      color: "white",
+                      borderBottom: "1px dashed rgba(255, 245, 245, .8)",
+                    }}
+                    >
+                    Find the Best Service For You
+                  </Typography>
+                  <Typography className="privateItem">
+                    01 Private Jet Charter
+                  </Typography>
+                  <Typography className="privateItem">
+                    02 Business Jet Charter
+                  </Typography>
+                  <Typography className="privateItem">
+                    03 Private Helicopter
+                  </Typography>
+                  <Typography className="privateItem">
+                    04 Air Ambulance
+                  </Typography>
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
         </Box>
       </Container>
     </Box>

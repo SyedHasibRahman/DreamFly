@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Testimonial from "../Testimonial/Testimonial";
 
@@ -50,24 +50,24 @@ const TestimonialSlider = () => {
 
     return (
         <div
-            style={ {
+            style={{
                 backgroundImage: `url(https://themeim.com/demo/flynext/assets/images/client/map.png)`,
                 backgroundSize: 'cover',
                 objectFit: 'contain',
                 padding: '20px 0'
-            } }
+            }}
         >
-            <Slider { ...settings }>
+            <Slider {...settings}>
                 {/* { Array.from(Array(10)).map((_, index) => (
                     <Grid item xs={ 12 } key={ index }>
                         <Testimonial />
                     </Grid>
                 )) } */}
-                { reviews.map((review, index) => (
-                    <Grid item xs={ 12 } key={ index }>
-                        <Testimonial review={ review } />
+                {reviews.map((review, index) => (
+                    <Grid item xs={12} key={index}>
+                        <Testimonial review={review} />
                     </Grid>
-                )) }
+                ))}
             </Slider >
 
 
