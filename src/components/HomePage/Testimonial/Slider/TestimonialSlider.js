@@ -12,7 +12,7 @@ const TestimonialSlider = () => {
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);
-    console.log(reviews)
+    // console.log(reviews)
     var settings = {
         dots: true,
         infinite: true,
