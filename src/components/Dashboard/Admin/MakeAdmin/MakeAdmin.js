@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     const onSubmit = (data) => {
         const email = data.email;
         const user = { email };
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://agile-lowlands-71900.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,

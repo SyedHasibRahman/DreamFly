@@ -22,7 +22,7 @@ const UserProfile = () => {
         // console.log(updateData);
         const details = updateData.details;
         const name = updateData.name
-        fetch(`https://salty-beach-45243.herokuapp.com/users/${user._id}`, {
+        fetch(`https://agile-lowlands-71900.herokuapp.com/users/${user._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

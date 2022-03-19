@@ -8,7 +8,7 @@ import OurTeam from '../OurTeam/OurTeam';
 const OurTeams = () => {
   const [ourTeams, setOurTeams] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/teamsInfo')
+    fetch('https://agile-lowlands-71900.herokuapp.com/teamsInfo')
       .then(res => res.json())
       .then(data => setOurTeams(data))
   }, []);
@@ -52,20 +52,20 @@ const OurTeams = () => {
         <Box>
           <Typography
             gutterBottom
-            sx={{ color: '#5e35b1', fontWeight: '700', fontSize: '20px', marginBottom: '10px', textAlign: "center" }}
+            sx={ { color: '#5e35b1', fontWeight: '700', fontSize: '20px', marginBottom: '10px', textAlign: "center" } }
           >
             Our team
           </Typography>
-          <Typography sx={{ textAlign: "center" }} variant="h2">
+          <Typography sx={ { textAlign: "center" } } variant="h2">
             Meet Our Team Members
           </Typography>
         </Box>
-        <Box sx={{ marginTop: '50px' }}>
-          <Slider {...settings}>
+        <Box sx={ { marginTop: '50px' } }>
+          <Slider { ...settings }>
             {
               ourTeams.map(ourTeam => <OurTeam
-                key={ourTeam._id}
-                ourTeam={ourTeam}
+                key={ ourTeam._id }
+                ourTeam={ ourTeam }
               ></OurTeam>)
             }
           </Slider>
