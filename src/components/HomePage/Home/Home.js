@@ -10,6 +10,8 @@ import PersonalFlight from "../PersonalFlight/PersonalFlight/PersonalFlight";
 import TourPackages from "../../Shared/TourPackages/TourPackages/TourPackages";
 import CounterArea from "../../Pages/AboutUs/CounterArea/CounterArea";
 import { Box, Container } from "@mui/material";
+import Chart from "../../Dashboard/Admin/Chart/Chart";
+
 
 
 
@@ -30,6 +32,7 @@ const Home = () => {
       </Box>
       <TourPackages />
       <Testimonials />
+      <Chart></Chart>
       <Footer />
     </>
   );
