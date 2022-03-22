@@ -42,7 +42,7 @@ export default function SignInSide() {
         const newLoginData = { ...loginData };
         newLoginData[field] = value;
         setLoginData(newLoginData);
-        console.log(newLoginData);
+        // console.log(newLoginData);
     }
 
     const handleSignInSubmit = (event) => {

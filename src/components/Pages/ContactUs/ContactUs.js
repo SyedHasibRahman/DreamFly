@@ -1,4 +1,4 @@
-import { Container, Grid, Typography, Link, InputAdornment } from '@mui/material';
+import { Container, Grid, Typography, InputAdornment } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser'
@@ -9,6 +9,7 @@ import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../../Shared/Footer/Footer';
 import InputTextField from '../../StyledComponent/InputTextField/InputTextField';
 import swal from 'sweetalert';
+import SocialIcons from '../../Shared/SocialIcons/SocialIcons';
 
 
 
@@ -75,7 +76,7 @@ const ContactUs = () => {
                         </Typography>
                         <Box sx={{ py: 3, display: "flex", borderBottom: "1px dashed #b39ddb" }}>
                             <Box className="contact-icon-box">
-                                <Link href="#"><i className="fa-solid fa-location-dot contact-icon"></i></Link>
+                                <i className="fa-solid fa-location-dot contact-icon"></i>
                             </Box>
                             <Box sx={{ ml: 3 }}>
                                 <Typography variant='h3'>
@@ -91,7 +92,7 @@ const ContactUs = () => {
                         </Box>
                         <Box sx={{ py: 3, display: "flex", borderBottom: "1px dashed #b39ddb" }}>
                             <Box className="contact-icon-box">
-                                <Link href="#"><Link href="#" ><i className="fa-solid fa-phone contact-icon"></i></Link></Link>
+                                <i className="fa-solid fa-phone contact-icon"></i>
                             </Box>
                             <Box sx={{ ml: 3 }}>
                                 <Typography variant='h3'>
@@ -107,7 +108,7 @@ const ContactUs = () => {
                         </Box>
                         <Box sx={{ pt: 3, display: "flex", }}>
                             <Box className="contact-icon-box">
-                                <Link href="#"><i className="fa-solid fa-envelope contact-icon"></i></Link>
+                                <i className="fa-solid fa-envelope contact-icon"></i>
                             </Box>
                             <Box sx={{ ml: 3 }}>
                                 <Typography variant='h3'>
@@ -144,19 +145,7 @@ const ContactUs = () => {
                                 <Typography sx={{ fontSize: "18px", mt: 2, mb: 3 }}>
                                     With a vast array of popular private planes to choose from, travelling by private jet charter is the most efficient.
                                 </Typography>
-                                <Box sx={{ display: "flex", mt: 2 }}>
-                                    <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
-                                        <i className="fab fa-facebook-f social-icon"></i>
-                                    </a>
-                                    <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
-                                        <i className="fab fa-twitter social-icon"></i></a>
-                                    <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
-                                        <i className="fab fa-youtube social-icon"></i>
-                                    </a>
-                                    <a href="#a" sx={{ mr: 1 }} className='social-icon-box'>
-                                        <i className="fab fa-instagram social-icon"></i>
-                                    </a>
-                                </Box>
+                                <SocialIcons/>
                             </Grid>
 
                             {/* Contact From  */}
@@ -238,7 +227,6 @@ const ContactUs = () => {
                                         <Grid item xs={12} md={12}>
                                             <InputTextField
                                                 label="Massage"
-                                                id="custom-css-outlined-input"
                                                 fullWidth
                                                 type="text"
                                                 rows={5}

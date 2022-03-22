@@ -11,6 +11,7 @@ const SearchFlights = () => {
     // console.log(flights);
 
     const booking = useSelector((state) => state.flightSlice.filterDate);
+    
     const dateAndPass = useSelector((state) => state.flightSlice.dateAndPass);
 
     const from = [...new Map((booking.map((data) => data.from)).map(item => [item.id, item])).values()];
@@ -88,7 +89,7 @@ const SearchFlights = () => {
                     {
                         booking.map((data) => {
 
-                            const { departure, arrival, fare, flightName, img, _id } = data;
+                            const { departure, arrival, flightName, price, img, _id } = data;
 
                             return (
 
@@ -117,7 +118,7 @@ const SearchFlights = () => {
                                     <Grid item
                                         sm={ 2 } sx={ { textAlign: "center", fontWeight: 700, fontSize: "20px" } }
                                     >
-                                        { fare }</Grid>
+                                        { price }</Grid>
                                     <Grid item sm={ 2 }
                                         sx={ { textAlign: "center", } }>
                                         <Button>

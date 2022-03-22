@@ -9,7 +9,7 @@ const CustomizePackage = ({ packags, packages, setPackages }) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `https://agile-lowlands-71900.herokuapp.com/tourPackages/${id}`;
+            const url = `http://localhost:5000/tourPackages/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -25,7 +25,7 @@ const PersonalFlight = () => {
 
   useEffect(() => {
     // fetch("https://dashboard.heroku.com/flight")
-    fetch("https://agile-lowlands-71900.herokuapp.com/flight")
+    fetch("http://localhost:5000/flight")
       .then((res) => res.json())
       .then((data) => setFlights(data));
   }, []);

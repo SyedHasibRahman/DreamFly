@@ -70,5 +70,3 @@ const ServiceCards = () => {
 };
 
 export default ServiceCards;
-
-// Array.from(Array(6)).map((_, index) 
