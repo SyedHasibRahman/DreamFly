@@ -96,7 +96,7 @@ const OurCourses = () => {
                     <CardActions sx={{ pb: 2 }}>
                       <SecondaryButton>
                         <Link to={`/Book/${_id}`} style={{ textDecoration: 'none', color: 'pink' }}>
-                          Book Now
+                          Enroll Now
                         </Link>
                         <span className="course_arrow">
                           <i className="fas fa-arrow-right"></i>
