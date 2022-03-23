@@ -60,8 +60,7 @@ const PersonalFlight = () => {
     };
     if (from && to) {
       axios
-        // .post("http://localhost:5000/filter", data)
-        .post("http://localhost:5000/filter", data)
+        .post("https://agile-lowlands-71900.herokuapp.com/filter", data)
         .then((res) => dispatch(addFilterData(res.data)));
     }
     dispatch(
