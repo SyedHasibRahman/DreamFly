@@ -11,7 +11,7 @@ const BlogSideber = ({ handleSearch }) => {
         
         fetch('http://localhost:5000/blogs')
             .then(res => res.json())
-            .then(data => setRecentBlogs(data.blogs))
+            .then(data => setRecentBlogs(data.blogs.reverse()))
     }, []);
 
     return (

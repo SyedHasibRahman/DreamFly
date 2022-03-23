@@ -4,18 +4,27 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import PrimaryButton from '../../../../StyledComponent/Buttons/PrimaryButton';
 import InputTextField from '../../../../StyledComponent/InputTextField/InputTextField';
+import swal from 'sweetalert';
 
 
 const AddBlog = () => {
 
     const { register, handleSubmit, reset } = useForm();
+    const date = new Date()
+    
+    const onSubmit = (date) => {
+        const datas = {date }
+        console.log(datas)
 
-    const onSubmit = data => {
-
-        axios.post('http://localhost:5000/blogs', data)
+        axios.post('http://localhost:5000/blogs', date)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('Added successfully');
+                    swal({
+                        title: "Good job!",
+                        text: "You successfully publish your blog",
+                        icon: "success",
+                        
+                      });
                     reset();
                 }
             })
@@ -36,15 +45,6 @@ const AddBlog = () => {
             >
                 <Grid item xs={ 12 } md={ 6 }>
                     <InputTextField
-                        label="Date"
-                        fullWidth
-                        type="text"
-                        sx={ { bgcolor: "white" } }
-                        { ...register("date", { required: true }) }
-                    />
-                </Grid>
-                <Grid item xs={ 12 } md={ 6 }>
-                    <InputTextField
                         label="Bannar Image Url"
                         fullWidth
                         type="text"
@@ -54,38 +54,11 @@ const AddBlog = () => {
                 </Grid>
                 <Grid item xs={ 12 } md={ 6 }>
                     <InputTextField
-                        label="Image Url"
-                        fullWidth
-                        type="text"
-                        sx={ { bgcolor: "white" } }
-                        { ...register("images2", { required: true }) }
-                    />
-                </Grid>
-                <Grid item xs={ 12 } md={ 6 }>
-                    <InputTextField
-                        label="Image Url"
-                        fullWidth
-                        type="text"
-                        sx={ { bgcolor: "white" } }
-                        { ...register("images3", { required: true }) }
-                    />
-                </Grid>
-                <Grid item xs={ 12 } md={ 6 }>
-                    <InputTextField
-                        label="Blog Short Title"
+                        label="Blog Title"
                         fullWidth
                         type="text"
                         sx={ { bgcolor: "white" } }
                         { ...register("title", { required: true }) }
-                    />
-                </Grid>
-                <Grid item xs={ 12 } md={ 6 }>
-                    <InputTextField
-                        label="Blog Full Title"
-                        fullWidth
-                        type="text"
-                        sx={ { bgcolor: "white" } }
-                        { ...register("fullTitle", { required: true }) }
                     />
                 </Grid>
                 <Grid item xs={ 12 } md={ 6 }>
@@ -110,24 +83,6 @@ const AddBlog = () => {
                 </Grid>
                 <Grid item xs={ 12 } md={ 6 }>
                     <InputTextField
-                        label="Your Inspirational Quote"
-                        fullWidth
-                        type="text"
-                        sx={ { bgcolor: "white" } }
-                        { ...register("quote", { required: true }) }
-                    />
-                </Grid>
-                <Grid item xs={ 12 } md={ 6 }>
-                    <InputTextField
-                        label="Quote Name"
-                        fullWidth
-                        type="text"
-                        sx={ { bgcolor: "white" } }
-                        { ...register("quoteName", { required: true }) }
-                    />
-                </Grid>
-                <Grid item xs={ 12 } md={ 6 }>
-                    <InputTextField
                         label="Tag 1"
                         fullWidth
                         type="text"
@@ -146,7 +101,6 @@ const AddBlog = () => {
                 </Grid>
                 <PrimaryButton type="submit">submit</PrimaryButton>
             </Grid>
-
         </Box>
     );
 };
