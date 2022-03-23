@@ -12,7 +12,6 @@ import CounterArea from "../../Pages/AboutUs/CounterArea/CounterArea";
 import { Box, Container } from "@mui/material";
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 
-// home
 
 const Home = () => {
 
