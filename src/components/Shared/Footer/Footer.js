@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import logo from '../../../images/Logo.png';
@@ -28,15 +28,14 @@ const SubscribeButton = styled(Button)({
 
 const Footer = () => {
 
-    const [subscribes, setSubscribes] = useState([]);
-    console.log(subscribes)
+    // const [subscribes, setSubscribes] = useState([]);
     
-    useEffect(() => {
-        fetch('http://localhost:5000/subscribes')
-            .then(res => res.json())
-            .then(data => setSubscribes(data))
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/subscribes')
+    //         .then(res => res.json())
+    //         .then(data => setSubscribes(data))
 
-    }, [])
+    // }, [])
 
     const handleInput = event => {
         const searchText = event.target.value;
