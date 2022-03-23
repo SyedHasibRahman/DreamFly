@@ -24,7 +24,7 @@ const RecentBlog = ({recentBlog}) => {
                     {date}
                 </Typography>
                 <Typography sx={{fontSize: "16px", fontWeight: 600}}>
-                    {title.slice(0,47)}
+                    {title || ""}
                 </Typography>
             </Box>
         </Box>

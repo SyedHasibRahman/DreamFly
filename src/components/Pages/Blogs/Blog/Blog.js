@@ -11,7 +11,7 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 const Blog = ({blog}) => {
 
-    const {image1, date, comment, title, info, _id} = blog;
+    const {image1, date, title, info, _id} = blog;
     
     return (
         <Card sx={{}}>
@@ -24,7 +24,7 @@ const Blog = ({blog}) => {
             />
             <CardContent>
                 <Typography sx={{fontSize: "1rem", mt: "-10px", color: "text.secondary"}}>
-                    {date}   <span>|</span>  {comment} Comment
+                    {date}
                 </Typography>
                 <Typography sx={{fontSize: "1.3rem", py: 2, fontWeight: 600}}>
                     {title}

@@ -10,13 +10,20 @@ import swal from 'sweetalert';
 const AddBlog = () => {
 
     const { register, handleSubmit, reset } = useForm();
-    const date = new Date()
+    const date = new Date().toLocaleString('en-US', {
+        weekday: 'short', // long, short, narrow
+        day: 'numeric', // numeric, 2-digit
+        month: 'long', // numeric, 2-digit, long, short, narrow
+        year: 'numeric', // numeric, 2-digit
+        // hour: 'numeric', // numeric, 2-digit
+        // minute: 'numeric', // numeric, 2-digit
+        // second: 'numeric', // numeric, 2-digit
+    });
+    console.log(date)
     
-    const onSubmit = (date) => {
-        const datas = {date }
-        console.log(datas)
+    const onSubmit = (data) => {
 
-        axios.post('http://localhost:5000/blogs', date)
+        axios.post('http://localhost:5000/blogs', data)
             .then(res => {
                 if (res.data.insertedId) {
                     swal({
@@ -43,6 +50,16 @@ const AddBlog = () => {
                 onSubmit={ handleSubmit(onSubmit) }
                 sx={ {} }
             >
+                <Grid item xs={ 12 } md={ 6 }>
+                    <InputTextField
+                        label="Date"
+                        defaultValue={date}
+                        fullWidth
+                        type="text"
+                        sx={ { bgcolor: "white" } }
+                        { ...register("date", { required: true }) }
+                    />
+                </Grid>
                 <Grid item xs={ 12 } md={ 6 }>
                     <InputTextField
                         label="Bannar Image Url"
