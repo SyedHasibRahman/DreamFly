@@ -1,5 +1,8 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
 import "./App.css";
 import Home from "./components/HomePage/Home/Home";
 import Blogs from "./components/Pages/Blogs/Blogs/Blogs";
@@ -20,7 +23,6 @@ import UserProfile from "./components/Dashboard/User/UserProfile/UserProfile";
 import ManageUsers from "./components/Dashboard/Admin/AdminPanel/ManageUsers/ManageUsers/ManageUsers";
 import Payment from "./components/Dashboard/Payment/Payment";
 import TourDetails from "./components/Shared/TourPackages/TourDetails/TourDetails";
-import DeleteBlog from "./components/Dashboard/Admin/Blog/DeleteBlog/DeleteBlog";
 import UpdateBlog from "./components/Dashboard/Admin/Blog/UpdateBlog/UpdateBlog";
 import AddBlog from "./components/Dashboard/Admin/Blog/AddBlog/AddBlog";
 import TourPackages from "./components/Shared/TourPackages/TourPackages/TourPackages";
@@ -36,10 +38,11 @@ import UpadatePackage from "./components/Dashboard/Admin/CustomizePackage/Upadat
 import CustomizePackages from "./components/Dashboard/Admin/CustomizePackage/CustomizePackages/CustomizePackages";
 import Invoice from "./components/Dashboard/Payment/Invoice";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
-import MessengerLive from "./components/MessengerLive/MessengerLive";
 import BookDetails from "./components/Services/Book/BookDetails";
 import SeaechFlightDetails from "./components/HomePage/PersonalFlight/SearchFlights/SeaechFlightDetails";
 import TeamDetails from "./components/Pages/AboutUs/OurTeam/TeamDetails/TeamDetails";
+import CourseEnroll from "./components/Pages/OurCourses/OurCoursesDetails/CourseEnroll/CourseEnroll";
+import ManageBlogs from "./components/Dashboard/Admin/Blog/DeleteBlog/ManageBlogs";
 import PaymentCard from "./components/Dashboard/Payment/PaymentCard/PaymentCard";
 
 
@@ -48,13 +51,14 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
+      
         <Routes>
           <Route path="/" element={ <Home /> } />
           <Route path="Home" element={ <Home /> } />
           <Route path="Services" element={ <Services /> } />
           <Route path="PaymentCard" element={ <PaymentCard/> } />
           <Route path="About" element={ <AboutUs /> } />
-          <Route path="TeamDetails" element={ <TeamDetails /> } />
+          <Route path="TeamDetails/:teamId" element={ <TeamDetails /> } />
           <Route path="Pilots" element={ <OurPilots /> } />
           <Route path="SeaechFlightDetails/:SeaechId" element={ <SeaechFlightDetails /> } />
           <Route path="SearchFlight" element={ <SearchFlights /> } />
@@ -63,6 +67,7 @@ function App() {
           <Route path="/blogs/:blogId" element={ <BlogDetails /> } />
           <Route path="/CoursesDetails" element={ <OurCoursesDetails /> } />
           <Route path="/Courses" element={ <OurCourses /> } />
+          <Route path="Courses/:courseId" element={ <CourseEnroll /> } />
           <Route path="/TourPackages" element={ <TourPackages /> } />
           <Route path="/TourPackages/:TourId" element={ <TourDetails /> } />
           <Route path="/Book/:BookId" element={ <BookDetails /> } />
@@ -77,10 +82,8 @@ function App() {
               </PrivateRoute>
             }
           >
-
             <Route path="/Dashboard" element={ <UserProfile /> } />
             <Route path="UserOrder" element={ <UserOrder /> } />
-            {/* <Route path="payment/" element={ <Payment /> } /> */ }
             <Route path="payment/:bookedId" element={ <Payment /> } />
             <Route path="UserCourse" element={ <UserCourse /> } />
             <Route path="CouserDetails" element={ <CouserDetails /> } />
@@ -101,7 +104,7 @@ function App() {
             <Route path="AddFlight" element={ <ManageFlight /> } />
             <Route path="ManageUsers" element={ <ManageUsers /> } />
             <Route path="UpdateBlog/:id" element={ <UpdateBlog /> } />
-            <Route path="ManageBlog" element={ <DeleteBlog /> } />
+            <Route path="ManageBlog" element={ <ManageBlogs /> } />
             <Route path="MakeAdmin" element={ <MakeAdmin /> } />
             <Route path="AddPackage" element={ <ManagePackage /> } />
             <Route path="ManageOrders" element={ <ManageOrders /> } />
@@ -109,11 +112,10 @@ function App() {
             <Route path="ManagePackages" element={ <CustomizePackages /> } />
           </Route>
           <Route path="*" element={ <NotFound /> } />
-        </Routes >
-        {/* <Footer /> */ }
-        < MessengerLive />
-      </AuthProvider >
-    </div >
+        </Routes>
+      
+      </AuthProvider>
+    </div>
   );
 }
 

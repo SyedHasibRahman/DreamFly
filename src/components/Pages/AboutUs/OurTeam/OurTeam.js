@@ -1,212 +1,57 @@
-import { Container, Typography } from '@mui/material';
-import { Box } from '@mui/system';
-import React, { Component } from "react";
-import Slider from "react-slick";
+import { Typography } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { Box } from '@material-ui/system';
+import React from 'react';
+import SecondaryButton from '../../../StyledComponent/Buttons/SecondaryButton';
+import './OurTeam.css';
 
-export default class OurTeam extends Component {
-  render() {
-    var settings = {
-      dots: true,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      initialSlide: 0,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            initialSlide: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
-    };
-    return (
-      <Box className="paddingY90" sx={{ backgroundColor: '#f5f3f1' }}>
-        <Container>
-          <Box>
-            <Typography
-              gutterBottom
-              sx={{ color: '#5e35b1', fontWeight: '700', fontSize: '20px', marginBottom: '10px', textAlign: "center" }}
-            >
-              Our team
-            </Typography>
-            <Typography sx={{ textAlign: "center" }} variant="h2">
-              Meet Our Team Members
-            </Typography>
+const OurTeam = (props) => {
+  const { _id, name, role, img, facebook, twitter, instragram, linkedin } = props.ourTeam;
+  return (
+    <Box sx={{ display: 'flex', justifyContent: 'center', marginRight: '10px' }}>
+      <Box className="team-member" sx={{ backgroundColor: '#f5f3f1', borderRadius: '5px', width: '350px', position: 'relative' }}>
+        <Box
+          sx={{ display: 'flex', justifyContent: 'center', borderRadius: '5px 5px 5px 5px' }}
+        >
+          <Box
+            sx={{ width: '100%', height: '370px', backgroundColor: '#DDE6EF', borderRadius: '5px 5px 0 0 ' }}
+          >
+            <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src={img} alt="" />
           </Box>
-          <Box sx={{ marginTop: '50px' }}>
-
-            <Slider {...settings}>
-
-              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Box sx={{ backgroundColor: '#f5f3f1', borderRadius: '5px', width: '360px' }}>
-                  <Box
-                    sx={{ display: 'flex', justifyContent: 'center', borderRadius: '5px 5px 5px 5px ' }}
-                  >
-                    <Box
-                      sx={{ width: '100%', height: '370px', backgroundColor: '#DDE6EF', borderRadius: '5px 5px 0 0 ' }}
-                    >
-                      <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src="https://i.ibb.co/sFKDHZy/273198995-1038508826733889-8359221742081174328-n.jpg" alt="" />
-                    </Box>
-                  </Box>
-                  <Typography
-                    sx={{ backgroundColor: 'transparent', fontFamily: '"Mulish", sans-serif', fontWeight: '800', fontSize: "24px", textAlign: 'center', paddingTop: '16px', margin: '0', color: '#19232d', }}
-                  >
-                    Syed Hasib Rahman
-                  </Typography>
-                  <Typography
-                    sx={{ textAlign: 'center', fontFamily: '"Mulish", sans-serif', fontSize: '18px', fontWeight: '700', fontStyle: 'italic', margin: '0', paddingBottom: '16px', color: '#19232d' }}
-                  >
-                    Mern Stack Developer
-                  </Typography>
-                </Box>
-              </Box>
-
-
-              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Box sx={{ backgroundColor: '#f5f3f1', borderRadius: '5px', width: '360px' }}>
-                  <Box
-                    sx={{ display: 'flex', justifyContent: 'center', borderRadius: '5px 5px 5px 5px ' }}
-                  >
-                    <Box
-                      sx={{ width: '100%', height: '370px', backgroundColor: '#DDE6EF', borderRadius: '5px 5px 0 0 ' }}
-                    >
-                      <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src="https://i.ibb.co/xF2bn4z/1642344359559.jpg" alt="" />
-                    </Box>
-                  </Box>
-                  <Typography
-                    sx={{ backgroundColor: 'transparent', fontFamily: '"Mulish", sans-serif', fontWeight: '800', fontSize: "24px", textAlign: 'center', paddingTop: '16px', margin: '0', color: '#19232d', }}
-                  >
-                    Ali Haydar
-                  </Typography>
-                  <Typography
-                    sx={{ textAlign: 'center', fontFamily: '"Mulish", sans-serif', fontSize: '18px', fontWeight: '700', fontStyle: 'italic', margin: '0', paddingBottom: '16px', color: '#19232d' }}
-                  >
-                    Full Stack Developer
-                  </Typography>
-                </Box>
-              </Box>
-
-
-              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Box sx={{ backgroundColor: '#f5f3f1', borderRadius: '5px', width: '360px' }}>
-                  <Box
-                    sx={{ display: 'flex', justifyContent: 'center', borderRadius: '5px 5px 5px 5px ' }}
-                  >
-                    <Box
-                      sx={{ width: '100%', height: '370px', backgroundColor: '#DDE6EF', borderRadius: '5px 5px 0 0 ' }}
-                    >
-                      <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src="https://i.ibb.co/M7rbMS8/273535204-469565924638968-1772298594840346666-n.jpg" alt="" />
-                    </Box>
-                  </Box>
-                  <Typography
-                    sx={{ backgroundColor: 'transparent', fontFamily: '"Mulish", sans-serif', fontWeight: '800', fontSize: "24px", textAlign: 'center', paddingTop: '16px', margin: '0', color: '#19232d', }}
-                  >
-                    Alif Ahmed Nowshad
-                  </Typography>
-                  <Typography
-                    sx={{ textAlign: 'center', fontFamily: '"Mulish", sans-serif', fontSize: '18px', fontWeight: '700', fontStyle: 'italic', margin: '0', paddingBottom: '16px', color: '#19232d' }}
-                  >
-                    Frontend Developer
-                  </Typography>
-                </Box>
-              </Box>
-
-
-              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Box sx={{ backgroundColor: '#f5f3f1', borderRadius: '5px', width: '360px' }}>
-                  <Box
-                    sx={{ display: 'flex', justifyContent: 'center', borderRadius: '5px 5px 5px 5px ' }}
-                  >
-                    <Box
-                      sx={{ width: '100%', height: '370px', backgroundColor: '#DDE6EF', borderRadius: '5px 5px 0 0 ' }}
-                    >
-                      <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src="https://i.ibb.co/Df82dBQ/273619420-1283686172140181-285853505001044674-n.jpg" alt="" />
-                    </Box>
-                  </Box>
-                  <Typography
-                    sx={{ backgroundColor: 'transparent', fontFamily: '"Mulish", sans-serif', fontWeight: '800', fontSize: "24px", textAlign: 'center', paddingTop: '16px', margin: '0', color: '#19232d', }}
-                  >
-                    Md Raju Mollah
-                  </Typography>
-                  <Typography
-                    sx={{ textAlign: 'center', fontFamily: '"Mulish", sans-serif', fontSize: '18px', fontWeight: '700', fontStyle: 'italic', margin: '0', paddingBottom: '16px', color: '#19232d' }}
-                  >
-                    Product Manager
-                  </Typography>
-                </Box>
-              </Box>
-              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Box sx={{ backgroundColor: '#f5f3f1', borderRadius: '5px', width: '360px' }}>
-                  <Box
-                    sx={{ display: 'flex', justifyContent: 'center', borderRadius: '5px 5px 5px 5px ' }}
-                  >
-                    <Box
-                      sx={{ width: '100%', height: '370px', backgroundColor: '#DDE6EF', borderRadius: '5px 5px 0 0 ' }}
-                    >
-                      <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src="https://i.ibb.co/h8NYKSv/272761422-971064016862969-3825357988219787803-n.jpg" alt="" />
-                    </Box>
-                  </Box>
-                  <Typography
-                    sx={{ backgroundColor: 'transparent', fontFamily: '"Mulish", sans-serif', fontWeight: '800', fontSize: "24px", textAlign: 'center', paddingTop: '16px', margin: '0', color: '#19232d', }}
-                  >
-                    Sajeeb Kumar
-                  </Typography>
-                  <Typography
-                    sx={{ textAlign: 'center', fontFamily: '"Mulish", sans-serif', fontSize: '18px', fontWeight: '700', fontStyle: 'italic', margin: '0', paddingBottom: '16px', color: '#19232d' }}
-                  >
-                    SQA Engineer
-                  </Typography>
-                </Box>
-              </Box>
-              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Box sx={{ backgroundColor: '#f5f3f1', borderRadius: '5px', width: '360px' }}>
-                  <Box
-                    sx={{ display: 'flex', justifyContent: 'center', borderRadius: '5px 5px 5px 5px ' }}
-                  >
-                    <Box
-                      sx={{ width: '100%', height: '370px', backgroundColor: '#DDE6EF', borderRadius: '5px 5px 0 0 ' }}
-                    >
-                      <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src="https://i.ibb.co/GHhQgCx/272914099-490286912457588-8686964581657137105-n.jpg" alt="" />
-                    </Box>
-                  </Box>
-                  <Typography
-                    sx={{ backgroundColor: 'transparent', fontFamily: '"Mulish", sans-serif', fontWeight: '800', fontSize: "24px", textAlign: 'center', paddingTop: '16px', margin: '0', color: '#19232d', }}
-                  >
-                    Md Sohel Rana
-                  </Typography>
-                  <Typography
-                    sx={{ textAlign: 'center', fontFamily: '"Mulish", sans-serif', fontSize: '18px', fontWeight: '700', fontStyle: 'italic', margin: '0', paddingBottom: '16px', color: '#19232d' }}
-                  >
-                    Software Engineer
-                  </Typography>
-                </Box>
-              </Box>
-
-
-            </Slider>
+        </Box>
+        <Typography
+          sx={{ backgroundColor: 'transparent', fontFamily: '"Mulish", sans-serif', fontWeight: '800', fontSize: "24px", textAlign: 'center', paddingTop: '16px', margin: '0', color: '#19232d', }}
+        >
+          {name}
+        </Typography>
+        <Typography
+          sx={{ textAlign: 'center', fontFamily: '"Mulish", sans-serif', fontSize: '18px', fontWeight: '700', fontStyle: 'italic', margin: '0', paddingBottom: '8px', color: '#19232d' }}
+        >
+          {role}
+        </Typography>
+        <Typography
+          sx={{ textAlign: 'center', fontFamily: '"Mulish", sans-serif', fontSize: '18px', fontWeight: '700', fontStyle: 'italic', margin: '0', paddingBottom: '10px', color: '#19232d' }}
+        >
+          <Link to={`/TeamDetails/${_id}`} style={{ textDecoration: 'none' }}><SecondaryButton>Details</SecondaryButton></Link>
+        </Typography>
+        <Box className="teram-social" sx={{ position: 'absolute', right: '-61px', top: '0' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '500px' }}>
+            <a href={facebook} className='social-icon-box my-2' target='_blank' rel="noreferrer">
+              <i className="fab fa-facebook-f social-icon"></i>
+            </a>
+            <a href={twitter} className='social-icon-box my-2' target='_blank' rel="noreferrer">
+              <i className="fab fa-twitter social-icon"></i></a>
+            <a href={linkedin} sx={{}} className='social-icon-box my-2' target='_blank' rel="noreferrer">
+              <i className="fab fa-linkedin social-icon"></i>
+            </a>
+            <a href={instragram} sx={{}} className='social-icon-box my-2' target='_blank' rel="noreferrer">
+              <i className="fab fa-instagram social-icon"></i>
+            </a>
           </Box>
-        </Container>
+        </Box>
       </Box>
-    );
-  }
-}
+    </Box>
+  );
+};
+
+export default OurTeam;

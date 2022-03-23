@@ -36,7 +36,7 @@ const TourPackages = () => {
   const sliderRef = useRef(null);
   const [packages, setPackages] = useState([]);
   useEffect(() => {
-    fetch('https://agile-lowlands-71900.herokuapp.com/tourPackages')
+    fetch('http://localhost:5000/tourPackages')
       .then(res => res.json())
       .then(data => setPackages(data))
   }, []);
@@ -87,8 +87,7 @@ const TourPackages = () => {
                 DreamFly Tour Packages
               </Typography>
             </Box>
-            <Slider
-              {...settings}
+            <Slider {...settings}
               ref={sliderRef}
               slidesToShow={3}
               slidesToScroll={1}

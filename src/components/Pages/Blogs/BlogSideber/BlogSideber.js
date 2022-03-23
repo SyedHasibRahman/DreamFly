@@ -8,8 +8,8 @@ const BlogSideber = ({ handleSearch }) => {
 
     const [recentBlogs, setRecentBlogs] = useState([]);
     useEffect(() => {
-        // fetch('https://salty-beach-45243.herokuapp.com/blogs')
-        fetch('https://agile-lowlands-71900.herokuapp.com/blogs')
+        
+        fetch('http://localhost:5000/blogs')
             .then(res => res.json())
             .then(data => setRecentBlogs(data.blogs))
     }, []);

@@ -16,15 +16,16 @@ import { useState } from 'react';
 import useAuth from '../../../../hooks/useAuth';
 import LinearProgress from '@mui/material/LinearProgress';
 
+
 function Copyright(props) {
     return (
-        <Typography variant="body2" color="text.secondary" align="center" { ...props }>
-            { 'Copyright © ' }
+        <Typography variant="body2" color="text.secondary" align="center" {...props}>
+            {'Copyright © '}
             <Link color="inherit" href="https://mui.com/">
                 DreamFly
-            </Link>{ ' ' }
-            { new Date().getFullYear() }
-            { '.' }
+            </Link>{' '}
+            {new Date().getFullYear()}
+            {'.'}
         </Typography>
     );
 }
@@ -41,7 +42,7 @@ export default function SignInSide() {
         const newLoginData = { ...loginData };
         newLoginData[field] = value;
         setLoginData(newLoginData);
-        console.log(newLoginData);
+        // console.log(newLoginData);
     }
 
     const handleSignInSubmit = (event) => {
@@ -53,46 +54,46 @@ export default function SignInSide() {
     };
 
     return (
-        <ThemeProvider theme={ theme } >
+        <ThemeProvider theme={theme} >
             <Container>
-                { isLoading && <LinearProgress /> }
-                <Grid container component="main" sx={ { py: 5 } }>
+                {isLoading && <LinearProgress />}
+                <Grid container component="main" sx={{ py: 5 }}>
                     <Grid
                         item
-                        xs={ false }
-                        sm={ 4 }
-                        md={ 7 }
-                        sx={ {
+                        xs={false}
+                        sm={4}
+                        md={7}
+                        sx={{
                             backgroundImage: 'url(https://i.ibb.co/HG4dLcL/undraw-Airport-re-oqk1.png)',
                             backgroundRepeat: 'no-repeat',
                             backgroundColor: (t) =>
                                 t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
-                        } }
+                        }}
                     />
-                    <Grid item xs={ 12 } sm={ 8 } md={ 5 } component={ Paper } elevation={ 6 } square>
+                    <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
                         <Box
-                            sx={ {
+                            sx={{
                                 my: 8,
                                 mx: 4,
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'center',
-                            } }
+                            }}
                         >
-                            <Avatar sx={ { m: 1, bgcolor: 'secondary.main' } }>
+                            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
                                 <LockOutlinedIcon />
                             </Avatar>
                             <Typography component="h1" variant="h5">
                                 Sign In
                             </Typography>
-                            {/* Form Start here */ }
-                            { user?.email && <Alert severity="success">User Login Successfull </Alert> }
+                            {/* Form Start here */}
+                            {user?.email && <Alert severity="success">User Login Successfull </Alert>}
                             {
-                                authError && <Alert severity="error">{ authError }</Alert>
+                                authError && <Alert severity="error">{authError}</Alert>
                             }
-                            <Box component="form" noValidate onSubmit={ handleSignInSubmit } sx={ { mt: 1 } }>
+                            <Box component="form" noValidate onSubmit={handleSignInSubmit} sx={{ mt: 1 }}>
                                 <TextField
                                     margin="normal"
                                     required
@@ -101,7 +102,7 @@ export default function SignInSide() {
                                     label="Email Address"
                                     name="email"
                                     type="email"
-                                    onChange={ handleOnChange }
+                                    onChange={handleOnChange}
                                     autoComplete="email"
                                     autoFocus
                                 />
@@ -111,20 +112,20 @@ export default function SignInSide() {
                                     fullWidth
                                     name="password"
                                     type="password"
-                                    onChange={ handleOnChange }
+                                    onChange={handleOnChange}
                                     label="Password"
                                     id="password"
                                     autoComplete="current-password"
                                 />
                                 <FormControlLabel
-                                    control={ <Checkbox value="remember" color="primary" /> }
+                                    control={<Checkbox value="remember" color="primary" />}
                                     label="Remember me"
                                 />
                                 <Button
                                     type="submit"
                                     fullWidth
                                     variant="contained"
-                                    sx={ { mt: 3, mb: 2 } }
+                                    sx={{ mt: 3, mb: 2 }}
                                 >
                                     Sign In
                                 </Button>
@@ -141,7 +142,7 @@ export default function SignInSide() {
                                         </Link>
                                     </Grid>
                                 </Grid>
-                                <Copyright sx={ { mt: 5 } } />
+                                <Copyright sx={{ mt: 5 }} />
                             </Box>
                         </Box>
                     </Grid>

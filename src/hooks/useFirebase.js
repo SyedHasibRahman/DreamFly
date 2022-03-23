@@ -1,6 +1,6 @@
 import { useState } from "react";
 import initializeFirebase from "../components/Pages/Login/Firebase/firebase.init";
-import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, updateProfile, signInWithPopup, GoogleAuthProvider, deleteUser } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, updateProfile, signInWithPopup, GoogleAuthProvider, deleteUser, getIdToken } from "firebase/auth";
 import { useEffect } from "react";
 
 
@@ -11,6 +11,7 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
     const [admin, setAdmin] = useState(false)
+    const [token, setToken] = useState('')
 
     const uid = user.uid;
     const auth = getAuth();
@@ -82,7 +83,11 @@ const useFirebase = () => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 // const uid = user.uid;
-                setUser(user)
+                setUser(user);
+                getIdToken(user)
+                    .then(idToken => {
+                        setToken(idToken);
+                    })
             } else {
                 setUser({})
             }
@@ -91,7 +96,7 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, [auth])
     useEffect(() => {
-        fetch(`https://agile-lowlands-71900.herokuapp.com/users/${user.email}`)
+        fetch(`http://localhost:5000/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -123,14 +128,14 @@ const useFirebase = () => {
         }).catch((error) => {
             console.log('Error deleting user:', error);
         });
-          
-        
+
+
     }
 
 
     const saveUser = (email, displayName, photoURL, uid, method) => {
         const user = { email, displayName, photoURL, uid };
-        fetch('https://agile-lowlands-71900.herokuapp.com/users', {
+        fetch('http://localhost:5000/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -142,6 +147,7 @@ const useFirebase = () => {
     return {
         user,
         admin,
+        token,
         registerUser,
         logOut,
         logInUser,

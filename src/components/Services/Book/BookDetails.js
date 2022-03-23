@@ -18,7 +18,7 @@ const BookDetails = () => {
     const { register, handleSubmit } = useForm();
 
     useEffect(() => {
-        const url = `https://agile-lowlands-71900.herokuapp.com/services/${BookId}`
+        const url = `http://localhost:5000/services/${BookId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setTourPackage(data))
@@ -32,7 +32,7 @@ const BookDetails = () => {
         data.discription = tourPackage.discription;
         data.category = tourPackage.category;
         data.status = "pending"
-        axios.post('https://agile-lowlands-71900.herokuapp.com/orders', data)
+        axios.post('http://localhost:5000/orders', data)
             // axios.post('https://still-bastion-57482.herokuapp.com/orders', { ...data, img, name, price, discription })
             .then(res => {
                 console.log(res)
