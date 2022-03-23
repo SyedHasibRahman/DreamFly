@@ -109,6 +109,19 @@ const AdminPath = () => {
                     />
                 </ListItem>
             </Link>
+            <Link className='link-td-none' to='/Dashboard/ManageBlog' >
+                <ListItem button key="Test" primary="Test Primary"  >
+                    <ListItemIcon>
+                        <AddCommentIcon
+                            sx={ { '& > :not(style)': { color: "white" } } }
+                        />
+                    </ListItemIcon>
+                    <ListItemText
+                        primaryTypographyProps={ { color: "white" } }
+                        primary="Manage Blog"
+                    />
+                </ListItem>
+            </Link>
             <Link className='link-td-none' to='/Dashboard/MakeAdmin' >
                 <ListItem button key="Test" primary="Test Primary"  >
                     <ListItemIcon>

@@ -19,7 +19,6 @@ const AddBlog = () => {
         // minute: 'numeric', // numeric, 2-digit
         // second: 'numeric', // numeric, 2-digit
     });
-    console.log(date)
     
     const onSubmit = (data) => {
 
@@ -38,7 +37,7 @@ const AddBlog = () => {
     }
 
     return (
-        <Box sx={ { p: 5 } }>
+        <Box sx={ { p: {md: 0, sm: 3, xs: 0} , mx: { xs: 0, md: "150px" } }}>
             <Typography sx={ { fontSize: '24px', fontWeight: 600, pb: 5 } }>
                 Publish Blog
             </Typography>
@@ -50,26 +49,26 @@ const AddBlog = () => {
                 onSubmit={ handleSubmit(onSubmit) }
                 sx={ {} }
             >
-                <Grid item xs={ 12 } md={ 6 }>
+                
                     <InputTextField
                         label="Date"
                         defaultValue={date}
                         fullWidth
                         type="text"
-                        sx={ { bgcolor: "white" } }
+                        sx={{ bgcolor: "white", display: "none" }}
                         { ...register("date", { required: true }) }
                     />
-                </Grid>
-                <Grid item xs={ 12 } md={ 6 }>
+                
+                <Grid item xs={ 12 }>
                     <InputTextField
                         label="Bannar Image Url"
                         fullWidth
                         type="text"
                         sx={ { bgcolor: "white" } }
-                        { ...register("image1", { required: true }) }
+                        { ...register("img", { required: true }) }
                     />
                 </Grid>
-                <Grid item xs={ 12 } md={ 6 }>
+                <Grid item xs={ 12 }>
                     <InputTextField
                         label="Blog Title"
                         fullWidth
@@ -78,27 +77,30 @@ const AddBlog = () => {
                         { ...register("title", { required: true }) }
                     />
                 </Grid>
-                <Grid item xs={ 12 } md={ 6 }>
+                <Grid item xs={ 12 }>
                     <InputTextField
                         label="Blog Info"
+                        minRows={3}
+                        multiline
                         fullWidth
                         type="text"
                         sx={ { bgcolor: "white" } }
                         { ...register("info", { required: true }) }
                     />
                 </Grid>
-                <Grid item xs={ 12 } md={ 6 }>
+                <Grid item xs={ 12 }>
                     <InputTextField
                         label="Description"
+                        minRows={5}
+                        multiline
                         fullWidth
                         type="text"
                         required
-                        multiline
                         sx={ { bgcolor: "white" } }
                         { ...register("description", { required: true }) }
                     />
                 </Grid>
-                <Grid item xs={ 12 } md={ 6 }>
+                <Grid item xs={ 12 } sm={6}>
                     <InputTextField
                         label="Tag 1"
                         fullWidth
@@ -107,16 +109,18 @@ const AddBlog = () => {
                         { ...register("tag1", { required: true }) }
                     />
                 </Grid>
-                <Grid item xs={ 12 } md={ 6 }>
+                <Grid item xs={ 12 } sm={6}>
                     <InputTextField
-                        label="Tag2"
+                        label="Tag 2"
                         fullWidth
                         type="text"
                         sx={ { bgcolor: "white" } }
                         { ...register("tag2", { required: true }) }
                     />
                 </Grid>
-                <PrimaryButton type="submit">submit</PrimaryButton>
+                <Grid item xs={ 12 } marginTop="0 px !important">
+                    <PrimaryButton  type="submit">Publish</PrimaryButton>
+                </Grid>
             </Grid>
         </Box>
     );
