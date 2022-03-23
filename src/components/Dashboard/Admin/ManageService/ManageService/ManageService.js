@@ -1,15 +1,15 @@
 import { Box, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 import PrimaryButton from '../../../../StyledComponent/Buttons/PrimaryButton';
 import SecondaryButton from '../../../../StyledComponent/Buttons/SecondaryButton';
 
-const CustomizePackage = ({ packags, packages, setPackages }) => {
+const ManageService = ({ packags, packages, setPackages }) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/tourPackages/${id}`;
+            const url = `http://localhost:5000/service/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -27,23 +27,23 @@ const CustomizePackage = ({ packags, packages, setPackages }) => {
     return (
         <div>
 
-            <Box style={{}} key={packags._id}>
+            <Box style={ {} } key={ packags._id }>
                 <Card
-                    sx={{
+                    sx={ {
                         maxWidth: "100%",
                         margin: "10px",
                         position: "relative",
-                    }}
+                    } }
                 >
                     <CardActionArea>
                         <Box className="tour_img">
                             <CardMedia
                                 component="img"
-                                image={packags?.images}
+                                image={ packags?.images }
                                 alt="green iguana"
                             />
                             <Typography className="tour_price">
-                                ${packags?.price}
+                                ${ packags?.price }
                             </Typography>
                         </Box>
                         <CardContent>
@@ -51,29 +51,39 @@ const CustomizePackage = ({ packags, packages, setPackages }) => {
                                 gutterBottom
                                 variant="h5"
                                 component="div"
-                                sx={{ fontWeight: 600, fontSize: "1.4rem" }}
+                                sx={ { fontWeight: 600, fontSize: "1.4rem" } }
                             >
-                                {packags?.title}
+                                { packags?.name }
                             </Typography>
                             <Typography
-                                sx={{ color: "#111", fontWeight: 500, py: 1 }}
+                                gutterBottom
+                                variant="h5"
+                                component="div"
+                                sx={ { fontWeight: 600, fontSize: "1.4rem" } }
                             >
-                                Date: {packags?.date}
+                                { packags?.title }
                             </Typography>
-                            <Typography sx={{ color: "#111", fontWeight: 500 }}>
-                                Person: {packags?.person}
+                            <Typography
+                                gutterBottom
+                                variant="h5"
+                                component="div"
+                                sx={ { fontWeight: 600, fontSize: "1.4rem" } }
+                            >
+                                { packags?.seat}
                             </Typography>
+                            
+                            
                         </CardContent>
                         <CardActions
-                            sx={{ display: "flex", mx: 1, justifyContent: "space-between" }}
+                            sx={ { display: "flex", mx: 1, justifyContent: "space-between" } }
                         >
                             <SecondaryButton
-                                onClick={() => handleDelete(packags._id)}
+                                onClick={ () => handleDelete(packags._id) }
                             >
                                 DELETE
                             </SecondaryButton>
                             <Link
-                                style={{ textDecoration: 'none' }} as={HashLink} to={`/Dashboard/UpdatePackage/${packags._id}`}
+                                style={ { textDecoration: 'none' } } as={ HashLink } to={ `/Dashboard/UpdateService/${packags._id}` }
                             >
                                 <PrimaryButton>UPDATE</PrimaryButton>
                             </Link>
@@ -89,5 +99,4 @@ const CustomizePackage = ({ packags, packages, setPackages }) => {
 
     );
 };
-
-export default CustomizePackage;
+export default ManageService;

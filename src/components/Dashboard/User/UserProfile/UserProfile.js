@@ -20,8 +20,8 @@ const UserProfile = () => {
     const updateUser = (updateData) => {
         const user = { updateData };
         // console.log(updateData);
-        const details = updateData.details;
-        const name = updateData.name
+        // const details = updateData.details;
+        // const name = updateData.name
         fetch(`https://salty-beach-45243.herokuapp.com/users/${user._id}`, {
             method: 'PUT',
             headers: {
