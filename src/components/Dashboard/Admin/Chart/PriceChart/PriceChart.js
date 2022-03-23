@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { Container } from '@mui/material';
 
+// please use api
 const data = [
   {
     name: 'Page A',
