@@ -15,7 +15,6 @@ const About = () => {
       <Container>
         <Grid container spacing={5}>
           <Grid item xs={12} md={6}
-            data-aos="fade-right"
             data-aos-offset="200"
             data-aos-easing="ease-in-sine"
             data-aos-duration="400s"
@@ -28,7 +27,6 @@ const About = () => {
             </Box>
           </Grid>
           <Grid item xs={12} md={6}
-            data-aos="fade-left"
             data-aos-offset="200"
             data-aos-easing="ease-in-sine"
             data-aos-duration="400s"

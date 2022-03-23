@@ -10,6 +10,7 @@ import Inventory2Icon from '@mui/icons-material/Inventory2';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AddCommentIcon from '@mui/icons-material/AddComment';
 import StoreIcon from '@mui/icons-material/Store';
+import BarChartIcon from '@mui/icons-material/BarChart';
 
 const AdminPath = () => {
     return (
@@ -32,6 +33,16 @@ const AdminPath = () => {
                         />
                     </ListItemIcon>
                     <ListItemText primaryTypographyProps={ { color: "white" } } primary="User Profile" />
+                </ListItem>
+            </Link>
+            <Link className='link-td-none' to='/Dashboard/PriceChart' >
+                <ListItem button key="Test" primary="Test Primary"  >
+                    <ListItemIcon>
+                        <BarChartIcon
+                            sx={ { '& > :not(style)': { color: "white" } } }
+                        />
+                    </ListItemIcon>
+                    <ListItemText primaryTypographyProps={ { color: "white" } } primary="PriceChart" />
                 </ListItem>
             </Link>
             <Link className='link-td-none' to='/Dashboard/AddFlight' >

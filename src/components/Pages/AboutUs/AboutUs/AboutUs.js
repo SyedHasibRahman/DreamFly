@@ -1,4 +1,4 @@
-import { Box, Container, Typography, styled } from '@mui/material';
+import { Box, Container, Typography, styled, Grid } from '@mui/material';
 import React from 'react';
 import Review from '../../../Dashboard/User/Review/Review';
 import TestimonialSlider from '../../../HomePage/Testimonial/Slider/TestimonialSlider';
@@ -55,7 +55,7 @@ const AboutUs = () => {
             <WhyUs />
             <CounterArea />
             <OurHistory />
-            <OurTeams />
+            {/* <OurTeams />
             <Box className="paddingY90">
                 <Container>
                     <Typography
@@ -88,7 +88,7 @@ const AboutUs = () => {
                     </div>
 
                 </Container>
-            </Box>
+            </Box> */}
             <Footer />
         </Box>
     );
