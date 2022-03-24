@@ -41,12 +41,12 @@ const Review = () => {
     };
 
     return (
-        <div className='row  d-flex justify-content-center my-5'>
-            <div className='col-12 col-md-10 col-lg-9 '>
-                <div className=' box-shadow bg-white '>
+        <div className='row  d-flex justify-content-center my-4'>
+            <div className='col-11 col-md-10'>
+                <div className='box-shadow bg-white '>
                     <Form onSubmit={handleRating}>
-                        <Form.Group className='' controlId='exampleForm.ControlInput1' sx={{ my: 2 }}>
-                            <Form.Label>Email address</Form.Label>
+                        <Form.Group className='mb-3'>
+                            <Form.Label>Email</Form.Label>
                             <Form.Control
                                 type='email'
                                 placeholder='name@example.com'
@@ -55,7 +55,7 @@ const Review = () => {
 
                             />
                         </Form.Group>
-                        <Form.Group className='mb-1' controlId='exampleForm.ControlInput1'>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Name</Form.Label>
                             <Form.Control
                                 type='email'
@@ -64,16 +64,7 @@ const Review = () => {
                                 disabled
                             />
                         </Form.Group>
-                        <Form.Group className='mb-1' controlId='exampleForm.ControlInput1'>
-                            <Form.Label>Image Link</Form.Label>
-                            <Form.Control
-                                onChange={handleChange}
-                                name='img'
-                                type='url'
-                                placeholder='Your image url'
-                            />
-                        </Form.Group>
-                        <Form.Group className='mb-1' controlId='exampleForm.ControlInput1'>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Star's</Form.Label>
                             <Form.Control
                                 onChange={handleChange}
@@ -86,10 +77,7 @@ const Review = () => {
                                 required
                             />
                         </Form.Group>
-                        <Form.Group
-                            className='mb-1'
-                            controlId='exampleForm.ControlTextarea1'
-                        >
+                        <Form.Group>
                             <Form.Label>Explain Your feedback</Form.Label>
                             <Form.Control
                                 onChange={handleChange}
@@ -98,8 +86,8 @@ const Review = () => {
                                 rows={3}
                             />
                         </Form.Group>
-                        <SecondaryButton type='submit'>
-                            Submit Reveiw
+                        <SecondaryButton sx={{mt: "0 !important"}} type='submit'>
+                            Submit
                         </SecondaryButton>
                     </Form>
                     {success && (

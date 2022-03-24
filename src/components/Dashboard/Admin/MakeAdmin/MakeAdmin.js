@@ -46,7 +46,7 @@ const MakeAdmin = () => {
                         <form onSubmit={ handleSubmit(onSubmit) }>
                             <div className='col-12 d-md-flex'>
                                 <div className='w-100 '>
-                                    <label htmlhtmlFor='name' className='mb-2'>
+                                    <label htmlFor='name' className='mb-2'>
                                         Enter email
                                     </label>
                                     <input

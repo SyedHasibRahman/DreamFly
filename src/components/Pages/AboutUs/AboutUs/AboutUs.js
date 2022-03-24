@@ -1,4 +1,4 @@
-import { Box, Container, Typography, styled, Grid } from '@mui/material';
+import { Box, Container, Typography, styled, } from '@mui/material';
 import React from 'react';
 import Review from '../../../Dashboard/User/Review/Review';
 import TestimonialSlider from '../../../HomePage/Testimonial/Slider/TestimonialSlider';
@@ -35,13 +35,6 @@ const Backdrop = styled('div')`
   -webkit-tap-highlight-color: transparent;
 `;
 
-const style = {
-    width: '50%',
-    height: 'fit-content',
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-
-};
 
 
 const AboutUs = () => {
@@ -55,7 +48,7 @@ const AboutUs = () => {
             <WhyUs />
             <CounterArea />
             <OurHistory />
-            {/* <OurTeams />
+            <OurTeams />
             <Box className="paddingY90">
                 <Container>
                     <Typography
@@ -81,14 +74,18 @@ const AboutUs = () => {
                             onClose={handleClose}
                             BackdropComponent={Backdrop}
                         >
-                            <Box sx={style}>
+                            <Box sx={{width: {lg: "30%", md: "40%", sm: "60%", xs: "80%"},
+                                height: 'fit-content',
+                                bgcolor: 'background.paper',
+                                borderRadius: "15px",}}
+                                >
                                 <Review />
                             </Box>
                         </StyledModal>
                     </div>
 
                 </Container>
-            </Box> */}
+            </Box>
             <Footer />
         </Box>
     );
