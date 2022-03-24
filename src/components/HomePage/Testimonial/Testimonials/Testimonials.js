@@ -77,7 +77,7 @@ const Testimonials = () => {
                         <TestimonialSlider reviews={reviews} />
                     </Grid>
                     <Grid item xs={12} sm={12} md={4} lg={4} 
-                        sx={{width: '100%'}}
+                        sx={{width: '100%', padding: '15px',}}
                         >
                         <Box
                             sx={{
@@ -90,8 +90,8 @@ const Testimonials = () => {
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                width: "100%", 
-                                minHeight: "350px"}}
+                                width: "100%",
+                                height: "100%"}}
                             >
                         <Box >
                             <SecondaryButton type="button" onClick={handleOpen}>
