@@ -11,17 +11,13 @@ const UserProfile = () => {
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
-        // console.log(field, value);
         const newUpdateData = { ...updateData };
         newUpdateData[field] = value;
         setUpdateData(newUpdateData);
-        console.log(newUpdateData);
     }
     const updateUser = (updateData) => {
         const user = { updateData };
-        // console.log(updateData);
-        const details = updateData.details;
-        const name = updateData.name
+        // console.log(updateData); 
         fetch(`https://agile-lowlands-71900.herokuapp.com/users/${user._id}`, {
             method: 'PUT',
             headers: {
@@ -34,7 +30,6 @@ const UserProfile = () => {
         registerUser(updateData.email, updateData.password, updateData.detail);
     }
 
-    // console.log(user);
     return (
         <div>
             <Box>

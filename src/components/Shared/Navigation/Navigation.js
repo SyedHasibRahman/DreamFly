@@ -158,7 +158,7 @@ const Navigation = () => {
               <Tooltip title="Open settings">
                 <IconButton onClick={ handleOpenUserMenu }>
                   {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */ }
-                  <Avatar alt="Remy Sharp" src={ user?.photoURL } />
+                  <Avatar alt="User Photo" src={ user?.photoURL } />
                 </IconButton>
               </Tooltip>
               <Menu

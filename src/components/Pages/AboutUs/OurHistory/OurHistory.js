@@ -239,13 +239,13 @@ const OurHistory = () => {
                     style={{ paddingLeft: 0, paddingRight: 0 }}
                   >
                   <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src="https://themeim.com/demo/flynext/assets/images/history/history-1.png" alt=""
-                    data-aos='slide-right'
+                    // data-aos='slide-right'
                   />
                 </TimelineOppositeContent>
                 <TimelineContent style={{ paddingLeft: 0, paddingRight: 0 }}>
                   <Box sx={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center' }}>
                     <Box
-                      data-aos="fade-left"
+                      // data-aos="fade-left"
                       data-aos-offset="200"
                       data-aos-easing="ease-in-sine"
                       data-aos-duration="800s"
@@ -276,13 +276,13 @@ const OurHistory = () => {
                     style={{ paddingLeft: 0, paddingRight: 0 }}
                   >
                   <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src="https://themeim.com/demo/flynext/assets/images/history/history-2.png" alt=""
-                    data-aos='slide-right'
+                    // data-aos='slide-right'
                   />
                 </TimelineOppositeContent>
                 <TimelineContent style={{ paddingLeft: 0, paddingRight: 0 }}>
                   <Box sx={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center' }}>
                     <Box
-                      data-aos="fade-right"
+                      // data-aos="fade-right"
                       data-aos-offset="200"
                       data-aos-easing="ease-in-sine"
                       data-aos-duration="800s"
@@ -313,13 +313,13 @@ const OurHistory = () => {
                   style={{ paddingLeft: 0, paddingRight: 0}}
                   >
                   <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src="https://themeim.com/demo/flynext/assets/images/history/history-3.png" alt=""
-                    data-aos='slide-right'
+                    // data-aos='slide-right'
                   />
                 </TimelineOppositeContent>
                 <TimelineContent style={{ paddingLeft: 0, paddingRight: 0}}>
                   <Box sx={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center' }}>
                     <Box
-                      data-aos="fade-left"
+                      // data-aos="fade-left"
                       data-aos-offset="200"
                       data-aos-easing="ease-in-sine"
                       data-aos-duration="800s"
@@ -350,13 +350,13 @@ const OurHistory = () => {
                   style={{ paddingLeft: 0, paddingRight: 0 }}
                   >
                   <img style={{ width: '100%', height: '100%', objectFit: 'fill' }} src="https://themeim.com/demo/flynext/assets/images/history/history-4.png" alt=""
-                    data-aos='slide-left'
+                    // data-aos='slide-left'
                   />
                 </TimelineOppositeContent>
                 <TimelineContent style={{ paddingLeft: 0, paddingRight: 0 }}>
                     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center' }}>
                       <Box
-                        data-aos="fade-right"
+                        // data-aos="fade-right"
                         data-aos-offset="200"
                         data-aos-easing="ease-in-sine"
                         data-aos-duration="800s"

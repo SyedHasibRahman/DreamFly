@@ -5,7 +5,7 @@
   position: absolute;
   left: 20px;
   top: 35px;
-  background: #DC1585;
+  background: #FF257B;
   width: 90px;
   height: 35px;
   color: white !important;
@@ -17,26 +17,4 @@
 }
 .clock svg {
   color: #4527a0 !important;
-}
-.courses_btn {
-  padding-bottom: 10px;
-}
-.courses_btn button {
-  background: transparent;
-  border: 1px solid #4527a0;
-  border-radius: 20px;
-  color: #4527a0;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 10px 25px;
-  outline: none;
-  margin-left: 10px;
-}
-.course_arrow {
-  padding-left: 10px;
-}
-.our_course_link a {
-  text-decoration: none !important;
-  color: #111;
-  font-weight: 500;
 }

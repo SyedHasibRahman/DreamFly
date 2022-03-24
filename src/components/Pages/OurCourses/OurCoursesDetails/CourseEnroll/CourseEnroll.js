@@ -9,6 +9,7 @@ import Navigation from '../../../../Shared/Navigation/Navigation';
 import InputTextField from '../../../../StyledComponent/InputTextField/InputTextField';
 import SecondaryButton from '../../../../StyledComponent/Buttons/SecondaryButton';
 import Footer from '../../../../Shared/Footer/Footer';
+import swal from 'sweetalert';
 
 
 const CourseEnroll = () => {
@@ -21,6 +22,7 @@ const CourseEnroll = () => {
     const navigate = useNavigate();
     const redirect_uri = location.state?.from || '/Dashboard/UserOrder';
     const { register, handleSubmit } = useForm();
+    
 
     useEffect(() => {
         const url = `https://agile-lowlands-71900.herokuapp.com/courses/${courseId}`
@@ -41,7 +43,12 @@ const CourseEnroll = () => {
             .then(res => {
                 console.log(res)
                 if (res.data.insertedId) {
-                    alert('Order Successful!');
+                    swal({
+                        title: "Good job!",
+                        text: "You successfully Enroll!",
+                        icon: "success",
+                        
+                      });
                     navigate(redirect_uri);
                 }
             })

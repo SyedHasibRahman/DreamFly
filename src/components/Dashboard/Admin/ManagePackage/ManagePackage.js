@@ -36,7 +36,7 @@ const ManagePackage = () => {
                         <form onSubmit={ handleSubmit(onSubmit) }>
                             <div className='col-12 d-md-flex'>
                                 <div className='w-100 '>
-                                    <label htmlhtmlFor='name' className='mb-2'>
+                                    <label htmlFor='name' className='mb-2'>
                                         Package Title
                                     </label>
                                     <input
@@ -47,7 +47,7 @@ const ManagePackage = () => {
                                 </div>
 
                                 <div className='w-100 ps-0 ps-md-3'>
-                                    <label htmlhtmlFor='price' className='mb-2'>
+                                    <label htmlFor='price' className='mb-2'>
                                         Price
                                     </label>
                                     <input
@@ -59,14 +59,14 @@ const ManagePackage = () => {
                             </div>
                             <div className='col-12 '>
                                 <div className='w-100 '>
-                                    <label htmlhtmlFor='image' className='mb-2'>
+                                    <label htmlFor='image' className='mb-2'>
                                         Image
                                     </label>
                                     <input required placeholder='Image Url' { ...register('images') } />
                                 </div>
                                 <div className='w-100 '></div>
                                 <div className='w-100 '>
-                                    <label htmlhtmlFor='image' className='mb-2'>
+                                    <label htmlFor='image' className='mb-2'>
                                         Total persion
                                     </label>
                                     <input
@@ -76,7 +76,7 @@ const ManagePackage = () => {
                                     />
                                 </div>
                                 <div className='w-100 '>
-                                    <label htmlhtmlFor='image' className='mb-2'>
+                                    <label htmlFor='image' className='mb-2'>
                                         Category
                                     </label>
                                     {/* <input
@@ -112,7 +112,7 @@ const ManagePackage = () => {
                                 ......................*/}
 
                                 {/* <div className='w-100 '>
-                                    <label htmlhtmlFor='description' className='mb-2'>
+                                    <label htmlFor='description' className='mb-2'>
                                         Description
                                     </label>
                                     <textarea

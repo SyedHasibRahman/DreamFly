@@ -4,15 +4,13 @@ import { Alert } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import './UpadatePackage.css'
+import swal from 'sweetalert';
 
 const UpadatePackage = () => {
     const { reset, } = useForm();
     const [success, setSuccess] = useState();
     const { id } = useParams();
-    console.log(id)
     const [service, setService] = useState({});
-    console.log(service.date)
-    console.log(service.description)
     useEffect(() => {
         const url = `https://agile-lowlands-71900.herokuapp.com/tourPackages/${id}`;
         fetch(url)
@@ -46,11 +44,6 @@ const UpadatePackage = () => {
         setService(update)
     }
 
-    // const handledetailschange = e => {
-    //     const updatedes = e.target.value;
-    //     const update = { images: service.images, title: service.title, price: service.price, person: service.person, description: updatedes, category: service.category, date: service.date }
-    //     setService(update)
-    // }
     const handleCategorychange = e => {
         const updateDate = e.target.value;
         const update = { images: service.images, title: service.title, price: service.price, person: service.person, description: service.description, category: updateDate, date: service.date }
@@ -84,6 +77,14 @@ const UpadatePackage = () => {
                 }
             });
         e.preventDefault();
+
+        swal({
+            title: "Good job!",
+            text: "Your Update Completed!",
+            icon: "success",
+            button: "Done",
+        });
+
     }
     return (
         <Container>
@@ -95,7 +96,7 @@ const UpadatePackage = () => {
                         <form onSubmit={ handleUpdateuser }>
                             <div className='col-12 d-md-flex'>
                                 <div className='w-100 '>
-                                    <label htmlhtmlFor='name' className='mb-2'>
+                                    <label htmlFor='name' className='mb-2'>
                                         Package Title
                                     </label>
                                     <input
@@ -108,7 +109,7 @@ const UpadatePackage = () => {
                                 </div>
 
                                 <div className='w-100 ps-0 ps-md-3'>
-                                    <label htmlhtmlFor='price' className='mb-2'>
+                                    <label htmlFor='price' className='mb-2'>
                                         Price
                                     </label>
                                     <input
@@ -121,7 +122,7 @@ const UpadatePackage = () => {
                             </div>
                             <div className='col-12 '>
                                 <div className='w-100 '>
-                                    <label htmlhtmlFor='image' className='mb-2'>
+                                    <label htmlFor='image' className='mb-2'>
                                         Image
                                     </label>
                                     <input
@@ -130,7 +131,7 @@ const UpadatePackage = () => {
                                 </div>
                                 <div className='w-100 '></div>
                                 <div className='w-100 '>
-                                    <label htmlhtmlFor='image' className='mb-2'>
+                                    <label htmlFor='image' className='mb-2'>
                                         Total persion
                                     </label>
                                     <input
@@ -142,14 +143,10 @@ const UpadatePackage = () => {
                                     />
                                 </div>
                                 <div className='w-100 '>
-                                    <label htmlhtmlFor='image' className='mb-2'>
+                                    <label htmlFor='image' className='mb-2'>
                                         Category
                                     </label>
-                                    {/* <input
-                                    required
-                                    placeholder='Category'
-                                    {...register('category')}
-                                /> */}
+
                                     <Select
                                         labelId="demo-simple-select-label"
                                         id="demo-simple-select"
@@ -164,16 +161,7 @@ const UpadatePackage = () => {
 
                                     </Select>
                                 </div>
-                                {/* <div className="w-100 form-outline datepicker">
-                                    <label htmlFor="exampleDatepicker1" className="form-label">Select a date</label>
-                                    <input
-                                        value={service.date || ''}
-                                        type="date"
-                                        className="form-control"
-                                        id="exampleDatepicker1"
-                                        onChange={handleDatechange}
-                                    />
-                                </div> */}
+
                                 <div className="w-100 form-outline">
                                     <label className="form-label">Select a date</label>
                                     <input
@@ -184,18 +172,6 @@ const UpadatePackage = () => {
                                         onChange={ handleDatechange }
                                     />
                                 </div>
-                                {/* <div className='w-100 '>
-                                    <label htmlhtmlFor='description' className='mb-2'>
-                                        Description
-                                    </label>
-                                    <textarea
-                                        defaultValue={service.description || ''}
-                                        className='bg-white'
-                                        rows='4'
-                                        placeholder='Short description'
-                                        onChange={handledetailschange}
-                                    />
-                                </div> */}
 
                             </div>
                             <button

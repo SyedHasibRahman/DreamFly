@@ -43,6 +43,8 @@ import SeaechFlightDetails from "./components/HomePage/PersonalFlight/SearchFlig
 import TeamDetails from "./components/Pages/AboutUs/OurTeam/TeamDetails/TeamDetails";
 import CourseEnroll from "./components/Pages/OurCourses/OurCoursesDetails/CourseEnroll/CourseEnroll";
 import ManageBlogs from "./components/Dashboard/Admin/Blog/DeleteBlog/ManageBlogs";
+import PriceChart from "./components/Dashboard/Admin/Chart/PriceChart/PriceChart";
+import PaymentCard from "./components/Dashboard/Payment/PaymentCard/PaymentCard";
 
 
 
@@ -55,6 +57,7 @@ function App() {
           <Route path="/" element={ <Home /> } />
           <Route path="Home" element={ <Home /> } />
           <Route path="Services" element={ <Services /> } />
+          <Route path="PaymentCard" element={ <PaymentCard/> } />
           <Route path="About" element={ <AboutUs /> } />
           <Route path="TeamDetails/:teamId" element={ <TeamDetails /> } />
           <Route path="Pilots" element={ <OurPilots /> } />
@@ -98,6 +101,7 @@ function App() {
             }
           >
             <Route path="/Dashboard" element={ <UserProfile /> } />
+            <Route path="PriceChart" element={ <PriceChart /> } />
             <Route path="AddBlog" element={ <AddBlog /> } />
             <Route path="AddFlight" element={ <ManageFlight /> } />
             <Route path="ManageUsers" element={ <ManageUsers /> } />
