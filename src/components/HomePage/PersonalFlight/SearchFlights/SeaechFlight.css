@@ -3,3 +3,33 @@
     height: 80px;
     object-fit: contain;
 }
+
+.flight-item{
+    display: flex;
+    justify-content: space-between;
+}
+.flight-card{
+    margin: 50px;
+}
+
+@media only screen and (max-width: 450px) {
+    .flight-card{
+        margin: 10px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .flight-img{
+        width: 100%;
+        height: 60px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .flight-img{
+        width: 100%;
+        height: 100px;
+        object-fit: contain;
+    }
+}

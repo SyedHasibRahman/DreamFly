@@ -3,6 +3,7 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import useAuth from '../../../hooks/useAuth';
 import { CircularProgress } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import PaymentCard from './PaymentCard/PaymentCard';
 
 const CheckoutForm = ({ booked }) => {
     const [error, setError] = useState('');
@@ -98,6 +99,7 @@ const CheckoutForm = ({ booked }) => {
     }
     return (
         <div>
+            <PaymentCard />
             { !booked.payment ? <form onSubmit={ handleSubmit }>
                 <CardElement
                     options={ {
@@ -134,6 +136,7 @@ const CheckoutForm = ({ booked }) => {
                     }
                 </>
             }
+
         </div>
     );
 };

@@ -27,7 +27,7 @@ const Navigation = () => {
     "Blogs",
     "Courses",
   ];
-  const settings = ["Profile", "Account", "Dashboard"];
+  const settings = ["Dashboard"];
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -98,13 +98,13 @@ const Navigation = () => {
                 } }
               >
                 { pages.map((page) => (
-                  <MenuItem key={ page } sx={ { py: 0, my: 0 } } onClick={ handleCloseNavMenu }>
-                    <Typography sx={ { fontWeight: 600, py: "0 !important", my: 0 } }>
+                  <MenuItem key={ page } onClick={ handleCloseNavMenu }>
+                    <Typography sx={ { pr: "40px !important", } }>
                       <Link
                         style={ {
                           textDecoration: "none",
                           color: "black",
-                          fontWeight: 400,
+                          fontWeight: 700,
                         } }
                         to={ `/${page}` }
                       >
@@ -157,7 +157,6 @@ const Navigation = () => {
             >
               <Tooltip title="Open settings">
                 <IconButton onClick={ handleOpenUserMenu }>
-                  {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */ }
                   <Avatar alt="User Photo" src={ user?.photoURL } />
                 </IconButton>
               </Tooltip>
@@ -176,9 +175,24 @@ const Navigation = () => {
                 open={ Boolean(anchorElUser) }
                 onClose={ handleCloseUserMenu }
               >
+                <Box sx={ { display: "flex", justifyContent: "center", px: 2, py: 1 } }>
+                  <Avatar sx={ { width: "65px", height: "65px" } } alt="User Photo" src={ user?.photoURL } />
+                </Box>
+                <Box sx={ { display: "flex", justifyContent: "center", px: 2, pb: 1 } }>
+                  { user.email &&
+                    <Typography
+                      style={ {
+                        textAlign: "center",
+                        textDecoration: "none",
+                        color: "#4527a0",
+                        fontWeight: 700,
+                      } }>
+                      { user.displayName }
+                    </Typography>
+                  }
+                </Box>
                 { settings.map((setting) => (
-                  <MenuItem key={ setting } onClick={ handleCloseUserMenu }>
-                    {/* <Typography textAlign="center">{ setting }</Typography> */ }
+                  <MenuItem sx={ { textAlign: "center", } } key={ setting } onClick={ handleCloseUserMenu }>
                     <Link
                       style={ {
                         textDecoration: "none",
@@ -194,10 +208,10 @@ const Navigation = () => {
                 <MenuItem>
                   { user.email ? (
                     <Typography
-                      sx={ {
+                      style={ {
                         textDecoration: "none",
                         color: "black",
-                        fontWeight: 600,
+                        fontWeight: 700,
                       } }
                       onClick={ logOut }>
                       LogOut

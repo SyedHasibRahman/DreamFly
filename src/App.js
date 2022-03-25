@@ -96,11 +96,10 @@ function App() {
             element={
               <AdminRoute>
                 <Dashboard />
-
               </AdminRoute>
             }
           >
-            <Route path="/Dashboard" element={ <UserProfile /> } />
+            <Route path="Dashboard" element={ <UserProfile /> } />
             <Route path="PriceChart" element={ <PriceChart /> } />
             <Route path="AddBlog" element={ <AddBlog /> } />
             <Route path="AddFlight" element={ <ManageFlight /> } />

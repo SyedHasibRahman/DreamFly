@@ -89,7 +89,6 @@ const BlogDetails = () => {
 
     // Delete comment section
     const handleDeleteComment = (id) => {
-
         const proceed = swal({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this!",

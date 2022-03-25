@@ -66,7 +66,7 @@ const UserProfile = () => {
                                     name: "details"
                                 } }
                                     name="details"
-                                    defaultValue={ user.details || '' }
+                                    defaultValue={ `Hey! I am ${user.displayName}. I love to use this air ticket booking web application. It's making my life easier.` || '' }
                                     onChange={ handleOnChange }
                                 />
                                 <TextField

@@ -18,7 +18,6 @@ function Booking() {
   return (
     <div className="booking">
       <SearchFlights />
-
       <Box sx={ { bgcolor: "#fafafa" } }>
         <Container className="paddingY90">
           <Typography
@@ -32,14 +31,13 @@ function Booking() {
           >
             Luxury Deals For You
           </Typography>
-          <Grid container spacing={ { xs: 2, md: 3 } }>
+          <Grid container spacing={ { xs: 4, md: 3 } }>
             {
               booking.map(book => <Book key={ book._id } book={ book }></Book>)
             }
           </Grid>
         </Container>
       </Box>
-
     </div>
   );
 }
