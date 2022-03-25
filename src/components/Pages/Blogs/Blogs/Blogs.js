@@ -16,7 +16,7 @@ const Blogs = () => {
     const size = 6;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
+        fetch(`https://agile-lowlands-71900.herokuapp.com/blogs?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setBlogs(data.blogs);
@@ -36,51 +36,51 @@ const Blogs = () => {
     return (
         <>
             <Navigation></Navigation>
-                <Box sx={{ py: 10, bgcolor: "#fafafa" }}>
-                    <Container>
-                        <Box>
-                            <Typography
-                                variant="h2"
-                                sx={{ pb: 8, textAlign: "center" }}
-                            >
-                                Welcome To Our Blogs
-                            </Typography>
-                        </Box>
+            <Box sx={ { py: 10, bgcolor: "#fafafa" } }>
+                <Container>
+                    <Box>
+                        <Typography
+                            variant="h2"
+                            sx={ { pb: 8, textAlign: "center" } }
+                        >
+                            Welcome To Our Blogs
+                        </Typography>
+                    </Box>
 
-                        <Box>
-                            <Grid container spacing={4}>
-                                <Grid item xs={12} md={8} sx={{}}>
-                                    <Grid container spacing={4} columns={12}>
-                                        {searchblogs.map((blog) => (
-                                            <Grid key={blog._id} item xs={12} md={6}>
-                                                <Blog
-                                                    gridColumn="span 8"
-                                                    blog={blog}>
-                                                </Blog>
-                                            </Grid>
-                                        ))}
-                                    </Grid>
-                                    <Box sx={{ pt: 4, display: "flex",mx: { sm: "50px", md: 0, lg: 0 } }}>
-                                    {[...Array(pageCount).keys()].map(number =>
+                    <Box>
+                        <Grid container spacing={ 4 }>
+                            <Grid item xs={ 12 } md={ 8 } sx={ {} }>
+                                <Grid container spacing={ 4 } columns={ 12 }>
+                                    { searchblogs.map((blog) => (
+                                        <Grid key={ blog._id } item xs={ 12 } md={ 6 }>
+                                            <Blog
+                                                gridColumn="span 8"
+                                                blog={ blog }>
+                                            </Blog>
+                                        </Grid>
+                                    )) }
+                                </Grid>
+                                <Box sx={ { pt: 4, display: "flex", mx: { sm: "50px", md: 0, lg: 0 } } }>
+                                    { [...Array(pageCount).keys()].map(number =>
                                         <Typography
-                                            sx={{ width: "35px", height: "35px", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", bgcolor: '#5e35b1', color: "white" }}
-                                            style={{ marginRight: '10px', borderRadius: "50%" }}
-                                            className={number === page ? 'selected' : ''}
-                                            key={number}
-                                            onClick={() => setPage(number)}
-                                            >
-                                            {number + 1}
+                                            sx={ { width: "35px", height: "35px", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", bgcolor: '#5e35b1', color: "white" } }
+                                            style={ { marginRight: '10px', borderRadius: "50%" } }
+                                            className={ number === page ? 'selected' : '' }
+                                            key={ number }
+                                            onClick={ () => setPage(number) }
+                                        >
+                                            { number + 1 }
                                         </Typography>)
                                     }
-                                    </Box>
-                                </Grid>
-                                <Grid item xs={12} md={4} sx={{}}>
-                                    <BlogSideber handleSearch={handleSearch}></BlogSideber>
-                                </Grid>
+                                </Box>
                             </Grid>
-                        </Box>
-                    </Container>
-                </Box>
+                            <Grid item xs={ 12 } md={ 4 } sx={ {} }>
+                                <BlogSideber handleSearch={ handleSearch }></BlogSideber>
+                            </Grid>
+                        </Grid>
+                    </Box>
+                </Container>
+            </Box>
             <Footer></Footer>
         </>
     );

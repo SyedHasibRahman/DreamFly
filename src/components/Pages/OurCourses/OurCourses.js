@@ -20,7 +20,7 @@ import { Link } from "react-router-dom";
 const OurCourses = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/courses")
+    fetch("https://agile-lowlands-71900.herokuapp.com/courses")
       .then(res => res.json())
       .then((data) => setData(data))
   }, [])
@@ -29,39 +29,39 @@ const OurCourses = () => {
       <Navigation />
       <Container>
         <Box className="paddingY90">
-          <Box sx={{ textAlign: "center", mb: 5 }}>
+          <Box sx={ { textAlign: "center", mb: 5 } }>
             <Typography
               gutterBottom
-              sx={{ color: '#5e35b1', fontWeight: '700', fontSize: '20px', marginBottom: '10px', textAlign: 'center' }}
+              sx={ { color: '#5e35b1', fontWeight: '700', fontSize: '20px', marginBottom: '10px', textAlign: 'center' } }
             >
               Choose Course
             </Typography>
             <Typography
               variant="h2"
-              sx={{ textAlign: 'center' }}
+              sx={ { textAlign: 'center' } }
             >
               Find The Right Course For You
             </Typography>
           </Box>
-          <Grid container spacing={{ xs: 1, md: 3 }}>
-            {data.map((item, _id) => (
-              <Grid item xs={12} sm={6} md={4} key={item.id}>
+          <Grid container spacing={ { xs: 1, md: 3 } }>
+            { data.map((item, _id) => (
+              <Grid item xs={ 12 } sm={ 6 } md={ 4 } key={ item.id }>
                 <Card
-                  sx={{
+                  sx={ {
                     maxWidth: "100%",
                     margin: "10px",
                     position: "relative",
-                  }}
+                  } }
                 >
                   <CardActionArea>
                     <Box className="courses_img">
                       <CardMedia
                         component="img"
-                        image={item?.images}
+                        image={ item?.images }
                         alt="green iguana"
                       />
                       <Typography className="courses_price">
-                        ${item?.price}
+                        ${ item?.price }
                       </Typography>
                     </Box>
                     <CardContent>
@@ -69,45 +69,45 @@ const OurCourses = () => {
                         gutterBottom
                         variant="h3"
                       >
-                        {item?.title}
+                        { item?.title }
                       </Typography>
                       <Box
-                        sx={{
+                        sx={ {
                           color: "#111",
                           fontWeight: 500,
                           py: 1,
                           display: "flex",
                           alignItems: "center",
-                        }}
+                        } }
                       >
                         <span className="clock">
                           <AccessTimeIcon />
                         </span>
                         <Typography
-                          sx={{ paddingLeft: "8px", fontWeight: 700 }}
+                          sx={ { paddingLeft: "8px", fontWeight: 700 } }
                         >
-                          {item?.hours}
+                          { item?.hours }
                         </Typography>
                       </Box>
-                      <Typography sx={{ color: "#111", fontWeight: 500 }}>
-                        {item?.dec}
+                      <Typography sx={ { color: "#111", fontWeight: 500 } }>
+                        { item?.dec }
                       </Typography>
                     </CardContent>
-                    <CardActions sx={{ pb: 2 }}>
-                    <Link 
-                      style={{textDecoration: "none", textAlign: "center", cursor: "pointer" }}
-                      to={`/Courses/${item._id}`}
+                    <CardActions sx={ { pb: 2 } }>
+                      <Link
+                        style={ { textDecoration: "none", textAlign: "center", cursor: "pointer" } }
+                        to={ `/Courses/${item._id}` }
                       >
-                      <SecondaryButton size="small">
+                        <SecondaryButton size="small">
                           Enroll Now &nbsp;
                           <i className="fas fa-arrow-right"></i>
-                      </SecondaryButton>
-                    </Link>
+                        </SecondaryButton>
+                      </Link>
                     </CardActions>
                   </CardActionArea>
                 </Card>
               </Grid>
-            ))}
+            )) }
           </Grid>
         </Box>
       </Container>

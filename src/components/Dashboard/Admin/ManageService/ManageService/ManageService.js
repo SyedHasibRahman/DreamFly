@@ -9,7 +9,7 @@ const ManageService = ({ packags, packages, setPackages }) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/service/${id}`;
+            const url = `http://agile-lowlands-71900.herokuapp.com/service/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -69,10 +69,10 @@ const ManageService = ({ packags, packages, setPackages }) => {
                                 component="div"
                                 sx={ { fontWeight: 600, fontSize: "1.4rem" } }
                             >
-                                { packags?.seat}
+                                { packags?.seat }
                             </Typography>
-                            
-                            
+
+
                         </CardContent>
                         <CardActions
                             sx={ { display: "flex", mx: 1, justifyContent: "space-between" } }

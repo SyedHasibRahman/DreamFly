@@ -12,7 +12,7 @@ const UpadatePackage = () => {
     const { id } = useParams();
     const [service, setService] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/tourPackages/${id}`;
+        const url = `https://agile-lowlands-71900.herokuapp.com/tourPackages/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data));
@@ -58,7 +58,7 @@ const UpadatePackage = () => {
     // handleUpdateuser
     const handleUpdateuser = e => {
 
-        const url = `http://localhost:5000/tourPackages/${id}`;
+        const url = `https://agile-lowlands-71900.herokuapp.com/tourPackages/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -93,18 +93,18 @@ const UpadatePackage = () => {
                     <div className='add-product box-shadow bg-white p-4 packageDiv'>
                         <h3 className='mb-5 heading-main text-light'>Update Package</h3>
 
-                        <form onSubmit={handleUpdateuser}>
+                        <form onSubmit={ handleUpdateuser }>
                             <div className='col-12 d-md-flex'>
                                 <div className='w-100 '>
                                     <label htmlFor='name' className='mb-2'>
                                         Package Title
                                     </label>
                                     <input
-                                        defaultValue={service.title || ''}
+                                        defaultValue={ service.title || '' }
 
                                         required
                                         placeholder='Package Name'
-                                        onChange={handleTitlechange}
+                                        onChange={ handleTitlechange }
                                     />
                                 </div>
 
@@ -113,10 +113,10 @@ const UpadatePackage = () => {
                                         Price
                                     </label>
                                     <input
-                                        value={service.price || ''}
+                                        value={ service.price || '' }
                                         required
                                         placeholder='Enter price'
-                                        onChange={handlePricechange}
+                                        onChange={ handlePricechange }
                                     />
                                 </div>
                             </div>
@@ -126,8 +126,8 @@ const UpadatePackage = () => {
                                         Image
                                     </label>
                                     <input
-                                        value={service.images || ''}
-                                        required placeholder='Image Url' onChange={handleImagechange} />
+                                        value={ service.images || '' }
+                                        required placeholder='Image Url' onChange={ handleImagechange } />
                                 </div>
                                 <div className='w-100 '></div>
                                 <div className='w-100 '>
@@ -135,10 +135,10 @@ const UpadatePackage = () => {
                                         Total persion
                                     </label>
                                     <input
-                                        value={service.person || ''}
+                                        value={ service.person || '' }
                                         required
                                         placeholder='Persion'
-                                        onChange={handlePersonchange}
+                                        onChange={ handlePersonchange }
 
                                     />
                                 </div>
@@ -150,14 +150,14 @@ const UpadatePackage = () => {
                                     <Select
                                         labelId="demo-simple-select-label"
                                         id="demo-simple-select"
-                                        onChange={handleCategorychange}
+                                        onChange={ handleCategorychange }
                                         label="Age"
-                                        value={service.category || ''}
+                                        value={ service.category || '' }
 
                                     >
-                                        <MenuItem value={'General'}>General</MenuItem>
-                                        <MenuItem value={'Packages'}>Packages</MenuItem>
-                                        <MenuItem value={'Services'}>Services</MenuItem>
+                                        <MenuItem value={ 'General' }>General</MenuItem>
+                                        <MenuItem value={ 'Packages' }>Packages</MenuItem>
+                                        <MenuItem value={ 'Services' }>Services</MenuItem>
 
                                     </Select>
                                 </div>
@@ -165,11 +165,11 @@ const UpadatePackage = () => {
                                 <div className="w-100 form-outline">
                                     <label className="form-label">Select a date</label>
                                     <input
-                                        value={service.date || ''}
+                                        value={ service.date || '' }
                                         className="form-control"
 
                                         placeholder='mm/dd/yyyy'
-                                        onChange={handleDatechange}
+                                        onChange={ handleDatechange }
                                     />
                                 </div>
 
@@ -177,15 +177,15 @@ const UpadatePackage = () => {
                             <button
                                 type='submit'
                                 className='btn text-light'
-                                style={{ marginLeft: `calc(100% - 115px)`, background: '#FF257B', color: 'white' }}
+                                style={ { marginLeft: `calc(100% - 115px)`, background: '#FF257B', color: 'white' } }
                             >
                                 Update
                             </button>
-                            {success && (
+                            { success && (
                                 <Alert variant='success' className='mt-2 py-2'>
                                     Packages Update successfully
                                 </Alert>
-                            )}
+                            ) }
                         </form>
                     </div>
                 </div>

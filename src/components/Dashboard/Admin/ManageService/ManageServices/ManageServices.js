@@ -5,7 +5,7 @@ import ManageService from '../ManageService/ManageService';
 const ManageServices = () => {
     const [packages, setPackages] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/service')
+        fetch('http://agile-lowlands-71900.herokuapp.com/service')
             .then(res => res.json())
             .then(data => setPackages(data));
     }, [])

@@ -50,184 +50,184 @@ const Navigation = () => {
     <>
       <AppBar
         position="sticky"
-        sx={{
+        sx={ {
           background: "linear-gradient(90deg, #5e35b1, #5e35b1)",
           py: "5px"
-        }}
+        } }
       >
         <Container>
-          <Toolbar disableGutters sx={{ p: 0, m: 0 }}>
+          <Toolbar disableGutters sx={ { p: 0, m: 0 } }>
             <Typography
               variant="h6"
               noWrap
               component="div"
-              sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+              sx={ { mr: 2, display: { xs: "none", md: "flex" } } }
             >
               <Link to="/">
-                <img src={logo} width="200px" alt="logo" />
+                <img src={ logo } width="200px" alt="logo" />
               </Link>
             </Typography>
 
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, }}>
+            <Box sx={ { flexGrow: 1, display: { xs: "flex", md: "none" }, } }>
               <IconButton
                 size="large"
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
-                onClick={handleOpenNavMenu}
+                onClick={ handleOpenNavMenu }
                 color="inherit"
               >
                 <MenuIcon />
               </IconButton>
               <Menu
                 id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
+                anchorEl={ anchorElNav }
+                anchorOrigin={ {
                   vertical: "bottom",
                   horizontal: "left",
-                }}
+                } }
                 keepMounted
-                transformOrigin={{
+                transformOrigin={ {
                   vertical: "top",
                   horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
+                } }
+                open={ Boolean(anchorElNav) }
+                onClose={ handleCloseNavMenu }
+                sx={ {
                   display: { xs: "block", md: "none" },
-                }}
+                } }
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography sx={{pr: "40px !important",}}>
+                { pages.map((page) => (
+                  <MenuItem key={ page } onClick={ handleCloseNavMenu }>
+                    <Typography sx={ { pr: "40px !important", } }>
                       <Link
-                        style={{
+                        style={ {
                           textDecoration: "none",
                           color: "black",
                           fontWeight: 700,
-                        }}
-                        to={`/${page}`}
-                        >
-                        {page}
+                        } }
+                        to={ `/${page}` }
+                      >
+                        { page }
                       </Link>
                     </Typography>
                   </MenuItem>
-                ))}
+                )) }
               </Menu>
             </Box>
             <Typography
               variant="h6"
               noWrap
               component="div"
-              sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+              sx={ { flexGrow: 1, display: { xs: "flex", md: "none" } } }
             >
-              <img src={logo} width="150px" alt="logo" />
+              <img src={ logo } width="150px" alt="logo" />
             </Typography>
             <Box
-              sx={{
+              sx={ {
                 flexGrow: 1,
                 display: { xs: "none", md: "flex" },
                 justifyContent: { md: "flex-end" },
-              }}
+              } }
             >
-              {pages.map((page) => (
+              { pages.map((page) => (
                 <Typography
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ ml: 2, color: "white", display: "block" }}
+                  key={ page }
+                  onClick={ handleCloseNavMenu }
+                  sx={ { ml: 2, color: "white", display: "block" } }
                 >
                   <Link
-                    style={{
+                    style={ {
                       textDecoration: "none",
                       color: "white",
                       fontWeight: 400,
-                    }}
-                    to={`/${page}`}
+                    } }
+                    to={ `/${page}` }
                   >
-                    {page}
+                    { page }
                   </Link>
                 </Typography>
-              ))}
+              )) }
             </Box>
 
             <Box
-              sx={{
+              sx={ {
                 flexGrow: 0,
-              }}
+              } }
             >
               <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu}>
-                  <Avatar alt="User Photo" src={user?.photoURL} />
+                <IconButton onClick={ handleOpenUserMenu }>
+                  <Avatar alt="User Photo" src={ user?.photoURL } />
                 </IconButton>
               </Tooltip>
               <Menu
                 id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
+                anchorEl={ anchorElUser }
+                anchorOrigin={ {
                   vertical: "top",
                   horizontal: "right",
-                }}
+                } }
                 keepMounted
-                transformOrigin={{
+                transformOrigin={ {
                   vertical: "top",
                   horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
+                } }
+                open={ Boolean(anchorElUser) }
+                onClose={ handleCloseUserMenu }
               >
-                <Box sx={{display: "flex", justifyContent: "center", px: 2, py:1}}>
-                  <Avatar sx={{width: "65px", height: "65px"}} alt="User Photo" src={user?.photoURL} />
+                <Box sx={ { display: "flex", justifyContent: "center", px: 2, py: 1 } }>
+                  <Avatar sx={ { width: "65px", height: "65px" } } alt="User Photo" src={ user?.photoURL } />
                 </Box>
-                <Box sx={{display: "flex", justifyContent: "center", px: 2, pb:1}}>
-                  {user.email &&
+                <Box sx={ { display: "flex", justifyContent: "center", px: 2, pb: 1 } }>
+                  { user.email &&
                     <Typography
-                      style={{
+                      style={ {
                         textAlign: "center",
                         textDecoration: "none",
                         color: "#4527a0",
                         fontWeight: 700,
-                      }}>
-                      {user.displayName}
+                      } }>
+                      { user.displayName }
                     </Typography>
                   }
                 </Box>
-                {settings.map((setting) => (
-                  <MenuItem sx={{textAlign: "center",}} key={setting} onClick={handleCloseUserMenu}>
+                { settings.map((setting) => (
+                  <MenuItem sx={ { textAlign: "center", } } key={ setting } onClick={ handleCloseUserMenu }>
                     <Link
-                      style={{
+                      style={ {
                         textDecoration: "none",
                         color: "black",
                         fontWeight: 600,
-                      }}
-                      to={`/${setting}`}
+                      } }
+                      to={ `/${setting}` }
                     >
-                      {setting}
+                      { setting }
                     </Link>
                   </MenuItem>
-                ))}
+                )) }
                 <MenuItem>
-                  {user.email ? (
+                  { user.email ? (
                     <Typography
-                      style={{
+                      style={ {
                         textDecoration: "none",
                         color: "black",
                         fontWeight: 700,
-                      }}
-                      onClick={logOut}>
+                      } }
+                      onClick={ logOut }>
                       LogOut
                     </Typography>
                   ) : (
                     <Link
-                      style={{
+                      style={ {
                         textDecoration: "none",
                         color: "black",
                         fontWeight: 600,
-                      }}
+                      } }
                       to="/SignIn"
                     >
                       SignIn
                     </Link>
-                  )}
+                  ) }
                 </MenuItem>
               </Menu>
             </Box>

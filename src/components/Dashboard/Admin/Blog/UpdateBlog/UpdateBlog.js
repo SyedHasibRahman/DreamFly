@@ -7,13 +7,13 @@ import { Alert } from 'react-bootstrap';
 
 const UpdateBlog = () => {
 
-    
+
     const { reset, } = useForm();
     const [success, setSuccess] = useState();
     const { id } = useParams();
     const [blogs, setBlogs] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/blogs/${id}`;
+        const url = `https://agile-lowlands-71900.herokuapp.com/blogs/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setBlogs(data));
@@ -60,7 +60,7 @@ const UpdateBlog = () => {
     // handleUpdateuser
     const handleUpdateBlog = e => {
 
-        const url = `http://localhost:5000/blogs/${id}`;
+        const url = `http://agile-lowlands-71900.herokuapp.com/blogs/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -94,100 +94,100 @@ const UpdateBlog = () => {
             <div className='row  d-flex justify-content-center my-md-5 my-2'>
                 <div className='col-12 col-md-10 col-lg-9'>
                     <div className='add-product box-shadow bg-white p-md-4 p-lg-5 p-3 packageDiv'>
-                    <Typography sx={ { fontSize: '24px', color: "white", fontWeight: 600, pb: 3 } }>
-                        Update Blog
-                    </Typography>
-                    <form onSubmit={handleUpdateBlog}>
-                        <div className=''>
-                            <div className='w-100 '>
-                                <label htmlFor='Image url' className='mb-2'>
-                                    Image url
-                                </label>
-                                <input
-                                    type="text"
-                                    width="100%"
-                                    autoComplete
-                                    defaultValue={ blogs.img || ''}
-                                    onChange={handleImageChange}
-                                />
-                            </div>
-                            <div className='w-100 '>
-                                <label htmlFor='Title' className='mb-2'>
-                                    Title
-                                </label>
-                                <input
-                                    type="text"
-                                    width="100%"
-                                    autoComplete
-                                    defaultValue={ blogs.title || ''}
-                                    onChange={handleTitleChange}
-                                />
-                            </div>
-                            <div className='w-100'>
-                                <label htmlFor='Info' className='mb-2'>
-                                    Info
-                                </label>
-                                <textarea
-                                    type="text"
-                                    width="100%"
-                                    autoComplete
-                                    defaultValue={ blogs.info || ''}
-                                    onChange={handleInfoChange}
-                                />
-                            </div>
-                            <div className='w-100'>
-                                <label htmlFor='Description' className='mb-2'>
-                                    Description
-                                </label>
-                                <textarea
-                                    type="text"
-                                    width="100%"
-                                    autoComplete
-                                    defaultValue={ blogs.description || ''}
-                                    onChange={handleDescriptionChange}
-                                />
-                            </div>
-                            <div className='row'>
-                                <div className='col-sm-6'>
-                                    <label htmlFor='Tag 1' className='mb-2'>
-                                    Tag 1
+                        <Typography sx={ { fontSize: '24px', color: "white", fontWeight: 600, pb: 3 } }>
+                            Update Blog
+                        </Typography>
+                        <form onSubmit={ handleUpdateBlog }>
+                            <div className=''>
+                                <div className='w-100 '>
+                                    <label htmlFor='Image url' className='mb-2'>
+                                        Image url
                                     </label>
                                     <input
                                         type="text"
                                         width="100%"
                                         autoComplete
-                                        defaultValue={ blogs.tag1 || ''}
-                                        onChange={handleTag1Change}
+                                        defaultValue={ blogs.img || '' }
+                                        onChange={ handleImageChange }
                                     />
                                 </div>
-                                <div className='col-sm-6'>
-                                    <label htmlFor='Tag 2' className='mb-2'>
-                                        Tag 2
+                                <div className='w-100 '>
+                                    <label htmlFor='Title' className='mb-2'>
+                                        Title
                                     </label>
                                     <input
                                         type="text"
                                         width="100%"
                                         autoComplete
-                                        defaultValue={ blogs.tag2 || ''}
-                                        onChange={handleTag2Change}
+                                        defaultValue={ blogs.title || '' }
+                                        onChange={ handleTitleChange }
                                     />
                                 </div>
+                                <div className='w-100'>
+                                    <label htmlFor='Info' className='mb-2'>
+                                        Info
+                                    </label>
+                                    <textarea
+                                        type="text"
+                                        width="100%"
+                                        autoComplete
+                                        defaultValue={ blogs.info || '' }
+                                        onChange={ handleInfoChange }
+                                    />
+                                </div>
+                                <div className='w-100'>
+                                    <label htmlFor='Description' className='mb-2'>
+                                        Description
+                                    </label>
+                                    <textarea
+                                        type="text"
+                                        width="100%"
+                                        autoComplete
+                                        defaultValue={ blogs.description || '' }
+                                        onChange={ handleDescriptionChange }
+                                    />
+                                </div>
+                                <div className='row'>
+                                    <div className='col-sm-6'>
+                                        <label htmlFor='Tag 1' className='mb-2'>
+                                            Tag 1
+                                        </label>
+                                        <input
+                                            type="text"
+                                            width="100%"
+                                            autoComplete
+                                            defaultValue={ blogs.tag1 || '' }
+                                            onChange={ handleTag1Change }
+                                        />
+                                    </div>
+                                    <div className='col-sm-6'>
+                                        <label htmlFor='Tag 2' className='mb-2'>
+                                            Tag 2
+                                        </label>
+                                        <input
+                                            type="text"
+                                            width="100%"
+                                            autoComplete
+                                            defaultValue={ blogs.tag2 || '' }
+                                            onChange={ handleTag2Change }
+                                        />
+                                    </div>
+                                </div>
+
+                                <button
+                                    type='submit'
+                                    className='btn text-light px-5 py-2'
+                                    style={ { background: '#FF257B', color: 'white' } }
+                                >
+                                    Update
+                                </button>
+                                { success && (
+                                    <Alert variant='success' className='mt-2 py-2'>
+                                        Packages Update successfully
+                                    </Alert>
+                                ) }
                             </div>
-                            
-                            <button
-                                type='submit'
-                                className='btn text-light px-5 py-2'
-                                style={{ background: '#FF257B', color: 'white' }}
-                            >
-                                Update
-                            </button>
-                            {success && (
-                                <Alert variant='success' className='mt-2 py-2'>
-                                    Packages Update successfully
-                                </Alert>
-                            )}
-                        </div>
-                    </form>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@ import './Booking.css';
 function Booking() {
   const [booking, setBooking] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://agile-lowlands-71900.herokuapp.com/services")
       .then(res => res.json())
       .then((data) => setBooking(data))
   }, [])

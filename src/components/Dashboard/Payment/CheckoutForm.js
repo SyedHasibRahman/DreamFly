@@ -3,6 +3,7 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import useAuth from '../../../hooks/useAuth';
 import { CircularProgress } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import PaymentCard from './PaymentCard/PaymentCard';
 
 const CheckoutForm = ({ booked }) => {
     const [error, setError] = useState('');
@@ -17,7 +18,7 @@ const CheckoutForm = ({ booked }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://agile-lowlands-71900.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -84,7 +85,7 @@ const CheckoutForm = ({ booked }) => {
                 last4: paymentMethod.card.last4,
                 transaction: paymentIntent.client_secret.slice('_secret')[0]
             }
-            const url = `http://localhost:5000/myorders/${_id}`
+            const url = `https://agile-lowlands-71900.herokuapp.com/myorders/${_id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -98,6 +99,7 @@ const CheckoutForm = ({ booked }) => {
     }
     return (
         <div>
+            <PaymentCard />
             { !booked.payment ? <form onSubmit={ handleSubmit }>
                 <CardElement
                     options={ {
@@ -134,6 +136,7 @@ const CheckoutForm = ({ booked }) => {
                     }
                 </>
             }
+
         </div>
     );
 };

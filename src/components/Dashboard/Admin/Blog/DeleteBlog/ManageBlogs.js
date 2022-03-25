@@ -17,7 +17,7 @@ const ManageBlogs = () => {
 
     useEffect(() => {
         // fetch('https://agile-lowlands-71900.herokuapp.com/blogs')
-        fetch('http://localhost:5000/blogs')
+        fetch('http://agile-lowlands-71900.herokuapp.com/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data.blogs))
     }, []);
@@ -26,7 +26,7 @@ const ManageBlogs = () => {
     const handleDeleteBlogs = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/blogs/${id}`;
+            const url = `http://agile-lowlands-71900.herokuapp.com/blogs/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -84,7 +84,7 @@ const ManageBlogs = () => {
                                     </CardActions>
                                 </Card>
                             </Grid>)
-                    } )}
+                    }) }
                 </Grid>
             </Container>
         </Box>

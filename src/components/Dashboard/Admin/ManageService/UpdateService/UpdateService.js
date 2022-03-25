@@ -12,7 +12,7 @@ const UpdateService = () => {
     console.log(service.date)
     console.log(service.description)
     useEffect(() => {
-        const url = `http://localhost:5000/service/${id}`;
+        const url = `http://agile-lowlands-71900.herokuapp.com/service/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data));
@@ -22,13 +22,13 @@ const UpdateService = () => {
     //update data
     const handleImageChange = e => {
         const updatedImage = e.target.value;
-        const update = { img: updatedImage, title: service.title, name: service.name, seat: service.seat, price: service.price, category: service.category,}
+        const update = { img: updatedImage, title: service.title, name: service.name, seat: service.seat, price: service.price, category: service.category, }
         setService(update)
     }
 
     const handleTitleChange = e => {
         const updatetitle = e.target.value;
-        const update = { title: updatetitle, img: service.img, name: service.name, seat: service.seat, price: service.price, category: service.category,}
+        const update = { title: updatetitle, img: service.img, name: service.name, seat: service.seat, price: service.price, category: service.category, }
         setService(update)
     }
 
@@ -51,15 +51,15 @@ const UpdateService = () => {
 
     const handleCategoryChange = e => {
         const updateCategory = e.target.value;
-        const update = { category: updateCategory, img: service.img, name: service.name, seat: service.seat, title: service.title,  price: service.price,}
+        const update = { category: updateCategory, img: service.img, name: service.name, seat: service.seat, title: service.title, price: service.price, }
         setService(update)
     }
-    
+
 
 
     const handleUpdateuser = e => {
 
-        const url = `http://localhost:5000/service/${id}`;
+        const url = `http://agile-lowlands-71900.herokuapp.com/service/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -102,7 +102,7 @@ const UpdateService = () => {
                                 </div>
                                 <div className='w-100 '>
                                     <label htmlFor='name' className='mb-2'>
-                                    Service Name
+                                        Service Name
                                     </label>
                                     <input
                                         defaultValue={ service.name || '' }
@@ -114,7 +114,7 @@ const UpdateService = () => {
                                 </div>
                                 <div className='w-100 '>
                                     <label htmlFor='seat' className='mb-2'>
-                                    Service Seat
+                                        Service Seat
                                     </label>
                                     <input
                                         defaultValue={ service.seat || '' }
@@ -127,7 +127,7 @@ const UpdateService = () => {
 
                                 <div className='w-100 ps-0 ps-md-3'>
                                     <label htmlFor='price' className='mb-2'>
-                                    Service Price
+                                        Service Price
                                     </label>
                                     <input
                                         value={ service.price || '' }
@@ -147,7 +147,7 @@ const UpdateService = () => {
                                         required placeholder='Image Url' onChange={ handleImageChange } />
                                 </div>
                                 <div className='w-100 '></div>
-                    
+
                                 <div className='w-100 '>
                                     <label htmlFor='image' className='mb-2'>
                                         Category
@@ -181,7 +181,7 @@ const UpdateService = () => {
                                         onChange={handleDatechange}
                                     />
                                 </div> */}
-                               
+
                                 {/* <div className='w-100 '>
                                     <label htmlFor='description' className='mb-2'>
                                         Description

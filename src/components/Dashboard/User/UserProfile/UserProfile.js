@@ -17,10 +17,8 @@ const UserProfile = () => {
     }
     const updateUser = (updateData) => {
         const user = { updateData };
-        // console.log(updateData);
-        // const details = updateData.details;
-        // const name = updateData.name
-        fetch(`https://salty-beach-45243.herokuapp.com/users/${user._id}`, {
+        // console.log(updateData); 
+        fetch(`https://agile-lowlands-71900.herokuapp.com/users/${user._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -68,7 +66,7 @@ const UserProfile = () => {
                                     name: "details"
                                 } }
                                     name="details"
-                                    defaultValue={ user.details || '' }
+                                    defaultValue={ `Hey! I am ${user.displayName}. I love to use this air ticket booking web application. It's making my life easier.` || '' }
                                     onChange={ handleOnChange }
                                 />
                                 <TextField

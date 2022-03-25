@@ -17,7 +17,7 @@ const ManageUsers = () => {
     const [users, setUsers] = useState([]);
     const [searchUsers, setSearchUsers] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/users`;
+        const url = `https://agile-lowlands-71900.herokuapp.com/users`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -39,7 +39,7 @@ const ManageUsers = () => {
     const handleDelete = id => {
         const deleteMassege = window.confirm("Delete the User?");
         if (deleteMassege) {
-            const url = `http://localhost:5000/users/${id}`;
+            const url = `https://agile-lowlands-71900.herokuapp.com/users/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
