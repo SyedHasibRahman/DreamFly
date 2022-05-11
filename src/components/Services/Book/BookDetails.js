@@ -100,10 +100,10 @@ const BookDetails = () => {
                                 <h2 className="pt-4">Shipping and Billing</h2>
                                 {/* <input type="date" /> */ }
                                 <form className='tourdetails' onSubmit={ handleSubmit(onSubmit) }>
-                                    <input { ...register("userName", { required: true, maxLength: 200 }) } defaultValue={ user?.displayName || 'User Name' } />
-                                    <input { ...register("email") } value={ user?.email || '' } />
-                                    <input { ...register("address") } placeholder="Address" />
-                                    <input { ...register("phone") } placeholder="Phone Number" />
+                                    <input { ...register("userName", { required: true, maxLength: 200 }) } defaultValue={ user?.displayName || 'Passenger name' } />
+                                    <input { ...register("email") } value={ user?.email || 'Passenger Email' } />
+                                    <input { ...register("address") } placeholder="Passenger Address" />
+                                    <input { ...register("phone") } placeholder="Passenger Mobile" />
                                     <input type="submit" value={ `$ ${tourPackage.price}, Confirm Booked` } />
                                     {/* <input type="submit" value="Confirm Order" /> */ }
                                 </form>

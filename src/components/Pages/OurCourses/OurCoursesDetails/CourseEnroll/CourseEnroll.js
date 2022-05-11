@@ -22,7 +22,7 @@ const CourseEnroll = () => {
     const navigate = useNavigate();
     const redirect_uri = location.state?.from || '/Dashboard/UserOrder';
     const { register, handleSubmit } = useForm();
-    
+
 
     useEffect(() => {
         const url = `https://agile-lowlands-71900.herokuapp.com/courses/${courseId}`
@@ -47,8 +47,8 @@ const CourseEnroll = () => {
                         title: "Good job!",
                         text: "You successfully Enroll!",
                         icon: "success",
-                        
-                      });
+
+                    });
                     navigate(redirect_uri);
                 }
             })
@@ -100,13 +100,13 @@ const CourseEnroll = () => {
                                 <form className='tourdetails' onSubmit={ handleSubmit(onSubmit) }>
                                     <InputTextField
                                         fullWidth
-                                        { ...register("Name", { required: true, }) } defaultValue={ user?.displayName || 'Full Name' } />
+                                        { ...register("Name", { required: true, }) } defaultValue={ user?.displayName || 'Passenger name' } />
                                     <InputTextField
-                                        fullWidth { ...register("email") } value={ user?.email || '' } />
+                                        fullWidth { ...register("email") } value={ user?.email || 'Passenger Email' } />
                                     <InputTextField
-                                        fullWidth { ...register("address") } placeholder="Address" />
+                                        fullWidth { ...register("address") } placeholder="Passenger Address" />
                                     <InputTextField
-                                        fullWidth { ...register("phone") } placeholder="Phone Number" />
+                                        fullWidth { ...register("phone") } placeholder="Passenger Mobile" />
                                     <SecondaryButton
                                         fullWidth type="submit" >
                                         { course.price } Confirm Booked

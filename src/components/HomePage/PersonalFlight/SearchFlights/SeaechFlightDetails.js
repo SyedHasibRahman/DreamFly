@@ -105,13 +105,13 @@ const SeaechFlightDetails = () => {
                                 <form className='tourdetails' onSubmit={ handleSubmit(onSubmit) }>
                                     <InputTextField
                                         fullWidth
-                                        { ...register("userName", { required: true, maxLength: 200 }) } defaultValue={ user?.displayName || 'User Name' } />
+                                        { ...register("userName", { required: true, maxLength: 200 }) } defaultValue={ user?.displayName || 'Passenger name' } />
                                     <InputTextField
-                                        fullWidth { ...register("email") } value={ user?.email || '' } />
+                                        fullWidth { ...register("email") } value={ user?.email || 'Passenger Email' } />
                                     <InputTextField
-                                        fullWidth { ...register("address") } placeholder="Address" />
+                                        fullWidth { ...register("address") } placeholder="Passenger Address" />
                                     <InputTextField
-                                        fullWidth { ...register("phone") } placeholder="Phone Number" />
+                                        fullWidth { ...register("phone") } placeholder="Passenger Mobile" />
                                     <SecondaryButton
                                         fullWidth type="submit" >
                                         { SearchFlight.price } Confirm Booked
